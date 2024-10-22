@@ -1,4 +1,4 @@
-## Team 7even Members
+## Generic Team 7even Members
 
 | Student Number | Name                 |
 |----------------|----------------------|
@@ -9,3 +9,4 @@
 | u22668323      | Mpho Tsotetsi         |
 | u22883925      | Josh Kretschmer       |
 | u22516949      | Lonwabo Kwitshana     |
+
