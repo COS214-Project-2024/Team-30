@@ -13,6 +13,7 @@ class Citizen
     int emotionalState;
 
     public:
+    nhag`jhGHJGSS
 
     int PayTac();
     void GoToWork();
