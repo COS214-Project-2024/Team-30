@@ -1,7 +1,8 @@
 #ifndef POPULATION_H
 #define POPULATION_H
 
-class Population {
+#include "Government.h"
+class Population :public Government{
     public:
         int getPopulation();
         void setPopulation();
