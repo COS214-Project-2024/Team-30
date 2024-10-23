@@ -2,7 +2,7 @@
 #define GOVERNMENT_H
 
 #include <vector>
-#include "CityGRowth.h"
+#include "CityGrowth.h"
 #include "Strategy.h"
 class Government{
 public:
