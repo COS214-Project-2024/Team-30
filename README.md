@@ -1,7 +1,6 @@
 ## Generic Team 7even
 
-![pexels-francesco-ungaro-409127](https://github.com/user-attachments/assets/2f88c40e-ae6a-425b-9943-1742cbf2dcd9)
-
+<img src="https://github.com/user-attachments/assets/2f88c40e-ae6a-425b-9943-1742cbf2dcd9" alt="Image" width="600" />
 
 # City Overview 🌆
 
@@ -19,7 +18,6 @@ Welcome to the **City of Dreams**!
 - **City Growth 📈**: A dynamic process influenced by interconnected factors, ensuring the city thrives.
 
 Get lost in the utopia, and be sure to have fun!
-
 
 | Student Number | Name               | GitHub Profile                              |
 |----------------|--------------------|---------------------------------------------|
