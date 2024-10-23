@@ -3,6 +3,24 @@
 ![pexels-francesco-ungaro-409127](https://github.com/user-attachments/assets/2f88c40e-ae6a-425b-9943-1742cbf2dcd9)
 
 
+# City Overview 🌆
+
+Welcome to the **City of Dreams**! 
+
+### Key Highlights:
+
+- **Buildings 🏢**: The backbone of urban life, from residential homes to commercial and industrial spaces.
+- **Utilities 💧⚡**: Vital services like power, clean water, and waste management for a thriving city.
+- **Transportation 🚗🚌**: Efficient systems that facilitate the movement of people and goods.
+- **Citizens 👥**: The heart of the city, driving economic and cultural development.
+- **Government 🏛️**: The framework that manages resources, public services, and community relations.
+- **Resources 🌱**: Essential materials and energy that fuel economic activity.
+- **Taxation 💰**: A tool for funding growth and services while ensuring fairness.
+- **City Growth 📈**: A dynamic process influenced by interconnected factors, ensuring the city thrives.
+
+Get lost in the utopia, and be sure to have fun!
+
+
 | Student Number | Name               | GitHub Profile                              |
 |----------------|--------------------|---------------------------------------------|
 | u21434965      | Charlotte Green     | [![GitHub](https://img.shields.io/badge/GitHub-000?logo=github&logoColor=white)](https://github.com/charlotte-lauren)  |
