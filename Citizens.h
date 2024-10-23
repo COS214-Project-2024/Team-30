@@ -14,7 +14,7 @@ class Citizen
 
     public:
 
-    int PayTac();
+    int PayTax();
     void GoToWork();
     void CallEmergencyServices();
     void update();
