@@ -1,5 +1,8 @@
 ## Generic Team 7even
 
+![pexels-francesco-ungaro-409127](https://github.com/user-attachments/assets/2f88c40e-ae6a-425b-9943-1742cbf2dcd9)
+
+
 | Student Number | Name               | GitHub Profile                              |
 |----------------|--------------------|---------------------------------------------|
 | u21434965      | Charlotte Green     | [![GitHub](https://img.shields.io/badge/GitHub-000?logo=github&logoColor=white)](https://github.com/charlotte-lauren)  |
