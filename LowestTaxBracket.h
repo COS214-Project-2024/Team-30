@@ -12,6 +12,6 @@ class LowestTaxBracket: public TaxBracket
      int getamountToPay() ;
      string getTaxBracket();
 
-
+//
 };
 #endif

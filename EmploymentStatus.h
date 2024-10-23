@@ -15,6 +15,8 @@ class EmploymentStatus
     virtual int getIncome()=0;
     virtual string getJobType() =0;
 
+    //
+
 
 };
 #endif

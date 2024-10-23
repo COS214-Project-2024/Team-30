@@ -6,7 +6,7 @@ using namespace std;
 
 class MiddleTaxBracket: public TaxBracket
 {
-    
+    //
     public:
     
      int getamountToPay() ;

@@ -14,6 +14,6 @@ class TaxBracket
     virtual int getamountToPay() =0;
     virtual string getTaxBracket() =0;
 
-
+//
 };
 #endif

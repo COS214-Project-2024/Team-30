@@ -12,6 +12,6 @@ class HighestTaxBracket: public TaxBracket
      int getamountToPay() ;
      string getTaxBracket();
 
-
+//
 };
 #endif
