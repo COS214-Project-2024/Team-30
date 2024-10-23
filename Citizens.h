@@ -3,6 +3,7 @@
 #include <iostream>
 #include "TaxBracket.h"
 #include"EmploymentStatus.h"
+#include "EmotionalState.h"
 using namespace std;
 class Citizen
 {
@@ -10,13 +11,13 @@ class Citizen
     int income;
     TaxBracket* TaxBracket;
     EmploymentStatus* EmploymentStatus;
-    int emotionalState;
+    EmotionalState* emotionalState;
 
     public:
 
-    int PayTax();
-    void GoToWork();
-    void CallEmergencyServices();
+    int payTax();
+    void goToWork();
+    void callEmergencyServices();
     void update();
     void request();
 
