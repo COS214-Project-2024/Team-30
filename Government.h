@@ -18,7 +18,7 @@ private:
     vector<std::shared_ptr<Citizen>> population;
     vector<std::shared_ptr<Building>> infrastructure;
 
-// objects owned by Government
+//objects 
     unique_ptr<BuildingFactory> cityBuilder;
     unique_ptr<CategorizationStrategy> strategy;
 //data    
