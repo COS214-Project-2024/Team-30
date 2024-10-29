@@ -2,16 +2,17 @@
 #define MIDDLETAXBRACKET_H
 #include <iostream>
 #include "TaxBracket.h"
+#include "Citizen.h"
+
 using namespace std;
 
-class MiddleTaxBracket: public TaxBracket
+class MiddleTaxBracket : public TaxBracket
 {
-    
-    public:
-    
-     int getamountToPay() ;
-     string getTaxBracket();
 
-
+public:
+    MiddleTaxBracket();
+    int getamountToPay() override;
+    string getTaxBracket() override;
+    void setTaxRate(double rate) override;
 };
 #endif

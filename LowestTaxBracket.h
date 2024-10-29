@@ -2,16 +2,17 @@
 #define LOWESTTAXBRACKET_H
 #include <iostream>
 #include "TaxBracket.h"
+#include "Citizen.h"
 using namespace std;
 
-class LowestTaxBracket: public TaxBracket
+class LowestTaxBracket : public TaxBracket
 {
-    
-    public:
-    
-     int getamountToPay() ;
-     string getTaxBracket();
 
+public:
+    LowestTaxBracket();
+    int getamountToPay() override;
+    string getTaxBracket() override;
+    void setTaxRate(double rate) override;
 
 };
 #endif

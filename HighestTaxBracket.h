@@ -2,16 +2,18 @@
 #define HIGHESTTAXBRACKET_H
 #include <iostream>
 #include "TaxBracket.h"
+#include "Citizen.h"
+
 using namespace std;
 
 class HighestTaxBracket: public TaxBracket
 {
     
     public:
-    
-     int getamountToPay() ;
-     string getTaxBracket();
-
+     HighestTaxBracket();
+     int getamountToPay() override;
+     string getTaxBracket() override;
+    void setTaxRate(double rate) override;
 
 };
 #endif

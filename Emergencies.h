@@ -2,6 +2,10 @@
 #define EMERGENCIES_H
 
 #include "Building.h"
+#include <iostream>
+#include <string>
+#include <memory>
+using namespace std;
 
 class Emergencies
 {

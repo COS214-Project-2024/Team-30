@@ -1,13 +1,14 @@
 #ifndef SATISFIED_H
 #define SATISFIED_H
+
 #include "EmotionalState.h"
 
-class Satisfied : public EmotionalState
-{
+class Satisfied : public EmotionalState {
 public:
-    void handle() override;
+    // void react() const override;
+    // void adjustHappiness(Citizen &citizen) override;
+    void changeState(Citizen &citizen) override;
+    string getEmotionalState() override;
 };
 
-
-
-#endif
+#endif // SATISFIED_H
