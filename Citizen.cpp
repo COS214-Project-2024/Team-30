@@ -67,3 +67,24 @@ void Citizen::printDetails()
     cout << "Happiness Meter:\t"<< happinessMeter<<endl;
 
 }
+
+//logic for paying taxes
+int Citizen::payTax()
+{
+    //get that person current tax bracket
+    int amount= taxBracket->getamountToPay();
+    
+    if( amount > income)
+    {
+        amount = income; // if they dont have enough to pay taxes
+    }
+
+    income = income - amount;
+    return amount;//added to city budget 
+}
+
+//this is for employment rate
+string Citizen::getEmploymentStatus()
+{
+    return employmentStatus->getJobType();
+}

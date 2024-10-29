@@ -32,7 +32,8 @@ class Citizen
 
     public:
     Citizen();
-    // int payTax();
+    int payTax();
+    string getEmploymentStatus();
     // void goToWork();
     // void callEmergencyServices();
     // void update();

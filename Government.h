@@ -3,9 +3,8 @@
 
 #include <vector>
 #include <iostream>
-#include <string>
-#include <memory>
-#include <random>
+#include <algorithm>
+#include <iomanip>
 #include "CityGrowthObserver.h"
 #include "CategorizationStrategy.h"
 #include "Citizen.h"
@@ -15,27 +14,32 @@ using namespace std;
 class Government{
 private:
 //lists
-    std::vector<CityGrowthObserver*> observers;
-    std::vector<Citizen*> population;
-    std::vector<Building*> Infurstructure;
-//objects
-    BuildingFactory* CityBuilder;
-    CategorizationStrategy* strategy;
+    vector<std::shared_ptr<CityGrowthObserver>> observers;
+    vector<std::shared_ptr<Citizen>> population;
+    vector<std::shared_ptr<Building>> infrastructure;
+
+// objects owned by Government
+    unique_ptr<BuildingFactory> cityBuilder;
+    unique_ptr<CategorizationStrategy> strategy;
 //data    
     string cityName;
     double employmentRate;
     int citybudget;
+    int populationNum;
 
 
 public:
     Government(string);
-    void attach(CityGrowthObserver ob);
-    void detach(CityGrowthObserver ob);
+    void attach(std::shared_ptr<CityGrowthObserver> ob);
+    void detach(std::shared_ptr<CityGrowthObserver> ob);
     void notifyObservers();
-    void populationGrowth(Citizen*);
+    void populationGrowth(std::shared_ptr<Citizen> );
     void calculateEmploymentRate();
     void increaseInfurstructure();
-    
+    void populationDecline(std::shared_ptr<Citizen>);
+    void collectTaxes();
+    void printInfo();
+    ~Government();
 
 
 
