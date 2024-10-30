@@ -2,8 +2,8 @@
 #define GOVERNMENT_H
 
 #include <vector>
-#include "CityGrowth.h"
-#include "Strategy.h"
+#include "CityGrowthObserver.h"
+#include "CategorizationStrategy.h"
 class Government{
 public:
     void attach(CityGrowthObserver ob);
