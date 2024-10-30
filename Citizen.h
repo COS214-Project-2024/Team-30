@@ -45,8 +45,17 @@ class Citizen
     int getHappinessMeter();
     int getID() const;
     int getIncome();
+    string getEmotionalState();
     void setEmotionalState(unique_ptr<EmotionalState> emotionalState);
     void printDetails(); //helper to see that constructor works as expected
+    void respondToTax();
+    void respondToPayment();
+    void respondToJobChange(bool gainedJob);
+    void respondToIncreasedInfrastructure();
+     void getHired(std::unique_ptr<EmploymentStatus> newJob);
+    void getFired();
+
+    
     
 
 };

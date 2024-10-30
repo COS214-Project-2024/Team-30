@@ -4,9 +4,9 @@ HighestTaxBracket::HighestTaxBracket()
 {
     taxRate = 0.4;
 }
-int HighestTaxBracket::getamountToPay()
+int HighestTaxBracket::getamountToPay(int income)
 {
-    return citizen->getIncome() * taxRate;
+    return income * taxRate;
 }
 string HighestTaxBracket::getTaxBracket()
 {

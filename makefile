@@ -19,7 +19,8 @@ SRCS = main.cpp \
        TaxBracket.cpp \
        LowestTaxBracket.cpp \
        MiddleTaxBracket.cpp \
-       HighestTaxBracket.cpp
+       HighestTaxBracket.cpp \
+       Government.cpp
 
 # Define the object files
 OBJS = $(SRCS:.cpp=.o)

@@ -13,7 +13,6 @@ void Satisfied::changeState(Citizen &citizen)
 {
     if (citizen.getHappinessMeter() < 50)
     {
-        cout << "Citizen is now Satisfied"<<endl;
         citizen.setEmotionalState(make_unique<Unsatisfied>());
     }
 }

@@ -4,9 +4,9 @@ LowestTaxBracket::LowestTaxBracket()
 {
     taxRate = 0.1;
 }
-int LowestTaxBracket::getamountToPay()
+int LowestTaxBracket::getamountToPay(int income)
 {
-    return citizen->getIncome() * taxRate;
+    return income * taxRate;
 }
 string LowestTaxBracket::getTaxBracket()
 {

@@ -11,7 +11,7 @@ class HighestTaxBracket: public TaxBracket
     
     public:
      HighestTaxBracket();
-     int getamountToPay() override;
+     int getamountToPay(int income) override;
      string getTaxBracket() override;
     void setTaxRate(double rate) override;
 

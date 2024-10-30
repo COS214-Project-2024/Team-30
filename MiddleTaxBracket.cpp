@@ -4,9 +4,10 @@ MiddleTaxBracket::MiddleTaxBracket()
 {
     taxRate = 0.35;
 }
-int MiddleTaxBracket::getamountToPay()
+int MiddleTaxBracket::getamountToPay(int income)
 {
-    return citizen->getIncome() * taxRate;
+    int amounttopay = income * taxRate;
+    return amounttopay;
 }
 string MiddleTaxBracket::getTaxBracket()
 {

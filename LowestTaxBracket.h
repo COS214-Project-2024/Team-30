@@ -10,7 +10,7 @@ class LowestTaxBracket : public TaxBracket
 
 public:
     LowestTaxBracket();
-    int getamountToPay() override;
+    int getamountToPay(int income) override;
     string getTaxBracket() override;
     void setTaxRate(double rate) override;
 
