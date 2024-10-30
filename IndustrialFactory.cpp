@@ -1,9 +1,12 @@
+// Create a new Industrial Building
 #include <iostream>
 #include "BuildingFactory.h"
 #include "IndustrialFactory.h"
 #include "Industrial.h"
 
-Building *IndustrialFactory::createBuilding(){
-    std::cout<<"New Industrail Building Built."<<std::endl;
-    return new Industrial();
+// Create a new Industrial Building
+std::unique_ptr<Building> IndustrialFactory::createBuilding() {
+    std::cout << "New Industrial Building Built." << std::endl;
+    return std::make_unique<Industrial>(); // Create and return a unique_ptr<Industrial>
 }
+

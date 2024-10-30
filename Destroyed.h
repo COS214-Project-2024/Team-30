@@ -10,6 +10,7 @@ class Destroyed : public BuildingState{
     public:
     void handle() override;
     void changeState() override;
+    string getStatus() override;
 };
 
 #endif

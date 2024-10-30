@@ -11,6 +11,7 @@ class Underconstruction : public BuildingState{
     public:
     void handle() override;
     void changeState() override;
+    string getStatus() override;
 
 };
 

@@ -3,14 +3,17 @@
 
 #include "Building.h"
 
-class BuildingFactory{
+class BuildingFactory
+{
 
-    private:
-    protected:
+private:
+    Building *building;
 
-    public:
-    virtual ~BuildingFactory(){};
-    virtual Building* createBuilding() = 0;
+public:
+    virtual ~BuildingFactory();
+
+protected:
+    virtual std::unique_ptr<Building> createBuilding() = 0;
 };
 
 #endif
