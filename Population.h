@@ -5,7 +5,7 @@
 class Population :public Government{
     public:
         int getPopulation();
-        void setPopulation();
+        void setPopulation(int a);
     private: 
      int population;
 };
