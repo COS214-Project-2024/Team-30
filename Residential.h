@@ -9,9 +9,11 @@ class Residential : public Building{
 
     private:
     protected:
+    
     public:
-    void build();
-    Residential* clone();
+    Residential();
+    void build() override;
+    Residential* clone() override;
     //void displayInfo();
 };
 

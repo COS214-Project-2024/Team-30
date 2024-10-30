@@ -8,11 +8,13 @@ class BuildingComponent{
 
     private:
     Building* Building;
+    //idea use a vector of type Building??
 
     protected:
+
     public:
-    void add(BuildingComponent* component);
-    void remove(BuildingComponent* component);
+    virtual void add(BuildingComponent* component);
+    virtual void remove(BuildingComponent* component);
     virtual void displayInfo();
 };
 

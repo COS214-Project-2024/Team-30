@@ -11,25 +11,32 @@ class Building : public BuildingComponent{
 
     private:
     BuildingState*  currState;
-    int capacity;
+    int capacity; 
     //vector<Utilities*> utilities;
     bool runningUtils;
 
     protected:
-    int price;
+    int price; //? whats price
 
     public:
-    Building(BuildingState* initialState);
+    Building(); //Building constructor
+    Building(BuildingState* initialState); //set state to underconstruction
     virtual void build() = 0;
-    void setState(BuildingState* state); 
-    void processState();
-    void displayInfo();
-    int buildingHealth();
-    void add(BuildingComponent* component);
-    void remove(BuildingComponent* component);
+
+    void setState(BuildingState* state); //set state to underconstruction
+    void processState(); //request() function for State DP
+    
+    void displayInfo() override;
+
+    int buildingHealth(); 
+
+    void add(BuildingComponent* component) override;
+    void remove(BuildingComponent* component) override;
     void update();
+
     void recieveUtilities();    //Utilities
     //Utilities* setUtilities();
+
     virtual Building* clone() = 0;
 
 };

@@ -9,7 +9,7 @@ class ResidentialFactory : public BuildingFactory{
     private:
     protected:
     public:
-    Building* createBuilding();
+    Building* createBuilding() override;
 };
 
 #endif

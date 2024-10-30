@@ -8,9 +8,11 @@ class Landmark : public Building{
 
     private:
     protected:
+    
     public:
-    void build();
-    Landmark* clone();
+    Landmark();
+    void build() override;
+    Landmark* clone() override;
 };
 
 #endif
