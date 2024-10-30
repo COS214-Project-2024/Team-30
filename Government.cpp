@@ -9,7 +9,14 @@ void Government::attach(CityGrowthObserver *ob)
 
 void Government::detach(CityGrowthObserver *ob)
 {
-    observers.erase(std::remove(observers.begin(), observers.end(), ob), observers.end());
+    for (auto it = observers.begin(); it != observers.end(); ++it)
+    {
+        if (*it == ob)
+        {
+            observers.erase(it);
+            break; 
+        }
+    }
 }
 
 void Government::notify()
@@ -18,6 +25,11 @@ void Government::notify()
     {
         observer->update(Population);
     }
+}
+
+std::string Government::categorize()
+{
+    return strategy->categorize(Population, 0);
 }
 
 void Government::populationGrowth(int newPeople)
