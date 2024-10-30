@@ -9,7 +9,9 @@ class Underconstruction : public BuildingState{
     protected:
 
     public:
-    void handle();
+    void handle() override;
+    void changeState() override;
+
 };
 
 #endif

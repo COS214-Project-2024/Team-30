@@ -3,12 +3,13 @@
 
 #include "BuildingState.h"
 
-class Destroyed : BuildingState{
+class Destroyed : public BuildingState{
 
     private:
     protected:
     public:
-    void handle();
+    void handle() override;
+    void changeState() override;
 };
 
 #endif

@@ -9,8 +9,9 @@ class Commercial : public Building{
     private:
     protected:
     public:
-    void build();
-    Commercial* clone();
+    Commercial();
+    void build() override;
+    Commercial* clone() override;
 };
 
 #endif

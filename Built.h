@@ -8,7 +8,8 @@ class Built : public BuildingState{
     private:
     protected:
     public:
-    void handle();
+    void handle() override;
+    void changeState() override;
 };
 
 #endif

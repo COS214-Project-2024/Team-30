@@ -7,7 +7,9 @@ class BuildingFactory{
 
     private:
     protected:
+
     public:
+    virtual ~BuildingFactory(){};
     virtual Building* createBuilding() = 0;
 };
 
