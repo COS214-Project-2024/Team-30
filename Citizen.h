@@ -35,7 +35,7 @@ class Citizen
     Citizen();
     int payTax();
     string getEmploymentStatus();
-    void payTax();
+    void payTaxes();
     void getPaid();
     int getAccountBalance();
     // void goToWork();

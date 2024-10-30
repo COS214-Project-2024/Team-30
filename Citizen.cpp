@@ -68,7 +68,7 @@ int Citizen::getAccountBalance()
     return this->accountBalance;
 }
 
-void Citizen::payTax()
+void Citizen::payTaxes()
 {
     accountBalance = accountBalance - taxBracket->getamountToPay();
 }
