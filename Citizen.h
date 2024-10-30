@@ -24,6 +24,7 @@ class Citizen
     private:
     int id; 
     int income;
+    int accountBalance;
     int happinessMeter;
     unique_ptr<TaxBracket> taxBracket;
     unique_ptr<EmploymentStatus> employmentStatus;
@@ -34,6 +35,9 @@ class Citizen
     Citizen();
     int payTax();
     string getEmploymentStatus();
+    void payTax();
+    void getPaid();
+    int getAccountBalance();
     // void goToWork();
     // void callEmergencyServices();
     // void update();

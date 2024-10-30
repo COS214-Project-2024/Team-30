@@ -11,13 +11,12 @@ class Emergencies
 {
 protected:
     int damageInflicted;
-    Building* buildingType;
+    unique_ptr<Building> buildingType; // Use smart pointer for buildingType
+
 public:
-    virtual void accessDamage(Building* buildingType) = 0;
-    Emergencies();
-    ~Emergencies();
+    virtual void accessDamage(unique_ptr<Building> buildingType) = 0; // Updated parameter to use unique_ptr
+    // Emergencies();
+    virtual ~Emergencies(); // Ensure virtual destructor for proper cleanup
 };
-
-
 
 #endif

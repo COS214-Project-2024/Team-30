@@ -3,6 +3,7 @@
 int Citizen::nextID = 1;  // or 0, depending on your starting point for IDs
 
 Citizen::Citizen() : id(nextID++){
+    accountBalance = 0;
     // Random number generator setup
     random_device rd;
     mt19937 gen(rd());
@@ -38,7 +39,13 @@ Citizen::Citizen() : id(nextID++){
 
     // Step 3: Initialize other attributes
     income = employmentStatus->getIncome();                // Default income, modify if needed
+    getPaid();
     happinessMeter = 50;       // Default happiness, adjust as needed
+
+}
+void Citizen::getPaid()
+{
+    accountBalance = accountBalance + income;
 }
 int Citizen::getID() const
 {
@@ -56,6 +63,15 @@ int Citizen::getIncome()
 {
     return this->income;
 }
+int Citizen::getAccountBalance()
+{
+    return this->accountBalance;
+}
+
+void Citizen::payTax()
+{
+    accountBalance = accountBalance - taxBracket->getamountToPay();
+}
 
 void Citizen::printDetails()
 {
@@ -64,6 +80,7 @@ void Citizen::printDetails()
     cout << "Income:\t"<<income<<endl;
     cout << "Emotional State:\t"<< emotionalState->getEmotionalState()<<endl;
     cout << "Tax Bracket:\t"<< taxBracket->getTaxBracket()<<endl;
+    cout << "Account Balance:\t"<< accountBalance<<endl;
     cout << "Happiness Meter:\t"<< happinessMeter<<endl;
 
 }
