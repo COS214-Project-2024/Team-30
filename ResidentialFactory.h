@@ -1,11 +1,11 @@
-#ifndef INDUSTRIALFACTORY_H
-#define INDUSTRIALFACTORY_H
+#ifndef RESIDENTIALFACTORY_H
+#define RESIDENTIALFACTORY_H
 
 #include "Building.h"
 #include "BuildingFactory.h"
 #include <memory> // Include for smart pointers
 
-class IndustrialFactory : public BuildingFactory {
+class ResidentialFactory : public BuildingFactory {
 
     private:
     protected:

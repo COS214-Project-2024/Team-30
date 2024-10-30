@@ -3,8 +3,9 @@
 
 #include "Building.h"
 #include "LandmarkFactory.h"
+#include <memory> // Include for smart pointers
 
-class Landmark : public Building{
+class Landmark : public Building {
 
     private:
     protected:
@@ -12,7 +13,7 @@ class Landmark : public Building{
     public:
     Landmark();
     void build() override;
-    Landmark* clone() override;
+    // std::unique_ptr<Building> clone() override; // Change to return unique_ptr<Building>
 };
 
 #endif

@@ -2,10 +2,10 @@
 #define RESIDENTIAL_H
 
 #include "Building.h"
-#include "ResidentailFactory.h"
+#include "ResidentialFactory.h"
+#include <memory> // Include for smart pointers
 
-
-class Residential : public Building{
+class Residential : public Building {
 
     private:
     protected:
@@ -13,8 +13,8 @@ class Residential : public Building{
     public:
     Residential();
     void build() override;
-    Residential* clone() override;
-    //void displayInfo();
+    // std::unique_ptr<Building> clone() override; // Change to return unique_ptr<Building>
+    // void displayInfo();
 };
 
 #endif

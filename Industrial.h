@@ -3,15 +3,16 @@
 
 #include "Building.h"
 #include "IndustrialFactory.h"
+#include <memory> // Include for smart pointers
 
-class Industrial : public Building{
+class Industrial : public Building {
 
     private:
     protected:
     public:
     Industrial();
     void build() override;
-    Industrial* clone() override;
+    // std::unique_ptr<Building> clone() override; // Change to return unique_ptr<Building>
 };
 
 #endif

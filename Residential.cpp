@@ -1,25 +1,27 @@
 #include <iostream>
-
 #include "Residential.h"
-#include "ResidentailFactory.h"
+#include "ResidentialFactory.h"
+#include "Underconstruction.h"
 
-//creates a Residential object
-Residential::Residential()
-{
-    //state of residnetial building should be underconstruction     !!!!!!!!!!
+// Creates a Residential object
+Residential::Residential() {
+    // State of residential building should be under construction
+    setState(std::make_unique<Underconstruction>()); // Use smart pointer
+    capacity = 4;
+    buildingHealth = 100;
+    price = 500;
+    runningUtils = false;
 }
 
-//builds a residential building, calls residential factory to create building
+// Builds a residential building, calls residential factory to create building
 void Residential::build() {
-    
-    ResidentialFactory* newRes = new ResidentialFactory();
-    newRes->createBuilding();
-    //change building state to built here                           !!!!!!!!!!
-    std::cout<<"New Residential Building Built"<<std::endl;
-    
+    // ResidentialFactory* newRes = new ResidentialFactory();
+    // newRes->createBuilding();
+    // // Change building state to built here
+    // std::cout << "New Residential Building Built" << std::endl;
 }
 
-//clones Residential building
-Residential *Residential::clone(){
-    Residential* clonedRes = new Residential(*this);
-}
+// Clones Residential building
+// std::unique_ptr<Building> Residential::clone() {
+//     return std::make_unique<Residential>(*this); // Use smart pointer for cloning
+// }
