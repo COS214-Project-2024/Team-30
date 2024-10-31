@@ -10,6 +10,7 @@ public:
     void detach(CityGrowthObserver* ob);
     void notify();
 
+    void setStrategy(CategorizationStrategy* str);
     std::string categorize(); 
 
     void populationGrowth(int newPeople);

@@ -26,12 +26,15 @@ int main() {
     cityGovernment.attach(&infrastructureObserver);
     cityGovernment.attach(&economyObserver);
 
+    //strategy
+    cityGovernment.setStrategy(&popStrategy);
+
     //population growth
     cityGovernment.populationGrowth(1000); 
-    // std::cout << "City categorized as: " << cityGovernment.categorize() << std::endl;
+    std::cout << "City categorized as: " << cityGovernment.categorize() << std::endl;
 
     cityGovernment.populationGrowth(5000); 
-    // std::cout << "City categorized as: " << cityGovernment.categorize() << std::endl;
+    std::cout << "City categorized as: " << cityGovernment.categorize() << std::endl;
 
     return 0;
 }

@@ -27,6 +27,11 @@ void Government::notify()
     }
 }
 
+void Government::setStrategy(CategorizationStrategy *str)
+{
+    strategy=str;
+}
+
 std::string Government::categorize()
 {
     return strategy->categorize(Population, 0);
