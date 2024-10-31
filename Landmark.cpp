@@ -22,6 +22,23 @@ void Landmark::build() {
 }
 
 // Clones Landmark 
-// std::unique_ptr<Building> Landmark::clone() {
-//     return std::make_unique<Landmark>(*this); // Return a unique_ptr<Landmark>
-// }
+unique_ptr<Building> Landmark::clone() {
+    // Create a new Landmark instance
+    auto clonedLandmark = std::make_unique<Landmark>();
+
+    clonedLandmark->capacity = this->capacity;
+    clonedLandmark->buildingHealth = this->buildingHealth;
+    clonedLandmark->price = this->price;
+    clonedLandmark->runningUtils = this->runningUtils;
+
+    if (this->currState) {
+        clonedLandmark->currState = this->currState->clone();
+    }
+
+    return clonedLandmark;
+}
+
+string Landmark::getType()
+{
+    return "Landmark Building";
+}

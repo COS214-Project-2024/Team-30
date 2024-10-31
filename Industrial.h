@@ -12,7 +12,9 @@ class Industrial : public Building {
     public:
     Industrial();
     void build() override;
-    // std::unique_ptr<Building> clone() override; // Change to return unique_ptr<Building>
+    unique_ptr<Building> clone() override; // Change to return unique_ptr<Building>
+    string getType() override;
+
 };
 
 #endif

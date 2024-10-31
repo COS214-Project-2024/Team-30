@@ -26,6 +26,23 @@ void Commercial::build() {
 }
 
 // clones a Commercial Building
-// unique_ptr<Building> Commercial::clone() {
-//     return make_unique<Commercial>(*this); // Return a unique_ptr<Commercial>
-// }
+unique_ptr<Building> Commercial::clone() {
+    // Create a new Commercial instance
+    auto clonedCommercial = std::make_unique<Commercial>();
+
+    clonedCommercial->capacity = this->capacity;
+    clonedCommercial->buildingHealth = this->buildingHealth;
+    clonedCommercial->price = this->price;
+    clonedCommercial->runningUtils = this->runningUtils;
+
+    if (this->currState) {
+        clonedCommercial->currState = this->currState->clone();
+    }
+
+    return clonedCommercial;
+}
+
+string Commercial::getType()
+{
+    return "Commercial Building";
+}

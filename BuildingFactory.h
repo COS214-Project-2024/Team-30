@@ -13,7 +13,7 @@ public:
     virtual ~BuildingFactory();
 
 protected:
-    virtual std::unique_ptr<Building> createBuilding() = 0;
+    virtual unique_ptr<Building> createBuilding() = 0;
 };
 
 #endif

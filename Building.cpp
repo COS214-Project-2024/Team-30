@@ -1,5 +1,6 @@
 #include <iostream>
 #include <memory>  // Include for smart pointers
+#include <iomanip> 
 
 #include "Building.h"
 #include "BuildingState.h"
@@ -49,10 +50,18 @@ void Building::processState()
 
 void Building::displayInfo()
 {
-    cout << "Building State:\t" << currState->getStatus() << endl;
-    cout << "Building Capacity:\t" << capacity << endl;
-    cout << "Building price:\t" << price << endl;
-    cout << "Utensils Set:\t" << runningUtils << endl;
+    std::cout << "==========================================" << std::endl;
+    std::cout << std::setw(20) << std::left << "Building Type:" 
+              << std::setw(20) << getType() << std::endl;
+    std::cout << std::setw(20) << std::left << "Building State:" 
+              << std::setw(20) << currState->getStatus() << std::endl;
+    std::cout << std::setw(20) << std::left << "Capacity:" 
+              << std::setw(20) << capacity << std::endl;
+    std::cout << std::setw(20) << std::left << "Price:" 
+              << std::setw(20) << price << std::endl;
+    std::cout << std::setw(20) << std::left << "Utilities Running:" 
+              << std::boolalpha << runningUtils << std::endl; // Output true/false as words
+    std::cout << "==========================================" << std::endl;
 }
 
 BuildingState* Building::getState()

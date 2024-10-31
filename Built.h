@@ -11,6 +11,8 @@ class Built : public BuildingState{
     void handle() override;
     void changeState() override;
     string getStatus() override;
+    unique_ptr<BuildingState> clone() const override;
+
 
 };
 

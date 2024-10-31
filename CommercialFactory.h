@@ -7,7 +7,7 @@
 
 class CommercialFactory : public BuildingFactory {
     public:
-    std::unique_ptr<Building> createBuilding() override; // Change return type to std::unique_ptr<Building>
+    unique_ptr<Building> createBuilding() override; // Change return type to unique_ptr<Building>
 };
 
 #endif
