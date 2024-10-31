@@ -24,6 +24,23 @@ void Industrial::build() {
 }
 
 // clones Industrial building 
-// std::unique_ptr<Building> Industrial::clone() {
-//     return std::make_unique<Industrial>(*this); // Return a unique_ptr<Industrial>
-// }
+unique_ptr<Building> Industrial::clone() {
+    // Create a new Industrial instance
+    auto clonedIndustrial = std::make_unique<Industrial>();
+
+    clonedIndustrial->capacity = this->capacity;
+    clonedIndustrial->buildingHealth = this->buildingHealth;
+    clonedIndustrial->price = this->price;
+    clonedIndustrial->runningUtils = this->runningUtils;
+
+    if (this->currState) {
+        clonedIndustrial->currState = this->currState->clone();
+    }
+
+    return clonedIndustrial;
+}
+
+string Industrial::getType()
+{
+    return "Industrial Building";
+}

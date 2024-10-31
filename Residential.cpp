@@ -22,6 +22,23 @@ void Residential::build() {
 }
 
 // Clones Residential building
-// std::unique_ptr<Building> Residential::clone() {
-//     return std::make_unique<Residential>(*this); // Use smart pointer for cloning
-// }
+unique_ptr<Building> Residential::clone() {
+    // Create a new Residential instance
+    auto clonedResidential = std::make_unique<Residential>();
+
+    clonedResidential->capacity = this->capacity;
+    clonedResidential->buildingHealth = this->buildingHealth;
+    clonedResidential->price = this->price;
+    clonedResidential->runningUtils = this->runningUtils;
+
+    if (this->currState) {
+        clonedResidential->currState = this->currState->clone();
+    }
+
+    return clonedResidential;
+}
+
+string Residential::getType()
+{
+    return "Residential Building";
+}

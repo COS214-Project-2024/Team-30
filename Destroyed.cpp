@@ -11,10 +11,15 @@ void Destroyed::handle() {
 
 void Destroyed::changeState() {
     // Create a unique_ptr for the new state
-    std::unique_ptr<BuildingState> state_ = std::make_unique<Underconstruction>(); // Use unique_ptr
+    unique_ptr<BuildingState> state_ = std::make_unique<Underconstruction>(); // Use unique_ptr
     state_->handle(); // Call handle on the new state
 }
 
 std::string Destroyed::getStatus() {
     return "Destroyed";
+}
+
+unique_ptr<BuildingState> Destroyed::clone() const
+{
+    return std::make_unique<Destroyed>(*this);
 }

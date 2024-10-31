@@ -13,7 +13,9 @@ class Residential : public Building {
     public:
     Residential();
     void build() override;
-    // std::unique_ptr<Building> clone() override; // Change to return unique_ptr<Building>
+    unique_ptr<Building> clone() override; // Change to return unique_ptr<Building>
+    string getType() override;
+
     // void displayInfo();
 };
 

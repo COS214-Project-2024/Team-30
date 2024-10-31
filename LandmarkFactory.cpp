@@ -4,7 +4,7 @@
 #include "LandmarkFactory.h"
 
 // Create a new Landmark Building
-std::unique_ptr<Building> LandmarkFactory::createBuilding() {
+unique_ptr<Building> LandmarkFactory::createBuilding() {
     std::cout << "New Landmark Made" << std::endl;
     return std::make_unique<Landmark>(); // Use smart pointer to create and return a new Landmark
 }

@@ -9,6 +9,7 @@
 #include "Built.h"
 #include "Destroyed.h"
 
+using namespace std;
 int main() {
     // Create factories
     ResidentialFactory residentialFactory;
@@ -17,29 +18,24 @@ int main() {
     LandmarkFactory landmarkFactory;
 
     // Create buildings using factories with smart pointers
-    std::unique_ptr<Building> residentialBuilding = residentialFactory.createBuilding();
-    std::unique_ptr<Building> commercialBuilding = commercialFactory.createBuilding();
-    std::unique_ptr<Building> industrialBuilding = industrialFactory.createBuilding();
-    std::unique_ptr<Building> landmarkBuilding = landmarkFactory.createBuilding();
+    unique_ptr<Building> residentialBuilding = residentialFactory.createBuilding();
+    unique_ptr<Building> commercialBuilding = commercialFactory.createBuilding();
+    unique_ptr<Building> industrialBuilding = industrialFactory.createBuilding();
+    unique_ptr<Building> landmarkBuilding = landmarkFactory.createBuilding();
 
-    // Display the initial state of each building
-    std::cout << "Residential Building State: " << residentialBuilding->getState()->getStatus() << std::endl;
-    std::cout << "Commercial Building State: " << commercialBuilding->getState()->getStatus() << std::endl;
-    std::cout << "Industrial Building State: " << industrialBuilding->getState()->getStatus() << std::endl;
-    std::cout << "Landmark Building State: " << landmarkBuilding->getState()->getStatus() << std::endl;
+    residentialBuilding->displayInfo();
+    commercialBuilding->displayInfo();
+    industrialBuilding->displayInfo();
+    landmarkBuilding->displayInfo();
 
-    // Simulate building completion by changing the state
-    residentialBuilding->setState(std::make_unique<Built>());
-    commercialBuilding->setState(std::make_unique<Built>());
-    industrialBuilding->setState(std::make_unique<Built>());
-    landmarkBuilding->setState(std::make_unique<Built>());
+    cout << "\n\n\n" << "PROTOTYPE" << "\n\n\n";
 
-    // Display the state after construction is complete
-    std::cout << "Residential Building State after build: " << residentialBuilding->getState()->getStatus() << std::endl;
-    std::cout << "Commercial Building State after build: " << commercialBuilding->getState()->getStatus() << std::endl;
-    std::cout << "Industrial Building State after build: " << industrialBuilding->getState()->getStatus() << std::endl;
-    std::cout << "Landmark Building State after build: " << landmarkBuilding->getState()->getStatus() << std::endl;
+    unique_ptr<Building> residentialBuilding2 = residentialBuilding->clone();
+    residentialBuilding2->setState(make_unique<Built>());
+    residentialBuilding2->displayInfo();
+    cout << "\n\n";
+    residentialBuilding->displayInfo();
 
-    // No need for manual cleanup due to smart pointers
+
     return 0;
 }

@@ -11,7 +11,7 @@ class LandmarkFactory : public BuildingFactory {
     protected:
     
     public:
-    std::unique_ptr<Building> createBuilding() override; // Change to return unique_ptr<Building>
+    unique_ptr<Building> createBuilding() override; // Change to return unique_ptr<Building>
 };
 
 #endif

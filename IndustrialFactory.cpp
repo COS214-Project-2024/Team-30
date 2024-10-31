@@ -5,7 +5,7 @@
 #include "Industrial.h"
 
 // Create a new Industrial Building
-std::unique_ptr<Building> IndustrialFactory::createBuilding() {
+unique_ptr<Building> IndustrialFactory::createBuilding() {
     std::cout << "New Industrial Building Built." << std::endl;
     return std::make_unique<Industrial>(); // Create and return a unique_ptr<Industrial>
 }

@@ -27,7 +27,7 @@ class Building {
     BuildingState* getState();
     void setState(unique_ptr<BuildingState> state); // Accept a unique_ptr
     void processState(); //request() function for State DP
-    
+    virtual string getType() = 0;
     void displayInfo(); //removed override keyword. testing without the building component
 
     //removed Building health, changed to member variable
@@ -39,7 +39,7 @@ class Building {
     void recieveUtilities();    //Utilities
     //Utilities* setUtilities();
 
-    // virtual unique_ptr<Building> clone() = 0; // Return unique_ptr
+    virtual unique_ptr<Building> clone() = 0; // Return unique_ptr
 
 };
 

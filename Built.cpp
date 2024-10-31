@@ -21,3 +21,8 @@ string Built::getStatus()
 {
     return "Built";
 }
+
+unique_ptr<BuildingState> Built::clone() const
+{
+    return std::make_unique<Built>(*this);
+}

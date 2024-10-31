@@ -12,7 +12,9 @@ class Commercial : public Building {
     public:
     Commercial();
     void build() override;
-    // unique_ptr<Building> clone() override; // Return unique_ptr<Building>
+    unique_ptr<Building> clone() override; // Return unique_ptr<Building>
+    string getType() override;
+
 };
 
 #endif

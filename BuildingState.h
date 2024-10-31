@@ -22,6 +22,7 @@ class BuildingState {
     virtual void handle() = 0;
     virtual void changeState() = 0;
     virtual string getStatus() = 0;
+     virtual unique_ptr<BuildingState> clone() const = 0;  // Clone for deep copy. this will ensure that when we use prototype to create objects, they wont share states.
 };
 
 #endif
