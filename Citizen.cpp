@@ -3,6 +3,14 @@
 #include <iomanip>
 int Citizen::nextID = 1; // or 0, depending on your starting point for IDs
 
+/**
+ * @brief Constructs a Citizen object with initial randomized attributes.
+ *
+ * Initializes the Citizen with a unique ID, a zero account balance, 
+ * randomly assigned employment status, tax bracket, and emotional state.
+ * Additionally, assigns an initial happiness level and calls functions 
+ * to set income and adjust account balance.
+ */
 Citizen::Citizen() : id(nextID++)
 {
     accountBalance = 0;
@@ -11,6 +19,13 @@ Citizen::Citizen() : id(nextID++)
     mt19937 gen(rd());
 
     // Step 1: Randomly assign EmploymentStatus
+      /**
+     * @brief Step 1: Randomly assign EmploymentStatus
+     * 
+     * Generates a random integer to assign one of three employment statuses 
+     * (OfficeJob, IndustrialJob, or Unemployed) along with the associated 
+     * tax bracket.
+     */
     uniform_int_distribution<> employmentDist(0, 2);
     int employmentChoice = employmentDist(gen);
 
@@ -29,11 +44,19 @@ Citizen::Citizen() : id(nextID++)
         taxBracket = make_unique<LowestTaxBracket>();
         break;
     }
-
-    // Step 2: assign initial EmotionalState
+     /**
+     * @brief Step 2: Assign initial EmotionalState
+     * 
+     * Sets the emotional state to Satisfied initially.
+     */
     emotionalState = make_unique<Satisfied>();
 
     // Step 3: Randomly assign initial happiness meter
+    /**
+     * @brief Step 3: Randomly assign initial happiness meter
+     * 
+     * Generates a random integer between 0 and 100 for the initial happiness level.
+     */
     uniform_int_distribution<> happinessDist(0, 100); // Adjust the range as necessary
     happinessMeter = happinessDist(gen); // Assign a random happiness level
 

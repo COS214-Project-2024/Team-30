@@ -21,8 +21,6 @@
 #include "Underconstruction.h"
 #include "Built.h"
 #include "Destroyed.h"
-#include "BuildingComponent.h"
-#include "BuildingComposite.h"
 #include "Residential.h"
 #include "Commercial.h"
 #include "Industrial.h"
