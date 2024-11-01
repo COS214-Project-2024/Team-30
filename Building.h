@@ -3,7 +3,7 @@
 
 #include <vector>
 #include <memory> // Include for smart pointers
-
+#include<algorithm>
 #include "BuildingState.h"
 // #include "Utilities.h"
 #include "BuildingComponent.h"
