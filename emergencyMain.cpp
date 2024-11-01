@@ -9,6 +9,7 @@
 // #include "IndustrialFactory.h"
 // #include "LandmarkFactory.h"
 // #include "Fires.h"
+// #include "Earthquake.h"
 // #include "Building.h"
 
 // // Function to test building assignment based on employment
@@ -66,6 +67,9 @@
 //     Fires fireEvent;
 //     fireEvent.accessDamage(residentialBuilding);
 
+//     Earthquake earthquakeEvent;
+//     earthquakeEvent.accessDamage(residentialBuilding);
+
 //     // Display building and citizen info after the fire
 //     residentialBuilding->displayInfo();
 //     std::cout << "Citizen 1 happiness after fire: " << citizen1->getHappinessMeter() << std::endl;
@@ -97,7 +101,7 @@
 // int main() {
 //     testBuildingAssignment();
 //     testEmergencyEventImpact();
-//     // testBuildingCapacityLimits();
+//     testBuildingCapacityLimits();
 
 //     return 0;
 // }

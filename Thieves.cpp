@@ -1,7 +1,17 @@
 #include "Thieves.h"
-
 #include <random>
 
+/**
+ * @brief Calculates and applies theft damage to a specified building.
+ *
+ * This function simulates a theft incident by randomly determining its severity 
+ * (minor, moderate, or major) and calculating the corresponding damage. 
+ * It then applies the calculated damage to the specified building and notifies 
+ * the citizens within that building of the emergency.
+ *
+ * @param buildingType A shared pointer to the Building object that will 
+ *                     take damage from the theft.
+ */
 void Thieves::accessDamage(shared_ptr<Building> buildingType) {
     // Set up random number generation
     random_device rd; // Seed
@@ -14,17 +24,17 @@ void Thieves::accessDamage(shared_ptr<Building> buildingType) {
     if (severity == 0) {
         uniform_int_distribution<> dist(0, 5); // Minor theft damage range
         theftDamage = dist(gen);
-        cout << "Minor theft incident! Inflicting " << theftDamage << " damage." << endl;
+        std::cout << "Minor theft incident! Inflicting " << theftDamage << " damage." << std::endl;
     }
     else if (severity == 1) {
         uniform_int_distribution<> dist(6, 10); // Moderate theft damage range
         theftDamage = dist(gen);
-        cout << "Moderate theft incident! Inflicting " << theftDamage << " damage." << endl;
+        std::cout << "Moderate theft incident! Inflicting " << theftDamage << " damage." << std::endl;
     }
     else if (severity == 2) {
         uniform_int_distribution<> dist(11, 20); // Major theft damage range
         theftDamage = dist(gen);
-        cout << "Major theft incident! Inflicting " << theftDamage << " damage." << endl;
+        std::cout << "Major theft incident! Inflicting " << theftDamage << " damage." << std::endl;
     }
 
     // Apply the calculated damage to the building
@@ -32,7 +42,13 @@ void Thieves::accessDamage(shared_ptr<Building> buildingType) {
     buildingType->notifyCitizensOfEmergency(theftDamage);
 }
 
+/**
+ * @brief Retrieves the type of emergency represented by the Thieves class.
+ *
+ * @return std::string A string indicating the type of emergency, which 
+ *                     is "Theft" in this case.
+ */
 string Thieves::getTypeOfEmergency()
 {
-    return "string";
+    return "Theft";
 }
