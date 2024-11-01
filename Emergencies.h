@@ -5,6 +5,8 @@
 #include <iostream>
 #include <string>
 #include <memory>
+#include <cstdlib> 
+#include <ctime> 
 using namespace std;
 
 class Emergencies
@@ -17,6 +19,7 @@ public:
     virtual string getTypeOfEmergency() = 0;
     // Emergencies();
     int getDamage();
+    void setDamage(int damage);
     virtual ~Emergencies(); // Ensure virtual destructor for proper cleanup
 };
 
