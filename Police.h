@@ -3,7 +3,7 @@
 #include "EmergencyServices.h"
 class Police : public EmergencyServices
 {
-  void handleRequest(Emergencies* emergency) override;
+  void handleRequest(std::shared_ptr<Emergencies> emergency) override;
 
 };
 

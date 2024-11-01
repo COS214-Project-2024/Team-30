@@ -1,15 +1,22 @@
 #ifndef EMERGENCYSERVICES_H
 #define EMERGENCYSERVICES_H
 
-#include "Emergencies.h"
+#include <memory>
+#include <iostream>
 
-class EmergencyServices
-{
-    protected:
-        EmergencyServices* successor;
+class Emergencies;
+using namespace std;
 
-    public:
-    virtual void handleRequest(Emergencies* emergency) = 0;
+class EmergencyServices {
+protected:
+    std::shared_ptr<EmergencyServices> successor;
+
+public:
+    virtual ~EmergencyServices() = default;
+
+    virtual void handleRequest(std::shared_ptr<Emergencies> emergency);
+
+    virtual void reduceDamage(std::shared_ptr<Emergencies> emergency, int reduction);
 };
 
-#endif
+#endif // EMERGENCYSERVICES_H
