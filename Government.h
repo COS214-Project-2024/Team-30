@@ -30,8 +30,6 @@ private:
     double employmentRate;
     int citybudget;
     int populationNum;
-    double birthRate;
-
 
 public:
     Government(string);
@@ -57,7 +55,6 @@ public:
     //
     int getPopulationNum();
     double getEmploymentRate();
-    void setBirthRate(double bR);
 
 };
 

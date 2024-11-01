@@ -5,7 +5,6 @@ void PopulationGrowth::update(Government *g)
     bR=(g->getPopulationNum() - oldPop);
     bR /= g->getPopulationNum();
     bR*=1000;
-    g->setBirthRate(bR);
     printInfo(g);
     oldPop = g->getPopulationNum();
 }

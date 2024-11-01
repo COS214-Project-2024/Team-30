@@ -51,11 +51,6 @@ double Government::getEmploymentRate()
     return employmentRate;
 }
 
-void Government::setBirthRate(double bR)
-{
-    birthRate=bR;
-}
-
 void Government::populationGrowth(std::shared_ptr<Citizen> citizen)
 {
     population.push_back(citizen);
