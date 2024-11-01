@@ -5,7 +5,8 @@
 class Thieves : public Emergencies
 {
 public:
-    void accessDamage(unique_ptr<Building> buildingType) override;
+    void accessDamage(shared_ptr<Building> buildingType) override;
+    string getTypeOfEmergency() override;
 };
 
 #endif

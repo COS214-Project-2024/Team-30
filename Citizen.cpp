@@ -1,5 +1,6 @@
 #include "Citizen.h"
-
+#include "Building.h"
+#include <iomanip>
 int Citizen::nextID = 1; // or 0, depending on your starting point for IDs
 
 Citizen::Citizen() : id(nextID++)
@@ -29,23 +30,18 @@ Citizen::Citizen() : id(nextID++)
         break;
     }
 
-    // Step 2: Randomly assign initial EmotionalState
-    uniform_int_distribution<> emotionDist(0, 1);
-    int emotionChoice = emotionDist(gen);
+    // Step 2: assign initial EmotionalState
+    emotionalState = make_unique<Satisfied>();
 
-    if (emotionChoice == 0)
-    {
-        emotionalState = make_unique<Satisfied>();
-    }
-    else
-    {
-        emotionalState = make_unique<Unsatisfied>();
-    }
+    // Step 3: Randomly assign initial happiness meter
+    uniform_int_distribution<> happinessDist(0, 100); // Adjust the range as necessary
+    happinessMeter = happinessDist(gen); // Assign a random happiness level
 
-    // Step 3: Initialize other attributes
+    emotionalState->changeState(*this);
+    
+    // Initialize other attributes
     income = employmentStatus->getIncome(); // Default income, modify if needed
-    getPaid();
-    happinessMeter = 50; // Default happiness, adjust as needed
+    getPaid(); // Presumably fills account balance based on income
 }
 void Citizen::getPaid()
 {
@@ -79,13 +75,36 @@ void Citizen::payTaxes()
 
 void Citizen::printDetails()
 {
-    cout << "Person:\t" << getID() << endl;
-    cout << "Employment Status:\t" << employmentStatus->getJobType() << endl;
-    cout << "Income:\t" << income << endl;
-    cout << "Emotional State:\t" << emotionalState->getEmotionalState() << endl;
-    cout << "Tax Bracket:\t" << taxBracket->getTaxBracket() << endl;
-    cout << "Account Balance:\t" << accountBalance << endl;
-    cout << "Happiness Meter:\t" << happinessMeter << endl;
+    // Set a width for the labels
+    int labelWidth = 20;
+
+    // Calculate the length of the border based on the maximum line length
+    std::string border(60, '*'); // Adjust the number (60) based on desired border length
+
+    std::cout << border << std::endl;  // Print top border
+
+    std::cout << std::setw(labelWidth) << std::left << "Person:" 
+              << getID() << std::endl;
+
+    std::cout << std::setw(labelWidth) << std::left << "Employment Status:" 
+              << employmentStatus->getJobType() << std::endl;
+
+    std::cout << std::setw(labelWidth) << std::left << "Income:" 
+              << income << std::endl;
+
+    std::cout << std::setw(labelWidth) << std::left << "Emotional State:" 
+              << emotionalState->getEmotionalState() << std::endl;
+
+    std::cout << std::setw(labelWidth) << std::left << "Tax Bracket:" 
+              << taxBracket->getTaxBracket() << std::endl;
+
+    std::cout << std::setw(labelWidth) << std::left << "Account Balance:" 
+              << accountBalance << std::endl;
+
+    std::cout << std::setw(labelWidth) << std::left << "Happiness Meter:" 
+              << happinessMeter << std::endl;
+
+    std::cout << border << std::endl;  // Print bottom border
 }
 
 // logic for paying taxes
@@ -176,3 +195,29 @@ void Citizen::getFired() {
         cout << "Citizen got fired and is now Unemployed." << endl;
     }
 }
+
+void Citizen::assignToBuilding(std::shared_ptr<Building> building) {
+    currentBuilding = building; // Assign the shared pointer
+    if (currentBuilding) {
+        currentBuilding->addCitizen(shared_from_this()); // Add citizen to building
+    }
+}
+
+void Citizen::reactToEmergency(int damage) {
+    if (damage <= 20) {
+        happinessMeter -= 5;  // Minor happiness impact
+    } else if (damage <= 50) {
+        happinessMeter -= 15; // Medium happiness impact
+    } else {
+        happinessMeter -= 30; // Severe happiness impact
+    }
+    happinessMeter = max(happinessMeter, 0); // Keep happiness non-negative
+
+    cout << "Citizen " << id << " happiness is now " << happinessMeter << endl;
+
+    emotionalState->changeState(*this);
+}
+
+ void Citizen::setEmploymentStatus(std::unique_ptr<EmploymentStatus> status) {
+        employmentStatus = std::move(status); // Move the unique_ptr to the member
+    }

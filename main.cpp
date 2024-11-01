@@ -21,6 +21,51 @@
 #include "Underconstruction.h"
 #include "Built.h"
 #include "Destroyed.h"
+#include "BuildingComponent.h"
+#include "BuildingComposite.h"
+#include "Residential.h"
+#include "Commercial.h"
+#include "Industrial.h"
+#include "Landmark.h"
+
+void factoryTests();
+
+// void testCompositePattern()
+// {
+//     std::cout << "=== Testing Composite Pattern ===\n";
+
+//     std::unique_ptr<BuildingComposite> cityBlock = std::make_unique<BuildingComposite>();
+
+//     ResidentialFactory residentialFactory;
+//     CommercialFactory commercialFactory;
+//     IndustrialFactory industrialFactory;
+//     LandmarkFactory landmarkFactory;
+
+//     // Create buildings as unique_ptr
+//     auto residentialBuilding = residentialFactory.createBuilding();
+//     auto commercialBuilding = commercialFactory.createBuilding();
+//     auto industrialBuilding = industrialFactory.createBuilding();
+//     auto landmarkBuilding = landmarkFactory.createBuilding();
+
+//     // Add various buildings to the composite
+//     cityBlock->add(std::move(residentialBuilding));
+//     cityBlock->add(std::move(commercialBuilding));
+//     cityBlock->add(std::move(industrialBuilding));
+//     cityBlock->add(std::move(landmarkBuilding));
+
+//     // Display information for the entire city block
+//     std::cout << "\nCity Block Information:\n";
+//     cityBlock->displayInfo();
+
+//     // Instead of moving, we keep a copy of the raw pointer
+//     // Assuming industrialBuilding was added and you have access to its raw pointer
+
+//     // Now we call remove with the raw pointer
+//     cityBlock->remove(std::move(industrialBuilding)); // Remove the building
+
+//     std::cout << "\nCity Block Information after removing Industrial Building:\n";
+//     cityBlock->displayInfo();
+// }
 
 int main()
 {
@@ -33,13 +78,22 @@ int main()
         auto citizen = std::make_shared<Citizen>(); // Create a shared_ptr to a new Citizen
         citizens.push_back(citizen);                // Store shared_ptr in the vector
         government.populationGrowth(citizen);       // Pass shared_ptr to populationGrowth
+
+        citizens[i]->printDetails();
     }
 
     government.collectTaxes();
     government.calculateEmploymentRate();
     government.printInfo();
 
-     // Create factories
+    // factoryTests();
+
+    // testCompositePattern();
+    return 0;
+}
+void factoryTests()
+{
+    // Create factories
     ResidentialFactory residentialFactory;
     CommercialFactory commercialFactory;
     IndustrialFactory industrialFactory;
@@ -56,12 +110,11 @@ int main()
     industrialBuilding->displayInfo();
     landmarkBuilding->displayInfo();
 
-    cout << "\n\n\n" << "PROTOTYPE" << "\n\n\n";
+    cout << "\n\n\n"<< "PROTOTYPE" << "\n\n\n";
 
     unique_ptr<Building> residentialBuilding2 = residentialBuilding->clone();
     residentialBuilding2->setState(make_unique<Built>());
     residentialBuilding2->displayInfo();
     cout << "\n\n";
     residentialBuilding->displayInfo();
-
 }

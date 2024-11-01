@@ -85,7 +85,52 @@ void Building::recieveUtilities()
 {
 }
 
+void Building::takeDamage(int damage) {
+    buildingHealth -= damage;
+    cout << "Building took " << damage << " damage. Health is now " << buildingHealth << endl;
+
+    if (buildingHealth <= 0) {
+        cout << "Building is destroyed." << endl;
+        setState(make_unique<Destroyed>());
+    }
+}
+
+void Building::simulateEmergency(Emergencies& emergency) {
+    emergency.accessDamage(this->clone());
+}
+
+
+// void Building::add(std::unique_ptr<BuildingComponent> component) {
+//     std::cout << "[Warning] Operation Unsupported: Cannot add components to a leaf node." << std::endl;
+// }
+
+// void Building::remove(std::unique_ptr<BuildingComponent> component) {
+//     std::cout << "[Warning] Operation Unsupported: Leaf nodes cannot remove components." << std::endl;
+// }
+
+void Building::addCitizen(shared_ptr<Citizen> citizen) {
+    if (residents.size() < capacity) {
+        residents.push_back(citizen);
+    } else {
+        cout << "Building is at full capacity!" << endl;
+    }
+}
+
+void Building::removeCitizen(shared_ptr<Citizen> citizen) {
+    residents.erase(remove(residents.begin(), residents.end(), citizen), residents.end());
+}
+
+void Building::notifyCitizensOfEmergency(int damage) {
+    for (auto& resident : residents) {
+        resident->reactToEmergency(damage);
+    }
+}
+void Building::setCapacity(int capacity)
+{
+    this->capacity = capacity; 
+}
+
 Building::~Building() 
 {
-   // No need for explicit delete; unique_ptr will automatically clean up
+
 }

@@ -19,16 +19,19 @@
 #include <random>
 using namespace std;
 
-class Citizen
+class Building;
+
+class Citizen : public std::enable_shared_from_this<Citizen>
 {
     private:
-    int id; 
+    int id;
     int income;
     int accountBalance;
     int happinessMeter;
     unique_ptr<TaxBracket> taxBracket;
     unique_ptr<EmploymentStatus> employmentStatus;
     unique_ptr<EmotionalState> emotionalState;
+    shared_ptr<Building> currentBuilding; 
     static int nextID; 
 
     public:
@@ -38,6 +41,8 @@ class Citizen
     void payTaxes();
     void getPaid();
     int getAccountBalance();
+    void assignToBuilding(std::shared_ptr<Building> building);
+    void reactToEmergency(int damage);
     // void goToWork();
     // void callEmergencyServices();
     // void update();
@@ -47,13 +52,15 @@ class Citizen
     int getIncome();
     string getEmotionalState();
     void setEmotionalState(unique_ptr<EmotionalState> emotionalState);
+    void setEmploymentStatus(std::unique_ptr<EmploymentStatus> status);
     void printDetails(); //helper to see that constructor works as expected
     void respondToTax();
     void respondToPayment();
     void respondToJobChange(bool gainedJob);
     void respondToIncreasedInfrastructure();
-     void getHired(std::unique_ptr<EmploymentStatus> newJob);
+    void getHired(std::unique_ptr<EmploymentStatus> newJob);
     void getFired();
+    
 
     
     
