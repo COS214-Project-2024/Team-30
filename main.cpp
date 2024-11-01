@@ -67,7 +67,7 @@ void factoryTests();
 
 int main()
 {
-    const int numCitizens = 100;                    // Define the number of Citizen instances
+    const int numCitizens = 10;                     // Define the number of Citizen instances
     std::vector<std::shared_ptr<Citizen>> citizens; // Vector of shared_ptrs to Citizen
     Government government("CityGov");
 
@@ -76,43 +76,45 @@ int main()
         auto citizen = std::make_shared<Citizen>(); // Create a shared_ptr to a new Citizen
         citizens.push_back(citizen);                // Store shared_ptr in the vector
         government.populationGrowth(citizen);       // Pass shared_ptr to populationGrowth
-
-        citizens[i]->printDetails();
     }
-
     government.collectTaxes();
     government.calculateEmploymentRate();
     government.printInfo();
+    
+    for (int i = 0; i < numCitizens; i++)
+    {
+        citizens[i]->printDetails();
+    }
 
     // factoryTests();
 
     // testCompositePattern();
     return 0;
 }
-void factoryTests()
-{
-    // Create factories
-    ResidentialFactory residentialFactory;
-    CommercialFactory commercialFactory;
-    IndustrialFactory industrialFactory;
-    LandmarkFactory landmarkFactory;
+// void factoryTests()
+// {
+//     // Create factories
+//     ResidentialFactory residentialFactory;
+//     CommercialFactory commercialFactory;
+//     IndustrialFactory industrialFactory;
+//     LandmarkFactory landmarkFactory;
 
-    // Create buildings using factories with smart pointers
-    unique_ptr<Building> residentialBuilding = residentialFactory.createBuilding();
-    unique_ptr<Building> commercialBuilding = commercialFactory.createBuilding();
-    unique_ptr<Building> industrialBuilding = industrialFactory.createBuilding();
-    unique_ptr<Building> landmarkBuilding = landmarkFactory.createBuilding();
+//     // Create buildings using factories with smart pointers
+//     unique_ptr<Building> residentialBuilding = residentialFactory.createBuilding();
+//     unique_ptr<Building> commercialBuilding = commercialFactory.createBuilding();
+//     unique_ptr<Building> industrialBuilding = industrialFactory.createBuilding();
+//     unique_ptr<Building> landmarkBuilding = landmarkFactory.createBuilding();
 
-    residentialBuilding->displayInfo();
-    commercialBuilding->displayInfo();
-    industrialBuilding->displayInfo();
-    landmarkBuilding->displayInfo();
+//     residentialBuilding->displayInfo();
+//     commercialBuilding->displayInfo();
+//     industrialBuilding->displayInfo();
+//     landmarkBuilding->displayInfo();
 
-    cout << "\n\n\n"<< "PROTOTYPE" << "\n\n\n";
+//     cout << "\n\n\n"<< "PROTOTYPE" << "\n\n\n";
 
-    unique_ptr<Building> residentialBuilding2 = residentialBuilding->clone();
-    residentialBuilding2->setState(make_unique<Built>());
-    residentialBuilding2->displayInfo();
-    cout << "\n\n";
-    residentialBuilding->displayInfo();
-}
+//     unique_ptr<Building> residentialBuilding2 = residentialBuilding->clone();
+//     residentialBuilding2->setState(make_unique<Built>());
+//     residentialBuilding2->displayInfo();
+//     cout << "\n\n";
+//     residentialBuilding->displayInfo();
+// }

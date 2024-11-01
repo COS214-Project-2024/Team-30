@@ -80,6 +80,21 @@ void Government::collectTaxes()
     }
 }
 
+double Government::populationSatisfactionRate()
+{
+    if (population.empty())
+    {
+        return 0.0;
+    }
+    int satisfiedCount = std::count_if(population.begin(), population.end(),
+                                       [](const std::shared_ptr<Citizen> &citizen)
+                                       {
+                                           return citizen->getEmotionalState() == "Satisfied";
+                                       });
+
+    return static_cast<double>(satisfiedCount) / population.size();
+}
+
 void Government::printInfo()
 {
     std::cout << "=========================================" << std::endl;
@@ -92,28 +107,13 @@ void Government::printInfo()
     std::cout << " Employment Rate : " << std::fixed << std::setprecision(2)
               << (employmentRate * 100) << "%" << std::endl;
     std::cout << "-----------------------------------------" << std::endl;
-    std::cout << " Satisfaction Rate : "<< std::fixed << std::setprecision(2) << populationSatisfactionRate() << "%"<<std::endl;
+    std::cout << " Satisfaction Rate : "<< std::fixed << std::setprecision(2) << populationSatisfactionRate() * 100<< "%"<<std::endl;
     std::cout << "-----------------------------------------" << std::endl;
     std::cout << " City Budget     : $" << citybudget << std::endl;
     std::cout << "=========================================" << std::endl;
 }
 
-double Government::populationSatisfactionRate()
-{
-    int satisfiedCount = 0;
 
-    for (const auto &person : population)
-    {
-        if (person && person->getEmotionalState() == "Satisfied")
-        {
-            satisfiedCount++;
-        }
-    }
-    if (population.empty()) return 0.0;
-
-    // Calculate the satisfaction rate as a percentage
-    return (static_cast<double>(satisfiedCount) / population.size()) * 100.0;
-}
 
 
 Government::~Government() = default;

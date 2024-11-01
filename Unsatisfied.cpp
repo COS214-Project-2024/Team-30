@@ -28,7 +28,7 @@ void Unsatisfied::changeState(Citizen &citizen)
  *
  * @return A string indicating the emotional state, which is "Unsatisfied".
  */
-string Unsatisfied::getEmotionalState()
+string Unsatisfied::getCurrentEmotion()
 {
     return "Unsatisfied";
 }

@@ -8,7 +8,7 @@ public:
     // void react() const override;
     // void adjustHappiness(Citizen &citizen) override;
     void changeState(Citizen &citizen) override;
-    string getEmotionalState() override;
+    string getCurrentEmotion() override;
 };
 
 #endif // SATISFIED_H

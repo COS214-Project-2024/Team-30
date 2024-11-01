@@ -35,8 +35,6 @@ SRCS = main.cpp \
        CommercialFactory.cpp \
        IndustrialFactory.cpp \
        LandmarkFactory.cpp \
-       BuildingComponent.cpp \
-       BuildingComposite.cpp \
        Emergencies.cpp \
        Fires.cpp \
        Earthquake.cpp \
