@@ -30,6 +30,7 @@ private:
     double employmentRate;
     int citybudget;
     int populationNum;
+    double birthRate;
 
 
 public:
@@ -37,7 +38,7 @@ public:
     
     void populationGrowth(std::shared_ptr<Citizen> );
     void calculateEmploymentRate();
-    void increaseInfurstructure();
+    void increaseInfrastructure();
     void populationDecline(std::shared_ptr<Citizen>);
     void collectTaxes();
     void printInfo();
@@ -56,6 +57,7 @@ public:
     //
     int getPopulationNum();
     double getEmploymentRate();
+    void setBirthRate(double bR);
 
 };
 

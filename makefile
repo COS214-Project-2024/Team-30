@@ -26,6 +26,7 @@ SRCS = TestingMain.cpp \
        EconomyCategorization.cpp\
        PopulationCategorization.cpp\
        Population.cpp\
+       PopulationGrowth.cpp\
        Infrastructure.cpp\
        Housing.cpp\
        Economy.cpp

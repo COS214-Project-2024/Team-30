@@ -51,6 +51,11 @@ double Government::getEmploymentRate()
     return employmentRate;
 }
 
+void Government::setBirthRate(double bR)
+{
+    birthRate=bR;
+}
+
 void Government::populationGrowth(std::shared_ptr<Citizen> citizen)
 {
     population.push_back(citizen);
@@ -75,7 +80,7 @@ void Government::calculateEmploymentRate()
     employmentRate = static_cast<double>(employedCount) / population.size();
 }
 
-void Government::increaseInfurstructure()
+void Government::increaseInfrastructure()
 {
     // if (cityBuilder) {
     //     infrastructure.push_back(cityBuilder->createBuilding());
