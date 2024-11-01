@@ -31,6 +31,7 @@ class Citizen : public std::enable_shared_from_this<Citizen>
     unique_ptr<TaxBracket> taxBracket;
     unique_ptr<EmploymentStatus> employmentStatus;
     unique_ptr<EmotionalState> emotionalState;
+    unique_ptr<Building> home; 
     shared_ptr<Building> currentBuilding; 
     static int nextID; 
 
@@ -42,11 +43,8 @@ class Citizen : public std::enable_shared_from_this<Citizen>
     void getPaid();
     int getAccountBalance();
     void assignToBuilding(std::shared_ptr<Building> building);
+    void setHome(std::shared_ptr<Building> home);
     void reactToEmergency(int damage);
-    // void goToWork();
-    // void callEmergencyServices();
-    // void update();
-    // void request();
     int getHappinessMeter();
     int getID() const;
     int getIncome();
