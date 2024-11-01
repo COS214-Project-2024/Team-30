@@ -1,4 +1,5 @@
-#include "Citizen.h"
+#include "CitizensUnitTests/Citizen.h"
+
 #include "Building.h"
 #include <iomanip>
 int Citizen::nextID = 1; // or 0, depending on your starting point for IDs

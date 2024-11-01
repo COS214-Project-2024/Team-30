@@ -1,6 +1,7 @@
 #include "Satisfied.h"
 #include "Unsatisfied.h"
-#include "Citizen.h"
+#include "CitizensUnitTests/Citizen.h"
+
 
 /**
  * @brief Changes the emotional state of the given citizen to Satisfied 

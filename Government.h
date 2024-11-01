@@ -7,7 +7,8 @@
 #include <iomanip>
 #include "CityGrowthObserver.h"
 // #include "CategorizationStrategy.h"
-#include "Citizen.h"
+#include "CitizensUnitTests/Citizen.h"
+
 // #include "Building.h"
 // #include "BuildingFactory.h"
 using namespace std;

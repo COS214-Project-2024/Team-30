@@ -1,6 +1,7 @@
 #include <iostream>
 #include <memory>
-#include "Citizen.h"
+#include "CitizensUnitTests/Citizen.h"
+
 #include "EmploymentStatus.h"
 #include "EmotionalState.h"
 #include "Satisfied.h"
