@@ -7,7 +7,7 @@ class Population :public Government{
         int getPopulation();
         void setPopulation(int a);
     private: 
-     int population;
+        int population;
 };
 
 #endif

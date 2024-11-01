@@ -2,10 +2,12 @@
 #define CATEGORIZATIONSTRATEGY_H
 
 #include <string>
+#include "Government.h"
+class Government;
 
 class CategorizationStrategy{
     public:
-        virtual std::string categorize(int population,int economy)=0;  
+        virtual std::string categorize(Government* g)=0;  
 
 };
 

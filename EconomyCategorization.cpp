@@ -1,12 +1,14 @@
 #include "EconomyCategorization.h"
 
-std::string EconomyCategorization::categorize(int population, int economy)
+std::string EconomyCategorization::categorize(Government* g)
 {
-    if (economy < 10000)
+    double sta= g->getEmploymentRate();
+    // std::cout<<sta<<std::endl;
+    if (sta < 0.45)
     {
         return "Low Economic Activity";
     }
-    else if (economy < 50000)
+    else if (sta < 0.70)
     {
         return "Medium Economic Activity";
     }

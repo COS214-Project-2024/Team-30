@@ -5,7 +5,7 @@
 
 class Housing : public CityGrowthObserver {
 public:
-    void update(int population) override;
+    void update(Government* g) override;
 };
 
 #endif

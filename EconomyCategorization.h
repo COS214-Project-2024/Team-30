@@ -4,10 +4,11 @@
 #include <string>
 
 #include "CategorizationStrategy.h"
+#include "Government.h"
 
 class EconomyCategorization : public CategorizationStrategy {
 public:
-    std::string categorize(int population, int economy) override;
+    std::string categorize(Government* g) override;
 };
 
 #endif

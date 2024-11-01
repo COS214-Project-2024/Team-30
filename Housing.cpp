@@ -1,7 +1,7 @@
 #include "Housing.h"
 #include <iostream>
 
-void Housing::update(int population)
+void Housing::update(Government* g)
 {
     int hs=0;
 
