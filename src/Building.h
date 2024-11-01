@@ -8,7 +8,7 @@
 // #include "Utilities.h"
 #include "BuildingComponent.h"
 #include "Emergencies.h"
-#include "Citizen.h"
+#include "CitizensUnitTests/Citizen.h"
 
 class Emergencies;
 
