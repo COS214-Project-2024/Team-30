@@ -6,26 +6,22 @@
 #include <algorithm>
 #include <iomanip>
 #include "CityGrowthObserver.h"
-#include "CategorizationStrategy.h"
+// #include "CategorizationStrategy.h"
 #include "Citizen.h"
-#include "Building.h"
-#include "BuildingFactory.h"
-#include "ResidentialFactory.h"
-#include "CommercialFactory.h"
-#include "IndustrialFactory.h"
+
+// #include "Building.h"
+// #include "BuildingFactory.h"
 using namespace std;
 class Government{
 private:
 //lists
-    //vector<std::shared_ptr<CityGrowthObserver>> observers;
+    vector<std::shared_ptr<CityGrowthObserver>> observers;
     vector<std::shared_ptr<Citizen>> population;
-    vector<std::shared_ptr<Building>> infrastructure;
+    // vector<std::shared_ptr<Building>> infrastructure;
 
 //objects 
-    ResidentialFactory residentialFactory;
-    CommercialFactory commercialFactory;
-    IndustrialFactory industrialFactory;
-    //unique_ptr<CategorizationStrategy> strategy;
+    // unique_ptr<BuildingFactory> cityBuilder;
+    // unique_ptr<CategorizationStrategy> strategy;
 //data    
     string cityName;
     double employmentRate;
@@ -45,8 +41,6 @@ public:
     void collectTaxes();
     void printInfo();
     double populationSatisfactionRate();
-    vector<std::shared_ptr<Citizen>> getPeople ();
-    vector<std::shared_ptr<Building>> getInfrastructure();
     ~Government();
 
 

@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:src/Citizen.cpp
 #include "Citizen.h"
-========
-#include "CitizensUnitTests/Citizen.h"
->>>>>>>> e5017ac (put citizens into its own folder. will come back to it):CitizensUnitTests/Citizen.cpp
 
 #include "Building.h"
 #include <iomanip>
