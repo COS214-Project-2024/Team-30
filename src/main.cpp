@@ -1,147 +1,170 @@
 #include <iostream>
 #include <memory>
+#include "Government.h"
 #include "Citizen.h"
-
-#include "EmploymentStatus.h"
-#include "EmotionalState.h"
-#include "Satisfied.h"
-#include "Unsatisfied.h"
-#include "OfficeJob.h"
-#include "IndustrialJob.h"
-#include "Unemployed.h"
-#include "TaxBracket.h"
-#include "LowestTaxBracket.h"
-#include "MiddleTaxBracket.h"
-#include "HighestTaxBracket.h"
-#include "Government.h"
+#include "Fires.h"
+#include "Earthquake.h"
 #include "Building.h"
-#include "ResidentialFactory.h"
-#include "CommercialFactory.h"
-#include "IndustrialFactory.h"
-#include "LandmarkFactory.h"
-#include "Underconstruction.h"
-#include "Built.h"
-#include "Destroyed.h"
-#include "Residential.h"
-#include "Commercial.h"
-#include "Industrial.h"
-#include "Landmark.h"
-#include <iostream>
-#include <memory>
-#include "EmploymentStatus.h"
-#include "EmotionalState.h"
-#include "Satisfied.h"
-#include "Unsatisfied.h"
-#include "OfficeJob.h"
-#include "IndustrialJob.h"
-#include "Unemployed.h"
-#include "TaxBracket.h"
-#include "LowestTaxBracket.h"
-#include "MiddleTaxBracket.h"
-#include "HighestTaxBracket.h"
-#include "Government.h"
-#include "Building.h"
-#include "ResidentialFactory.h"
-#include "CommercialFactory.h"
-#include "IndustrialFactory.h"
-#include "LandmarkFactory.h"
-#include "Underconstruction.h"
-#include "Built.h"
-#include "Destroyed.h"
-#include "Residential.h"
-#include "Commercial.h"
-#include "Industrial.h"
-#include "Landmark.h"
+#include "EmergencyServices.h"
+#include "Emergencies.h"
+#include "Thieves.h"
+using namespace std;
+// Function to display the main menu and capture user selection
 
-void factoryTests();
+unique_ptr<Government> cityGovernment;
 
-// void testCompositePattern()
-// {
-//     std::cout << "=== Testing Composite Pattern ===\n";
+void addNewCitizen() {
+    cout<< endl;
+    cout<< endl;
+    cout<< endl;
+    std::shared_ptr<Citizen> newCitizen = std::make_shared<Citizen>();
+    std::cout << "A new citizen has been added to the city!\n";
+    cityGovernment->populationGrowth(newCitizen);
+    cout<< endl;
+    cout<< endl;
+    cout<< endl;
+}
 
-//     std::unique_ptr<BuildingComposite> cityBlock = std::make_unique<BuildingComposite>();
+void CollectTaxes() {
+    cout<< endl;
+    cout<< endl;
+    cout<< endl;
+    cityGovernment->collectTaxes();
+    cout << "It's the 28th of Febuary and the Tax man is knocking!\n";
+    cout<< endl;
+    cout<< endl;
+    cout<< endl;
+}
 
-//     ResidentialFactory residentialFactory;
-//     CommercialFactory commercialFactory;
-//     IndustrialFactory industrialFactory;
-//     LandmarkFactory landmarkFactory;
+void IncreaseInfurstructure() {
+    cout<< endl;
+    cout<< endl;
+    cout<< endl;
+    cityGovernment->increaseInfurstructure();
+    cout << "Economy is growing time to expand\n";
+    cout<< endl;
+    cout<< endl;
+    cout<< endl;
+}
 
-//     // Create buildings as unique_ptr
-//     auto residentialBuilding = residentialFactory.createBuilding();
-//     auto commercialBuilding = commercialFactory.createBuilding();
-//     auto industrialBuilding = industrialFactory.createBuilding();
-//     auto landmarkBuilding = landmarkFactory.createBuilding();
-
-//     // Add various buildings to the composite
-//     cityBlock->add(std::move(residentialBuilding));
-//     cityBlock->add(std::move(commercialBuilding));
-//     cityBlock->add(std::move(industrialBuilding));
-//     cityBlock->add(std::move(landmarkBuilding));
-
-//     // Display information for the entire city block
-//     std::cout << "\nCity Block Information:\n";
-//     cityBlock->displayInfo();
-
-//     // Instead of moving, we keep a copy of the raw pointer
-//     // Assuming industrialBuilding was added and you have access to its raw pointer
-
-//     // Now we call remove with the raw pointer
-//     cityBlock->remove(std::move(industrialBuilding)); // Remove the building
-
-//     std::cout << "\nCity Block Information after removing Industrial Building:\n";
-//     cityBlock->displayInfo();
-// }
-
-int main()
+void SimulateDisaster()
 {
-    const int numCitizens = 10;                     // Define the number of Citizen instances
-    std::vector<std::shared_ptr<Citizen>> citizens; // Vector of shared_ptrs to Citizen
-    Government government("CityGov");
+    cout << "\n====== Disaster Menu ======\n";
+    cout << "What disaster would you like \n";
+    cout << "1) Fire\n";
+    cout << "2) Earthquake \n";
+    cout << "3) Thieves\n";
+    int choice;
+    cin >> choice;
 
-    for (int i = 0; i < numCitizens; i++)
-    {
-        auto citizen = std::make_shared<Citizen>(); // Create a shared_ptr to a new Citizen
-        citizens.push_back(citizen);                // Store shared_ptr in the vector
-        government.populationGrowth(citizen);       // Pass shared_ptr to populationGrowth
+   vector<std::shared_ptr<Building>> copyOfInfrastructure = cityGovernment->getInfrastructure();
+
+   
+Fires fireEvent;
+ Earthquake earthquakeEvent;
+ Thieves thieveEvent;
+
+    switch (choice) {
+        case 1:
+             for (const auto &building : copyOfInfrastructure) 
+             {
+                if (building)
+                {fireEvent.accessDamage(building);}
+            }
+            break;
+        
+        
+        case 2:
+            for (const auto &building : copyOfInfrastructure) 
+             {
+                if (building)
+                {earthquakeEvent.accessDamage(building);}
+            }
+            break;
+        
+        
+        case 3:
+            for (const auto &building : copyOfInfrastructure) 
+             {
+                if (building)
+                {thieveEvent.accessDamage(building);}
+            }
+            break;
+       
+       
+        default:
+            cout << "Invalid selection. Please try again.\n";
+            break;
+
+
     }
-    government.collectTaxes();
-    government.calculateEmploymentRate();
-    government.printInfo();
-    
-    for (int i = 0; i < numCitizens; i++)
-    {
-        citizens[i]->printDetails();
+  
+
+
+}
+
+int displayMenu() {
+
+    cityGovernment->printInfo();
+    cout << "\n====== Game Menu ======\n";
+    cout << "1) Add to the population\n";
+    cout << "2) Collect Taxes\n";
+    cout << "3) Increase infrastructure\n";
+    cout << "4) Simulate Disaster >:)!! \n";
+    cout << "5) Move people around \n";
+    cout << "6) Kill someone\n";
+    cout << "7) Change someones job\n";
+    cout << "0) Exit Game\n";
+    int choice;
+    cin >> choice;
+    return choice;
+
+
+}
+
+
+void handleMenuSelection(int choice) {
+    switch (choice) {
+        case 0:
+            cout << "Exiting game. Thank you for Playing!! Goodbye!!!!\n";
+            break;
+        case 1:
+            addNewCitizen();
+            break;
+        case 2:
+            CollectTaxes();
+            break;
+        case 3:
+            IncreaseInfurstructure();
+            break;
+         case 4:
+            SimulateDisaster();
+            break;
+        default:
+            cout << "Invalid selection. Please try again.\n";
+            break;
     }
+}
 
-    // factoryTests();
+int main() {
+    std::string cityName;
 
-    // testCompositePattern();
+    // Creative prompt for city name
+    std::cout << "**Welcome to the City Simulator!**\n";
+    std::cout << "Enter the name of your bustling metropolis: ";
+    std::getline(std::cin, cityName);
+
+    // Create the government object
+    cityGovernment =std::make_unique<Government>(cityName);
+
+    // Main game loop
+    int choice;
+    do {
+        choice = displayMenu();
+        handleMenuSelection(choice);
+    } while (choice != 0);
+
     return 0;
 }
-// void factoryTests()
-// {
-//     // Create factories
-//     ResidentialFactory residentialFactory;
-//     CommercialFactory commercialFactory;
-//     IndustrialFactory industrialFactory;
-//     LandmarkFactory landmarkFactory;
 
-//     // Create buildings using factories with smart pointers
-//     unique_ptr<Building> residentialBuilding = residentialFactory.createBuilding();
-//     unique_ptr<Building> commercialBuilding = commercialFactory.createBuilding();
-//     unique_ptr<Building> industrialBuilding = industrialFactory.createBuilding();
-//     unique_ptr<Building> landmarkBuilding = landmarkFactory.createBuilding();
 
-//     residentialBuilding->displayInfo();
-//     commercialBuilding->displayInfo();
-//     industrialBuilding->displayInfo();
-//     landmarkBuilding->displayInfo();
-
-//     cout << "\n\n\n"<< "PROTOTYPE" << "\n\n\n";
-
-//     unique_ptr<Building> residentialBuilding2 = residentialBuilding->clone();
-//     residentialBuilding2->setState(make_unique<Built>());
-//     residentialBuilding2->displayInfo();
-//     cout << "\n\n";
-//     residentialBuilding->displayInfo();
-// }
