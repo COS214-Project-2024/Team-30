@@ -134,3 +134,7 @@ Building::~Building()
 {
 
 }
+
+int Building::getCapacity(){
+    return capacity;
+}

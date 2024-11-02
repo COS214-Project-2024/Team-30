@@ -162,6 +162,18 @@ void Government::printInfo()
    }
 }
 
+int Government::ResidentialCapacity(){
+    int cap=0;
+    for (const auto &building : infrastructure)
+    {
+        if (building->getType() == "Residential Building")
+        {
+            cap += building->getCapacity();
+        }
+    }
+    return cap;
+}
+
 vector<std::shared_ptr<Citizen>> Government::getPeople ()
 {
     return population;

@@ -48,6 +48,7 @@ public:
     void populationDecline(int i);
     void collectTaxes();
     void printInfo();
+
     double populationSatisfactionRate();
     vector<std::shared_ptr<Citizen>> getPeople ();
     vector<std::shared_ptr<Building>> getInfrastructure();
@@ -65,6 +66,7 @@ public:
     //
     int getPopulationNum();
     double getEmploymentRate();
+    int ResidentialCapacity();
 
 
 

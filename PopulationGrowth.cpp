@@ -12,9 +12,10 @@
  */
 void PopulationGrowth::update(Government *g)
 {
+    std::cout<<oldPop<<"\n";
     bR = (g->getPopulationNum() - oldPop); // Calculate the change in population
     bR /= g->getPopulationNum(); // Calculate the birth rate
-    bR *= 1000; // Convert to births per 1,000 people
+    bR *= 50; // Convert to births per 1,000 people
     printInfo(g); // Print the current population information
     oldPop = g->getPopulationNum(); // Update the old population for the next call
 }
@@ -29,10 +30,10 @@ void PopulationGrowth::update(Government *g)
  */
 void PopulationGrowth::printInfo(Government* g)
 {
-    std::cout << "=================================================================" << std::endl;
+    std::cout << "\n=================================================================" << std::endl;
     std::cout << "          Population Information               " << std::endl;
     std::cout << "=================================================================" << std::endl;
-    std::cout << " Birth Rate           : " <<  bR << " births per 1,000 people" << std::endl;
+    std::cout << " Birth Rate           : " <<  bR << " births per 50 people" << std::endl;
     std::cout << "-----------------------------------------------------------------" << std::endl;
     std::cout << " Old Population       : " << oldPop << std::endl;
     std::cout << "-----------------------------------------------------------------" << std::endl;

@@ -13,8 +13,13 @@
  */
 void Economy::update(Government* g)
 {
-    std::cout << "Economy is growing to support population: " << g->getPopulationNum() << std::endl;
+    std::cout << "\n=================================================================" << std::endl;
+    std::cout << "                      Economic State                                    " << std::endl;
+    std::cout << "=================================================================" << std::endl;
+    std::cout << "Economy has grown to support population: " << g->getPopulationNum() << std::endl;
+     std::cout << "=================================================================" << std::endl;
     g->calculateEmploymentRate();
+     std::cout << "\n=================================================================" << std::endl;
     std::cout << "\nRevised information on city" << std::endl;
     g->printInfo();
 }
