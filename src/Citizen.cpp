@@ -400,3 +400,12 @@ void Citizen::reactToEmergency(int damage) {
 void Citizen::setEmploymentStatus(std::unique_ptr<EmploymentStatus> status) {
     employmentStatus = std::move(status); // Move the unique_ptr to the member
 }
+
+unique_ptr<TaxBracket> Citizen::getTaxBracket() {
+    return make_unique<TaxBracket>(*taxBracket);
+}
+
+
+std::shared_ptr<Building> Citizen::getHome() {
+    return home;
+}
