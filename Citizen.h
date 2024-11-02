@@ -49,7 +49,6 @@ class Citizen : public std::enable_shared_from_this<Citizen>
     int getID() const;
     int getIncome();
     shared_ptr<Building> getHome();
-    unique_ptr<TaxBracket> getTaxBracket();
     string getEmotionalState();
     void setEmotionalState(unique_ptr<EmotionalState> emotionalState);
     void setEmploymentStatus(std::unique_ptr<EmploymentStatus> status);
