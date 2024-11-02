@@ -360,6 +360,10 @@ void Citizen::assignToBuilding(std::shared_ptr<Building> building) {
     }
 }
 
+void Citizen::setHome(std::shared_ptr<Building> building) {
+    home = building; // Assign the shared pointer
+}
+
 /**
  * @brief Adjusts the Citizen's happiness in response to an emergency event.
  *
