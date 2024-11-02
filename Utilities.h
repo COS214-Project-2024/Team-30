@@ -28,7 +28,7 @@ public:
      * @brief Sends a notification message to citizens regarding utility services.
      * @param message The message to notify citizens.
      */
-    void notifyCitizens(const std::string& message);
+    void notifyCitizens(const string& message);
 
 private:
     PowerPlant powerPlant;         /**< PowerPlant instance responsible for electricity generation. */
