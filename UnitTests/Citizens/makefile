@@ -1,39 +1,75 @@
-# Compiler and flags
-CXX = g++
-CXXFLAGS = -std=c++17 -Wall -Wextra -I. -I../../src -I.. # Includes src and parent directory for doctest.h
-
 # Directories
-SRC_DIR = ../../src
-TEST_DIR = .
-BUILD_DIR = ./build
+SRC_DIR := ../../src
+TEST_DIR := .
+BIN_DIR := bin
 
 # Source files
-SRC_FILES := $(SRC_DIR)/Citizen.cpp $(SRC_DIR)/Building.cpp $(SRC_DIR)/Residential.cpp
+SRC_FILES := \
+    $(SRC_DIR)/Citizen.cpp \
+    $(SRC_DIR)/EmploymentStatus.cpp \
+    $(SRC_DIR)/Satisfied.cpp \
+    $(SRC_DIR)/Unsatisfied.cpp \
+    $(SRC_DIR)/OfficeJob.cpp \
+    $(SRC_DIR)/IndustrialJob.cpp \
+    $(SRC_DIR)/Unemployed.cpp \
+    $(SRC_DIR)/TaxBracket.cpp \
+    $(SRC_DIR)/LowestTaxBracket.cpp \
+    $(SRC_DIR)/MiddleTaxBracket.cpp \
+    $(SRC_DIR)/HighestTaxBracket.cpp \
+    $(SRC_DIR)/Government.cpp \
+    $(SRC_DIR)/Building.cpp \
+    $(SRC_DIR)/BuildingFactory.cpp \
+    $(SRC_DIR)/Underconstruction.cpp \
+    $(SRC_DIR)/Built.cpp \
+    $(SRC_DIR)/Destroyed.cpp \
+    $(SRC_DIR)/Residential.cpp \
+    $(SRC_DIR)/Commercial.cpp \
+    $(SRC_DIR)/Industrial.cpp \
+    $(SRC_DIR)/Landmark.cpp \
+    $(SRC_DIR)/ResidentialFactory.cpp \
+    $(SRC_DIR)/CommercialFactory.cpp \
+    $(SRC_DIR)/IndustrialFactory.cpp \
+    $(SRC_DIR)/LandmarkFactory.cpp \
+    $(SRC_DIR)/Emergencies.cpp \
+    $(SRC_DIR)/Fires.cpp \
+    $(SRC_DIR)/Earthquake.cpp \
+    $(SRC_DIR)/Thieves.cpp
+
+# Test files
 TEST_FILES := $(TEST_DIR)/CitizenUnitTests.cpp
-OBJS := $(SRC_FILES:.cpp=.o) $(TEST_FILES:.cpp=.o)
 
-# Target executable
-TARGET = CitizenUnitTests
+# Object files
+OBJ_FILES := $(SRC_FILES:.cpp=.o) $(TEST_FILES:.cpp=.o)
 
-# Main rule
+# Output executable name
+TARGET := $(BIN_DIR)/CitizenUnitTests
+
+# Compiler and flags
+CXX := g++
+CXXFLAGS := -std=c++17 -Wall -Wextra -I. -I$(SRC_DIR) -I..
+
+# Default target
 all: $(TARGET)
 
-# Build target
-$(TARGET): $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $@ $^
+# Ensure bin directory exists, then link the executable
+$(TARGET): $(BIN_DIR) $(OBJ_FILES)
+	$(CXX) $(CXXFLAGS) -o $@ $(OBJ_FILES)
 
-# Compile sources and tests
+# Rule to create bin directory if it doesn't exist
+$(BIN_DIR):
+	mkdir -p $(BIN_DIR)
+
+# Compile source files to object files
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-# Run tests
-test: $(TARGET)
+# Clean build files
+clean:
+	rm -f $(OBJ_FILES) $(TARGET)
+
+# Run the executable
+run: all
 	./$(TARGET)
 
-# Clean up
-clean:
-	rm -f $(OBJS) $(TARGET)
-	rm -rf $(BUILD_DIR)
-
-# PHONY targets
-.PHONY: all clean test
+# Phony targets
+.PHONY: all clean run
