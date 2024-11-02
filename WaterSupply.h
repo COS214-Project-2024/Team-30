@@ -27,8 +27,9 @@ public:
     /**
      * @brief Distributes water to a specified building.
      * @param b The building receiving water.
+     * @return True if water distribution was successful, false otherwise.
      */
-    void distributeWater(Building b);
+    bool distributeWater(Building b);
 
     /**
      * @brief Repairs the water supply system, returning it to working condition.

@@ -25,14 +25,16 @@ public:
     /**
      * @brief Manages sewage disposal for a specified building.
      * @param b The building for which sewage disposal is managed.
+     * @return True if disposal was successfully managed, false otherwise.
      */
-    void manageDisposal(Building b);
+    bool manageDisposal(Building b);
 
     /**
      * @brief Manages sewage treatment for a specified building.
      * @param b The building for which sewage treatment is managed.
+     * @return True if treatment was successfully managed, false otherwise.
      */
-    void manageTreatment(Building b);
+    bool manageTreatment(Building b);
 
     /**
      * @brief Repairs the sewage system, returning it to working condition.

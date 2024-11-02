@@ -9,7 +9,7 @@ using namespace std;
 
 /**
  * @class PowerPlant
- * @brief Represents a power plant responsible for generating electricity, observing coal resources.
+ * @brief Represents a power plant responsible for generating electricity and observing coal resources.
  */
 class PowerPlant : public ResourceObserver {
 public:
@@ -27,8 +27,9 @@ public:
     /**
      * @brief Generates electricity for a specified building.
      * @param b The building receiving electricity.
+     * @return True if electricity generation was successful, false otherwise.
      */
-    void generateElectricity(Building b);
+    bool generateElectricity(Building b);
 
     /**
      * @brief Repairs the power plant, returning it to working condition.
