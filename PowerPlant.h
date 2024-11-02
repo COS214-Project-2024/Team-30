@@ -7,7 +7,18 @@
 
 using namespace std;
 
-class PowerPlant : public ResourceObserver  {
+class PowerPlant : public ResourceObserver {
+    public:
+        PowerPlant();
+        void setWorking(bool b);
+
+        void generateElectricity(Building b);
+
+        bool repair();
+        void updateResourceLevel();
+
+    private:
+        bool working;
 };
 
 #endif 
