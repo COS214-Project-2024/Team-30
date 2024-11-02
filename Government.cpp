@@ -173,8 +173,6 @@ vector<std::shared_ptr<Building>> Government::getInfrastructure()
     return infrastructure;
 }
 
-
-
 Government::~Government() = default;
 
 void Government::attach(CityGrowthObserver* ob)

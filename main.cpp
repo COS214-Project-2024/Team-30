@@ -142,9 +142,37 @@ int displayMenu() {
 }
 
 void MassIntroduceCitizens(){
+    Housing housingObserver;
+    Infrastructure infrastructureObserver;
+    Economy economyObserver;
+    PopulationGrowth populationObserver;
+    cityGovernment->attach(&populationObserver);
+    cityGovernment->attach(&housingObserver);
+    cityGovernment->attach(&infrastructureObserver);
+    cityGovernment->attach(&economyObserver);
 
+    std::unique_ptr<CategorizationStrategy> popStrategy = std::make_unique<PopulationCategorization>();
+    std::unique_ptr<CategorizationStrategy> ecoStrategy = std::make_unique<EconomyCategorization>();
+
+    std::string val = "0";
+    std::cout << "How many new citizens are entering the city? ";
+    std::cin >> val;
+    std::cout << std::endl;
+    int numCitizens = stoi(val);
+
+    for (int i = 0; i < numCitizens; i++)
+    {
+        auto citizen = std::make_shared<Citizen>();
+        cityGovernment->populationGrowth(citizen);
+    }
+    cityGovernment->collectTaxes();
+    cityGovernment->notifyObservers();
+
+    cityGovernment->setStrategy(popStrategy.get());
+    std::cout << "City categorization by Population: " << cityGovernment->categorize() << std::endl;
+    cityGovernment->setStrategy(ecoStrategy.get());
+    std::cout << "City categorization by Economy: " << cityGovernment->categorize() << std::endl;
 }
-
 
 void handleMenuSelection(int choice) {
     switch (choice) {
@@ -160,13 +188,13 @@ void handleMenuSelection(int choice) {
         case 3:
             IncreaseInfurstructure();
             break;
-         case 4:
+        case 4:
             SimulateDisaster();
             break;
              case 6:
             RemoveSomeone();
             break;
-             case 8:
+        case 8:
             MassIntroduceCitizens();
         default:
             cout << "Invalid selection. Please try again.\n";
