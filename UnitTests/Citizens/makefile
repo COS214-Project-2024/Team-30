@@ -9,11 +9,11 @@ BUILD_DIR = ./build
 
 # Source files
 SRC_FILES := $(SRC_DIR)/Citizen.cpp $(SRC_DIR)/Building.cpp $(SRC_DIR)/Residential.cpp
-TEST_FILES := $(TEST_DIR)/test_citizen.cpp
+TEST_FILES := $(TEST_DIR)/CitizenUnitTests.cpp
 OBJS := $(SRC_FILES:.cpp=.o) $(TEST_FILES:.cpp=.o)
 
 # Target executable
-TARGET = test_citizen
+TARGET = CitizenUnitTests
 
 # Main rule
 all: $(TARGET)

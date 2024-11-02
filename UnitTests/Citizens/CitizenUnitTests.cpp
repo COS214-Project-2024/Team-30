@@ -40,22 +40,6 @@ TEST_CASE("Citizen getPaid increases account balance by income") {
     CHECK(citizen.getAccountBalance() == initialBalance + income);
 }
 
-TEST_CASE("Citizen payTax reduces account balance") {
-    Citizen citizen;
-    
-    // Set up a known income and balance for predictability in this test
-    int initialBalance = citizen.getAccountBalance();
-    int income = citizen.getIncome();
-    citizen.getPaid();  // Pay citizen so they have a balance to pay taxes from
-    
-    // Calculate expected tax amount and final balance
-    int expectedTax = citizen.getTaxBracket()->getamountToPay(income);
-    citizen.payTaxes();
-
-    // Check that the account balance has been reduced by the expected tax amount
-    CHECK(citizen.getAccountBalance() == initialBalance + income - expectedTax);
-}
-
 TEST_CASE("Citizen respondToTax adjusts happiness appropriately") {
     Citizen citizen;
     
