@@ -1,6 +1,6 @@
 #include "Satisfied.h"
 #include "Unsatisfied.h"
-#include "CitizensUnitTests/Citizen.h"
+#include "Citizen.h"
 
 
 /**

@@ -1,4 +1,4 @@
-#include "CitizensUnitTests/Citizen.h"
+#include "Citizen.h"
 
 #include "Building.h"
 #include <iomanip>

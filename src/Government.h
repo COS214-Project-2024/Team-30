@@ -7,7 +7,7 @@
 #include <iomanip>
 #include "CityGrowthObserver.h"
 // #include "CategorizationStrategy.h"
-#include "CitizensUnitTests/Citizen.h"
+#include "Citizen.h"
 
 // #include "Building.h"
 // #include "BuildingFactory.h"

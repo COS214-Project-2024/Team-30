@@ -1,6 +1,6 @@
 #include <iostream>
 #include <memory>
-#include "CitizensUnitTests/Citizen.h"
+#include "Citizen.h"
 
 #include "EmploymentStatus.h"
 #include "EmotionalState.h"
@@ -28,7 +28,6 @@
 #include "Landmark.h"
 #include <iostream>
 #include <memory>
-#include "Citizen.h"
 #include "EmploymentStatus.h"
 #include "EmotionalState.h"
 #include "Satisfied.h"

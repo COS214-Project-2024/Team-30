@@ -1,5 +1,5 @@
 #include "TaxBracket.h"
-#include "CitizensUnitTests/Citizen.h"
+#include "Citizen.h"
   
 
 /**

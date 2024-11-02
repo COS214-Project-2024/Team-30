@@ -2,7 +2,7 @@
 #define LOWESTTAXBRACKET_H
 #include <iostream>
 #include "TaxBracket.h"
-#include "CitizensUnitTests/Citizen.h"
+#include "Citizen.h"
 
 using namespace std;
 
