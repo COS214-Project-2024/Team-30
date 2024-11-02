@@ -176,3 +176,41 @@ vector<std::shared_ptr<Building>> Government::getInfrastructure()
 
 
 Government::~Government() = default;
+
+void Government::attach(CityGrowthObserver* ob)
+{
+    observers.push_back(ob);
+}
+
+void Government::detach(CityGrowthObserver* ob)
+{
+    observers.erase(std::remove(observers.begin(), observers.end(), ob), observers.end());
+}
+
+void Government::notifyObservers()
+{
+    for (CityGrowthObserver *observer : observers)
+    {
+        observer->update(this);
+    }
+}
+
+void Government::setStrategy(CategorizationStrategy* str)
+{
+    strategy=str;
+}
+
+std::string Government::categorize()
+{
+    return strategy->categorize(this);
+}
+
+int Government::getPopulationNum()
+{
+    return populationNum;
+}
+
+double Government::getEmploymentRate()
+{
+    return employmentRate;
+}

@@ -8,6 +8,13 @@
 #include "EmergencyServices.h"
 #include "Emergencies.h"
 #include "Thieves.h"
+#include "Government.h"
+#include "PopulationCategorization.h"
+#include "EconomyCategorization.h"
+#include "Housing.h"
+#include "Infrastructure.h"
+#include "Economy.h"
+#include "PopulationGrowth.h"
 using namespace std;
 // Function to display the main menu and capture user selection
 
@@ -125,11 +132,16 @@ int displayMenu() {
     cout << "5) Move people around \n";
     cout << "6) Remove someone\n";
     cout << "7) Change someones job\n";
+    std::cout<<"8) City Growth:Mass Increase population\n ";
     cout << "0) Exit Game\n";
     int choice;
     cin >> choice;
     return choice;
 
+
+}
+
+void MassIntroduceCitizens(){
 
 }
 
@@ -151,10 +163,11 @@ void handleMenuSelection(int choice) {
          case 4:
             SimulateDisaster();
             break;
-        case 6:
+             case 6:
             RemoveSomeone();
             break;
-
+             case 8:
+            MassIntroduceCitizens();
         default:
             cout << "Invalid selection. Please try again.\n";
             break;
