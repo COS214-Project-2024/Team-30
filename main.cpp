@@ -114,11 +114,16 @@ int displayMenu() {
     cout << "5) Move people around \n";
     cout << "6) Kill someone\n";
     cout << "7) Change someones job\n";
+    std::cout<<"8) City Growth:Mass Increase population\n ";
     cout << "0) Exit Game\n";
     int choice;
     cin >> choice;
     return choice;
 
+
+}
+
+void MassIntroduceCitizens(){
 
 }
 
@@ -140,6 +145,8 @@ void handleMenuSelection(int choice) {
          case 4:
             SimulateDisaster();
             break;
+        case 8:
+            MassIntroduceCitizens();
         default:
             cout << "Invalid selection. Please try again.\n";
             break;
