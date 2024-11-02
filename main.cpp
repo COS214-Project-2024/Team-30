@@ -163,12 +163,15 @@ void MassIntroduceCitizens(){
     }
     cityGovernment->collectTaxes();
     cityGovernment->notifyObservers();
-
-    std::cout << "City categorization: " << std::endl;
+    
+    std::cout<<"\n------------------------------------------------------------------------------";
+    std::cout << "\nCity categorization: " << std::endl;
+    std::cout<<"------------------------------------------------------------------------------\n";
     cityGovernment->setStrategy(popStrategy.get());
     std::cout << "City categorization by Population: " << cityGovernment->categorize() << std::endl;
     cityGovernment->setStrategy(ecoStrategy.get());
     std::cout << "City categorization by Economy: " << cityGovernment->categorize() << std::endl;
+    std::cout<<"------------------------------------------------------------------------------\n";
 }
 
 void handleMenuSelection(int choice) {
