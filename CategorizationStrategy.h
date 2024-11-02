@@ -3,6 +3,7 @@
 
 #include <string>
 #include "Government.h"
+class Government;
 
 /**
  * @class CategorizationStrategy

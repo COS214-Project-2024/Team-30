@@ -2,6 +2,7 @@
 #define CITYGROWTHOBSERVER_H
 
 #include "Government.h"
+class Government;
 
 /**
  * @class CityGrowthObserver
