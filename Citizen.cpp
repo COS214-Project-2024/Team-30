@@ -399,12 +399,27 @@ void Citizen::reactToEmergency(int damage) {
 void Citizen::setEmploymentStatus(std::unique_ptr<EmploymentStatus> status) {
     employmentStatus = std::move(status); // Move the unique_ptr to the member
 }
-
-unique_ptr<TaxBracket> Citizen::getTaxBracket() {
-    return make_unique<TaxBracket>(*taxBracket);
+/**
+ * @brief Retrieves the tax bracket for the citizen.
+ * 
+ * This function returns a unique pointer to a copy of the citizen's tax bracket.
+ * It uses `make_unique` to create a new `TaxBracket` instance based on the current tax bracket.
+ * 
+ * @return std::unique_ptr<TaxBracket> A unique pointer to a new TaxBracket instance representing the citizen's tax bracket.
+ */
+std::unique_ptr<TaxBracket> Citizen::getTaxBracket() {
+    return std::make_unique<TaxBracket>(*taxBracket);
 }
 
-
+/**
+ * @brief Retrieves the citizen's home.
+ * 
+ * This function returns a shared pointer to the `Building` instance representing the citizen's home.
+ * The home is shared, so multiple entities can hold references to it.
+ * 
+ * @return std::shared_ptr<Building> A shared pointer to the Building instance representing the citizen's home.
+ */
 std::shared_ptr<Building> Citizen::getHome() {
     return home;
 }
+
