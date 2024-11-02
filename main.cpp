@@ -207,9 +207,23 @@ void handleMenuSelection(int choice) {
     }
 }
 
+void display_city_intro() {
+
+    std::cout<< "    |-----|                            |-----|                         \n";
+    std::cout<< "    |     |                            |     |                         \n ";
+    std::cout<< "   |     |                            |     |                         \n";
+    std::cout<< "    |     |         /\\    /\\           |     |         /\\    /\\       \n";
+    std::cout<< "    |     |        /  \\__/  \\          |     |        /  \\__/  \\      \n";
+    std::cout<< "    |     |       /          \\         |     |       /          \\    \n";
+    std::cout<< "    |     |      |  _   _   _ |        |     |      |  _   _   _ |     \n";
+    std::cout<< "    |     |      | | | | | | ||        |     |      | | | | | | ||     \n";
+    std::cout<< "____|_____|_____ |_|_|_|_|_|_||    ____|_____|_____ |_|_|_|_|_|_||     \n";
+ 
+}
+
 int main() {
     std::string cityName;
-
+    display_city_intro();
     // Creative prompt for city name
     std::cout << "**Welcome to the City Simulator!**\n";
     std::cout << "Enter the name of your bustling metropolis: ";
@@ -230,5 +244,6 @@ int main() {
 
     return 0;
 }
+
 
 
