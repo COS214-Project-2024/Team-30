@@ -111,7 +111,7 @@ void Government::printInfo()
     std::cout << "------------------------------------------------------------" << std::endl;
     std::cout << "            Satisfaction Rate : "<< std::fixed << std::setprecision(2) << populationSatisfactionRate() * 100<< "%"<<std::endl;
     std::cout << "------------------------------------------------------------" << std::endl;
-    std::cout << "            City Budget     : R" << citybudget << " M"<< std::endl;
+    std::cout << "            City Budget     : R" << citybudget << " k"<< std::endl;
     std::cout << "============================================================" << std::endl;
 
  if (!population.empty())
