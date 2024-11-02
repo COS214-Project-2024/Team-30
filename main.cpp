@@ -20,6 +20,12 @@ using namespace std;
 
 unique_ptr<Government> cityGovernment;
 
+//observers
+Housing housingObserver;
+Infrastructure infrastructureObserver;
+Economy economyObserver;
+PopulationGrowth populationObserver;
+
 void addNewCitizen() {
     cout<< endl;
     cout<< endl;
@@ -141,15 +147,6 @@ int displayMenu() {
 }
 
 void MassIntroduceCitizens(){
-    Housing housingObserver;
-    Infrastructure infrastructureObserver;
-    Economy economyObserver;
-    PopulationGrowth populationObserver;
-    cityGovernment->attach(&populationObserver);
-    cityGovernment->attach(&housingObserver);
-    cityGovernment->attach(&infrastructureObserver);
-    cityGovernment->attach(&economyObserver);
-
     std::unique_ptr<CategorizationStrategy> popStrategy = std::make_unique<PopulationCategorization>();
     std::unique_ptr<CategorizationStrategy> ecoStrategy = std::make_unique<EconomyCategorization>();
 
@@ -234,6 +231,11 @@ int main() {
 
     //info print(initial)
     cityGovernment->printInfo();
+
+    cityGovernment->attach(&populationObserver);
+    cityGovernment->attach(&housingObserver);
+    cityGovernment->attach(&infrastructureObserver);
+    cityGovernment->attach(&economyObserver);
 
     // Main game loop
     int choice;

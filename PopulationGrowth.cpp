@@ -12,7 +12,7 @@
  */
 void PopulationGrowth::update(Government *g)
 {
-    std::cout<<oldPop<<"\n";
+    // std::cout<<oldPop<<"\n";
     bR = (g->getPopulationNum() - oldPop); // Calculate the change in population
     bR /= g->getPopulationNum(); // Calculate the birth rate
     bR *= 50; // Convert to births per 1,000 people

@@ -67,10 +67,6 @@ public:
     int getPopulationNum();
     double getEmploymentRate();
     int ResidentialCapacity();
-
-
-
-
 };
 
 #endif
