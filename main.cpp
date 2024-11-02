@@ -47,6 +47,17 @@ void IncreaseInfurstructure() {
     cout<< endl;
 }
 
+void RemoveSomeone()
+{
+    cout << "\n====== Remoeve Menu ======\n";
+    cout << "Which Person would you like to remove\n";
+    int choice;
+    cin >> choice;
+
+    cityGovernment->populationDecline(choice);
+
+}
+
 void SimulateDisaster()
 {
     cout << "\n====== Disaster Menu ======\n";
@@ -112,7 +123,7 @@ int displayMenu() {
     cout << "3) Increase infrastructure\n";
     cout << "4) Simulate Disaster >:)!! \n";
     cout << "5) Move people around \n";
-    cout << "6) Kill someone\n";
+    cout << "6) Remove someone\n";
     cout << "7) Change someones job\n";
     cout << "0) Exit Game\n";
     int choice;
@@ -140,6 +151,10 @@ void handleMenuSelection(int choice) {
          case 4:
             SimulateDisaster();
             break;
+        case 6:
+            RemoveSomeone();
+            break;
+
         default:
             cout << "Invalid selection. Please try again.\n";
             break;

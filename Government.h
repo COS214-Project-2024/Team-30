@@ -41,7 +41,7 @@ public:
     void populationGrowth(std::shared_ptr<Citizen> );
     void calculateEmploymentRate();
     void increaseInfurstructure();
-    void populationDecline(std::shared_ptr<Citizen>);
+    void populationDecline(int i);
     void collectTaxes();
     void printInfo();
     double populationSatisfactionRate();

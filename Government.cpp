@@ -38,9 +38,9 @@ void Government::calculateEmploymentRate()
 }
 
 void Government::increaseInfurstructure()
-{       if(citybudget>500)
+{       if(citybudget>800)
 {
-        for(int i =0; i<5; i++)
+        for(int i =0; i<2; i++)
         {
          infrastructure.push_back(residentialFactory.createBuilding());
          infrastructure.push_back(commercialFactory.createBuilding());
@@ -64,9 +64,28 @@ else
 }
 }
 
-void Government::populationDecline(std::shared_ptr<Citizen> citizen)
+void Government::populationDecline(int i)
+{
+
+std::shared_ptr<Citizen> citizen;
+   for (const auto &person : population)
+    {
+        if (person->getID()== i)
+        {
+          citizen = person;
+        }
+    }
+
+if(citizen)
 {
     population.erase(remove(population.begin(), population.end(), citizen), population.end());
+
+}
+
+else
+{
+    cout<< " Could Not Find Person:" << i;
+}
 }
 
 // marked
