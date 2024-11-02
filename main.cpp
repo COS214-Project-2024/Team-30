@@ -136,8 +136,8 @@ int displayMenu() {
     cout << "5) Move people around \n";
     cout << "6) Remove someone\n";
     cout << "7) Change someones job\n";
-    std::cout<<"8) City Growth:Mass Increase population\n ";
-    std::cout<<"9) Print City Information\n ";
+    std::cout<<"8) City Growth:Mass Increase population\n";
+    std::cout<<"9) Print City Information\n";
     cout << "0) Exit Game\n";
     std::cout<<"\nPlease make a selection: ";
     int choice;
