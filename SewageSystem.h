@@ -5,18 +5,43 @@
 
 using namespace std;
 
+/**
+ * @class SewageSystem
+ * @brief Manages sewage disposal and treatment for buildings.
+ */
 class SewageSystem {
-    public:
-        SewageSystem();
-        void setWorking(bool b);
+public:
+    /**
+     * @brief Constructs a SewageSystem instance.
+     */
+    SewageSystem();
 
-        void manageDisposal(Building b);
-        void manageTreatment(Building b);
-        
-        bool repair();
+    /**
+     * @brief Sets the operational status of the sewage system.
+     * @param b Boolean indicating if the sewage system is working.
+     */
+    void setWorking(bool b);
 
-    private:
-        bool working;
+    /**
+     * @brief Manages sewage disposal for a specified building.
+     * @param b The building for which sewage disposal is managed.
+     */
+    void manageDisposal(Building b);
+
+    /**
+     * @brief Manages sewage treatment for a specified building.
+     * @param b The building for which sewage treatment is managed.
+     */
+    void manageTreatment(Building b);
+
+    /**
+     * @brief Repairs the sewage system, returning it to working condition.
+     * @return True if the repair was successful, false otherwise.
+     */
+    bool repair();
+
+private:
+    bool working; /**< Indicates if the sewage system is operational. */
 };
 
-#endif 
+#endif // SEWAGESYSTEM_H

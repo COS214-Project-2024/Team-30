@@ -7,18 +7,42 @@
 
 using namespace std;
 
+/**
+ * @class PowerPlant
+ * @brief Represents a power plant responsible for generating electricity, observing coal resources.
+ */
 class PowerPlant : public ResourceObserver {
-    public:
-        PowerPlant();
-        void setWorking(bool b);
+public:
+    /**
+     * @brief Constructs a PowerPlant instance.
+     */
+    PowerPlant();
 
-        void generateElectricity(Building b);
+    /**
+     * @brief Sets the operational status of the power plant.
+     * @param b Boolean indicating if the power plant is working.
+     */
+    void setWorking(bool b);
 
-        bool repair();
-        void updateResourceLevel();
+    /**
+     * @brief Generates electricity for a specified building.
+     * @param b The building receiving electricity.
+     */
+    void generateElectricity(Building b);
 
-    private:
-        bool working;
+    /**
+     * @brief Repairs the power plant, returning it to working condition.
+     * @return True if the repair was successful, false otherwise.
+     */
+    bool repair();
+
+    /**
+     * @brief Updates the resource level of coal needed by the power plant.
+     */
+    void updateResourceLevel();
+
+private:
+    bool working; /**< Indicates if the power plant is operational. */
 };
 
-#endif 
+#endif // POWERPLANT_H
