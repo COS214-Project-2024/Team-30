@@ -17,11 +17,11 @@ std::string PopulationCategorization::categorize(Government* g)
 {
     int population = g->getPopulationNum();
     
-    if (population < 5000)
+    if (population < 6)
     {
         return "Small City";
     }
-    else if (population < 50000)
+    else if (population < 15)
     {
         return "Medium City";
     }

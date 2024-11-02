@@ -40,7 +40,6 @@ private:
     int citybudget;
     int populationNum;
 
-
 public:
     Government(string);
     void populationGrowth(std::shared_ptr<Citizen> );
