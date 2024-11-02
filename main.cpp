@@ -122,8 +122,6 @@ Fires fireEvent;
 }
 
 int displayMenu() {
-
-    cityGovernment->printInfo();
     cout << "\n====== Game Menu ======\n";
     cout << "1) Add to the population\n";
     cout << "2) Collect Taxes\n";
@@ -133,11 +131,12 @@ int displayMenu() {
     cout << "6) Remove someone\n";
     cout << "7) Change someones job\n";
     std::cout<<"8) City Growth:Mass Increase population\n ";
+    std::cout<<"9) Print City Information\n ";
     cout << "0) Exit Game\n";
+    std::cout<<"\nPlease make a selection: ";
     int choice;
     cin >> choice;
     return choice;
-
 
 }
 
@@ -176,6 +175,7 @@ void MassIntroduceCitizens(){
 }
 
 void handleMenuSelection(int choice) {
+
     switch (choice) {
         case 0:
             cout << "Exiting game. Thank you for Playing!! Goodbye!!!!\n";
@@ -198,6 +198,9 @@ void handleMenuSelection(int choice) {
         case 8:
             MassIntroduceCitizens();
             break;
+        case 9:
+            cityGovernment->printInfo();
+            break;
         default:
             cout << "Invalid selection. Please try again.\n";
             break;
@@ -214,6 +217,9 @@ int main() {
 
     // Create the government object
     cityGovernment =std::make_unique<Government>(cityName);
+
+    //info print(initial)
+    cityGovernment->printInfo();
 
     // Main game loop
     int choice;
