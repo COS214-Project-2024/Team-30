@@ -168,6 +168,7 @@ void MassIntroduceCitizens(){
     cityGovernment->collectTaxes();
     cityGovernment->notifyObservers();
 
+    std::cout << "City categorization: " << std::endl;
     cityGovernment->setStrategy(popStrategy.get());
     std::cout << "City categorization by Population: " << cityGovernment->categorize() << std::endl;
     cityGovernment->setStrategy(ecoStrategy.get());
@@ -191,11 +192,12 @@ void handleMenuSelection(int choice) {
         case 4:
             SimulateDisaster();
             break;
-             case 6:
+        case 6:
             RemoveSomeone();
             break;
         case 8:
             MassIntroduceCitizens();
+            break;
         default:
             cout << "Invalid selection. Please try again.\n";
             break;
