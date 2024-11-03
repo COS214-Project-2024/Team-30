@@ -55,6 +55,7 @@ class Citizen : public std::enable_shared_from_this<Citizen>
     void printDetails(); //helper to see that constructor works as expected
     void respondToTax();
     void respondToPayment();
+    void reactToNotGettingHired();
     void respondToJobChange(bool gainedJob);
     void respondToIncreasedInfrastructure();
     void getHired(std::unique_ptr<EmploymentStatus> newJob);

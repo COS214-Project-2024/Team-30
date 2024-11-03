@@ -1,0 +1,1 @@
+#include "CategorizationStrategy.h"

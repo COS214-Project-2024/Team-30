@@ -64,16 +64,23 @@ Citizen::Citizen() : id(nextID++)
     
     // Initialize other attributes
     income = employmentStatus->getIncome(); // Default income, modify if needed
-    getPaid(); // Presumably fills account balance based on income
+    getPaid(); 
 }
 /**
  * @brief Adds the Citizen's income to their account balance.
  *
- * This method increments the account balance by the income amount.
+ * This method increments the account balance by the income amount if citizen is employed. Otherwise, citizen cannot be paid hence happiness decreases by a single unit
  */
 void Citizen::getPaid()
 {
-    accountBalance = accountBalance + income;
+    if (this->getEmploymentStatus() == "IndustrialJob" || this->getEmploymentStatus() == "OfficeJob")
+    {
+        accountBalance = accountBalance + income;
+    }
+    else
+    {
+        happinessMeter = happinessMeter -1;
+    }
 }
 /**
  * @brief Retrieves the Citizen's unique ID.
@@ -130,6 +137,11 @@ int Citizen::getAccountBalance()
 void Citizen::payTaxes()
 {
     accountBalance = accountBalance - taxBracket->getamountToPay(income);
+    if (accountBalance <= 0)
+    {
+        cout << "Citizen is out of money"<<endl;
+        accountBalance = 0;
+    }
 }
 
 /**
@@ -246,9 +258,12 @@ void Citizen::respondToTax()
  */
 void Citizen::respondToPayment()
 {
+    if(this->getEmploymentStatus() != "Unemployed")
+    {
     happinessMeter += 20;                           // Increase happiness with payment
     happinessMeter = std::min(happinessMeter, 100); // Ensure it doesn't exceed 100
     emotionalState->changeState(*this);
+    }
 }
 
 /**
@@ -323,7 +338,7 @@ void Citizen::getHired(std::unique_ptr<EmploymentStatus> newJob)
     if (employmentStatus->getJobType() == "Unemployed")
     {
         employmentStatus = std::move(newJob);
-        happinessMeter = std::min(happinessMeter + 10, 100); // Ensure it does not exceed 100
+        happinessMeter = std::min(happinessMeter + 30, 100); // Ensure it does not exceed 100
         std::cout << "Citizen got hired as " << employmentStatus->getJobType() << std::endl;
     }
 }
@@ -358,7 +373,15 @@ void Citizen::assignToBuilding(std::shared_ptr<Building> building) {
         currentBuilding->addCitizen(shared_from_this()); // Add citizen to building
     }
 }
-
+/**
+ * @brief Sets the home for the citizen.
+ *
+ * This method assigns a shared pointer to a `Building` object as the citizen's home.
+ * The ownership of the building is shared, allowing multiple `Citizen` instances or other
+ * entities to reference the same building.
+ *
+ * @param building A `std::shared_ptr` to a `Building` object representing the home of the citizen.
+ */
 void Citizen::setHome(std::shared_ptr<Building> building) {
     home = building; // Assign the shared pointer
 }
@@ -400,6 +423,7 @@ void Citizen::setEmploymentStatus(std::unique_ptr<EmploymentStatus> status) {
     employmentStatus = std::move(status); // Move the unique_ptr to the member
 }
 
+
 /**
  * @brief Retrieves the citizen's home.
  * 
@@ -412,3 +436,7 @@ std::shared_ptr<Building> Citizen::getHome() {
     return home;
 }
 
+void Citizen::reactToNotGettingHired()
+{
+    happinessMeter = happinessMeter - 5;
+}
