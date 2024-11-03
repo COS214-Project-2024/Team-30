@@ -99,6 +99,11 @@ void Building::simulateEmergency(Emergencies& emergency) {
     emergency.accessDamage(this->clone());
 }
 
+void Building::setHealth(int buildingHealth)
+{
+    this->buildingHealth = buildingHealth;
+}
+
 
 // void Building::add(std::unique_ptr<BuildingComponent> component) {
 //     std::cout << "[Warning] Operation Unsupported: Cannot add components to a leaf node." << std::endl;
@@ -134,6 +139,11 @@ bool Building::hasOccupant(int citizenID) const {
     return std::any_of(residents.begin(), residents.end(), [citizenID](const shared_ptr<Citizen>& resident) {
         return resident->getID() == citizenID;
     });
+}
+
+int Building::getHealth()
+{
+    return this->buildingHealth;
 }
 
 Building::~Building() 
