@@ -30,6 +30,7 @@ class Building : public BuildingComponent{
     Building();
     //Building(const std::string& name);        composite constructor
     virtual ~Building();
+    virtual string getType() = 0;
     virtual void build() = 0;
     BuildingState* getState();
     void setState(unique_ptr<BuildingState> state); 
@@ -37,7 +38,7 @@ class Building : public BuildingComponent{
     void displayInfo();
     void update();  
     virtual unique_ptr<Building> clone() = 0; 
-    //void showInfo() const override;
+    void showInfo() const override;
     // void setUtilities();
     // void requestUtilities();
 

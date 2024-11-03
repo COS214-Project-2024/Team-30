@@ -9,11 +9,18 @@ class Commercial : public Building {
     
     private:
     protected:
+
     public:
     Commercial();
     void build() override;
     unique_ptr<Building> clone() override; // Return unique_ptr<Building>
     string getType() override;
+
+    // Commercial(const std::string& name) : Building(name) {}
+
+    // void showInfo() const override {
+    //     std::cout << "Commercial Building: " << name << std::endl;
+    // }
 
 };
 

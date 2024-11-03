@@ -16,7 +16,11 @@ class Residential : public Building {
     unique_ptr<Building> clone() override; // Change to return unique_ptr<Building>
     string getType() override;
 
-    // void displayInfo();
+    // Residential(const std::string& name) : Building(name) {}
+
+    // void showInfo() const override {
+    //     std::cout << "Residential Building: " << name << std::endl;
+    // }
 };
 
 #endif
