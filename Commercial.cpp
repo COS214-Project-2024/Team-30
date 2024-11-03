@@ -9,11 +9,13 @@
 Commercial::Commercial()
 {
     // initial state of Commercial Building should be Underconstruction
-    setState(make_unique<Underconstruction>()); // Use smart pointer
+        name = "Commercial";
     capacity = 20;
     buildingHealth = 100;
     price = 1200;
     runningUtils = false;
+
+    setState(std::make_unique<Underconstruction>()); // Use smart pointer
 }
 
 // builds a Commercial building, calls Commercial Factory to create building

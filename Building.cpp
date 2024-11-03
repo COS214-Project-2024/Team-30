@@ -9,9 +9,12 @@
 #include "Destroyed.h"
 
 //Buildings default constructor
-Building::Building(): capacity(0), buildingHealth(100), price(0),runningUtils(false){
+Building::Building(): name("Building:"),capacity(0), buildingHealth(100), price(0),runningUtils(false){
     //setUtilities();
 }
+
+Building::Building(const std::string &name) : name(name), capacity(0), buildingHealth(100), price(0), runningUtils(false) {}
+
 
 // Sets state of building to underconstruction
 void Building::setState(unique_ptr<BuildingState> state)
@@ -52,8 +55,8 @@ void Building::processState()
 void Building::displayInfo()
 {
     std::cout << "==========================================" << std::endl;
-    std::cout << std::setw(20) << std::left << "Building Type:" ;
-              //<< std::setw(20) << getType() << std::endl;
+    std::cout << std::setw(20) << std::left << "Building Type:" 
+              << std::setw(20) << getType() << std::endl;
     std::cout << std::setw(20) << std::left << "Building State:" 
               << std::setw(20) << currState->getStatus() << std::endl;
     std::cout << std::setw(20) << std::left << "Capacity:" 
@@ -79,12 +82,12 @@ Building::~Building()
 
 }
 
+void Building::showInfo() const{
+    std::cout << "Building: " << name << std::endl;
+}
+
 // Building::Building(BuildingState *initialState) : currState(nullptr){
 //     this->currState->setState();
-// }
-
-// void showInfo() const {
-//     std::cout << "Building: " << name << std::endl;
 // }
 
 // void Building::setUtilities(){

@@ -10,10 +10,9 @@
 #include "BuildingComponent.h"
 using namespace std;
 
-
 class Building : public BuildingComponent{
     protected:
-    //string name;
+    std::string name;
     int capacity; 
     int buildingHealth;
     int price; //price is gonna work with city budget in government
@@ -28,9 +27,9 @@ class Building : public BuildingComponent{
 
     public:
     Building();
-    //Building(const std::string& name);        composite constructor
+    Building(const std::string& name);        //composite constructor
     virtual ~Building();
-    virtual string getType() = 0;
+    virtual std::string getType() = 0;
     virtual void build() = 0;
     BuildingState* getState();
     void setState(unique_ptr<BuildingState> state); 

@@ -16,11 +16,11 @@ class Landmark : public Building {
     unique_ptr<Building> clone() override; // Change to return unique_ptr<Building>
     string getType() override;
 
-    // Landmark(const std::string& name) : Building(name) {}
-
-    // void showInfo() const override {
-    //     std::cout << "Landmark Building: " << name << std::endl;
-    // }
+    //composite
+    Landmark(const std::string& name) : Building(name) {}
+    void showInfo() const override {
+        std::cout << "Landmark Building: " << name << std::endl;
+    }
 
 };
 

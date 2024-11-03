@@ -19,7 +19,9 @@ SOURCES = buildingMain.cpp \
           ResidentialFactory.cpp \
           CommercialFactory.cpp \
           IndustrialFactory.cpp \
-          LandmarkFactory.cpp
+          LandmarkFactory.cpp \
+          BuildingComponent.cpp \
+          BuildingComposite.cpp
 
 # Object files (replace .cpp extensions with .o)
 OBJECTS = $(SOURCES:.cpp=.o)

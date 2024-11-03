@@ -5,11 +5,14 @@
 
 // Constructor for Landmark
 Landmark::Landmark() {
-    setState(std::make_unique<Underconstruction>()); // Use smart pointer
+    name = "Landmark";
     capacity = 100;
     buildingHealth = 90;
     price = 1500;
     runningUtils = false;
+    // state of landmark building should be under construction
+
+    setState(std::make_unique<Underconstruction>()); // Use smart pointer
     // state of landmark building should be under construction
 }
 

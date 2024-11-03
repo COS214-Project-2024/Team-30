@@ -6,11 +6,13 @@
 // Creates a Residential object
 Residential::Residential() {
     // State of residential building should be under construction
-    setState(std::make_unique<Underconstruction>()); // Use smart pointer
+    name = "Residential";
     capacity = 4;
     buildingHealth = 100;
     price = 500;
     runningUtils = false;
+
+    setState(std::make_unique<Underconstruction>()); // Use smart pointer
 }
 
 // Builds a residential building, calls residential factory to create building

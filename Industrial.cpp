@@ -8,11 +8,13 @@
 // constructor for Industrial 
 Industrial::Industrial() {
     // state of industrial building should be underconstruction
-    setState(std::make_unique<Underconstruction>()); // Use smart pointer
+    name = "Industrial";
     capacity = 20;
     buildingHealth = 100;
     price = 1000;
     runningUtils = false;
+
+    setState(std::make_unique<Underconstruction>()); // Use smart pointer
 }
 
 // builds an industrial building, calls industrial factory to create building

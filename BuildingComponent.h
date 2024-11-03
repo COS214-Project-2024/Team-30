@@ -10,7 +10,7 @@
 class BuildingComponent {
 public:
     virtual ~BuildingComponent() = default;
-    virtual void showInfo() const;
+    virtual void showInfo() const = 0;
     virtual void add(std::unique_ptr<BuildingComponent> component) ;
     virtual void remove(const BuildingComponent* component) ;
 };

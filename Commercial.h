@@ -16,11 +16,11 @@ class Commercial : public Building {
     unique_ptr<Building> clone() override; // Return unique_ptr<Building>
     string getType() override;
 
-    // Commercial(const std::string& name) : Building(name) {}
-
-    // void showInfo() const override {
-    //     std::cout << "Commercial Building: " << name << std::endl;
-    // }
+    //composite
+    Commercial(const std::string& name) : Building(name) {}
+    void showInfo() const override {
+        std::cout << "Commercial Building: " << name << std::endl;
+    }
 
 };
 
