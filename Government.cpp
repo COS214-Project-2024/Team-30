@@ -112,7 +112,7 @@ int Government::getNumberOfEmployedCitizens()
 }
 
 /**
- * @brief Print interface for the Game showing statistics for the city.
+ * @brief Print a summary for citizens.
  */
 void Government::printCitizenSummary()
 {
@@ -270,6 +270,9 @@ double Government::populationSatisfactionRate()
     return static_cast<double>(satisfiedCount) / population.size();
 }
 
+/**
+ * @brief Prints interface for the Game showing statistics for the city.
+ */
 void Government::printInfo()
 {   calculateEmploymentRate();
     std::cout << "============================================================" << std::endl;
@@ -304,7 +307,7 @@ void Government::printInfo()
    if (!infrastructure.empty())
    {
     std::cout << "============================================================" << std::endl;
-    std::cout << "                      City Information                      " << std::endl;
+    std::cout << "                      Building Information                  " << std::endl;
     std::cout << "============================================================" << std::endl;
    for (const auto &building : infrastructure)
     {
@@ -316,6 +319,10 @@ void Government::printInfo()
    }
 }
 
+/**
+ * @brief Calculates the total residential capacity of all buildings.
+ * @return The total residential capacity as an integer.
+ */
 int Government::ResidentialCapacity(){
     int cap=0;
     for (const auto &building : infrastructure)
