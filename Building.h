@@ -30,6 +30,7 @@ public:
     // Building(); //Building constructor
     // Building(BuildingState* initialState); //set state to underconstruction
     virtual ~Building();
+    int getCapacity();
     virtual void build() = 0;
     BuildingState *getState();
     void setState(unique_ptr<BuildingState> state); // Accept a unique_ptr

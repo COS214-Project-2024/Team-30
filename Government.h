@@ -13,18 +13,26 @@
 #include "ResidentialFactory.h"
 #include "CommercialFactory.h"
 #include "IndustrialFactory.h"
+#include "CityGrowthObserver.h"
+#include "CategorizationStrategy.h"
+#include "Citizen.h"
 using namespace std;
+
+class CityGrowthObserver;
+class CategorizationStrategy;
 class Government{
 private:
 //lists
     //vector<std::shared_ptr<CityGrowthObserver>> observers;
     vector<std::shared_ptr<Citizen>> population;
     vector<std::shared_ptr<Building>> infrastructure;
+    std::vector<CityGrowthObserver*> observers;
 
 //objects 
     ResidentialFactory residentialFactory;
     CommercialFactory commercialFactory;
     IndustrialFactory industrialFactory;
+    CategorizationStrategy* strategy;
     //unique_ptr<CategorizationStrategy> strategy;
 //data    
     string cityName;
@@ -32,26 +40,33 @@ private:
     int citybudget;
     int populationNum;
 
-
 public:
     Government(string);
-    void attach(std::shared_ptr<CityGrowthObserver> ob);
-    void detach(std::shared_ptr<CityGrowthObserver> ob);
-    void notifyObservers();
     void populationGrowth(std::shared_ptr<Citizen> );
     void calculateEmploymentRate();
     void increaseInfurstructure();
-    void populationDecline(std::shared_ptr<Citizen>);
+    void populationDecline(int i);
     void collectTaxes();
     void printInfo();
+
     double populationSatisfactionRate();
     vector<std::shared_ptr<Citizen>> getPeople ();
     vector<std::shared_ptr<Building>> getInfrastructure();
     ~Government();
 
+    //citygrowth observer
+    void attach(CityGrowthObserver* ob);
+    void detach(CityGrowthObserver* ob);
+    void notifyObservers();
 
+     //
+    void setStrategy(CategorizationStrategy* str);
+    std::string categorize();
 
-
+    //
+    int getPopulationNum();
+    double getEmploymentRate();
+    int ResidentialCapacity();
 };
 
 #endif
