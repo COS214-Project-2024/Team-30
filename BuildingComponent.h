@@ -1,21 +1,18 @@
 #ifndef BUILDINGCOMPONENT_H
 #define BUILDINGCOMPONENT_H
 
-#include "Building.h"
-#include "BuildingComponent.h"
+#include <iostream>
+#include <vector>
+#include <string>
+#include <memory>
 
-class BuildingComponent{
-
-    private:
-    Building* Building;
-    //idea use a vector of type Building??
-
-    protected:
-
-    public:
-    virtual void add(BuildingComponent* component);
-    virtual void remove(BuildingComponent* component);
-    virtual void displayInfo();
+// Component
+class BuildingComponent {
+public:
+    virtual ~BuildingComponent() = default;
+    virtual void showInfo() const;
+    virtual void add(std::unique_ptr<BuildingComponent> component) ;
+    virtual void remove(const BuildingComponent* component) ;
 };
 
 #endif
