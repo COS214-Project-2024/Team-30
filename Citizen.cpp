@@ -64,16 +64,23 @@ Citizen::Citizen() : id(nextID++)
     
     // Initialize other attributes
     income = employmentStatus->getIncome(); // Default income, modify if needed
-    getPaid(); // Presumably fills account balance based on income
+    getPaid(); 
 }
 /**
  * @brief Adds the Citizen's income to their account balance.
  *
- * This method increments the account balance by the income amount.
+ * This method increments the account balance by the income amount if citizen is employed. Otherwise, citizen cannot be paid hence happiness decreases by a single unit
  */
 void Citizen::getPaid()
 {
-    accountBalance = accountBalance + income;
+    if (this->getEmploymentStatus() == "IndustrialJob" || this->getEmploymentStatus() == "OfficeJob")
+    {
+        accountBalance = accountBalance + income;
+    }
+    else
+    {
+        happinessMeter = happinessMeter -1;
+    }
 }
 /**
  * @brief Retrieves the Citizen's unique ID.
@@ -130,6 +137,11 @@ int Citizen::getAccountBalance()
 void Citizen::payTaxes()
 {
     accountBalance = accountBalance - taxBracket->getamountToPay(income);
+    if (accountBalance <= 0)
+    {
+        cout << "Citizen is out of money"<<endl;
+        accountBalance = 0;
+    }
 }
 
 /**
@@ -246,9 +258,12 @@ void Citizen::respondToTax()
  */
 void Citizen::respondToPayment()
 {
+    if(this->getEmploymentStatus() != "Unemployed")
+    {
     happinessMeter += 20;                           // Increase happiness with payment
     happinessMeter = std::min(happinessMeter, 100); // Ensure it doesn't exceed 100
     emotionalState->changeState(*this);
+    }
 }
 
 /**
@@ -421,3 +436,7 @@ std::shared_ptr<Building> Citizen::getHome() {
     return home;
 }
 
+void Citizen::reactToNotGettingHired()
+{
+    happinessMeter = happinessMeter - 5;
+}

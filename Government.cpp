@@ -64,6 +64,121 @@ else
 }
 }
 
+int Government::getNumberofUnemployedCitizens()
+{
+    int nmbr = 0;
+    for (const auto &person : population)
+    {
+        if (person->getEmploymentStatus() == "Unemployed")
+        {
+            nmbr++;
+        }
+    }
+    return nmbr;
+
+}
+int Government::getNumberOfEmployedCitizens()
+{
+    int nmbr = 0;
+    for (const auto &person : population)
+    {
+        if (person->getEmploymentStatus() != "Unemployed")
+        {
+            nmbr++;
+        }
+    }
+    return nmbr;
+
+}
+void Government::printCitizenSummary()
+{
+    if (populationNum == 0)
+    {
+        cout << "\n\n\n\n[WARNING] : City currently has no citizens\n\n\n"<<endl;
+        return;
+    }
+    std::cout << "============================================================" << std::endl;
+    std::cout << "                     Citizens Summary                       " << std::endl;
+    std::cout << "============================================================" << std::endl;
+    std::cout << "            Population            : " << populationNum << std::endl;
+    std::cout << "------------------------------------------------------------" << std::endl;
+    std::cout << "            Employed Citizens     : " << getNumberOfEmployedCitizens() << std::endl;
+    std::cout << "------------------------------------------------------------" << std::endl;
+    std::cout << "            Unemployed Citizens   : " << getNumberofUnemployedCitizens() << std::endl;
+    std::cout << "============================================================" << std::endl;
+}
+
+ void Government::payDay()
+ {
+    for (const auto &person : population)
+    {
+        person->getPaid();
+        person->respondToPayment();
+    }
+    
+ }
+
+void Government::jobOpportunities()
+{
+    // Initialize random number generators
+    static std::random_device rd;
+    static std::mt19937 gen(rd());
+    
+    // Probability that each unemployed person has to get hired (e.g., 50%)
+    std::uniform_real_distribution<> hireChance(0.0, 1.0);
+    const double hiringProbability = 0.4;  // Adjust this value as needed
+    
+    // Create distribution for job types
+    std::uniform_int_distribution<> jobDist(0, 1); // 0 = OfficeJob, 1 = IndustrialJob
+
+    // Count unemployed people
+    std::vector<Citizen*> unemployed;
+    for (auto &person : population)
+    {
+        if (person->getEmploymentStatus() == "Unemployed")
+        {
+            unemployed.push_back(person.get());
+        }
+    }
+
+    // Define a maximum number of hires allowed (e.g., 30% of unemployed)
+    int maxHires = static_cast<int>(unemployed.size() * 1.0); // Adjust as needed
+    int hiredCount = 0;
+
+    // Attempt to hire unemployed citizens based on chance and max threshold
+    for (auto &person : unemployed)
+    {
+        if (hiredCount >= maxHires) break; // Stop if max hires reached
+
+        if (hireChance(gen) <= hiringProbability)
+        {
+            // Randomly assign job type
+            std::unique_ptr<EmploymentStatus> newJob;
+            if (jobDist(gen) == 0)
+            {
+                newJob = std::make_unique<OfficeJob>();
+            }
+            else
+            {
+                newJob = std::make_unique<IndustrialJob>();
+            }
+
+            // Hire person and increment the hired count
+            person->getHired(std::move(newJob));
+            hiredCount++;
+        }
+    }
+    if (hiredCount == 0)
+    {
+        cout << "Nobody got hired :("<<endl;
+        for (auto &person : unemployed)
+        {
+            person->reactToNotGettingHired();
+        }
+        
+    }
+}
+
 void Government::populationDecline(int i)
 {
 
