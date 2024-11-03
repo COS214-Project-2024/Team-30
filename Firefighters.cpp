@@ -1,4 +1,5 @@
 #include "Firefighters.h"
+#include "Emergencies.h"
 #include <iostream>
 
 void Firefighters::handleRequest(std::shared_ptr<Emergencies> emergency)
