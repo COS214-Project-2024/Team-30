@@ -338,7 +338,7 @@ void Citizen::getHired(std::unique_ptr<EmploymentStatus> newJob)
     if (employmentStatus->getJobType() == "Unemployed")
     {
         employmentStatus = std::move(newJob);
-        happinessMeter = std::min(happinessMeter + 10, 100); // Ensure it does not exceed 100
+        happinessMeter = std::min(happinessMeter + 30, 100); // Ensure it does not exceed 100
         std::cout << "Citizen got hired as " << employmentStatus->getJobType() << std::endl;
     }
 }
