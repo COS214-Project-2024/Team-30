@@ -144,6 +144,9 @@ void Government::printCitizenSummary()
     
  }
 
+ /**
+ * @brief Function for provided job opportunities to citizens.
+ */
 void Government::jobOpportunities()
 {
     // Initialize random number generators
