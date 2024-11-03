@@ -2,6 +2,7 @@
 #define BUILDING_H
 
 #include <vector>
+#include <algorithm>
 #include <memory>  // Include for smart pointers
 
 #include "BuildingState.h"
@@ -9,37 +10,36 @@
 #include "BuildingComponent.h"
 using namespace std;
 
-// : public BuildingComponent
-class Building {
+
+class Building : public BuildingComponent{
     protected:
-    //vector<Utilities*> utilities;
-    unique_ptr<BuildingState> currState; // Use unique_ptr for ownership
+    //string name;
     int capacity; 
     int buildingHealth;
-    int price; //? whats price : price is gonna work with city budget in government
+    int price; //price is gonna work with city budget in government
     bool runningUtils;
+    std::unique_ptr<BuildingState> currState; // Use unique_ptr for ownership
+
+    //Utilities
+    // int water;
+    // int power;
+    // int waste;
+    // int sewerage;
 
     public:
-    // Building(); //Building constructor
-    // Building(BuildingState* initialState); //set state to underconstruction
+    Building();
+    //Building(const std::string& name);        composite constructor
     virtual ~Building();
     virtual void build() = 0;
     BuildingState* getState();
-    void setState(unique_ptr<BuildingState> state); // Accept a unique_ptr
-    void processState(); //request() function for State DP
-    virtual string getType() = 0;
-    void displayInfo(); //removed override keyword. testing without the building component
-
-    //removed Building health, changed to member variable
-    
-    // void add(BuildingComponent* component) override;
-    // void remove(BuildingComponent* component) override;
-
-    void update();
-    void recieveUtilities();    //Utilities
-    //Utilities* setUtilities();
-
-    virtual unique_ptr<Building> clone() = 0; // Return unique_ptr
+    void setState(unique_ptr<BuildingState> state); 
+    void processState();    
+    void displayInfo();
+    void update();  
+    virtual unique_ptr<Building> clone() = 0; 
+    //void showInfo() const override;
+    // void setUtilities();
+    // void requestUtilities();
 
 };
 

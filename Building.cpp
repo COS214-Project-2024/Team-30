@@ -8,11 +8,12 @@
 #include "Underconstruction.h"
 #include "Destroyed.h"
 
-// Building::Building(BuildingState *initialState) : currState(nullptr){
-//     this->currState->setState();
-// }
+//Buildings default constructor
+Building::Building(): capacity(0), buildingHealth(100), price(0),runningUtils(false){
+    //setUtilities();
+}
 
-// sets state of building to underconstruction
+// Sets state of building to underconstruction
 void Building::setState(unique_ptr<BuildingState> state)
 {
     // note: just an idea
@@ -25,7 +26,7 @@ void Building::setState(unique_ptr<BuildingState> state)
     // currState->handle();
 }
 
-// set the state of the building acc to the building health
+// Sets the state of the building acc to the building health
 void Building::processState()
 {
     int health;
@@ -51,8 +52,8 @@ void Building::processState()
 void Building::displayInfo()
 {
     std::cout << "==========================================" << std::endl;
-    std::cout << std::setw(20) << std::left << "Building Type:" 
-              << std::setw(20) << getType() << std::endl;
+    std::cout << std::setw(20) << std::left << "Building Type:" ;
+              //<< std::setw(20) << getType() << std::endl;
     std::cout << std::setw(20) << std::left << "Building State:" 
               << std::setw(20) << currState->getStatus() << std::endl;
     std::cout << std::setw(20) << std::left << "Capacity:" 
@@ -69,23 +70,31 @@ BuildingState* Building::getState()
     return currState.get(); // Return raw pointer to BuildingState
 }
 
-// void Building::add(BuildingComponent *component)
-// {
-// }
-
-// void Building::remove(BuildingComponent *component)
-// {
-// }
-
 void Building::update()
-{
-}
-
-void Building::recieveUtilities()
 {
 }
 
 Building::~Building() 
 {
-   // No need for explicit delete; unique_ptr will automatically clean up
+
 }
+
+// Building::Building(BuildingState *initialState) : currState(nullptr){
+//     this->currState->setState();
+// }
+
+// void showInfo() const {
+//     std::cout << "Building: " << name << std::endl;
+// }
+
+// void Building::setUtilities(){
+//     water = 100;
+//     power = 100;
+//     sewerage = 100;
+//     waste = 100;
+// }
+
+// void Building::requestUtilities(){
+//     std::unique_ptr<Utilities> utilities;
+//     utilities->provideUtilites();
+// }
