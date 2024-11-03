@@ -109,6 +109,10 @@ int Government::getNumberOfEmployedCitizens()
     return nmbr;
 
 }
+
+/**
+ * @brief Print interface for the Game showing statistics for the city.
+ */
 void Government::printCitizenSummary()
 {
     if (populationNum == 0)
@@ -127,6 +131,9 @@ void Government::printCitizenSummary()
     std::cout << "============================================================" << std::endl;
 }
 
+/**
+ * @brief Function for  citizen to get paid and become happier.
+ */
  void Government::payDay()
  {
     for (const auto &person : population)
