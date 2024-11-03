@@ -2,8 +2,6 @@
 #include "Unsatisfied.h"
 #include "Citizen.h"
 
-
-
 /**
  * @brief Changes the emotional state of the given citizen to Satisfied 
  *        if their happiness meter is 50 or above.

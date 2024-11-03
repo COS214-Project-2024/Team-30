@@ -63,6 +63,8 @@ public:
 
      //
     void setStrategy(CategorizationStrategy* str);
+    void setCityBudget(int budget);
+    int getCityBudget();
     std::string categorize();
 
     //

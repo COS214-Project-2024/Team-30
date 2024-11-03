@@ -45,13 +45,13 @@ SRC_FILES := \
     $(SRC_DIR)/Economy.cpp
 
 # Test files
-TEST_FILES := $(TEST_DIR)/CitizenUnitTests.cpp
+TEST_FILES := $(TEST_DIR)/GovernmentUnitTests.cpp
 
 # Object files
 OBJ_FILES := $(SRC_FILES:.cpp=.o) $(TEST_FILES:.cpp=.o)
 
 # Output executable name
-TARGET := $(BIN_DIR)/CitizenUnitTests
+TARGET := $(BIN_DIR)/GovernmentUnitTests
 
 # Compiler and flags
 CXX := g++

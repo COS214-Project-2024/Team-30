@@ -1,4 +1,5 @@
 #include "Police.h"
+#include "Emergencies.h"
 #include <iostream>
 
 void Police::handleRequest(std::shared_ptr<Emergencies> emergency) {

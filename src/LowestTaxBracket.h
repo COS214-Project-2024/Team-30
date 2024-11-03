@@ -3,7 +3,6 @@
 #include <iostream>
 #include "TaxBracket.h"
 #include "Citizen.h"
-
 using namespace std;
 
 class LowestTaxBracket : public TaxBracket

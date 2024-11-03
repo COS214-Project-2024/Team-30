@@ -1,4 +1,5 @@
 #include "MedicalServices.h"
+#include "Emergencies.h"
 #include <iostream>
 
 void MedicalServices::handleRequest(std::shared_ptr<Emergencies> emergency) {

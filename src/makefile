@@ -38,7 +38,16 @@ SRCS = main.cpp \
        Emergencies.cpp \
        Fires.cpp \
        Earthquake.cpp \
-       Thieves.cpp
+       Thieves.cpp \
+       CityGrowthObserver.cpp\
+       CategorizationStrategy.cpp\
+       EconomyCategorization.cpp\
+       PopulationCategorization.cpp\
+       Population.cpp\
+       PopulationGrowth.cpp\
+       Infrastructure.cpp\
+       Housing.cpp\
+       Economy.cpp
 
 # Add emergencyMain.cpp to the source files
 EMERGENCY_SRCS = emergencyMain.cpp

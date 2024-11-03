@@ -339,3 +339,11 @@ double Government::getEmploymentRate()
 {
     return employmentRate;
 }
+void Government::setCityBudget(int cityBudget)
+{
+    this->citybudget = cityBudget;
+}
+int Government::getCityBudget()
+{
+    return citybudget;
+}

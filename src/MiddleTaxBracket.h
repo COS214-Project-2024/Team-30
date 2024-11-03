@@ -4,8 +4,6 @@
 #include "TaxBracket.h"
 #include "Citizen.h"
 
-
-
 using namespace std;
 
 class MiddleTaxBracket : public TaxBracket

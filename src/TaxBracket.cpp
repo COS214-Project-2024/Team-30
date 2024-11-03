@@ -1,6 +1,5 @@
 #include "TaxBracket.h"
-#include "Citizen.h"
-  
+#include "Citizen.h"  
 
 /**
  * @brief Retrieves the tax rate associated with the TaxBracket.
