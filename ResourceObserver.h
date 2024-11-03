@@ -1,16 +1,13 @@
 #ifndef RESOURCE_OBSERVER_H
 #define RESOURCE_OBSERVER_H
+#include <string>
+using namespace std;
 
 class ResourceObserver
-{
-    private: 
-        // observerState: State* 
-        //subject: ConcreteSubjects (buildings, powerPlant, waterSupply)
+{   
     public: 
-        ResourceObserver();
-        void updateWaterSupply();
-        void updatePowerPlant(); 
-        void updateBuildings();
+        virtual ~ResourceObserver() = default;
+        virtual void update(const string& resourceName, int newCapacity) = 0;
         
 
 };

@@ -1,14 +1,20 @@
 #ifndef WATER_H
 #define WATER_H
+#include "Resource.h"
 
-#include "WaterState.h"
 
-class Water
+class Water : public Resource
 {
     private: 
-        WaterState waterState;
+        //int capacity;
+
     public: 
-        void request();
+        Water(int capacity);
+
+        int getCapacity() const override;
+        void refill(int amount) override;
+        void use(int amount) override;
+
 
 };
 
