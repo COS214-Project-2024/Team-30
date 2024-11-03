@@ -441,3 +441,8 @@ void Citizen::reactToNotGettingHired()
 {
     happinessMeter = happinessMeter - 5;
 }
+
+void Citizen::setHappinessMeter(int happiness)
+{
+    this->happinessMeter = happiness;
+}

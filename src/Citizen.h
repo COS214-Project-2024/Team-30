@@ -52,6 +52,7 @@ class Citizen : public std::enable_shared_from_this<Citizen>
     string getEmotionalState();
     void setEmotionalState(unique_ptr<EmotionalState> emotionalState);
     void setEmploymentStatus(std::unique_ptr<EmploymentStatus> status);
+    void setHappinessMeter(int happinessMeter);
     void printDetails(); //helper to see that constructor works as expected
     void respondToTax();
     void respondToPayment();
