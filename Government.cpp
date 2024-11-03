@@ -8,6 +8,11 @@ Government::Government(string name)
     citybudget = 0;
 }
 
+
+/**
+ * @brief Adds a citizen to the population and assigns them a home.
+ * @param citizen A shared pointer to the citizen being added.
+ */
 void Government::populationGrowth(std::shared_ptr<Citizen> citizen)
 { if( citizen)
 
@@ -19,6 +24,9 @@ void Government::populationGrowth(std::shared_ptr<Citizen> citizen)
 }
 }
 
+/**
+ * @brief Calculates the employment rate based on the population.
+ */
 void Government::calculateEmploymentRate()
 {
 
@@ -37,6 +45,9 @@ void Government::calculateEmploymentRate()
     employmentRate = static_cast<double>(employedCount) / population.size();
 }
 
+/**
+ * @brief Increases infrastructure if the budget allows.
+ */
 void Government::increaseInfurstructure()
 {       if(citybudget>800)
 {
@@ -63,6 +74,15 @@ else
     cout<<"The City doesnt have the budget for the expansion"<<endl;
 }
 }
+
+
+
+
+
+
+
+
+
 
 int Government::getNumberofUnemployedCitizens()
 {
