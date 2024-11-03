@@ -95,6 +95,7 @@ int Government::getNumberofUnemployedCitizens()
 
 /**
  * @brief helper function which is used for employment rate.
+ * @return number as a int.
  */
 int Government::getNumberOfEmployedCitizens()
 {
@@ -207,7 +208,10 @@ void Government::jobOpportunities()
         
     }
 }
-
+/**
+ * @brief Removes a citizen from the population based on their ID.
+ * @param i The ID of the citizen to be removed.
+ */
 void Government::populationDecline(int i)
 {
 
@@ -232,7 +236,10 @@ else
 }
 }
 
-// marked
+
+/**
+ * @brief Collects taxes from all citizens and updates the city budget.
+ */
 void Government::collectTaxes()
 {
     for (const auto &person : population)
@@ -244,7 +251,10 @@ void Government::collectTaxes()
         }
     }
 }
-
+/**
+ * @brief Calculates the population satisfaction rate.
+ * @return The satisfaction rate as a double between 0 and 1.
+ */
 double Government::populationSatisfactionRate()
 {
     if (population.empty())
