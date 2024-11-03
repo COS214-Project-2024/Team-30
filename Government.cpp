@@ -76,14 +76,9 @@ else
 }
 
 
-
-
-
-
-
-
-
-
+/**
+ * @brief function to calculate unemployment rate
+ */
 int Government::getNumberofUnemployedCitizens()
 {
     int nmbr = 0;
@@ -97,6 +92,10 @@ int Government::getNumberofUnemployedCitizens()
     return nmbr;
 
 }
+
+/**
+ * @brief helper function which is used for employment rate.
+ */
 int Government::getNumberOfEmployedCitizens()
 {
     int nmbr = 0;
