@@ -60,6 +60,29 @@ void IncreaseInfurstructure() {
     cout<< endl;
 }
 
+void simulatePayDay()
+{
+    cout<< endl;
+    cout<< endl;
+    cout<< endl;
+    cout << "ITS PAY DAY!!\n";
+    cityGovernment->payDay();
+    cout << "Employed Citizens have been paid.\n";
+    cout<< endl;
+    cout<< endl;
+    cout<< endl;
+}
+void simulateJobOpportunites()
+{
+    cout<< endl;
+    cout<< endl;
+    cout<< endl;
+    cout << "Government advises businesses to hire unemployed citizens\n";
+    cityGovernment->jobOpportunities();
+    cout<< endl;
+    cout<< endl;
+    cout<< endl;
+}
 void RemoveSomeone()
 {
     cout << "\n====== Remoeve Menu ======\n";
@@ -126,25 +149,18 @@ Fires fireEvent;
 
 
 }
-
-int displayMenu() {
-    cout << "\n====== Game Menu ======\n";
-    cout << "1) Add to the population\n";
-    cout << "2) Collect Taxes\n";
-    cout << "3) Increase infrastructure\n";
-    cout << "4) Simulate Disaster >:)!! \n";
-    cout << "5) Move people around \n";
-    cout << "6) Remove someone\n";
-    cout << "7) Change someones job\n";
-    std::cout<<"8) City Growth:Mass Increase population\n";
-    std::cout<<"9) Print City Information\n";
-    cout << "0) Exit Game\n";
-    std::cout<<"\nPlease make a selection: ";
-    int choice;
-    cin >> choice;
-    return choice;
-
+void displayHeading() {
+    std::cout << R"(
+  ______  __  .___________. __   _______     _______.        _______. __  .___  ___.  __    __   __          ___   .___________.  ______   .______      
+ /      ||  | |           ||  | |   ____|   /       |       /       ||  | |   \/   | |  |  |  | |  |        /   \  |           | /  __  \  |   _  \     
+|  ,----'|  | `---|  |----`|  | |  |__     |   (----`      |   (----`|  | |  \  /  | |  |  |  | |  |       /  ^  \ `---|  |----`|  |  |  | |  |_)  |    
+|  |     |  |     |  |     |  | |   __|     \   \           \   \    |  | |  |\/|  | |  |  |  | |  |      /  /_\  \    |  |     |  |  |  | |      /     
+|  `----.|  |     |  |     |  | |  |____.----)   |      .----)   |   |  | |  |  |  | |  `--'  | |  `----./  _____  \   |  |     |  `--'  | |  |\  \----.
+ \______||__|     |__|     |__| |_______|_______/       |_______/    |__| |__|  |__|  \______/  |_______/__/     \__\  |__|      \______/  | _| `._____|
+                                                                                                                                                        
+)" << std::endl;
 }
+
 
 void MassIntroduceCitizens(){
     std::unique_ptr<CategorizationStrategy> popStrategy = std::make_unique<PopulationCategorization>();
@@ -173,6 +189,25 @@ void MassIntroduceCitizens(){
     std::cout << "City categorization by Economy: " << cityGovernment->categorize() << std::endl;
     std::cout<<"------------------------------------------------------------------------------\n";
 }
+int displayMenu() {
+    cout << "\n====== Game Menu ======\n";
+    cout << "1) Add to the population\n";
+    cout << "2) Collect Taxes\n";
+    cout << "3) Increase infrastructure\n";
+    cout << "4) Simulate Disaster >:)!! \n";
+    cout << "5) Move people around \n";
+    cout << "6) Remove someone\n";
+    cout << "7) Simulate a Pay Day\n";
+    cout << "8) City Growth: Mass Increase Population\n";
+    cout << "9) Print City Information\n";
+    cout << "10) Print Citizens Summary\n";
+    cout << "11) Create Job Opportunities\n";  // New option for job opportunities
+    cout << "0) Exit Game\n";
+    cout << "\nPlease make a selection: ";
+    int choice;
+    cin >> choice;
+    return choice;
+}
 
 void handleMenuSelection(int choice) {
 
@@ -195,11 +230,20 @@ void handleMenuSelection(int choice) {
         case 6:
             RemoveSomeone();
             break;
+        case 7:
+            simulatePayDay();
+            break;
         case 8:
             MassIntroduceCitizens();
             break;
         case 9:
             cityGovernment->printInfo();
+            break;
+        case 10:
+            cityGovernment->printCitizenSummary();
+            break;
+        case 11:
+            simulateJobOpportunites();
             break;
         default:
             cout << "Invalid selection. Please try again.\n";
@@ -224,6 +268,7 @@ void display_city_intro() {
 int main() {
     std::string cityName;
     display_city_intro();
+    displayHeading();
     // Creative prompt for city name
     std::cout << "**Welcome to the City Simulator!**\n";
     std::cout << "Enter the name of your bustling metropolis: ";

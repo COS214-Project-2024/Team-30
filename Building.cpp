@@ -1,7 +1,7 @@
 #include <iostream>
 #include <memory>  // Include for smart pointers
 #include <iomanip> 
-
+#include <algorithm>
 #include "Building.h"
 #include "BuildingState.h"
 #include "Built.h"
@@ -128,6 +128,12 @@ void Building::notifyCitizensOfEmergency(int damage) {
 void Building::setCapacity(int capacity)
 {
     this->capacity = capacity; 
+}
+
+bool Building::hasOccupant(int citizenID) const {
+    return std::any_of(residents.begin(), residents.end(), [citizenID](const shared_ptr<Citizen>& resident) {
+        return resident->getID() == citizenID;
+    });
 }
 
 Building::~Building() 

@@ -48,7 +48,9 @@ public:
     void populationDecline(int i);
     void collectTaxes();
     void printInfo();
-
+    void payDay();
+    void jobOpportunities();
+    void printCitizenSummary();
     double populationSatisfactionRate();
     vector<std::shared_ptr<Citizen>> getPeople ();
     vector<std::shared_ptr<Building>> getInfrastructure();
@@ -65,6 +67,8 @@ public:
 
     //
     int getPopulationNum();
+    int getNumberofUnemployedCitizens();
+    int getNumberOfEmployedCitizens();
     double getEmploymentRate();
     int ResidentialCapacity();
 };

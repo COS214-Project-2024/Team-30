@@ -42,18 +42,20 @@ class Citizen : public std::enable_shared_from_this<Citizen>
     void payTaxes();
     void getPaid();
     int getAccountBalance();
-    void assignToBuilding(std::shared_ptr<Building> building);
+    void assignToBuilding(shared_ptr<Building> building);
     void setHome(std::shared_ptr<Building> home);
     void reactToEmergency(int damage);
     int getHappinessMeter();
     int getID() const;
     int getIncome();
+    shared_ptr<Building> getHome();
     string getEmotionalState();
     void setEmotionalState(unique_ptr<EmotionalState> emotionalState);
     void setEmploymentStatus(std::unique_ptr<EmploymentStatus> status);
     void printDetails(); //helper to see that constructor works as expected
     void respondToTax();
     void respondToPayment();
+    void reactToNotGettingHired();
     void respondToJobChange(bool gainedJob);
     void respondToIncreasedInfrastructure();
     void getHired(std::unique_ptr<EmploymentStatus> newJob);

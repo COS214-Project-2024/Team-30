@@ -39,6 +39,7 @@ public:
     virtual string getType() = 0;
     void displayInfo(); // removed override keyword. testing without the building component
     void simulateEmergency(Emergencies &emergency);
+    bool hasOccupant(int citizenID) const;
 
 
     // void add(std::unique_ptr<BuildingComponent> component) override;

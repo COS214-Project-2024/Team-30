@@ -5,10 +5,6 @@
 
 class BuildingFactory
 {
-
-private:
-    Building *building;
-
 public:
     virtual ~BuildingFactory();
 
