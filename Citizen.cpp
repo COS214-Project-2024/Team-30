@@ -358,7 +358,15 @@ void Citizen::assignToBuilding(std::shared_ptr<Building> building) {
         currentBuilding->addCitizen(shared_from_this()); // Add citizen to building
     }
 }
-
+/**
+ * @brief Sets the home for the citizen.
+ *
+ * This method assigns a shared pointer to a `Building` object as the citizen's home.
+ * The ownership of the building is shared, allowing multiple `Citizen` instances or other
+ * entities to reference the same building.
+ *
+ * @param building A `std::shared_ptr` to a `Building` object representing the home of the citizen.
+ */
 void Citizen::setHome(std::shared_ptr<Building> building) {
     home = building; // Assign the shared pointer
 }
