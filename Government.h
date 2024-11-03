@@ -74,7 +74,7 @@ public:
 
     //
     void setCityBudget(int budget);
-    // int getCityBudget();
+    int getCityBudget();
 };
 
 #endif
