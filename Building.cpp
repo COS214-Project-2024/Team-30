@@ -50,7 +50,7 @@ void Building::processState()
 
 void Building::displayInfo()
 {
-    std::cout << "============================================================" << std::endl;
+    std::cout << "-------------------------------------------------------------" << std::endl;
     std::cout << std::setw(20) << std::left << "Building Type:" 
               << std::setw(20) << getType() << std::endl;
     std::cout << std::setw(20) << std::left << "Building State:" 
@@ -61,7 +61,7 @@ void Building::displayInfo()
               << std::setw(20) << price << std::endl;
     std::cout << std::setw(20) << std::left << "Utilities Running:" 
               << std::boolalpha << runningUtils << std::endl; // Output true/false as words
-    std::cout << "============================================================" << std::endl;
+    std::cout << "------------------------------------------------------------" << std::endl;
 }
 
 BuildingState* Building::getState()
