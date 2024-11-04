@@ -1,52 +1,96 @@
+#ifndef ROAD_H
+#define ROAD_H
 
-#include "Road.h"
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <list>
+#include <string>
+#include <memory>
+#include "Building.h"
+#include "Sign.h"
+#include "TrafficLight.h"
 
-Road::Road(const string& name) : name(name){}
+using namespace std;
 
-void Road::addBuilding(unique_ptr<Building> building) {
-    if (building) {
-        buildings.push_back(move(building));
-    }
-}
+class Building; //forward declaration
 
-void Road::addSign(const Sign& sign) {
-    signs.push_back(sign);
-}
+/**
+ * @brief Represents a road in the traffic system.
+ *
+ * The Road class maintains a collection of buildings, signs, and a traffic light,
+ * and allows for managing connections to other roads (left, right, straight).
+ */
+class Road {
+private:
+    string name;  ///< The name of the road.
+    vector<unique_ptr<Building>> buildings; ///< Buildings located on this road.
+    vector<Sign> signs; ///< Signs associated with this road.
+    unique_ptr<TrafficLight> light; ///< Traffic light for this road.
+    char state; ///< The state of the road, acting as a memento.
 
-void Road::addLight(unique_ptr<TrafficLight> light) {
-    if (light && !this->light) {
-        this->light = move(light);
-        return;
-    }
-    cout << "this road already has a traffic light" << endl;
-}
+public:
+    /**
+     * @brief Constructs a Road object with a specified name.
+     *
+     * @param name The name of the road.
+     */
+    Road(const string& name);
 
-bool Road::removeLight() {
-    if (light)
-    {
-        light = nullptr;
-        return true;
-    }
-    return false;
-}
+    /**
+     * @brief Sets the traffic light on this road to red.
+     *
+     * Changes the state of the traffic light to indicate that vehicles must stop.
+     */
+    void setLightRed();
 
-string Road::getName() const {
-    return name;
-}
+    /**
+     * @brief Resets the traffic light to its default state.
+     *
+     * This method returns the traffic light to its original setting (e.g., green).
+     */
+    void resetLight();
 
-void Road::setLightRed()
-{
-    if (light)
-    {
-        state = light->getState();
-        light->setState('R');
-    }
-}
+    shared_ptr<Road> left;   ///< Pointer to the road on the left.
+    shared_ptr<Road> right;  ///< Pointer to the road on the right.
+    shared_ptr<Road> straight; ///< Pointer to the road straight ahead.
 
-void Road::resetLight()
-{
-    if (light && state != 'N')
-    {
-        light->setState(state);
-    }
-}
+    /**
+     * @brief Adds a building to this road.
+     *
+     * @param building A unique pointer to the building to be added.
+     */
+    void addBuilding(unique_ptr<Building> building);
+
+    /**
+     * @brief Adds a sign to this road.
+     *
+     * @param sign The sign to be added.
+     */
+    void addSign(const Sign& sign);
+
+    /**
+     * @brief Adds a traffic light to this road.
+     *
+     * @param light A unique pointer to the traffic light to be added.
+     */
+    void addLight(unique_ptr<TrafficLight> light);
+
+    /**
+     * @brief Removes the traffic light from this road.
+     *
+     * @return True if the light was removed successfully, otherwise false.
+     */
+    bool removeLight();
+
+    /**
+     * @brief Gets the name of the road.
+     *
+     * @return The name of the road.
+     */
+    string getName() const;
+
+    ~Road() = default; ///< Default destructor.
+};
+
+#endif // ROAD_H

@@ -11,8 +11,8 @@ void Building::addCitizen(shared_ptr<Citizen> citizen) {
 }
 
 void Building::removeCitizen(shared_ptr<Citizen> citizen) {
+    if (this->containsCitizen(citizen));
     residents.erase(remove(residents.begin(), residents.end(), citizen), residents.end());
-
 }
 
 bool Building::containsCitizen(shared_ptr<Citizen> citizen)
