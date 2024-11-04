@@ -24,6 +24,12 @@ class Underconstruction : public BuildingState{
      * This method defines the actions taken while the building is in the "Under Construction" state.
      */
     void handle() override;
+
+    /**
+     * @brief Changes the state of the Building to a different state.
+     *
+     * Implements the logic for transitioning from the "Under Construction" state to another state.
+     */
     void changeState() override;
     string getStatus() override;
     unique_ptr<BuildingState> clone() const override;
