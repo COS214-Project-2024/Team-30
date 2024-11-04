@@ -28,7 +28,7 @@ protected:
     vector<shared_ptr<Citizen>> residents;
     static int nextID;
 
-       //Utilities
+    //Utilities
     int water;
     int power;
     int waste;
@@ -66,7 +66,6 @@ public:
 
 
     void setUtilities();
-    void requestUtilities();
     
     void setWater(int water);
     void setPower(int power);
