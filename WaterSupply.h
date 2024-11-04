@@ -22,27 +22,24 @@ public:
      * @brief Sets the operational status of the water supply system.
      * @param b Boolean indicating if the water supply system is working.
      */
-    void setWorking(bool b);
+    void setWorking(bool w);
     bool getWorking();
+
     void setWater(int w)
+    bool getWater();
 
     /**
      * @brief Distributes water to a specified building.
      * @param b The building receiving water.
      * @return True if water distribution was successful, false otherwise.
      */
-    bool distributeWater(Building* b);
+    int distributeWater(Building *b, int n);
 
     /**
      * @brief Repairs the water supply system, returning it to working condition.
      * @return True if the repair was successful, false otherwise.
      */
     bool repair();
-
-    /**
-     * @brief Updates the resource level of water.
-     */
-    void updateResourceLevel(bool b);
 
     /**
      * @brief Sends a notification message to citizens regarding utility services.

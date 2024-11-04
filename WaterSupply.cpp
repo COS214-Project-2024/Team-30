@@ -7,7 +7,7 @@
 
 using namespace std;
 
-WaterSupply::WaterSupply(Water* w)
+WaterSupply::WaterSupply(Water *w)
 {
     working = true;
     waterToDistribute = w.use(10); // check if makes sense
@@ -17,12 +17,7 @@ WaterSupply::WaterSupply(Water* w)
 void WaterSupply::setWorking(bool w)
 {
     working = w;
-
-    if (working)
-        cout << "Water supply working status set to: TRUE";
-
-    if (!working)
-        cout << "Water supply working status set to: FALSE";
+    cout << "Water supply working status set to: " << working << endl;
 }
 
 bool WaterSupply::getWorking()
@@ -32,7 +27,7 @@ bool WaterSupply::getWorking()
 
 void WaterSupply::setWater(int w)
 {
-    waterToDistribute = w;
+    waterToDistribute += w.use(w);
 
     cout << "Water supply level set to: " << waterToDistribute;
 }
@@ -42,43 +37,39 @@ int WaterSupply::getWater()
     return waterToDistribute;
 }
 
-bool WaterSupply::distributeWater(Building* b)
+int WaterSupply::distributeWater(Building *b, int n)
 {
-    if (working)
+    waterToDistribute -= n;
+
+    if (working && waterToDistribute > 0)
     {
         cout << "Distributing water to building...\n";
+        return n;
+    }
+    else if (working && waterToDistribute < 0)
+    {
+        setWater(n);
+        if (waterToDistribute >= n)
+        {
+            distributeWater(b, n);
+        } else {
+            return 0;
+        }
     }
     else
     {
         cout << "Water supply system not operational. Water distribution postponed.\n";
+        return 0;
     }
 }
 
 bool WaterSupply::repair()
 {
-    working = true;
+    setWorking(true);
     cout << "Water supply repaired and operational.\n";
-    notifyCitizens('Notification: Water Supply Repaired')
+    notifyCitizens('Notification: Water Supply Repaired') 
     return working;
 }
-
-void WaterSupply::updateResourceLevel(bool b, int c)
-{
-    setWorking(b);
-    setWater(c);
-    cout << "Updating water resource level.\n";
-    if (!b)
-    {
-        cout << "There is no water left to distribute" << endl;
-    }
-    else
-    {
-        cout << "Water level refiled for distribution" << endl;
-    }
-}
-
-
-
 
 void WaterSupply::notifyCitizens(const string &message)
 {
@@ -90,7 +81,8 @@ void WaterSupply::notifyCitizens(const string &message)
     //     }
     // }
 
-    cout << message << endl;;
+    cout << message << endl;
+    ;
 
     vector<Citizen *>::iterator it = residents.begin();
     for (it = residents.begin(); it != residents.end(); ++it)
