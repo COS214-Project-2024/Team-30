@@ -13,7 +13,7 @@ class Water : public Resource
 
         int getCapacity() const override;
         void refill(int amount) override;
-        void use(int amount) override;
+        int use(int amount) override;
 
 
 };

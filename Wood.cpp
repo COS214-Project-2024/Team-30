@@ -16,15 +16,17 @@ void Wood::refill(int amount)
     capacity += amount;  
 }
 
-void Wood::use(int amount)
+int Wood::use(int amount)
 {
     if (amount <= capacity) {
         capacity -= amount;  
         std::cout << "Using " << amount << " of wood. Remaining capacity: " << capacity << std::endl;
+        return capacity;
     } 
     else 
     {
         std::cout << "Not enough wood available to use " << amount << "." << std::endl;
+        return 0;
     }
 }
 

@@ -16,15 +16,17 @@ void Concrete::refill(int amount)
     capacity += amount;  
 }
 
-void Concrete::use(int amount)
+int Concrete::use(int amount)
 {
     if (amount <= capacity) {
         capacity -= amount;  
         std::cout << "Using " << amount << " of concrete. Remaining capacity: " << capacity << std::endl;
+        return capacity;
     } 
     else 
     {
         std::cout << "Not enough concrete available to use " << amount << "." << std::endl;
+        return 0;
     }
 }
 

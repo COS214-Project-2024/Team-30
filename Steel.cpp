@@ -16,15 +16,17 @@ void Steel::refill(int amount)
     capacity += amount;  
 }
 
-void Steel::use(int amount)
+int Steel::use(int amount)
 {
     if (amount <= capacity) {
         capacity -= amount;  
         std::cout << "Using " << amount << " of steel. Remaining capacity: " << capacity << std::endl;
+        return capacity;
     } 
     else 
     {
         std::cout << "Not enough steel available to use " << amount << "." << std::endl;
+        return 0;
     }
 }
 

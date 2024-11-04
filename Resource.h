@@ -22,7 +22,7 @@ class Resource
         virtual ~Resource() = default;
 
         virtual int getCapacity() const = 0;
-        virtual void use(int amount) = 0;
+        virtual int use(int amount) = 0;
         virtual void refill(int amount) = 0;
 
         bool isCritical() const;
