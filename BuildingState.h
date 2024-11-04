@@ -8,6 +8,15 @@ using namespace std;
 
 class Building;
 
+/**
+ * @class BuildingState
+ * @brief Abstract base class representing the state of a Building.
+ *
+ * The BuildingState class defines the interface for handling state-specific behavior
+ * of a Building. Derived classes must implement the abstract methods to define
+ * specific state behaviors and transitions.
+ */
+
 class BuildingState {
 
     private:
