@@ -19,15 +19,17 @@ class Building
 {
 protected:
     // vector<Utilities*> utilities;
+    int id;
     unique_ptr<BuildingState> currState; // Use unique_ptr for ownership
     int capacity;
     int buildingHealth;
     int price; //? whats price : price is gonna work with city budget in government
     bool runningUtils;
     vector<shared_ptr<Citizen>> residents;
+    static int nextID;
 
 public:
-    // Building(); //Building constructor
+    Building(); //Building constructor
     // Building(BuildingState* initialState); //set state to underconstruction
     virtual ~Building();
     int getCapacity();
@@ -43,7 +45,7 @@ public:
     void printResidents();
     bool containsCitizen(shared_ptr<Citizen> citizen);
     string getName();
-
+    int getID();
     // void add(std::unique_ptr<BuildingComponent> component) override;
     // void remove(std::unique_ptr<BuildingComponent> component) override;
     void takeDamage(int damage);

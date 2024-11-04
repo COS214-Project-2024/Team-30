@@ -6,7 +6,7 @@
 #include "Underconstruction.h"
 
 // constructor for Industrial 
-Industrial::Industrial() {
+Industrial::Industrial() :Building(){
     // state of industrial building should be underconstruction
     setState(std::make_unique<Underconstruction>()); // Use smart pointer
     capacity = 20;
