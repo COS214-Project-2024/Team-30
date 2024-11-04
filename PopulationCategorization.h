@@ -15,7 +15,7 @@
 class PopulationCategorization : public CategorizationStrategy {
 public:
     /**
-     * @brief Categorizes the population based on certain criteria.
+     * @brief Categorizes the population based on criteria.
      * 
      * This method uses data from the `Government` class to determine 
      * and return a categorization of population growth.
