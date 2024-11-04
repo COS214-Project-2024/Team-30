@@ -194,19 +194,19 @@ void MassIntroduceCitizens()
 }
 int displayMenu()
 {
-    cout << "\n====== Game Menu ======\n";
-    cout << "1) Add to the population\n";
-    cout << "2) Collect Taxes\n";
-    cout << "3) Increase infrastructure\n";
-    cout << "4) Simulate Disaster >:)!! \n";
-    cout << "5) Move people around \n";
-    cout << "6) Remove someone\n";
-    cout << "7) Simulate a Pay Day\n";
-    cout << "8) City Growth: Mass Increase Population\n";
-    cout << "9) Print City Information\n";
-    cout << "10) Print Citizens Summary\n";
-    cout << "11) Create Job Opportunities\n"; // New option for job opportunities
-    cout << "0) Exit Game\n";
+    cout << "\n         ====== Game Menu ======\n";
+    cout << "           1) Add to the population\n";
+    cout << "           2) Collect Taxes\n";
+    cout << "           3) Increase infrastructure\n";
+    cout << "           4) Simulate Disaster >:)!! \n";
+    cout << "           5) Move people around \n";
+    cout << "           6) Remove someone\n";
+    cout << "           7) Simulate a Pay Day\n";
+    cout << "           8) City Growth: Mass Increase Population\n";
+    cout << "           9) Print City Information\n";
+    cout << "           10) Print Citizens Summary\n";
+    cout << "           11) Create Job Opportunities\n"; // New option for job opportunities
+    cout << "           0) Exit Game\n";
     cout << "\nPlease make a selection: ";
     int choice;
     cin >> choice;
