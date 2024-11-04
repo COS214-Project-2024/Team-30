@@ -240,5 +240,7 @@ public:
      * @param happiness The new happiness level to set for the Citizen.
      */
     void setHappinessMeter(int happinessMeter);
+
+    void reactToUtilities(bool utilitiesActive);
 };
 #endif

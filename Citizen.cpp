@@ -3,11 +3,11 @@
 #include <iomanip>
 int Citizen::nextID = 1; // or 0, depending on your starting point for IDs
 
-//Method for this class only.
+// Method for this class only.
 /**
  * @brief Clamps a value within a specified range.
  *
- * Checks if the value is less than the minimum or greater than the maximum 
+ * Checks if the value is less than the minimum or greater than the maximum
  * and returns the clamped value within this range.
  *
  * @param value The value to be clamped.
@@ -23,14 +23,13 @@ int clamp(const int &value, const int &min, const int &max)
         return max;
     return value;
 }
-//Beginning of implementation.
+// Beginning of implementation.
 Citizen::Citizen() : id(nextID++)
 {
     accountBalance = 0;
     // Random number generator setup
     random_device rd;
     mt19937 gen(rd());
-
 
     uniform_int_distribution<> employmentDist(0, 2);
     int employmentChoice = employmentDist(gen);
@@ -50,17 +49,17 @@ Citizen::Citizen() : id(nextID++)
         taxBracket = make_unique<LowestTaxBracket>();
         break;
     }
- 
+
     emotionalState = make_unique<Satisfied>();
 
     uniform_int_distribution<> happinessDist(0, 100); // Adjust the range as necessary
-    happinessMeter = happinessDist(gen); // Assign a random happiness level
+    happinessMeter = happinessDist(gen);              // Assign a random happiness level
 
     emotionalState->changeState(*this);
-    
+
     // Initialize other attributes
     income = employmentStatus->getIncome(); // Default income, modify if needed
-    getPaid(); 
+    getPaid();
 }
 
 void Citizen::getPaid()
@@ -71,7 +70,7 @@ void Citizen::getPaid()
     }
     else
     {
-        happinessMeter = happinessMeter -1;
+        happinessMeter = happinessMeter - 1;
         happinessMeter = clamp(happinessMeter, 0, 100);
         emotionalState->changeState(*this);
     }
@@ -102,17 +101,15 @@ int Citizen::getAccountBalance()
     return this->accountBalance;
 }
 
-
 void Citizen::payTaxes()
 {
     accountBalance = accountBalance - taxBracket->getamountToPay(income);
     if (accountBalance <= 0)
     {
-        cout << "Citizen is out of money"<<endl;
+        cout << "Citizen is out of money" << endl;
         accountBalance = 0;
     }
 }
-
 
 void Citizen::printDetails()
 {
@@ -122,32 +119,31 @@ void Citizen::printDetails()
     // Calculate the length of the border based on the maximum line length
     std::string border(60, '.'); // Adjust the number (60) based on desired border length
 
-    std::cout << border << std::endl;  // Print top border
+    std::cout << border << std::endl; // Print top border
 
-    std::cout << std::setw(labelWidth) << std::left << "Person:" 
+    std::cout << std::setw(labelWidth) << std::left << "Person:"
               << getID() << std::endl;
 
-    std::cout << std::setw(labelWidth) << std::left << "Employment Status:" 
+    std::cout << std::setw(labelWidth) << std::left << "Employment Status:"
               << employmentStatus->getJobType() << std::endl;
 
-    std::cout << std::setw(labelWidth) << std::left << "Income:" 
+    std::cout << std::setw(labelWidth) << std::left << "Income:"
               << income << std::endl;
 
-    std::cout << std::setw(labelWidth) << std::left << "Emotional State:" 
+    std::cout << std::setw(labelWidth) << std::left << "Emotional State:"
               << emotionalState->getCurrentEmotion() << std::endl;
 
-    std::cout << std::setw(labelWidth) << std::left << "Tax Bracket:" 
+    std::cout << std::setw(labelWidth) << std::left << "Tax Bracket:"
               << taxBracket->getTaxBracket() << std::endl;
 
-    std::cout << std::setw(labelWidth) << std::left << "Account Balance:" 
+    std::cout << std::setw(labelWidth) << std::left << "Account Balance:"
               << accountBalance << std::endl;
 
-    std::cout << std::setw(labelWidth) << std::left << "Happiness Meter:" 
+    std::cout << std::setw(labelWidth) << std::left << "Happiness Meter:"
               << happinessMeter << std::endl;
 
-    std::cout << border << std::endl;  // Print bottom border
+    std::cout << border << std::endl; // Print bottom border
 }
-
 
 int Citizen::payTax()
 {
@@ -166,7 +162,6 @@ int Citizen::payTax()
     return amount; // Tax amount to be added to city budget
 }
 
-
 // this is for employment rate
 
 string Citizen::getEmploymentStatus()
@@ -174,12 +169,10 @@ string Citizen::getEmploymentStatus()
     return employmentStatus->getJobType();
 }
 
-
 string Citizen::getEmotionalState()
 {
     return emotionalState->getCurrentEmotion();
 }
-
 
 void Citizen::respondToTax()
 {
@@ -189,19 +182,15 @@ void Citizen::respondToTax()
     emotionalState->changeState(*this);           // Trigger state change if necessary
 }
 
-
 void Citizen::respondToPayment()
 {
-    if(this->getEmploymentStatus() != "Unemployed")
+    if (this->getEmploymentStatus() != "Unemployed")
     {
-    happinessMeter += 20;                           // Increase happiness with payment
-    happinessMeter = std::min(happinessMeter, 100); // Ensure it doesn't exceed 100
-    emotionalState->changeState(*this);
+        happinessMeter += 20;                           // Increase happiness with payment
+        happinessMeter = std::min(happinessMeter, 100); // Ensure it doesn't exceed 100
+        emotionalState->changeState(*this);
     }
 }
-
-
-
 
 void Citizen::respondToJobChange(bool gainedJob)
 {
@@ -217,14 +206,12 @@ void Citizen::respondToJobChange(bool gainedJob)
     emotionalState->changeState(*this);
 }
 
-
 void Citizen::respondToIncreasedInfrastructure()
 {
-    happinessMeter += 5;                           // Increase happiness with infrastructure improvements
+    happinessMeter += 5;                            // Increase happiness with infrastructure improvements
     happinessMeter = std::min(happinessMeter, 100); // Ensure it doesn't exceed 100
     emotionalState->changeState(*this);
 }
-
 
 void Citizen::getHired(std::unique_ptr<EmploymentStatus> newJob)
 {
@@ -237,35 +224,44 @@ void Citizen::getHired(std::unique_ptr<EmploymentStatus> newJob)
     }
 }
 
-void Citizen::getFired() {
+void Citizen::getFired()
+{
     // Transition to Unemployed status
-    if (employmentStatus->getJobType() != "Unemployed") {
-        employmentStatus = make_unique<Unemployed>(); // Reset to unemployed status
+    if (employmentStatus->getJobType() != "Unemployed")
+    {
+        employmentStatus = make_unique<Unemployed>();      // Reset to unemployed status
         happinessMeter = std::max(happinessMeter - 20, 0); // Ensure it does not go below 0
         emotionalState->changeState(*this);
         std::cout << "Citizen got fired and is now Unemployed." << std::endl;
     }
 }
 
-
-void Citizen::assignToBuilding(std::shared_ptr<Building> building) {
+void Citizen::assignToBuilding(std::shared_ptr<Building> building)
+{
     currentBuilding = building; // Assign the shared pointer
-    if (currentBuilding) {
+    if (currentBuilding)
+    {
         currentBuilding->addCitizen(shared_from_this()); // Add citizen to building
     }
 }
 
-void Citizen::setHome(std::shared_ptr<Building> building) {
+void Citizen::setHome(std::shared_ptr<Building> building)
+{
     home = building; // Assign the shared pointer
 }
 
-
-void Citizen::reactToEmergency(int damage) {
-    if (damage <= 20) {
-        happinessMeter -= 5;  // Minor happiness impact
-    } else if (damage <= 50) {
+void Citizen::reactToEmergency(int damage)
+{
+    if (damage <= 20)
+    {
+        happinessMeter -= 5; // Minor happiness impact
+    }
+    else if (damage <= 50)
+    {
         happinessMeter -= 15; // Medium happiness impact
-    } else {
+    }
+    else
+    {
         happinessMeter -= 30; // Severe happiness impact
     }
     happinessMeter = std::max(happinessMeter, 0); // Keep happiness non-negative
@@ -275,14 +271,13 @@ void Citizen::reactToEmergency(int damage) {
     emotionalState->changeState(*this);
 }
 
-
-void Citizen::setEmploymentStatus(std::unique_ptr<EmploymentStatus> status) {
+void Citizen::setEmploymentStatus(std::unique_ptr<EmploymentStatus> status)
+{
     employmentStatus = std::move(status); // Move the unique_ptr to the member
 }
 
-
-
-std::shared_ptr<Building> Citizen::getHome() {
+std::shared_ptr<Building> Citizen::getHome()
+{
     return home;
 }
 
@@ -295,4 +290,18 @@ void Citizen::reactToNotGettingHired()
 void Citizen::setHappinessMeter(int happiness)
 {
     this->happinessMeter = happiness;
+}
+
+void Citizen::reactToUtilities(bool utilities)
+{
+    if (utilities)
+    {
+        happinessMeter = happinessMeter + 8;
+        happinessMeter = clamp(happinessMeter, 0, 100);
+    }
+    else
+    {
+        happinessMeter = happinessMeter - 8;
+        happinessMeter = clamp(happinessMeter, 0, 100);
+    }
 }
