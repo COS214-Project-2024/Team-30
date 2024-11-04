@@ -35,6 +35,12 @@ class BuildingState {
      */
     virtual ~BuildingState() {}
 
+    /**
+     * @brief Sets the associated Building object.
+     *
+     * Assigns the current Building instance to the state using a shared pointer.
+     * @param currbuilding Shared pointer to the current Building object.
+     */
     void setBuilding(shared_ptr<Building> currbuilding); // Accept shared_ptr
     void setState();
     virtual void handle() = 0;
