@@ -76,7 +76,13 @@ class BuildingState {
      */
     virtual string getStatus() = 0;
 
-    
+    /**
+     * @brief Clones the BuildingState object.
+     *
+     * This pure virtual function must be implemented by derived classes to create a deep copy
+     * of the BuildingState. Ensures that when using the prototype pattern, objects do not share states.
+     * @return A unique pointer to a new cloned BuildingState object.
+     */
      virtual unique_ptr<BuildingState> clone() const = 0;  // Clone for deep copy. this will ensure that when we use prototype to create objects, they wont share states.
 };
 
