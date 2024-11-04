@@ -2,45 +2,62 @@
 #define BUILDING_H
 
 #include <vector>
-#include <memory>  // Include for smart pointers
-
+#include <memory> // Include for smart pointers
+#include <algorithm>
 #include "BuildingState.h"
-//#include "Utilities.h"
+// #include "Utilities.h"
 #include "BuildingComponent.h"
-using namespace std;
+#include "Emergencies.h"
+#include "Citizen.h"
 
-// : public BuildingComponent
-class Building {
-    protected:
-    //vector<Utilities*> utilities;
+class Emergencies;
+
+using namespace std;
+//
+class Building
+//  : public BuildingComponent
+{
+protected:
+    // vector<Utilities*> utilities;
+    int id;
     unique_ptr<BuildingState> currState; // Use unique_ptr for ownership
-    int capacity; 
+    int capacity;
     int buildingHealth;
     int price; //? whats price : price is gonna work with city budget in government
     bool runningUtils;
+    vector<shared_ptr<Citizen>> residents;
+    static int nextID;
 
-    public:
-    // Building(); //Building constructor
+public:
+    Building(); //Building constructor
     // Building(BuildingState* initialState); //set state to underconstruction
     virtual ~Building();
+    int getCapacity();
     virtual void build() = 0;
-    BuildingState* getState();
+    BuildingState *getState();
     void setState(unique_ptr<BuildingState> state); // Accept a unique_ptr
-    void processState(); //request() function for State DP
+    void setCapacity(int capacity);
+    void processState(); // request() function for State DP
     virtual string getType() = 0;
-    void displayInfo(); //removed override keyword. testing without the building component
-
-    //removed Building health, changed to member variable
-    
-    // void add(BuildingComponent* component) override;
-    // void remove(BuildingComponent* component) override;
-
+    void displayInfo(); // removed override keyword. testing without the building component
+    void simulateEmergency(Emergencies &emergency);
+    bool hasOccupant(int citizenID) const;
+    void printResidents();
+    bool containsCitizen(shared_ptr<Citizen> citizen);
+    string getName();
+    int getID();
+    // void add(std::unique_ptr<BuildingComponent> component) override;
+    // void remove(std::unique_ptr<BuildingComponent> component) override;
+    void takeDamage(int damage);
     void update();
-    void recieveUtilities();    //Utilities
-    //Utilities* setUtilities();
+    void recieveUtilities(); // Utilities
+    // Utilities* setUtilities();
+
+    void addCitizen(shared_ptr<Citizen> citizen);
+    void removeCitizen(shared_ptr<Citizen> citizen);
+    void notifyCitizensOfEmergency(int damage);
 
     virtual unique_ptr<Building> clone() = 0; // Return unique_ptr
-
 };
 
 #endif

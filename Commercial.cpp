@@ -6,7 +6,7 @@
 #include "Underconstruction.h"
 
 // constructor for Commercial
-Commercial::Commercial()
+Commercial::Commercial() :Building()
 {
     // initial state of Commercial Building should be Underconstruction
     setState(make_unique<Underconstruction>()); // Use smart pointer

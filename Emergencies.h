@@ -5,17 +5,21 @@
 #include <iostream>
 #include <string>
 #include <memory>
+#include <cstdlib> 
+#include <ctime> 
 using namespace std;
 
 class Emergencies
 {
 protected:
-    int damageInflicted;
-    unique_ptr<Building> buildingType; // Use smart pointer for buildingType
+    int damage;
 
 public:
-    virtual void accessDamage(unique_ptr<Building> buildingType) = 0; // Updated parameter to use unique_ptr
+    virtual void accessDamage(shared_ptr<Building> buildingType) = 0; // Updated parameter to use unique_ptr
+    virtual string getTypeOfEmergency() = 0;
     // Emergencies();
+    int getDamage();
+    void setDamage(int damage);
     virtual ~Emergencies(); // Ensure virtual destructor for proper cleanup
 };
 

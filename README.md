@@ -19,6 +19,14 @@ Welcome to the **City of Dreams**!
 
 Get lost in the utopia, and be sure to have fun!
 
+### How to Run the Program
+
+To run this project, use the following commands from your terminal. Ensure you have **GNU Make** installed and navigate to the project directory where the `Makefile` is located.
+
+1. **Compile and Run the Main Program:**
+   ```bash
+   make run
+
 | Student Number | Name               | GitHub Profile                              |
 |----------------|--------------------|---------------------------------------------|
 | u21434965      | Charlotte Green     | [![GitHub](https://img.shields.io/badge/GitHub-000?logo=github&logoColor=white)](https://github.com/charlotte-lauren)  |

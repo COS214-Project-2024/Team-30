@@ -1,3 +1,14 @@
 #include "Emergencies.h"
+#include "EmergencyServices.h"
 
-Emergencies::~Emergencies(){}
+int Emergencies::getDamage()
+{
+    return damage;
+}
+
+void Emergencies::setDamage(int newDamage)
+{
+    damage = newDamage;
+}
+
+Emergencies::~Emergencies() {}
