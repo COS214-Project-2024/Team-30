@@ -31,10 +31,7 @@ class BuildingState {
 
     public:
     /**
-     * @brief Weak reference to the associated Building.
-     *
-     * Using weak_ptr prevents circular references between Building and BuildingState,
-     * helping manage memory and avoid potential memory leaks.
+     * @brief Virtual destructor for BuildingState.
      */
     virtual ~BuildingState() {}
 
