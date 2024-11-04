@@ -1,23 +1,23 @@
 #include <iostream>
-#include <memory>  // Include for smart pointers
-#include <iomanip> 
-
+#include <memory> // Include for smart pointers
+#include <iomanip>
+#include <algorithm>
 #include "Building.h"
 #include "BuildingState.h"
 #include "Built.h"
 #include "Underconstruction.h"
 #include "Destroyed.h"
-#include "Utilities.h"
 
-//Buildings default constructor
-// Building::Building():name(""),capacity(0), buildingHealth(100), price(0),runningUtils(false){
-//     //setUtilities();
+// Building::Building(BuildingState *initialState) : currState(nullptr){
+//     this->currState->setState();
 // }
+int Building::nextID = 1; // or 0, depending on your starting point for IDs
 
-//Building::Building(const std::string &name) : name(name), capacity(0), buildingHealth(100), price(0), runningUtils(false) {}
+Building::Building() : id(nextID++)
+{
+}
 
-
-// Sets state of building to underconstruction
+// sets state of building to underconstruction
 void Building::setState(unique_ptr<BuildingState> state)
 {
     // note: just an idea
@@ -30,7 +30,7 @@ void Building::setState(unique_ptr<BuildingState> state)
     // currState->handle();
 }
 
-// Sets the state of the building acc to the building health
+// set the state of the building acc to the building health
 void Building::processState()
 {
     int health;
@@ -55,88 +55,187 @@ void Building::processState()
 
 void Building::displayInfo()
 {
-    std::cout << "==========================================" << std::endl;
-    std::cout << std::setw(20) << std::left << "Building Type:" 
+    std::cout << "-------------------------------------------------------------" << std::endl;
+    std::cout << std::setw(20) << std::left << "Building ID:"
+              << std::setw(20) << getID() << std::endl; // New line for Building ID
+    std::cout << std::setw(20) << std::left << "Building Type:"
               << std::setw(20) << getType() << std::endl;
-    std::cout << std::setw(20) << std::left << "Building State:" 
+    std::cout << std::setw(20) << std::left << "Building State:"
               << std::setw(20) << currState->getStatus() << std::endl;
-    std::cout << std::setw(20) << std::left << "Capacity:" 
+    std::cout << std::setw(20) << std::left << "Capacity:"
               << std::setw(20) << capacity << std::endl;
-    std::cout << std::setw(20) << std::left << "Price:" 
+    std::cout << std::setw(20) << std::left << "Price:"
               << std::setw(20) << price << std::endl;
-    std::cout << std::setw(20) << std::left << "Utilities Running:" 
+    std::cout << std::setw(20) << std::left << "Utilities Running:"
               << std::boolalpha << runningUtils << std::endl; // Output true/false as words
-    std::cout << "==========================================" << std::endl;
+    std::cout << "------------------------------------------------------------" << std::endl;
 }
 
-BuildingState* Building::getState()
+BuildingState *Building::getState()
 {
     return currState.get(); // Return raw pointer to BuildingState
 }
+
+// void Building::add(BuildingComponent *component)
+// {
+// }
+
+// void Building::remove(BuildingComponent *component)
+// {
+// }
 
 void Building::update()
 {
 }
 
-Building::~Building() 
+void Building::recieveUtilities()
 {
-
 }
 
-void Building::showInfo() const{
-    std::cout << "Building: " << name << std::endl;
+void Building::takeDamage(int damage)
+{
+    buildingHealth -= damage;
+    cout << "Building took " << damage << " damage. Health is now " << buildingHealth << endl;
+
+    if (buildingHealth <= 0)
+    {
+        cout << "Building is destroyed." << endl;
+        setState(make_unique<Destroyed>());
+    }
 }
 
-// Building::Building(BuildingState *initialState) : currState(nullptr){
-//     this->currState->setState();
+void Building::simulateEmergency(Emergencies &emergency)
+{
+    emergency.accessDamage(this->clone());
+}
+
+// void Building::add(std::unique_ptr<BuildingComponent> component) {
+//     std::cout << "[Warning] Operation Unsupported: Cannot add components to a leaf node." << std::endl;
 // }
 
-void Building::setUtilities(){
+// void Building::remove(std::unique_ptr<BuildingComponent> component) {
+//     std::cout << "[Warning] Operation Unsupported: Leaf nodes cannot remove components." << std::endl;
+// }
+
+void Building::addCitizen(shared_ptr<Citizen> citizen)
+{
+    if (residents.size() < capacity)
+    {
+        residents.push_back(citizen);
+    }
+    else
+    {
+        cout << "Building is at full capacity!" << endl;
+    }
+}
+
+void Building::removeCitizen(shared_ptr<Citizen> citizen)
+{
+    residents.erase(remove(residents.begin(), residents.end(), citizen), residents.end());
+}
+
+void Building::notifyCitizensOfEmergency(int damage)
+{
+    for (auto &resident : residents)
+    {
+        resident->reactToEmergency(damage);
+    }
+}
+void Building::setCapacity(int capacity)
+{
+    this->capacity = capacity;
+}
+
+bool Building::hasOccupant(int citizenID) const
+{
+    return std::any_of(residents.begin(), residents.end(), [citizenID](const shared_ptr<Citizen> &resident)
+                       { return resident->getID() == citizenID; });
+}
+
+Building::~Building()
+{
+}
+
+int Building::getCapacity()
+{
+    return capacity;
+}
+
+bool Building::containsCitizen(shared_ptr<Citizen> citizen)
+{
+    auto it = find(residents.begin(), residents.end(), citizen);
+    if (it == residents.end())
+    {
+
+        return false;
+    }
+    return true;
+}
+
+void Building::printResidents()
+{
+    if (residents.empty())
+    {
+        cout << "No residents in the building." << endl;
+        return;
+    }
+    cout << "Residents' ID numbers:\n";
+    for (const auto &resident : residents)
+    {
+        if (resident)
+        {
+            cout << resident->getID() << "\n";
+        }
+    }
+    cout << endl;
+}
+int Building::getID()
+{
+    return id;
+}
+
+void Building::setUtilities()
+{
     water = 100;
     power = 100;
     sewerage = 100;
     waste = 100;
 }
 
-// void Building::requestUtilities(){
-//     std::unique_ptr<Utilities> newUtils;
-//     newUtils = new Utilities(*this);
-// }
 
-int Building::getWater(){
+int Building::getWater()
+{
     return water;
 }
 
-int Building::getPower(){
+int Building::getPower()
+{
     return power;
 }
 
-int Building::getSewerage(){
+int Building::getSewerage()
+{
     return sewerage;
 }
 
-int Building::getWaste(){
+int Building::getWaste()
+{
     return waste;
 }
 
-void Building::simulateEmergency(Emergencies& emergency) {
-    emergency.accessDamage(this->clone());
+void Building::setWater(int water)
+{
+    this->water = water;
 }
-
-void Building::addCitizen(shared_ptr<Citizen> citizen) {
-    if (residents.size() < capacity) {
-        residents.push_back(citizen);
-    } else {
-        cout << "Building is at full capacity!" << endl;
-    }
+void Building::setPower(int power)
+{
+    this->power = power;
 }
-
-void Building::removeCitizen(shared_ptr<Citizen> citizen) {
-    residents.erase(remove(residents.begin(), residents.end(), citizen), residents.end());
+void Building::setSewerage(int sewerage)
+{
+    this->sewerage = sewerage;
 }
-
-void Building::notifyCitizensOfEmergency(int damage) {
-    for (auto& resident : residents) {
-        resident->reactToEmergency(damage);
-    }
+void Building::setWaste(int waste)
+{
+    this->waste = waste;
 }
