@@ -292,3 +292,7 @@ void Citizen::reactToNotGettingHired()
     happinessMeter = clamp(happinessMeter, 0, 100);
     emotionalState->changeState(*this);
 }
+void Citizen::setHappinessMeter(int happiness)
+{
+    this->happinessMeter = happiness;
+}

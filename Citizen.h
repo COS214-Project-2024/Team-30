@@ -232,5 +232,13 @@ public:
      * Prints a message indicating the Citizen has been fired.
      */
     void getFired();
+    /**
+     * @brief Sets the happiness level for a Citizen.
+     *
+     * This function updates the Citizen's happiness meter with a specified integer value.
+     *
+     * @param happiness The new happiness level to set for the Citizen.
+     */
+    void setHappinessMeter(int happinessMeter);
 };
 #endif
