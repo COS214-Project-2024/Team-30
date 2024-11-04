@@ -1,7 +1,6 @@
 #include "WaterSupply.h"
 #include "Water.h"
 #include "Building.h"
-#include "Utilities.h"
 
 #include <iostream>
 
@@ -10,7 +9,8 @@ using namespace std;
 WaterSupply::WaterSupply(Water *w)
 {
     working = true;
-    waterToDistribute = w.use(10); // check if makes sense
+    waterResource = w;
+    waterToDistribute = waterResource.use(10); // check if makes sense
     cout << "Water supply system initialized.\n";
 }
 
@@ -27,7 +27,7 @@ bool WaterSupply::getWorking()
 
 void WaterSupply::setWater(int w)
 {
-    waterToDistribute += w.use(w);
+    waterToDistribute += waterResource.use(w);
 
     cout << "Water supply level set to: " << waterToDistribute;
 }
@@ -37,22 +37,24 @@ int WaterSupply::getWater()
     return waterToDistribute;
 }
 
-int WaterSupply::distributeWater(Building *b, int n)
+int WaterSupply::distributeWater(Building *b)
 {
-    waterToDistribute -= n;
+    waterToDistribute -= 10;
 
     if (working && waterToDistribute > 0)
     {
         cout << "Distributing water to building...\n";
-        return n;
+        return 10;
     }
     else if (working && waterToDistribute < 0)
     {
-        setWater(n);
-        if (waterToDistribute >= n)
+        setWater(10);
+        if (waterToDistribute >= 10)
         {
-            distributeWater(b, n);
+            distributeWater(b);
         } else {
+            notifyCitizens('Notification: Water Supply Broken') ;
+            setWorking(false);
             return 0;
         }
     }
@@ -67,7 +69,7 @@ bool WaterSupply::repair()
 {
     setWorking(true);
     cout << "Water supply repaired and operational.\n";
-    notifyCitizens('Notification: Water Supply Repaired') 
+    notifyCitizens('Notification: Water Supply Repaired') ;
     return working;
 }
 

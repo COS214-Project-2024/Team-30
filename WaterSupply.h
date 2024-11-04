@@ -26,14 +26,14 @@ public:
     bool getWorking();
 
     void setWater(int w)
-    bool getWater();
+    int getWater();
 
     /**
      * @brief Distributes water to a specified building.
      * @param b The building receiving water.
      * @return True if water distribution was successful, false otherwise.
      */
-    int distributeWater(Building *b, int n);
+    int distributeWater(Building *b);
 
     /**
      * @brief Repairs the water supply system, returning it to working condition.
@@ -50,6 +50,7 @@ public:
 private:
     bool working; /**< Indicates if the water supply system is operational. */
     int waterToDistribute;
+    Water* waterResource;
 };
 
 #endif // WATERSUPPLY_H
