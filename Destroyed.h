@@ -31,7 +31,11 @@ class Destroyed : public BuildingState{
      */
     void changeState() override;
 
-
+    /**
+     * @brief Gets the status of the "Destroyed" state.
+     *
+     * @return A string indicating that the building is currently in a destroyed state.
+     */
     string getStatus() override;
     unique_ptr<BuildingState> clone() const override;
 
