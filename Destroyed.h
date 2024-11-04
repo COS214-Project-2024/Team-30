@@ -37,6 +37,13 @@ class Destroyed : public BuildingState{
      * @return A string indicating that the building is currently in a destroyed state.
      */
     string getStatus() override;
+
+    /**
+     * @brief Clones the Destroyed state object.
+     *
+     * Creates a deep copy of the current "Destroyed" state.
+     * @return A unique pointer to a new Destroyed state object.
+     */
     unique_ptr<BuildingState> clone() const override;
 
 };
