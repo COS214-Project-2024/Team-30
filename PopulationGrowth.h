@@ -34,7 +34,7 @@ public:
 
 private:
     int oldPop = 0; ///< Stores the old population number for comparison.
-    double bR;      ///< Represents the birth rate or another relevant metric related to population growth.
+    double bR;      ///< Represents the birth rate.
 };
 
 #endif

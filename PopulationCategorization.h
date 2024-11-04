@@ -10,12 +10,12 @@
  * @brief Concrete strategy for categorizing population growth.
  * 
  * This class implements the `CategorizationStrategy` interface to provide a 
- * specific categorization based on population metrics from the `Government` class.
+ * specific categorization based on population in the city.
  */
 class PopulationCategorization : public CategorizationStrategy {
 public:
     /**
-     * @brief Categorizes the population based on certain criteria.
+     * @brief Categorizes the population based on criteria.
      * 
      * This method uses data from the `Government` class to determine 
      * and return a categorization of population growth.

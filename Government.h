@@ -71,6 +71,10 @@ public:
     int getNumberOfEmployedCitizens();
     double getEmploymentRate();
     int ResidentialCapacity();
+
+    //
+    void setCityBudget(int budget);
+    int getCityBudget();
 };
 
 #endif

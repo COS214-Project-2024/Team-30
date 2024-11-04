@@ -8,6 +8,11 @@ Government::Government(string name)
     citybudget = 0;
 }
 
+
+/**
+ * @brief Adds a citizen to the population and assigns them a home.
+ * @param citizen A shared pointer to the citizen being added.
+ */
 void Government::populationGrowth(std::shared_ptr<Citizen> citizen)
 { if( citizen)
 
@@ -19,6 +24,9 @@ void Government::populationGrowth(std::shared_ptr<Citizen> citizen)
 }
 }
 
+/**
+ * @brief Calculates the employment rate based on the population.
+ */
 void Government::calculateEmploymentRate()
 {
 
@@ -37,6 +45,9 @@ void Government::calculateEmploymentRate()
     employmentRate = static_cast<double>(employedCount) / population.size();
 }
 
+/**
+ * @brief Increases infrastructure if the budget allows.
+ */
 void Government::increaseInfurstructure()
 {       if(citybudget>800)
 {
@@ -64,6 +75,10 @@ else
 }
 }
 
+
+/**
+ * @brief function to calculate unemployment rate
+ */
 int Government::getNumberofUnemployedCitizens()
 {
     int nmbr = 0;
@@ -77,6 +92,11 @@ int Government::getNumberofUnemployedCitizens()
     return nmbr;
 
 }
+
+/**
+ * @brief helper function which is used for employment rate.
+ * @return number as a int.
+ */
 int Government::getNumberOfEmployedCitizens()
 {
     int nmbr = 0;
@@ -90,6 +110,10 @@ int Government::getNumberOfEmployedCitizens()
     return nmbr;
 
 }
+
+/**
+ * @brief Print a summary for citizens.
+ */
 void Government::printCitizenSummary()
 {
     if (populationNum == 0)
@@ -108,6 +132,9 @@ void Government::printCitizenSummary()
     std::cout << "============================================================" << std::endl;
 }
 
+/**
+ * @brief Function for  citizen to get paid and become happier.
+ */
  void Government::payDay()
  {
     for (const auto &person : population)
@@ -118,6 +145,9 @@ void Government::printCitizenSummary()
     
  }
 
+ /**
+ * @brief Function for provided job opportunities to citizens.
+ */
 void Government::jobOpportunities()
 {
     // Initialize random number generators
@@ -178,7 +208,10 @@ void Government::jobOpportunities()
         
     }
 }
-
+/**
+ * @brief Removes a citizen from the population based on their ID.
+ * @param i The ID of the citizen to be removed.
+ */
 void Government::populationDecline(int i)
 {
 
@@ -203,7 +236,10 @@ else
 }
 }
 
-// marked
+
+/**
+ * @brief Collects taxes from all citizens and updates the city budget.
+ */
 void Government::collectTaxes()
 {
     for (const auto &person : population)
@@ -215,7 +251,10 @@ void Government::collectTaxes()
         }
     }
 }
-
+/**
+ * @brief Calculates the population satisfaction rate.
+ * @return The satisfaction rate as a double between 0 and 1.
+ */
 double Government::populationSatisfactionRate()
 {
     if (population.empty())
@@ -231,6 +270,9 @@ double Government::populationSatisfactionRate()
     return static_cast<double>(satisfiedCount) / population.size();
 }
 
+/**
+ * @brief Prints interface for the Game showing statistics for the city.
+ */
 void Government::printInfo()
 {   calculateEmploymentRate();
     std::cout << "============================================================" << std::endl;
@@ -265,7 +307,7 @@ void Government::printInfo()
    if (!infrastructure.empty())
    {
     std::cout << "============================================================" << std::endl;
-    std::cout << "                      City Information                      " << std::endl;
+    std::cout << "                      Building Information                  " << std::endl;
     std::cout << "============================================================" << std::endl;
    for (const auto &building : infrastructure)
     {
@@ -277,6 +319,10 @@ void Government::printInfo()
    }
 }
 
+/**
+ * @brief Calculates the total residential capacity of all buildings.
+ * @return The total residential capacity as an integer.
+ */
 int Government::ResidentialCapacity(){
     int cap=0;
     for (const auto &building : infrastructure)
@@ -289,29 +335,47 @@ int Government::ResidentialCapacity(){
     return cap;
 }
 
+
+/**
+ * @brief Retrieves the current population of the city.
+ * @return A vector of shared pointers to citizens.
+ */
 vector<std::shared_ptr<Citizen>> Government::getPeople ()
 {
     return population;
 }
 
-
+/**
+ * @brief Retrieves the current infrastructure of the city.
+ * @return A vector of shared pointers to buildings.
+ */
 vector<std::shared_ptr<Building>> Government::getInfrastructure()
 {
     return infrastructure;
 }
-
+/**
+ * @brief Default destructor for the Government class.
+ */
 Government::~Government() = default;
-
+/**
+ * @brief Attaches an observer to the city growth notifications.
+ * @param ob A pointer to the observer to be added.
+ */
 void Government::attach(CityGrowthObserver* ob)
 {
     observers.push_back(ob);
 }
-
+/**
+ * @brief Detaches an observer from the city growth notifications.
+ * @param ob A pointer to the observer to be removed.
+ */
 void Government::detach(CityGrowthObserver* ob)
 {
     observers.erase(std::remove(observers.begin(), observers.end(), ob), observers.end());
 }
-
+/**
+ * @brief Notifies all observers about changes in the city growth.
+ */
 void Government::notifyObservers()
 {
     for (CityGrowthObserver *observer : observers)
@@ -319,23 +383,51 @@ void Government::notifyObservers()
         observer->update(this);
     }
 }
-
+/**
+ * @brief Sets the categorization strategy for the government.
+ * @param str A pointer to the categorization strategy to be set.
+ */
 void Government::setStrategy(CategorizationStrategy* str)
 {
     strategy=str;
 }
-
+/**
+ * @brief Categorizes the city based on the current strategy.
+ * @return A string representing the category.
+ */
 std::string Government::categorize()
 {
     return strategy->categorize(this);
 }
-
+/**
+ * @brief Retrieves the current population number.
+ * @return The population number as an integer.
+ */
 int Government::getPopulationNum()
 {
     return populationNum;
 }
-
+/**
+ * @brief Retrieves the current employment rate.
+ * @return The employment rate as a double.
+ */
 double Government::getEmploymentRate()
 {
     return employmentRate;
+}
+/**
+ * @brief Sets the city budget.
+ * @param cityBudget The budget to be set.
+ */
+void Government::setCityBudget(int cityBudget)
+{
+    this->citybudget = cityBudget;
+}
+/**
+ * @brief Retrieves the current city budget.
+ * @return The city budget as an integer.
+ */
+int Government::getCityBudget()
+{
+    return citybudget;
 }
