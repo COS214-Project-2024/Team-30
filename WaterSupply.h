@@ -23,6 +23,7 @@ public:
      * @param b Boolean indicating if the water supply system is working.
      */
     void setWorking(bool b);
+    void setWater(int w)
 
     /**
      * @brief Distributes water to a specified building.
@@ -40,10 +41,11 @@ public:
     /**
      * @brief Updates the resource level of water.
      */
-    void updateResourceLevel();
+    void updateResourceLevel(bool b);
 
 private:
     bool working; /**< Indicates if the water supply system is operational. */
+    int waterToDistribute;
 };
 
 #endif // WATERSUPPLY_H
