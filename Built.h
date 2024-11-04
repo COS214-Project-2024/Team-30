@@ -29,6 +29,11 @@ class Built : public BuildingState{
      * Implements the logic for transitioning from the "Built" state to another state.
      */
     void changeState() override;
+    /**
+     * @brief Gets the status of the "Built" state.
+     *
+     * @return A string indicating that the building is currently in a fully constructed state.
+     */
     string getStatus() override;
     unique_ptr<BuildingState> clone() const override;
 
