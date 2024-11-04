@@ -1,16 +1,17 @@
 #include "Infrastructure.h"
 #include <iostream>
 
+using namespace std;
+
 void Infrastructure::update(Government* g)
 {
-     std::cout << "\n=================================================================" << std::endl;
-     std::cout << "                      Infrastructure" << std::endl;
-     std::cout << "=================================================================" << std::endl;
+     cout << "\n=================================================================" << endl;
+     cout << "                      Infrastructure" << endl;
+     cout << "=================================================================" << endl;
 
-     std::cout << "Infrastructure is expanding, due to the increased populations. " << std::endl;
+     cout << "Infrastructure is expanding, due to the increased populations. " << endl;
 
-     std::cout << "=================================================================" << std::endl;
+     cout << "=================================================================" << endl;
      g->increaseInfurstructure();
      // g->getInfrastructure();
-     // std::cout << g->getInfrastructure();
 }
