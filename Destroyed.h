@@ -17,7 +17,14 @@ class Destroyed : public BuildingState{
     private:
     protected:
     public:
+    /**
+     * @brief Handles the behavior specific to the "Destroyed" state.
+     *
+     * This method defines the actions taken while the building is in the "Destroyed" state.
+     */
     void handle() override;
+
+    
     void changeState() override;
     string getStatus() override;
     unique_ptr<BuildingState> clone() const override;
