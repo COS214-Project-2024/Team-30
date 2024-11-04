@@ -1,31 +1,41 @@
 #ifndef ROAD_H
 #define ROAD_H
 
-#include <string>
+#include <iostream>
+#include <algorithm>
+#include <vector>
 #include <list>
+#include <string>
+#include <memory>
 #include "Building.h"
 #include "Sign.h"
 #include "TrafficLight.h"
 
 using namespace std;
 
+class Building;
+
 class Road {
 private:
     string name;
-    list<TrafficLight> lights;
-    list<Building> buildings;
-    list<Sign> signs;
-    Road* left;
-    Road* right;
-
+    vector<unique_ptr<Building>> buildings;
+    vector<Sign> signs;
+    unique_ptr<TrafficLight> light;
+    char state;
 public:
-    Road(string name);
-    void addBuilding(const Building& building);
-    void removeBuilding(const Building& building);
+    void setLightRed();
+    void resetLight();
+    shared_ptr<Road> left;
+    shared_ptr<Road> right;
+    shared_ptr<Road> straight;
+    Road(const string& name);
+    void addBuilding(unique_ptr<Building> building);
     void addSign(const Sign& sign);
-    void removeSign(const Sign& sign);
-    void addLight(const TrafficLight& light);
-    void removeLight(const TrafficLight& light);
+    //bool removeSign(Sign sign);
+    void addLight(unique_ptr<TrafficLight> light);
+    bool removeLight();
+    string getName() const;                     // Return the road's name
+    ~Road() = default;
 };
 
 #endif // ROAD_H

@@ -8,7 +8,7 @@ using namespace std;
 class Taxi : public Transport {
 public:
     Taxi(string name, int capacity);
-    void move(Building from, Building to) override;
+    void Travel(shared_ptr<Building> to) override;
 };
 
 #endif // TAXI_H

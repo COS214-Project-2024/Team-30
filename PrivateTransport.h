@@ -7,8 +7,8 @@ using namespace std;
 
 class privateTransport : public Transport {
 public:
-    privateTransport(string name, int capacity);
-    void move(Building from, Building to) override;
+    privateTransport(string name, int capacity, shared_ptr<Building> from);
+    void Travel(shared_ptr<Building> to) override ;
 };
 
 #endif // PRIVATETRANSPORT_H

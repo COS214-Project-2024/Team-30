@@ -2,36 +2,41 @@
 #define BUILDING_H
 
 #include <vector>
+#include <memory> // Include for smart pointers
+#include<algorithm>
+//#include "BuildingState.h"
+// #include "Utilities.h"
+//#include "BuildingComponent.h"
+//#include "Emergencies.h"
+#include "Citizen.h"
 
-#include "BuildingState.h"
-//#include "Utilities.h"
-#include "BuildingComponent.h"
+class Emergencies;
+class BuildingState;
 
-class Building : public BuildingComponent{
-
-    private:
-    BuildingState*  currState;
+using namespace std;
+//
+class Building
+//  : public BuildingComponent
+{
+protected:
+    // vector<Utilities*> utilities;
+    //unique_ptr<BuildingState> currState; // Use unique_ptr for ownership
     int capacity;
-    //vector<Utilities*> utilities;
-    bool runningUtils;
+    vector<shared_ptr<Citizen>> residents;
+    string name;
+    //maybe add in a type checker for airport or train station or taxi rank
 
-    protected:
-    int price;
+public:
+    Building(int,string); //Building constructor
 
-    public:
-    Building(BuildingState* initialState);
-    virtual void build() = 0;
-    void setState(BuildingState* state); 
-    void processState();
-    void displayInfo();
-    int buildingHealth();
-    void add(BuildingComponent* component);
-    void remove(BuildingComponent* component);
-    void update();
-    void recieveUtilities();    //Utilities
-    //Utilities* setUtilities();
-    virtual Building* clone() = 0;
+    void addCitizen(shared_ptr<Citizen> citizen);
+    void removeCitizen(shared_ptr<Citizen> citizen);
+    void printResidents();
+    void notifyCitizensOfEmergency(int damage);
+    string getName();
+    bool containsCitizen(shared_ptr<Citizen> citizen);
 
+    //virtual unique_ptr<Building> clone() = 0; // Return unique_ptr
 };
 
 #endif

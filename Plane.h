@@ -1,14 +1,14 @@
 #ifndef PLANE_H
 #define PLANE_H
 
-#include "Transport.h"
+#include "PublicTransport.h"
 
 using namespace std;
 
-class Plane : public Transport {
+class Plane : public publicTransport {
 public:
     Plane(string name, int capacity);
-    void move(Building from, Building to) override;
+    void Travel(shared_ptr<Building> to) override;
 };
 
 #endif // PLANE_H

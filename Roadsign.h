@@ -7,7 +7,10 @@ using namespace std;
 
 class RoadSign : public Sign {
 public:
-    RoadSign(string message, string type);
+    RoadSign(const string& message) : Sign(message)
+    {
+        type = "RoadSign";
+    }
 };
 
 #endif // ROADSIGN_H

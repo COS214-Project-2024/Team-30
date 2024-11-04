@@ -3,14 +3,25 @@
 
 using namespace std;
 
-class TrafficLights {
+class TrafficLight {
 private:
     char state;
+    static int numLights;
+protected:
     int id;
-
 public:
+    TrafficLight();
     void changeState();
-    bool getState() const;
+    char getState() const;
+    int getID() const;
+    bool operator==(const TrafficLight& other) const {
+        return this->id == other.id;
+    }
+    void setState(char c)
+    {
+        state = c;
+    }
+
 };
 
 #endif // TRAFFICLIGHTS_H

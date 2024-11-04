@@ -9,11 +9,17 @@ class Sign {
 protected:
     string message;
     string type;
-
+    static int numSigns;
+    int ID;
 public:
-    Sign(string message, string type);
+    Sign(const string& message);
     virtual ~Sign() = default;
-    virtual void signIt(string message, string type);
+    int getID() const;
+    string getMessage() const;
+    string getType() const;
+    bool operator==(const Sign& other) const {
+        return this->ID == other.ID;
+    }
 };
 
 #endif // SIGN_H

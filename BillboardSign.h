@@ -7,7 +7,10 @@ using namespace std;
 
 class BillboardSign : public Sign {
 public:
-    BillboardSign(string message, string type);
+    BillboardSign(const string& message) : Sign(message)
+    {
+        type = "BillBoardSign";
+    }
 };
 
-#endif // BILLBOARDSIGN_H
+#endif
