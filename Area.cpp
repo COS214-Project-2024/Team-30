@@ -8,7 +8,7 @@ Area::Area(string name) : name(move(name)) {}
 
 /**
  * @brief Adds a road to the area.
- * @param newRoad A shared pointer to the road to be added.
+ * @param newRoad new shared pointer
  */
 void Area::addRoad(shared_ptr<Road> newRoad) {
     roads.push_back(newRoad);
@@ -17,9 +17,9 @@ void Area::addRoad(shared_ptr<Road> newRoad) {
 /**
  * @brief Connects roads in the area.
  * @param from A shared pointer to the originating road.
- * @param toLeft A shared pointer to the road on the left.
- * @param toRight A shared pointer to the road on the right.
- * @param toStraight A shared pointer to the road straight ahead.
+ * @param toLeft shared pointer to left road
+ * @param toRight shared pointer to right road
+ * @param toStraight shared pointer to straight road
  */
 void Area::connectRoads(const std::shared_ptr<Road>& from, const std::shared_ptr<Road>& toLeft,
                         const std::shared_ptr<Road>& toRight, const std::shared_ptr<Road>& toStraight) {
@@ -29,7 +29,7 @@ void Area::connectRoads(const std::shared_ptr<Road>& from, const std::shared_ptr
 }
 
 /**
- * @brief Displays all roads in the area along with their connections.
+ * @brief displays adjacency list
  */
 void Area::displayRoads() const {
     for (const auto& road : roads) {
@@ -44,7 +44,7 @@ void Area::displayRoads() const {
 }
 
 /**
- * @brief Sets all traffic lights on the roads in the area to red.
+ * @brief Sets all traffic lights to stop all cars
  */
 void Area::setAllLightsToRed() {
     for (const auto& road : roads) {
@@ -53,7 +53,7 @@ void Area::setAllLightsToRed() {
 }
 
 /**
- * @brief Resets all traffic lights on the roads in the area to their default state.
+ * @brief Resets all traffic lights on the roads in the area as 'memento'
  */
 void Area::resetAllLights() {
     for (const auto& road : roads) {
