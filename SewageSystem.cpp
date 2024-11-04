@@ -5,57 +5,47 @@
 
 using namespace std;
 
-SewageSystem::SewageSystem(){
+SewageSystem::SewageSystem() {
     working = true;
     cout << "Sewage system initialized.\n";
 }
 
-void SewageSystem::setWorking(bool w){
+void SewageSystem::setWorking(bool w) {
     working = w;
-    cout << "Sewage System working status set to: " << working << endl;
+    cout << "Sewage System working status set to: " << (working ? "Operational" : "Non-operational") << endl;
 }
 
-bool SewageSystem::getWorking()
-{
+bool SewageSystem::getWorking() {
     return working;
 }
 
-bool SewageSystem::manageDisposal(shared_ptr<Building> b){
+int SewageSystem::manageDisposal(shared_ptr<Building> b) {
     if (working) {
         cout << "Managing sewage disposal for building...\n";
         manageTreatment();
         b->sewage = 100;
+        return 100;  // Returning a success code as described in the documentation
     } else {
-        cout << "Sewage system not operational due to repairs needed. Disposal postponed.\n";
+        cout << "Sewage system not operational. Disposal postponed.\n";
+        return 0;  // Return a failure or postponed status code
     }
 }
 
-void SewageSystem::manageTreatment(){
-        cout << "Treating sewage for building...\n";
+void SewageSystem::manageTreatment() {
+    cout << "Treating sewage for building...\n";
 }
 
-bool SewageSystem::repair(){
+bool SewageSystem::repair() {
     working = true;
     cout << "Sewage system repaired and operational.\n";
-    notifyCitizens('Notification: Sewage System Repaired')
+    notifyCitizens("Notification: Sewage System Repaired");
     return working;
 }
 
-void SewageSystem::notifyCitizens(const string &message)
-{
-    // for (Citizen* citizen : citizens) {
-    //     if (working) {
-    //         citizen->increaseSatisfaction(10);  // increase satisfaction if working
-    //     } else {
-    //         citizen->decreaseSatisfaction(10);  // decrease satisfaction if not working
-    //     }
-    // }
+void SewageSystem::notifyCitizens(const string &message) {
+    cout << message << endl;
 
-    cout << message << endl;;
-
-    vector<Citizen *>::iterator it = residents.begin();
-    for (it = residents.begin(); it != residents.end(); ++it)
-    {
-        (*it)->reactToUtilities(working);
+    for (auto& resident : residents) {
+        resident->reactToUtilities(working);
     }
 }

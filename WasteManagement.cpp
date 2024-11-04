@@ -39,7 +39,7 @@ void WasteManagement::recycle(){
 bool WasteManagement::repair(){
     working = true;
     cout << "Waste Management system repaired and operational.\n";
-    notifyCitizens('Notification: Waste Management Repaired')
+    notifyCitizens('Notification: Waste Management Repaired');
     return working;
 }
 

@@ -18,24 +18,39 @@ using namespace std;
 class WaterSupply : public ResourceObserver {
 public:
     /**
-     * @brief Constructs a WaterSupply instance.
+     * @brief Constructs a WaterSupply instance with a given water resource.
+     * @param w Shared pointer to the Water resource.
      */
     WaterSupply(shared_ptr<Water> w);
 
     /**
      * @brief Sets the operational status of the water supply system.
-     * @param b Boolean indicating if the water supply system is working.
+     * @param w Boolean indicating if the water supply system is operational.
      */
     void setWorking(bool w);
+
+    /**
+     * @brief Checks if the water supply system is operational.
+     * @return True if operational, false otherwise.
+     */
     bool getWorking();
 
-    void setWater(int w)
+    /**
+     * @brief Sets the amount of water to distribute.
+     * @param w Amount of water to add to the water distribution level.
+     */
+    void setWater(int w);
+
+    /**
+     * @brief Retrieves the current water distribution level.
+     * @return Amount of water available for distribution.
+     */
     int getWater();
 
     /**
      * @brief Distributes water to a specified building.
-     * @param b The building receiving water.
-     * @return True if water distribution was successful, false otherwise.
+     * @param b Shared pointer to the building receiving water.
+     * @return The amount of water distributed, or 0 if distribution fails.
      */
     int distributeWater(shared_ptr<Building> b);
 
@@ -46,16 +61,16 @@ public:
     bool repair();
 
     /**
-     * @brief Sends a notification message to citizens regarding utility services.
+     * @brief Sends a notification message to citizens regarding the status of water supply services.
      * @param message The message to notify citizens.
      */
     void notifyCitizens(const string& message);
 
 private:
     bool working; /**< Indicates if the water supply system is operational. */
-    int waterToDistribute;
-    shared_ptr<Water> waterResource; /**< Shared pointer to the water resource */
-    vector<shared_ptr<Citizen>> residents; /**< List of citizens sharing water resources */
+    int waterToDistribute; /**< Amount of water available for distribution. */
+    shared_ptr<Water> waterResource; /**< Shared pointer to the water resource. */
+    vector<shared_ptr<Citizen>> residents; /**< List of citizens affected by water services. */
 };
 
 #endif // WATERSUPPLY_H

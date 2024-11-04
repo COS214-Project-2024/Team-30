@@ -10,7 +10,7 @@ PowerPlant::PowerPlant(shared_ptr<Coal> c)
 {
     working = true;
     coalResource = c;
-    coalToDistribute = coalResource.use(100); // check if makes sense
+    coalToDistribute = coalResource->use(100); // Assumes 'use' deducts coal and returns amount used
     cout << "Power plant initialized.\n";
 }
 
@@ -27,9 +27,9 @@ bool PowerPlant::getWorking()
 
 void PowerPlant::setCoal(int i)
 {
-    coalToDistribute += coalResource.use(i);
-
-    cout << "Coal supply level set to: " << coalToDistribute;
+    int usedCoal = coalResource->use(i); // Deduct coal from the resource
+    coalToDistribute += usedCoal;
+    cout << "Coal supply level set to: " << coalToDistribute << endl;
 }
 
 int PowerPlant::getCoal()
@@ -39,28 +39,24 @@ int PowerPlant::getCoal()
 
 int PowerPlant::generateElectricity(shared_ptr<Building> b)
 {
-    coalToDistribute -= 100;
-
-    if (working && coalToDistribute > 0)
+    if (working)
     {
-        cout << "Distributing power to building...\n";
-        return 100;
-    }
-    else if (working && coalToDistribute <= 0)
-    {
-        setCoal(100);
-        if (coalToDistribute >= 100)
+        if (coalToDistribute >= 100) // Check if there's enough coal
         {
-            generateElectricity(b);
-        } else {
-            notifyCitizens('Notification: Power Plant Broken') ;
-            setWorking(false);
+            coalToDistribute -= 100; // Deduct coal for electricity generation
+            cout << "Distributing power to building...\n";
+            return 100; // Return amount of electricity generated
+        }
+        else
+        {
+            notifyCitizens("Notification: Not enough coal for electricity generation.");
+            setWorking(false); // Power plant goes offline due to lack of resources
             return 0;
         }
     }
     else
     {
-        cout << "Power Plant not operational. Water distribution postponed.\n";
+        cout << "Power Plant not operational. Power distribution postponed.\n";
         return 0;
     }
 }
@@ -69,26 +65,16 @@ bool PowerPlant::repair()
 {
     setWorking(true);
     cout << "Power plant repaired and operational.\n";
-    notifyCitizens('Notification: Power Plant Repaired');
+    notifyCitizens("Notification: Power Plant Repaired");
     return working;
 }
 
 void PowerPlant::notifyCitizens(const string &message)
 {
-    // for (Citizen* citizen : citizens) {
-    //     if (working) {
-    //         citizen->increaseSatisfaction(10);  // increase satisfaction if working
-    //     } else {
-    //         citizen->decreaseSatisfaction(10);  // decrease satisfaction if not working
-    //     }
-    // }
-
     cout << message << endl;
-    ;
 
-    vector<Citizen *>::iterator it = residents.begin();
-    for (it = residents.begin(); it != residents.end(); ++it)
+    for (const auto& citizen : residents) // Use range-based for loop for clarity
     {
-        (*it)->reactToUtilities(working);
+        citizen->reactToUtilities(working);
     }
 }

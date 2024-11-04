@@ -25,19 +25,22 @@ public:
      * @param b Boolean indicating if the sewage system is working.
      */
     void setWorking(bool b);
+
+    /**
+     * @brief Checks the operational status of the sewage system.
+     * @return True if operational, false otherwise.
+     */
     bool getWorking();
 
     /**
      * @brief Manages sewage disposal for a specified building.
      * @param b The building for which sewage disposal is managed.
-     * @return True if disposal was successfully managed, false otherwise.
+     * @return An integer representing the reset value, typically 100.
      */
-    bool manageDisposal(shared_ptr<Building> b);
+    int manageDisposal(shared_ptr<Building> b);
 
     /**
      * @brief Manages sewage treatment for a specified building.
-     * @param b The building for which sewage treatment is managed.
-     * @return True if treatment was successfully managed, false otherwise.
      */
     void manageTreatment();
 
