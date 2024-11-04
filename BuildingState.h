@@ -67,8 +67,16 @@ class BuildingState {
      */
     virtual void changeState() = 0;
 
-
+    /**
+     * @brief Gets the status of the current state.
+     *
+     * This pure virtual function must be implemented by derived classes to return
+     * a string representing the current state status.
+     * @return A string indicating the status of the current state.
+     */
     virtual string getStatus() = 0;
+
+    
      virtual unique_ptr<BuildingState> clone() const = 0;  // Clone for deep copy. this will ensure that when we use prototype to create objects, they wont share states.
 };
 
