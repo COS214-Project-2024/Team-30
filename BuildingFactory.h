@@ -20,6 +20,13 @@ public:
     virtual ~BuildingFactory();
 
 protected:
+    /**
+     * @brief Creates a new Building object.
+     *
+     * This is a pure virtual function that must be implemented by derived classes
+     * to create instances of specific building types.
+     * @return A unique pointer to a newly created Building object.
+     */
     virtual unique_ptr<Building> createBuilding() = 0;
 };
 
