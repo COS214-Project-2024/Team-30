@@ -1,31 +1,99 @@
 #ifndef ROAD_H
 #define ROAD_H
 
-#include <string>
+#include <iostream>
+#include <algorithm>
+#include <vector>
 #include <list>
+#include <string>
+#include <memory>
 #include "Building.h"
 #include "Sign.h"
 #include "TrafficLight.h"
 
 using namespace std;
 
+class Building;
+
+/**
+ * @brief Represents a road in the traffic system.
+ *
+ * The Road class maintains a collection of buildings, signs, and a traffic light,
+ * and allows for managing connections to other roads (left, right, straight).
+ */
 class Road {
 private:
-    string name;
-    list<TrafficLight> lights;
-    list<Building> buildings;
-    list<Sign> signs;
-    Road* left;
-    Road* right;
+    int id; ///< The id of the road
+    vector<unique_ptr<Building>> buildings; ///< Buildings located on this road.
+    vector<Sign> signs; ///< Signs associated with this road.
+    unique_ptr<TrafficLight> light; ///< Traffic light for this road.
+    char state; ///< The state of the road, acting as a memento.
+    shared_ptr<Road> next;
 
 public:
-    Road(string name);
-    void addBuilding(const Building& building);
-    void removeBuilding(const Building& building);
+    static int numSigns;
+    /**
+     * @brief Constructs a Road object with a specified name.
+     *
+     * @param name The name of the road.
+     */
+    Road();
+
+    /**
+     * @brief Sets the traffic light on this road to red.
+     *
+     * Changes the state of the traffic light to indicate that vehicles must stop.
+     */
+    void setLightRed();
+
+    /**
+     * @brief Resets the traffic light to its default state.
+     *
+     * This method returns the traffic light to its original setting (e.g., green).
+     */
+    void resetLight();
+
+    /**
+     * @brief Adds a building to this road.
+     *
+     * @param building A unique pointer to the building to be added.
+     */
+    void addBuilding(unique_ptr<Building> building);
+
+    /**
+     * @brief Adds a sign to this road.
+     *
+     * @param sign The sign to be added.
+     */
     void addSign(const Sign& sign);
-    void removeSign(const Sign& sign);
-    void addLight(const TrafficLight& light);
-    void removeLight(const TrafficLight& light);
+
+    /**
+     * @brief Adds a traffic light to this road.
+     *
+     * @param light A unique pointer to the traffic light to be added.
+     */
+    void addLight(unique_ptr<TrafficLight> light);
+
+    /**
+     * @brief Removes the traffic light from this road.
+     *
+     * @return True if the light was removed successfully, otherwise false.
+     */
+    bool removeLight();
+
+    /**
+     * @brief Gets the name of the road.
+     *
+     * @return The name of the road.
+     */
+    string getName() const;
+
+    void setNext(shared_ptr<Road> r);
+
+    shared_ptr<Road> getNext();
+
+    ~Road() = default; ///< Default destructor.
+
 };
 
 #endif // ROAD_H
