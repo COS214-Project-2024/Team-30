@@ -24,8 +24,14 @@ class Destroyed : public BuildingState{
      */
     void handle() override;
 
-    
+    /**
+     * @brief Changes the state of the Building to a different state.
+     *
+     * Implements the logic for transitioning from the "Destroyed" state to another state.
+     */
     void changeState() override;
+
+
     string getStatus() override;
     unique_ptr<BuildingState> clone() const override;
 
