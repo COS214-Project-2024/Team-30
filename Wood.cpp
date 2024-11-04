@@ -20,7 +20,7 @@ int Wood::use(int amount)
 {
     if (amount <= capacity) {
         capacity -= amount;  
-        std::cout << "Using " << amount << " of wood. Remaining capacity: " << capacity << std::endl;
+        std::cout << "Using " << amount << " of wood. Remaining capacity: " << capacity << endl;
         return capacity;
     } 
     else 
