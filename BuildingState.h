@@ -50,7 +50,16 @@ class BuildingState {
      * @param currbuilding Shared pointer to the current Building object.
      */
     void setState();
+
+    /**
+     * @brief Handles state-specific behavior.
+     *
+     * This pure virtual function must be implemented by derived classes to perform
+     * actions associated with the current state.
+     */
     virtual void handle() = 0;
+
+    
     virtual void changeState() = 0;
     virtual string getStatus() = 0;
      virtual unique_ptr<BuildingState> clone() const = 0;  // Clone for deep copy. this will ensure that when we use prototype to create objects, they wont share states.
