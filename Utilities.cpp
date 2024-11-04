@@ -9,7 +9,7 @@
 
 using namespace std;
 
-Utilities::Utilities(std::shared_ptr<Building> b, Coal* c, Water* w) {
+Utilities::Utilities(std::shared_ptr<Building> b, shared_ptr<Coal> c, shared_ptr<Water> w) {
     cout << "Providing city utilities to building...\n";
 
     powerPlant = std::make_unique<PowerPlant>(c);

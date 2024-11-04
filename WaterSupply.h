@@ -2,7 +2,7 @@
 #define WATERSUPPLY_H
 
 #include "Building.h"
-#include "ResourceObserver.h"
+
 #include "Water.h"
 
 #include <memory>
@@ -15,7 +15,7 @@ using namespace std;
  * @class WaterSupply
  * @brief Manages water distribution for buildings and observes water resources.
  */
-class WaterSupply : public ResourceObserver {
+class WaterSupply  {
 public:
     /**
      * @brief Constructs a WaterSupply instance with a given water resource.

@@ -10,9 +10,9 @@ class Coal : public Resource
     public: 
         Coal(int capacity);
 
-        int getCapacity() ;
-        void refill(int amount) ;
-        int use(int amount) ;
+        int getCapacity() const override;
+        void refill(int amount) override;
+        int use(int amount) override;
 
 };
 

@@ -11,6 +11,8 @@
 #include "Citizen.h"
 #include "Utilities.h"
 #include "Resource.h"
+#include "Coal.h"
+#include "Water.h"
 
 class Emergencies;
 
@@ -61,6 +63,10 @@ public:
     void takeDamage(int damage);
 
     void receiveUtilities(Coal* c, Water* w); // Utilities
+    void receiveWater(int);
+    void receiveElectricity(int);
+    void receiveUtilities(Coal* c, Water* w);
+    void checkConstructionStatus();
     // Utilities* setUtilities();
 
     void addCitizen(shared_ptr<Citizen> citizen);

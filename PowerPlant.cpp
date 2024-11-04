@@ -1,75 +1,61 @@
 #include "PowerPlant.h"
-#include "Coal.h"
-
 #include <iostream>
-#include <memory>
-
-using namespace std;
 
 PowerPlant::PowerPlant(shared_ptr<Coal> c)
+    : coalResource(c), working(true), coalToDistribute(0)
 {
-    working = true;
-    coalResource = c;
-    coalToDistribute = coalResource->use(100); // Assumes 'use' deducts coal and returns amount used
-    cout << "Power plant initialized.\n";
 }
 
-void PowerPlant::setWorking(bool w)
-{
-    working = w;
-    cout << "Power Plant working status set to: " << working << endl;
+void PowerPlant::setWorking(bool b) {
+    working = b;
 }
 
-bool PowerPlant::getWorking()
-{
+bool PowerPlant::getWorking() {
     return working;
 }
 
-void PowerPlant::setCoal(int i)
-{
-    int usedCoal = coalResource->use(i); // Deduct coal from the resource
-    coalToDistribute += usedCoal;
-    cout << "Coal supply level set to: " << coalToDistribute << endl;
+void PowerPlant::setCoal(int w) {
+    coalToDistribute = w;
 }
 
-int PowerPlant::getCoal()
-{
+int PowerPlant::getCoal() {
     return coalToDistribute;
 }
 
-int PowerPlant::generateElectricity(shared_ptr<Building> b)
-{
-    if (working)
-    {
-        if (coalToDistribute >= 100) // Check if there's enough coal
-        {
-            coalToDistribute -= 100; // Deduct coal for electricity generation
-            cout << "Distributing power to building...\n";
-            return 100; // Return amount of electricity generated
-        }
-        else
-        {
-            notifyCitizens("Notification: Not enough coal for electricity generation.");
-            setWorking(false); // Power plant goes offline due to lack of resources
-            return 0;
-        }
-    }
-    else
-    {
-        cout << "Power Plant not operational. Power distribution postponed.\n";
+int PowerPlant::generateElectricity(shared_ptr<Building> b) {
+    if (!working) {
+        std::cout << "Power plant is not operational." << std::endl;
         return 0;
     }
+
+    if (coalToDistribute <= 0) {
+        std::cout << "No coal available to generate electricity." << std::endl;
+        return 0;
+    }
+
+    // Attempt to use the coal to generate electricity
+    int coalUsed = coalResource->use(coalToDistribute);
+    if (coalUsed > 0) {
+        std::cout << "Generated electricity using " << coalUsed << " units of coal." << std::endl;
+        b->receiveElectricity(coalUsed);  // Assume Building has a receiveElectricity method
+        coalToDistribute -= coalUsed;
+    } else {
+        std::cout << "Unable to generate electricity; not enough coal." << std::endl;
+    }
+    return coalUsed;
 }
 
-bool PowerPlant::repair()
-{
-    setWorking(true);
-    cout << "Power plant repaired and operational.\n";
-    notifyCitizens("Notification: Power Plant Repaired");
-    return working;
+bool PowerPlant::repair() {
+    if (!working) {
+        working = true;
+        std::cout << "Power plant repaired and is now operational." << std::endl;
+        return true;
+    } else {
+        std::cout << "Power plant is already operational." << std::endl;
+        return false;
+    }
 }
 
-void PowerPlant::notifyCitizens(const string &message)
-{
-    cout << message << endl;
+void PowerPlant::notifyCitizens(const string& message) {
+    std::cout << "Notifying citizens: " << message << std::endl;
 }

@@ -32,24 +32,25 @@ int WaterSupply::getWater() {
 }
 
 int WaterSupply::distributeWater(shared_ptr<Building> b) {
-    waterToDistribute -= 100;
-
-    if (working && waterToDistribute > 0) {
-        cout << "Distributing water to building...\n";
-        return 100;
-    } else if (working && waterToDistribute < 0) {
-        setWater(100);
-        if (waterToDistribute >= 100) {
-            return distributeWater(b);
-        } else {
-            notifyCitizens("Notification: Water Supply Broken");
-            setWorking(false);
-            return 0;
-        }
-    } else {
-        cout << "Water supply system not operational. Water distribution postponed.\n";
+    if (!working) {
+        std::cout << "Water supply system is not operational." << std::endl;
         return 0;
     }
+
+    if (waterToDistribute <= 0) {
+        std::cout << "No water available to distribute." << std::endl;
+        return 0;
+    }
+
+    int waterUsed = waterResource->use(waterToDistribute);
+    if (waterUsed > 0) {
+        std::cout << "Distributed " << waterUsed << " units of water to the building." << std::endl;
+        b->receiveWater(waterUsed);
+        waterToDistribute -= waterUsed;
+    } else {
+        std::cout << "Unable to distribute water; not enough in resource." << std::endl;
+    }
+    return waterUsed;
 }
 
 bool WaterSupply::repair() {

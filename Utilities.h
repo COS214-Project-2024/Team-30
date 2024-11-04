@@ -29,7 +29,7 @@ public:
      * @param c The coal source for electricity generation.
      * @param w The water source for water supply.
      */
-    Utilities(std::shared_ptr<Building> b, Coal* c, Water* w);
+    Utilities(std::shared_ptr<Building> b, shared_ptr<Coal> c, shared_ptr<Water> w) ;
 
 private:
     unique_ptr<PowerPlant> powerPlant;         /**< PowerPlant instance responsible for electricity generation. */
