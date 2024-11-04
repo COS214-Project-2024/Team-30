@@ -15,15 +15,13 @@ Utilities::Utilities(Building* b)
     wasteManagement = new WasteManagement();
     sewageSystem = new SewageSystem();
 
-    powerPlant.generateElectricity(b);
+    b.power = powerPlant.generateElectricity(b);
 
-    waterSupply.distributeWater(b);
+    b.water = waterSupply.distributeWater(b);
 
-    wasteManagement.removeWaste(b);
-    wasteManagement.recycle(b);
+    b.waste = wasteManagement.removeWaste(b);
 
-    sewageSystem.manageDisposal(b);
-    sewageSystem.manageTreatment(b);
+    b.sewage = sewageSystem.manageDisposal(b);
 
     if (
         powerPlant.getWorking() &&
