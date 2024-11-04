@@ -1,5 +1,6 @@
 #include "PopulationGrowth.h"
 
+using namespace std;
 /**
  * @brief Updates the observer with the current population data.
  *
@@ -30,15 +31,15 @@ void PopulationGrowth::update(Government *g)
  */
 void PopulationGrowth::printInfo(Government* g)
 {
-    std::cout << "\n=================================================================" << std::endl;
-    std::cout << "          Population Information               " << std::endl;
-    std::cout << "=================================================================" << std::endl;
-    std::cout << " Birth Rate           : " <<  bR << " births per 50 people" << std::endl;
-    std::cout << "-----------------------------------------------------------------" << std::endl;
-    std::cout << " Old Population       : " << oldPop << std::endl;
-    std::cout << "-----------------------------------------------------------------" << std::endl;
-    std::cout << " New Population       : " << g->getPopulationNum() << std::endl;
-    std::cout << "=================================================================" << std::endl;
+    cout << "\n=================================================================" << endl;
+    cout << "          Population Information               " << endl;
+    cout << "=================================================================" << endl;
+    cout << " Birth Rate           : " <<  bR << " births per 50 people" << endl;
+    cout << "-----------------------------------------------------------------" << endl;
+    cout << " Old Population       : " << oldPop << endl;
+    cout << "-----------------------------------------------------------------" << endl;
+    cout << " New Population       : " << g->getPopulationNum() << endl;
+    cout << "=================================================================" << endl;
 }
 
 

@@ -1,5 +1,6 @@
 #include "EconomyCategorization.h"
 
+using namespace std;
 /**
  * @brief Categorizes the economic state of the city based on the employment rate.
  *
@@ -13,7 +14,7 @@
  * @param g A pointer to the `Government` object that provides the employment rate data.
  * @return A string representing the economic activity level of the city.
  */
-std::string EconomyCategorization::categorize(Government* g)
+string EconomyCategorization::categorize(Government* g)
 {
     double sta = g->getEmploymentRate();
 

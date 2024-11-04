@@ -3,6 +3,7 @@
 
 #include "CityGrowthObserver.h"
 
+using namespace std;
 /**
  * @class PopulationGrowth
  * @brief A class that observes and responds to changes in the population of a government.
