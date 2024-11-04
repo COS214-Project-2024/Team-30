@@ -39,7 +39,12 @@ class Underconstruction : public BuildingState{
      */
     string getStatus() override;
 
-    
+     /**
+     * @brief Clones the Underconstruction state object.
+     *
+     * Creates a deep copy of the current "Under Construction" state.
+     * @return A unique pointer to a new Underconstruction state object.
+     */
     unique_ptr<BuildingState> clone() const override;
 
 };
