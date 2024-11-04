@@ -1,13 +1,16 @@
 #include "WaterSupply.h"
 #include "Water.h"
+#include "Building.h"
+#include "Utilities.h"
 
 #include <iostream>
 
 using namespace std;
 
-WaterSupply::WaterSupply()
+WaterSupply::WaterSupply(Water* w)
 {
     working = true;
+    waterToDistribute = w.use(10); // check if makes sense
     cout << "Water supply system initialized.\n";
 }
 
@@ -22,6 +25,11 @@ void WaterSupply::setWorking(bool w)
         cout << "Water supply working status set to: FALSE";
 }
 
+bool WaterSupply::getWorking()
+{
+    return working;
+}
+
 void WaterSupply::setWater(int w)
 {
     waterToDistribute = w;
@@ -29,7 +37,12 @@ void WaterSupply::setWater(int w)
     cout << "Water supply level set to: " << waterToDistribute;
 }
 
-bool WaterSupply::distributeWater(Building b)
+int WaterSupply::getWater()
+{
+    return waterToDistribute;
+}
+
+bool WaterSupply::distributeWater(Building* b)
 {
     if (working)
     {
@@ -45,6 +58,7 @@ bool WaterSupply::repair()
 {
     working = true;
     cout << "Water supply repaired and operational.\n";
+    notifyCitizens('Notification: Water Supply Repaired')
     return working;
 }
 
@@ -59,7 +73,28 @@ void WaterSupply::updateResourceLevel(bool b, int c)
     }
     else
     {
-
         cout << "Water level refiled for distribution" << endl;
+    }
+}
+
+
+
+
+void WaterSupply::notifyCitizens(const string &message)
+{
+    // for (Citizen* citizen : citizens) {
+    //     if (working) {
+    //         citizen->increaseSatisfaction(10);  // increase satisfaction if working
+    //     } else {
+    //         citizen->decreaseSatisfaction(10);  // decrease satisfaction if not working
+    //     }
+    // }
+
+    cout << message << endl;;
+
+    vector<Citizen *>::iterator it = residents.begin();
+    for (it = residents.begin(); it != residents.end(); ++it)
+    {
+        (*it)->reactToUtilities(working);
     }
 }

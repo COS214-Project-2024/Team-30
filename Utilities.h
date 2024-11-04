@@ -22,19 +22,14 @@ public:
      * @brief Constructs a Utilities manager for a given building.
      * @param b The building that requires utility services.
      */
-    Utilities(Building b);
-
-    /**
-     * @brief Sends a notification message to citizens regarding utility services.
-     * @param message The message to notify citizens.
-     */
-    void notifyCitizens(const string& message);
+    Utilities(Building* b);
 
 private:
-    PowerPlant powerPlant;         /**< PowerPlant instance responsible for electricity generation. */
-    SewageSystem sewageSystem;     /**< SewageSystem instance responsible for waste disposal and treatment. */
-    WasteManagement wasteManagement; /**< WasteManagement instance handling waste removal and recycling. */
-    WaterSupply waterSupply;       /**< WaterSupply instance responsible for water distribution. */
+    PowerPlant* powerPlant;         /**< PowerPlant instance responsible for electricity generation. */
+    SewageSystem* sewageSystem;     /**< SewageSystem instance responsible for waste disposal and treatment. */
+    WasteManagement* wasteManagement; /**< WasteManagement instance handling waste removal and recycling. */
+    WaterSupply* waterSupply;       /**< WaterSupply instance responsible for water distribution. */
+    bool working;
 };
 
 #endif // UTILITIES_H

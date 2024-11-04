@@ -16,20 +16,21 @@ public:
     /**
      * @brief Constructs a PowerPlant instance.
      */
-    PowerPlant();
+    PowerPlant(Coal c);
 
     /**
      * @brief Sets the operational status of the power plant.
      * @param b Boolean indicating if the power plant is working.
      */
     void setWorking(bool b);
+    bool getWorking();
 
     /**
      * @brief Generates electricity for a specified building.
      * @param b The building receiving electricity.
      * @return True if electricity generation was successful, false otherwise.
      */
-    bool generateElectricity(Building b);
+    bool generateElectricity(Building* b);
 
     /**
      * @brief Repairs the power plant, returning it to working condition.
@@ -42,8 +43,15 @@ public:
      */
     void updateResourceLevel();
 
+    /**
+     * @brief Sends a notification message to citizens regarding utility services.
+     * @param message The message to notify citizens.
+     */
+    void notifyCitizens(const string& message);
+
 private:
     bool working; /**< Indicates if the power plant is operational. */
+    int coalToDistribute;
 };
 
 #endif // POWERPLANT_H

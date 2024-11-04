@@ -19,7 +19,12 @@ void WasteManagement::setWorking(bool w){
         cout << "Waste Management system working status set to: FALSE";
 }
 
-bool WasteManagement::removeWaste(Building b){
+bool WasteManagement::getWorking()
+{
+    return working;
+}
+
+bool WasteManagement::removeWaste(Building* b){
     if (working) {
         cout << "Removing waste from building...\n";
     } else {
@@ -27,7 +32,7 @@ bool WasteManagement::removeWaste(Building b){
     }
 }
 
-bool WasteManagement::recycle(Building b){
+bool WasteManagement::recycle(Building* b){
     if (working) {
         cout << "Recycling waste for building...\n";
     } else {
@@ -38,5 +43,25 @@ bool WasteManagement::recycle(Building b){
 bool WasteManagement::repair(){
     working = true;
     cout << "Waste Management system repaired and operational.\n";
+    notifyCitizens('Notification: Waste Management Repaired')
     return working;
+}
+
+void WasteManagement::notifyCitizens(const string &message)
+{
+    // for (Citizen* citizen : citizens) {
+    //     if (working) {
+    //         citizen->increaseSatisfaction(10);  // increase satisfaction if working
+    //     } else {
+    //         citizen->decreaseSatisfaction(10);  // decrease satisfaction if not working
+    //     }
+    // }
+
+    cout << message << endl;;
+
+    vector<Citizen *>::iterator it = residents.begin();
+    for (it = residents.begin(); it != residents.end(); ++it)
+    {
+        (*it)->reactToUtilities(working);
+    }
 }

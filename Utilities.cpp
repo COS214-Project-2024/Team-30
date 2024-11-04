@@ -6,36 +6,34 @@
 
 using namespace std;
 
-Utilities::Utilities(Building b)
+Utilities::Utilities(Building* b)
 {
     cout << "Providing city utilities to building...\n";
 
-    powerPlant.generateElectricity();
+    powerPlant = new PowerPlant();
+    waterSupply = new WaterSupply();
+    wasteManagement = new WasteManagement();
+    sewageSystem = new SewageSystem();
 
-    waterSupply.distributeWater();
+    powerPlant.generateElectricity(b);
 
-    wasteManagement.removeWaste(Building b);
-    wasteManagement.recycle(Building b);
+    waterSupply.distributeWater(b);
 
-    sewageSystem.manageDisposal(Building b);
-    sewageSystem.manageTreatment(Building b);
-}
+    wasteManagement.removeWaste(b);
+    wasteManagement.recycle(b);
 
-void Utilities::notifyCitizens(const string &message)
-{
-    // for (Citizen* citizen : citizens) {
-    //     if (working) {
-    //         citizen->increaseSatisfaction(10);  // increase satisfaction if working
-    //     } else {
-    //         citizen->decreaseSatisfaction(10);  // decrease satisfaction if not working
-    //     }
-    // }
+    sewageSystem.manageDisposal(b);
+    sewageSystem.manageTreatment(b);
 
-    cout << message << endl;;
-
-    vector<Citizen *>::iterator it = residents.begin();
-    for (it = residents.begin(); it != residents.end(); ++it)
-    {
-        (*it)->update();
+    if (
+        powerPlant.getWorking() &&
+        waterSupply.getWorking() &&
+        wasteManagement.getWorking() &&
+        sewageSystem.getWorking()
+    ){
+        working = true;
+    }
+    else{
+        working = false;
     }
 }
