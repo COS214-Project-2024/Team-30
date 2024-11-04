@@ -5,59 +5,62 @@
 #include <memory> // Include for smart pointers
 #include <algorithm>
 #include "BuildingState.h"
-// #include "Utilities.h"
-// #include "BuildingComponent.h"
 #include "Emergencies.h"
 #include "Citizen.h"
 
 class Emergencies;
 
 using namespace std;
-//
+
 class Building
-//  : public BuildingComponent
 {
 protected:
-    // vector<Utilities*> utilities;
     int id;
-    unique_ptr<BuildingState> currState; // Use unique_ptr for ownership
+    unique_ptr<BuildingState> currState; 
     int capacity;
     int buildingHealth;
-    int price; //? whats price : price is gonna work with city budget in government
+    int price; 
     bool runningUtils;
     vector<shared_ptr<Citizen>> residents;
     static int nextID;
 
+     //std::string name;
+     //Utilities
+    // int water;
+    // int power;
+    // int waste;
+    // int sewage;
+
 public:
     Building(); //Building constructor
-    // Building(BuildingState* initialState); //set state to underconstruction
     virtual ~Building();
     int getCapacity();
     virtual void build() = 0;
     BuildingState *getState();
-    void setState(unique_ptr<BuildingState> state); // Accept a unique_ptr
+    void setState(unique_ptr<BuildingState> state); 
     void setCapacity(int capacity);
-    void processState(); // request() function for State DP
+    void processState(); 
     virtual string getType() = 0;
-    void displayInfo(); // removed override keyword. testing without the building component
+    void displayInfo(); 
+
     void simulateEmergency(Emergencies &emergency);
     bool hasOccupant(int citizenID) const;
     void printResidents();
     bool containsCitizen(shared_ptr<Citizen> citizen);
+    
     string getName();
     int getID();
-    // void add(std::unique_ptr<BuildingComponent> component) override;
-    // void remove(std::unique_ptr<BuildingComponent> component) override;
+
     void takeDamage(int damage);
     void update();
-    void recieveUtilities(); // Utilities
-    // Utilities* setUtilities();
+
+    void recieveUtilities(); 
 
     void addCitizen(shared_ptr<Citizen> citizen);
     void removeCitizen(shared_ptr<Citizen> citizen);
     void notifyCitizensOfEmergency(int damage);
 
-    virtual unique_ptr<Building> clone() = 0; // Return unique_ptr
+    virtual unique_ptr<Building> clone() = 0; 
 };
 
 #endif
