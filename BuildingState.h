@@ -21,6 +21,12 @@ class BuildingState {
 
     private:
     protected:
+    /**
+     * @brief Weak reference to the associated Building.
+     *
+     * Using weak_ptr prevents circular references between Building and BuildingState,
+     * helping manage memory and avoid potential memory leaks.
+     */
     weak_ptr<Building> building; // Use weak_ptr to prevent circular references
 
     public:
