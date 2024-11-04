@@ -3,6 +3,15 @@
 
 #include "BuildingState.h"
 
+/**
+ * @class Destroyed
+ * @brief Represents the "Destroyed" state of a Building.
+ *
+ * The Destroyed class implements state-specific behavior for buildings
+ * that have been destroyed. It provides concrete implementations of the methods
+ * defined in the BuildingState interface for managing this state.
+ */
+
 class Destroyed : public BuildingState{
 
     private:
