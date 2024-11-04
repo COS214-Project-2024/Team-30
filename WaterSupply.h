@@ -5,6 +5,10 @@
 #include "ResourceObserver.h"
 #include "Water.h"
 
+#include <memory>
+#include <string>
+#include <vector>
+
 using namespace std;
 
 /**
@@ -16,7 +20,7 @@ public:
     /**
      * @brief Constructs a WaterSupply instance.
      */
-    WaterSupply(Water* w);
+    WaterSupply(shared_ptr<Water> w);
 
     /**
      * @brief Sets the operational status of the water supply system.
@@ -33,7 +37,7 @@ public:
      * @param b The building receiving water.
      * @return True if water distribution was successful, false otherwise.
      */
-    int distributeWater(Building *b);
+    int distributeWater(shared_ptr<Building> b);
 
     /**
      * @brief Repairs the water supply system, returning it to working condition.
@@ -50,7 +54,8 @@ public:
 private:
     bool working; /**< Indicates if the water supply system is operational. */
     int waterToDistribute;
-    Water* waterResource;
+    shared_ptr<Water> waterResource; /**< Shared pointer to the water resource */
+    vector<shared_ptr<Citizen>> residents; /**< List of citizens sharing water resources */
 };
 
 #endif // WATERSUPPLY_H

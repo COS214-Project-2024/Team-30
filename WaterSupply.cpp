@@ -3,92 +3,67 @@
 #include "Building.h"
 
 #include <iostream>
+#include <memory>
 
 using namespace std;
 
-WaterSupply::WaterSupply(Water *w)
-{
+WaterSupply::WaterSupply(shared_ptr<Water> w) {
     working = true;
     waterResource = w;
-    waterToDistribute = waterResource.use(100); // check if makes sense
+    waterToDistribute = waterResource->use(100); // Assumes Water has a use method returning int
     cout << "Water supply system initialized.\n";
 }
 
-void WaterSupply::setWorking(bool w)
-{
+void WaterSupply::setWorking(bool w) {
     working = w;
     cout << "Water supply working status set to: " << working << endl;
 }
 
-bool WaterSupply::getWorking()
-{
+bool WaterSupply::getWorking() {
     return working;
 }
 
-void WaterSupply::setWater(int w)
-{
-    waterToDistribute += waterResource.use(w);
-
-    cout << "Water supply level set to: " << waterToDistribute;
+void WaterSupply::setWater(int w) {
+    waterToDistribute += waterResource->use(w);
+    cout << "Water supply level set to: " << waterToDistribute << endl;
 }
 
-int WaterSupply::getWater()
-{
+int WaterSupply::getWater() {
     return waterToDistribute;
 }
 
-int WaterSupply::distributeWater(Building *b)
-{
+int WaterSupply::distributeWater(shared_ptr<Building> b) {
     waterToDistribute -= 100;
 
-    if (working && waterToDistribute > 0)
-    {
+    if (working && waterToDistribute > 0) {
         cout << "Distributing water to building...\n";
         return 100;
-    }
-    else if (working && waterToDistribute < 0)
-    {
+    } else if (working && waterToDistribute < 0) {
         setWater(100);
-        if (waterToDistribute >= 100)
-        {
-            distributeWater(b);
+        if (waterToDistribute >= 100) {
+            return distributeWater(b);
         } else {
-            notifyCitizens('Notification: Water Supply Broken') ;
+            notifyCitizens("Notification: Water Supply Broken");
             setWorking(false);
             return 0;
         }
-    }
-    else
-    {
+    } else {
         cout << "Water supply system not operational. Water distribution postponed.\n";
         return 0;
     }
 }
 
-bool WaterSupply::repair()
-{
+bool WaterSupply::repair() {
     setWorking(true);
     cout << "Water supply repaired and operational.\n";
-    notifyCitizens('Notification: Water Supply Repaired') ;
+    notifyCitizens("Notification: Water Supply Repaired");
     return working;
 }
 
-void WaterSupply::notifyCitizens(const string &message)
-{
-    // for (Citizen* citizen : citizens) {
-    //     if (working) {
-    //         citizen->increaseSatisfaction(10);  // increase satisfaction if working
-    //     } else {
-    //         citizen->decreaseSatisfaction(10);  // decrease satisfaction if not working
-    //     }
-    // }
-
+void WaterSupply::notifyCitizens(const string& message) {
     cout << message << endl;
-    ;
 
-    vector<Citizen *>::iterator it = residents.begin();
-    for (it = residents.begin(); it != residents.end(); ++it)
-    {
-        (*it)->reactToUtilities(working);
+    for (const auto& resident : residents) {
+        resident->reactToUtilities(working); // Assuming `reactToUtilities` is a method in Citizen
     }
 }

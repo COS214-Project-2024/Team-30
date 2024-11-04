@@ -5,9 +5,9 @@
 #include "SewageSystem.h"
 #include "WasteManagement.h"
 #include "WaterSupply.h"
-
 #include "Building.h"
 
+#include <memory>
 #include <string>
 
 using namespace std;
@@ -21,15 +21,17 @@ public:
     /**
      * @brief Constructs a Utilities manager for a given building.
      * @param b The building that requires utility services.
+     * @param c The coal source for electricity generation.
+     * @param w The water source for water supply.
      */
-    Utilities(Building* b);
+    Utilities(Building* b, Coal* c, Water* w);
 
 private:
-    PowerPlant* powerPlant;         /**< PowerPlant instance responsible for electricity generation. */
-    SewageSystem* sewageSystem;     /**< SewageSystem instance responsible for waste disposal and treatment. */
-    WasteManagement* wasteManagement; /**< WasteManagement instance handling waste removal and recycling. */
-    WaterSupply* waterSupply;       /**< WaterSupply instance responsible for water distribution. */
-    bool working;
+    unique_ptr<PowerPlant> powerPlant;         /**< PowerPlant instance responsible for electricity generation. */
+    unique_ptr<SewageSystem> sewageSystem;     /**< SewageSystem instance responsible for waste disposal and treatment. */
+    unique_ptr<WasteManagement> wasteManagement; /**< WasteManagement instance handling waste removal and recycling. */
+    unique_ptr<WaterSupply> waterSupply;       /**< WaterSupply instance responsible for water distribution. */
+    bool working;                              /**< Status of all utility systems. */
 };
 
 #endif // UTILITIES_H

@@ -2,8 +2,11 @@
 #define POWERPLANT_H
 
 #include "Building.h"
-#include "ResourceObserver.h"
 #include "Coal.h"
+
+#include <memory>
+#include <vector>
+#include <string>
 
 using namespace std;
 
@@ -16,7 +19,7 @@ public:
     /**
      * @brief Constructs a PowerPlant instance.
      */
-    PowerPlant(Coal* c);
+    PowerPlant(shared_ptr<Coal> c);
 
     /**
      * @brief Sets the operational status of the power plant.
@@ -33,7 +36,7 @@ public:
      * @param b The building receiving electricity.
      * @return True if electricity generation was successful, false otherwise.
      */
-    int generateElectricity(Building* b);
+    int generateElectricity(shared_ptr<Building> b);
 
     /**
      * @brief Repairs the power plant, returning it to working condition.
@@ -50,7 +53,8 @@ public:
 private:
     bool working; /**< Indicates if the power plant is operational. */
     int coalToDistribute;
-    Coal* coalResource;
+    shared_ptr<Coal> coalResource;
+    vector<shared_ptr<Citizen>> residents;
 };
 
 #endif // POWERPLANT_H

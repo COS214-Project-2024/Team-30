@@ -3,6 +3,10 @@
 
 #include "Building.h"
 
+#include <memory>
+#include <string>
+#include <vector>
+
 using namespace std;
 
 /**
@@ -28,7 +32,7 @@ public:
      * @param b The building for which sewage disposal is managed.
      * @return True if disposal was successfully managed, false otherwise.
      */
-    bool manageDisposal(Building* b);
+    bool manageDisposal(shared_ptr<Building> b);
 
     /**
      * @brief Manages sewage treatment for a specified building.
@@ -51,6 +55,7 @@ public:
 
 private:
     bool working; /**< Indicates if the sewage system is operational. */
+    vector<shared_ptr<Citizen>> residents; /**< List of citizens affected by the sewage system. */
 };
 
 #endif // SEWAGESYSTEM_H

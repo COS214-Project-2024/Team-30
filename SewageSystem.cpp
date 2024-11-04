@@ -1,6 +1,7 @@
 #include "SewageSystem.h"
 
 #include <iostream>
+#include <memory>
 
 using namespace std;
 
@@ -19,7 +20,7 @@ bool SewageSystem::getWorking()
     return working;
 }
 
-bool SewageSystem::manageDisposal(Building* b){
+bool SewageSystem::manageDisposal(shared_ptr<Building> b){
     if (working) {
         cout << "Managing sewage disposal for building...\n";
         manageTreatment();

@@ -1,6 +1,7 @@
 #include "WasteManagement.h"
 
 #include <iostream>
+#include <memory> // for shared_ptr
 
 using namespace std;
 
@@ -19,13 +20,15 @@ bool WasteManagement::getWorking()
     return working;
 }
 
-int WasteManagement::removeWaste(Building* b){
+int WasteManagement::removeWaste(shared_ptr<Building> b){
     if (working) {
         cout << "Removing waste from building...\n";
         recycle();
         b->waste = 100;
+        return 100;
     } else {
         cout << "Waste management system not operational. Waste removal postponed.\n";
+        return 0;
     }
 }
 

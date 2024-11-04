@@ -2,10 +2,11 @@
 #include "Coal.h"
 
 #include <iostream>
+#include <memory>
 
 using namespace std;
 
-PowerPlant::PowerPlant(Coal *c)
+PowerPlant::PowerPlant(shared_ptr<Coal> c)
 {
     working = true;
     coalResource = c;
@@ -36,7 +37,7 @@ int PowerPlant::getCoal()
     return coalToDistribute;
 }
 
-int PowerPlant::generateElectricity(Building *b)
+int PowerPlant::generateElectricity(shared_ptr<Building> b)
 {
     coalToDistribute -= 100;
 
@@ -45,12 +46,12 @@ int PowerPlant::generateElectricity(Building *b)
         cout << "Distributing power to building...\n";
         return 100;
     }
-    else if (working && coalToDistribute < 0)
+    else if (working && coalToDistribute <= 0)
     {
-        setWater(100);
+        setCoal(100);
         if (coalToDistribute >= 100)
         {
-            distributeWater(b);
+            generateElectricity(b);
         } else {
             notifyCitizens('Notification: Power Plant Broken') ;
             setWorking(false);

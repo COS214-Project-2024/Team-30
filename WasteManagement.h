@@ -1,7 +1,13 @@
 #ifndef WASTEMANAGEMENT_H
 #define WASTEMANAGEMENT_H
 
+
 #include "Building.h"
+#include "Citizen.h" // Assuming this is the class for Citizen objects
+
+#include <string>
+#include <vector>
+#include <memory> // for smart pointers
 
 using namespace std;
 
@@ -28,7 +34,8 @@ public:
      * @param b The building from which waste is removed.
      * @return True if waste removal was successful, false otherwise.
      */
-    int removeWaste(Building* b);
+
+    int removeWaste(shared_ptr<Building> b); // Use shared_ptr for consistency
 
     /**
      * @brief Recycles waste for a specified building.
@@ -51,6 +58,7 @@ public:
 
 private:
     bool working; /**< Indicates if the waste management system is operational. */
+    vector<shared_ptr<Citizen>> residents;
 };
 
 #endif // WASTEMANAGEMENT_H

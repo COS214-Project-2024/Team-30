@@ -5,35 +5,25 @@
 
 #include <iostream>
 #include <string>
+#include <memory>
 
 using namespace std;
 
-Utilities::Utilities(Building* b, Coal*c, Water* w)
-{
+Utilities::Utilities(Building* b, Coal* c, Water* w) {
     cout << "Providing city utilities to building...\n";
 
-    powerPlant = new PowerPlant(c);
-    waterSupply = new WaterSupply(w);
-    wasteManagement = new WasteManagement();
-    sewageSystem = new SewageSystem();
+    powerPlant = std::make_unique<PowerPlant>(c);
+    waterSupply = std::make_unique<WaterSupply>(w);
+    wasteManagement = std::make_unique<WasteManagement>();
+    sewageSystem = std::make_unique<SewageSystem>();
 
-    b->power = powerPlant.generateElectricity(b);
+    b->setPower(powerPlant->generateElectricity(b));
+    b->setWater(waterSupply->distributeWater(b));
+    b->setWaste(wasteManagement->removeWaste(b));
+    b->setSewage(sewageSystem->manageDisposal(b));
 
-    b->water = waterSupply.distributeWater(b);
-
-    b->waste = wasteManagement.removeWaste(b);
-
-    b->sewage = sewageSystem.manageDisposal(b);
-
-    if (
-        powerPlant.getWorking() &&
-        waterSupply.getWorking() &&
-        wasteManagement.getWorking() &&
-        sewageSystem.getWorking()
-    ){
-        working = true;
-    }
-    else{
-        working = false;
-    }
+    working = (powerPlant->getWorking() &&
+               waterSupply->getWorking() &&
+               wasteManagement->getWorking() &&
+               sewageSystem->getWorking());
 }
