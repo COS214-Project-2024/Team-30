@@ -14,7 +14,7 @@ using namespace std;
  * @class PowerPlant
  * @brief Represents a power plant responsible for generating electricity and monitoring coal resources.
  */
-class PowerPlant : public ResourceObserver {
+class PowerPlant {
 public:
     /**
      * @brief Constructs a PowerPlant instance with a specified coal resource.
@@ -69,7 +69,6 @@ private:
     bool working; /**< Indicates if the power plant is operational. */
     int coalToDistribute; /**< Amount of coal available for generating electricity. */
     shared_ptr<Coal> coalResource; /**< Shared pointer to the Coal resource used for power generation. */
-    vector<shared_ptr<Citizen>> residents; /**< List of citizens affected by the power plant's operations. */
 };
 
 #endif // POWERPLANT_H

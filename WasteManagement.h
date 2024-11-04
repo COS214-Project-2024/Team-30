@@ -59,7 +59,6 @@ public:
 
 private:
     bool working; /**< Indicates if the waste management system is operational. */
-    vector<shared_ptr<Citizen>> residents; /**< List of citizens impacted by waste services. */
 };
 
 #endif // WASTEMANAGEMENT_H

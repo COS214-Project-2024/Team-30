@@ -58,7 +58,6 @@ public:
 
 private:
     bool working; /**< Indicates if the sewage system is operational. */
-    vector<shared_ptr<Citizen>> residents; /**< List of citizens affected by the sewage system. */
 };
 
 #endif // SEWAGESYSTEM_H

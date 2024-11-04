@@ -47,7 +47,12 @@ SRCS = main.cpp \
        PopulationGrowth.cpp\
        Infrastructure.cpp\
        Housing.cpp\
-       Economy.cpp
+       Economy.cpp\
+       PowerPlant.cpp\
+       SewageSystem.cpp\
+       WasteManagement.cpp\
+       WaterSupply.cpp\
+       Utilities.cpp
 
 # Add emergencyMain.cpp to the source files
 EMERGENCY_SRCS = emergencyMain.cpp

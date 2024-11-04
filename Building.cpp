@@ -7,12 +7,17 @@
 #include "Built.h"
 #include "Underconstruction.h"
 #include "Destroyed.h"
+#include "Utilities.h"
 
-// Building::Building(BuildingState *initialState) : currState(nullptr){
-//     this->currState->setState();
+//Buildings default constructor
+// Building::Building():name(""),capacity(0), buildingHealth(100), price(0),runningUtils(false){
+//     //setUtilities();
 // }
 
-// sets state of building to underconstruction
+//Building::Building(const std::string &name) : name(name), capacity(0), buildingHealth(100), price(0), runningUtils(false) {}
+
+
+// Sets state of building to underconstruction
 void Building::setState(unique_ptr<BuildingState> state)
 {
     // note: just an idea
@@ -25,7 +30,7 @@ void Building::setState(unique_ptr<BuildingState> state)
     // currState->handle();
 }
 
-// set the state of the building acc to the building health
+// Sets the state of the building acc to the building health
 void Building::processState()
 {
     int health;
@@ -50,7 +55,7 @@ void Building::processState()
 
 void Building::displayInfo()
 {
-    std::cout << "============================================================" << std::endl;
+    std::cout << "==========================================" << std::endl;
     std::cout << std::setw(20) << std::left << "Building Type:" 
               << std::setw(20) << getType() << std::endl;
     std::cout << std::setw(20) << std::left << "Building State:" 
@@ -61,7 +66,7 @@ void Building::displayInfo()
               << std::setw(20) << price << std::endl;
     std::cout << std::setw(20) << std::left << "Utilities Running:" 
               << std::boolalpha << runningUtils << std::endl; // Output true/false as words
-    std::cout << "============================================================" << std::endl;
+    std::cout << "==========================================" << std::endl;
 }
 
 BuildingState* Building::getState()
@@ -69,44 +74,54 @@ BuildingState* Building::getState()
     return currState.get(); // Return raw pointer to BuildingState
 }
 
-// void Building::add(BuildingComponent *component)
-// {
-// }
-
-// void Building::remove(BuildingComponent *component)
-// {
-// }
-
 void Building::update()
 {
 }
 
-void Building::recieveUtilities()
+Building::~Building() 
 {
+
 }
 
-void Building::takeDamage(int damage) {
-    buildingHealth -= damage;
-    cout << "Building took " << damage << " damage. Health is now " << buildingHealth << endl;
+void Building::showInfo() const{
+    std::cout << "Building: " << name << std::endl;
+}
 
-    if (buildingHealth <= 0) {
-        cout << "Building is destroyed." << endl;
-        setState(make_unique<Destroyed>());
-    }
+// Building::Building(BuildingState *initialState) : currState(nullptr){
+//     this->currState->setState();
+// }
+
+void Building::setUtilities(){
+    water = 100;
+    power = 100;
+    sewerage = 100;
+    waste = 100;
+}
+
+// void Building::requestUtilities(){
+//     std::unique_ptr<Utilities> newUtils;
+//     newUtils = new Utilities(*this);
+// }
+
+int Building::getWater(){
+    return water;
+}
+
+int Building::getPower(){
+    return power;
+}
+
+int Building::getSewerage(){
+    return sewerage;
+}
+
+int Building::getWaste(){
+    return waste;
 }
 
 void Building::simulateEmergency(Emergencies& emergency) {
     emergency.accessDamage(this->clone());
 }
-
-
-// void Building::add(std::unique_ptr<BuildingComponent> component) {
-//     std::cout << "[Warning] Operation Unsupported: Cannot add components to a leaf node." << std::endl;
-// }
-
-// void Building::remove(std::unique_ptr<BuildingComponent> component) {
-//     std::cout << "[Warning] Operation Unsupported: Leaf nodes cannot remove components." << std::endl;
-// }
 
 void Building::addCitizen(shared_ptr<Citizen> citizen) {
     if (residents.size() < capacity) {
@@ -124,17 +139,4 @@ void Building::notifyCitizensOfEmergency(int damage) {
     for (auto& resident : residents) {
         resident->reactToEmergency(damage);
     }
-}
-void Building::setCapacity(int capacity)
-{
-    this->capacity = capacity; 
-}
-
-Building::~Building() 
-{
-
-}
-
-int Building::getCapacity(){
-    return capacity;
 }

@@ -70,7 +70,6 @@ private:
     bool working; /**< Indicates if the water supply system is operational. */
     int waterToDistribute; /**< Amount of water available for distribution. */
     shared_ptr<Water> waterResource; /**< Shared pointer to the water resource. */
-    vector<shared_ptr<Citizen>> residents; /**< List of citizens affected by water services. */
 };
 
 #endif // WATERSUPPLY_H
