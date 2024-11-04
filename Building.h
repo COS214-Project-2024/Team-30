@@ -28,6 +28,13 @@ protected:
     vector<shared_ptr<Citizen>> residents;
     static int nextID;
 
+       //Utilities
+    int water;
+    int power;
+    int waste;
+    int sewerage;
+
+
 public:
     Building(); //Building constructor
     // Building(BuildingState* initialState); //set state to underconstruction
@@ -56,6 +63,20 @@ public:
     void addCitizen(shared_ptr<Citizen> citizen);
     void removeCitizen(shared_ptr<Citizen> citizen);
     void notifyCitizensOfEmergency(int damage);
+
+
+    void setUtilities();
+    void requestUtilities();
+    
+    void setWater(int water);
+    void setPower(int power);
+    void setSewerage(int sewerage);
+    void setWaste(int waste);
+
+    int getWater();
+    int getPower();
+    int getSewerage();
+    int getWaste();
 
     virtual unique_ptr<Building> clone() = 0; // Return unique_ptr
 };

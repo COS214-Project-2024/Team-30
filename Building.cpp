@@ -182,3 +182,31 @@ int Building::getID()
 {
     return id;
 }
+
+void Building::setUtilities(){
+    water = 100;
+    power = 100;
+    sewerage = 100;
+    waste = 100;
+}
+
+// void Building::requestUtilities(){
+//     std::unique_ptr<Utilities> newUtils;
+//     newUtils = new Utilities(*this);
+// }
+
+int Building::getWater(){
+    return water;
+}
+
+int Building::getPower(){
+    return power;
+}
+
+int Building::getSewerage(){
+    return sewerage;
+}
+
+int Building::getWaste(){
+    return waste;
+}
