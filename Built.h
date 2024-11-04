@@ -17,6 +17,11 @@ class Built : public BuildingState{
     private:
     protected:
     public:
+    /**
+     * @brief Handles the behavior specific to the "Built" state.
+     *
+     * This method defines the actions taken while the building is in the "Built" state.
+     */
     void handle() override;
     void changeState() override;
     string getStatus() override;
