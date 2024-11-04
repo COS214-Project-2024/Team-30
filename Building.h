@@ -3,7 +3,7 @@
 
 #include <vector>
 #include <memory> // Include for smart pointers
-#include<algorithm>
+#include <algorithm>
 #include "BuildingState.h"
 // #include "Utilities.h"
 #include "BuildingComponent.h"
@@ -35,12 +35,14 @@ public:
     BuildingState *getState();
     void setState(unique_ptr<BuildingState> state); // Accept a unique_ptr
     void setCapacity(int capacity);
-    void processState();                            // request() function for State DP
+    void processState(); // request() function for State DP
     virtual string getType() = 0;
     void displayInfo(); // removed override keyword. testing without the building component
     void simulateEmergency(Emergencies &emergency);
     bool hasOccupant(int citizenID) const;
-
+    void printResidents();
+    bool containsCitizen(shared_ptr<Citizen> citizen);
+    string getName();
 
     // void add(std::unique_ptr<BuildingComponent> component) override;
     // void remove(std::unique_ptr<BuildingComponent> component) override;
