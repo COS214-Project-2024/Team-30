@@ -31,7 +31,15 @@ class Underconstruction : public BuildingState{
      * Implements the logic for transitioning from the "Under Construction" state to another state.
      */
     void changeState() override;
+
+    /**
+     * @brief Gets the status of the "Under Construction" state.
+     *
+     * @return A string indicating that the building is currently under construction.
+     */
     string getStatus() override;
+
+    
     unique_ptr<BuildingState> clone() const override;
 
 };
