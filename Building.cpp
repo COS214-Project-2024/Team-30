@@ -7,13 +7,14 @@
 #include "Built.h"
 #include "Underconstruction.h"
 #include "Destroyed.h"
+#include "Utilities.h"
 
 //Buildings default constructor
-Building::Building(): name("Building:"),capacity(0), buildingHealth(100), price(0),runningUtils(false){
-    //setUtilities();
-}
+// Building::Building():name(""),capacity(0), buildingHealth(100), price(0),runningUtils(false){
+//     //setUtilities();
+// }
 
-Building::Building(const std::string &name) : name(name), capacity(0), buildingHealth(100), price(0), runningUtils(false) {}
+//Building::Building(const std::string &name) : name(name), capacity(0), buildingHealth(100), price(0), runningUtils(false) {}
 
 
 // Sets state of building to underconstruction
@@ -90,14 +91,52 @@ void Building::showInfo() const{
 //     this->currState->setState();
 // }
 
-// void Building::setUtilities(){
-//     water = 100;
-//     power = 100;
-//     sewerage = 100;
-//     waste = 100;
-// }
+void Building::setUtilities(){
+    water = 100;
+    power = 100;
+    sewerage = 100;
+    waste = 100;
+}
 
 // void Building::requestUtilities(){
-//     std::unique_ptr<Utilities> utilities;
-//     utilities->provideUtilites();
+//     std::unique_ptr<Utilities> newUtils;
+//     newUtils = new Utilities(*this);
 // }
+
+int Building::getWater(){
+    return water;
+}
+
+int Building::getPower(){
+    return power;
+}
+
+int Building::getSewerage(){
+    return sewerage;
+}
+
+int Building::getWaste(){
+    return waste;
+}
+
+void Building::simulateEmergency(Emergencies& emergency) {
+    emergency.accessDamage(this->clone());
+}
+
+void Building::addCitizen(shared_ptr<Citizen> citizen) {
+    if (residents.size() < capacity) {
+        residents.push_back(citizen);
+    } else {
+        cout << "Building is at full capacity!" << endl;
+    }
+}
+
+void Building::removeCitizen(shared_ptr<Citizen> citizen) {
+    residents.erase(remove(residents.begin(), residents.end(), citizen), residents.end());
+}
+
+void Building::notifyCitizensOfEmergency(int damage) {
+    for (auto& resident : residents) {
+        resident->reactToEmergency(damage);
+    }
+}
