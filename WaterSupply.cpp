@@ -10,7 +10,7 @@ WaterSupply::WaterSupply(Water *w)
 {
     working = true;
     waterResource = w;
-    waterToDistribute = waterResource.use(10); // check if makes sense
+    waterToDistribute = waterResource.use(100); // check if makes sense
     cout << "Water supply system initialized.\n";
 }
 
@@ -39,17 +39,17 @@ int WaterSupply::getWater()
 
 int WaterSupply::distributeWater(Building *b)
 {
-    waterToDistribute -= 10;
+    waterToDistribute -= 100;
 
     if (working && waterToDistribute > 0)
     {
         cout << "Distributing water to building...\n";
-        return 10;
+        return 100;
     }
     else if (working && waterToDistribute < 0)
     {
-        setWater(10);
-        if (waterToDistribute >= 10)
+        setWater(100);
+        if (waterToDistribute >= 100)
         {
             distributeWater(b);
         } else {

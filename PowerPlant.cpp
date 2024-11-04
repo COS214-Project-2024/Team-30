@@ -9,7 +9,7 @@ PowerPlant::PowerPlant(Coal *c)
 {
     working = true;
     coalResource = c;
-    coalToDistribute = coalResource.use(10); // check if makes sense
+    coalToDistribute = coalResource.use(100); // check if makes sense
     cout << "Power plant initialized.\n";
 }
 
@@ -38,17 +38,17 @@ int PowerPlant::getCoal()
 
 int PowerPlant::generateElectricity(Building *b)
 {
-    coalToDistribute -= 10;
+    coalToDistribute -= 100;
 
     if (working && coalToDistribute > 0)
     {
         cout << "Distributing power to building...\n";
-        return 10;
+        return 100;
     }
     else if (working && coalToDistribute < 0)
     {
-        setWater(10);
-        if (coalToDistribute >= 10)
+        setWater(100);
+        if (coalToDistribute >= 100)
         {
             distributeWater(b);
         } else {

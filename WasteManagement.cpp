@@ -11,12 +11,7 @@ WasteManagement::WasteManagement(){
 
 void WasteManagement::setWorking(bool w){
     working = w;
-
-    if (working)
-        cout << "Waste Management system working status set to: TRUE";
-    
-    if (!working)
-        cout << "Waste Management system working status set to: FALSE";
+    cout << "Waste Management working status set to: " << working << endl;
 }
 
 bool WasteManagement::getWorking()
@@ -24,20 +19,18 @@ bool WasteManagement::getWorking()
     return working;
 }
 
-bool WasteManagement::removeWaste(Building* b){
+int WasteManagement::removeWaste(Building* b){
     if (working) {
         cout << "Removing waste from building...\n";
+        recycle();
+        b->waste = 100;
     } else {
         cout << "Waste management system not operational. Waste removal postponed.\n";
     }
 }
 
-bool WasteManagement::recycle(Building* b){
-    if (working) {
+void WasteManagement::recycle(){
         cout << "Recycling waste for building...\n";
-    } else {
-        cout << "Waste management system not operational. Recycling postponed.\n";
-    }
 }
 
 bool WasteManagement::repair(){

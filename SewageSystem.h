@@ -35,7 +35,7 @@ public:
      * @param b The building for which sewage treatment is managed.
      * @return True if treatment was successfully managed, false otherwise.
      */
-    bool manageTreatment(Building* b);
+    void manageTreatment();
 
     /**
      * @brief Repairs the sewage system, returning it to working condition.

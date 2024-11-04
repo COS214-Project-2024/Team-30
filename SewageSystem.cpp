@@ -11,12 +11,7 @@ SewageSystem::SewageSystem(){
 
 void SewageSystem::setWorking(bool w){
     working = w;
-
-    if (working)
-        cout << "Sewage system working status set to: TRUE";
-    
-    if (!working)
-        cout << "Sewage system working status set to: FALSE";
+    cout << "Sewage System working status set to: " << working << endl;
 }
 
 bool SewageSystem::getWorking()
@@ -27,17 +22,15 @@ bool SewageSystem::getWorking()
 bool SewageSystem::manageDisposal(Building* b){
     if (working) {
         cout << "Managing sewage disposal for building...\n";
+        manageTreatment();
+        b->sewage = 100;
     } else {
         cout << "Sewage system not operational due to repairs needed. Disposal postponed.\n";
     }
 }
 
-bool SewageSystem::manageTreatment(Building* b){
-    if (working) {
+void SewageSystem::manageTreatment(){
         cout << "Treating sewage for building...\n";
-    } else {
-        cout << "Sewage system not operational due to repairs needed. Treatment postponed.\n";
-    }
 }
 
 bool SewageSystem::repair(){

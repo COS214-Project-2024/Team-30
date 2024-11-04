@@ -28,14 +28,14 @@ public:
      * @param b The building from which waste is removed.
      * @return True if waste removal was successful, false otherwise.
      */
-    bool removeWaste(Building* b);
+    int removeWaste(Building* b);
 
     /**
      * @brief Recycles waste for a specified building.
      * @param b The building for which waste is recycled.
      * @return True if recycling was successful, false otherwise.
      */
-    bool recycle(Building* b);
+    void recycle();
 
     /**
      * @brief Repairs the waste management system, returning it to working condition.
