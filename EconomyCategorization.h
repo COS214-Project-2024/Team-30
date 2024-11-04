@@ -10,17 +10,14 @@
  * @brief A strategy class that categorizes the economic state of the city based on Government data.
  *
  * This class implements the `CategorizationStrategy` interface to provide a categorization strategy 
- * specifically for the economy of the city. The categorization is based on the data available from 
- * the `Government` object.
+ * specifically for the economy of the city.
  */
 class EconomyCategorization : public CategorizationStrategy {
 public:
     /**
      * @brief Categorizes the economic state of the city.
      *
-     * This function examines the current economic conditions within the city and returns a string 
-     * representing the economic category (e.g., "Growing," "Stable," "Recession") based on factors 
-     * such as population and employment rates from the `Government` instance.
+     * This function examines an economic condition and returns a string appropriately.
      *
      * @param g A pointer to the `Government` object that provides the necessary data for categorization.
      * @return A string representing the economic category of the city.

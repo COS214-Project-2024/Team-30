@@ -17,10 +17,10 @@ public:
      * @brief Updates the economic state based on the current status of the Government.
      *
      * This method is called when the `Government` notifies its observers of changes.
-     * The `Economy` observer will assess the economic metrics in `Government` and
-     * potentially adjust them to reflect growth or decline in the economy.
+     * The `Economy` observer will assess the economic factors in `Government` and
+     * adjust accordingly.
      *
-     * @param g Pointer to the `Government` object that provides the current economic data.
+     * @param g Pointer to the `Government` object.
      */
     void update(Government* g) override;
 };

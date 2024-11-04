@@ -3,7 +3,27 @@
 #include <iomanip>
 int Citizen::nextID = 1; // or 0, depending on your starting point for IDs
 
-
+//Method for this class only.
+/**
+ * @brief Clamps a value within a specified range.
+ *
+ * Checks if the value is less than the minimum or greater than the maximum 
+ * and returns the clamped value within this range.
+ *
+ * @param value The value to be clamped.
+ * @param min The minimum allowed value.
+ * @param max The maximum allowed value.
+ * @return int The clamped value within the specified range.
+ */
+int clamp(const int &value, const int &min, const int &max)
+{
+    if (value < min)
+        return min;
+    if (value > max)
+        return max;
+    return value;
+}
+//Beginning of implementation.
 Citizen::Citizen() : id(nextID++)
 {
     accountBalance = 0;
@@ -52,6 +72,7 @@ void Citizen::getPaid()
     else
     {
         happinessMeter = happinessMeter -1;
+        happinessMeter = clamp(happinessMeter, 0, 100);
         emotionalState->changeState(*this);
     }
 }
@@ -179,25 +200,7 @@ void Citizen::respondToPayment()
     }
 }
 
-/**
- * @brief Clamps a value within a specified range.
- *
- * Checks if the value is less than the minimum or greater than the maximum 
- * and returns the clamped value within this range.
- *
- * @param value The value to be clamped.
- * @param min The minimum allowed value.
- * @param max The maximum allowed value.
- * @return int The clamped value within the specified range.
- */
-int clamp(const int &value, const int &min, const int &max)
-{
-    if (value < min)
-        return min;
-    if (value > max)
-        return max;
-    return value;
-}
+
 
 
 void Citizen::respondToJobChange(bool gainedJob)
@@ -286,5 +289,6 @@ std::shared_ptr<Building> Citizen::getHome() {
 void Citizen::reactToNotGettingHired()
 {
     happinessMeter = happinessMeter - 5;
+    happinessMeter = clamp(happinessMeter, 0, 100);
     emotionalState->changeState(*this);
 }

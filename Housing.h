@@ -4,21 +4,19 @@
 #include "CityGrowthObserver.h"
 
 /**
- * @brief Observer class for monitoring and responding to housing-related changes.
+ * @brief Observer class for monitoring if housing needs are met.
  *
  * The `Housing` class is a concrete observer that implements the `CityGrowthObserver` 
- * interface. It updates housing-related statistics and infrastructure whenever 
- * there are changes in the population or other factors within the `Government` object.
+ * interface. 
  */
 class Housing : public CityGrowthObserver {
 public:
     /**
-     * @brief Updates housing conditions based on the current state of the Government.
+     * @brief Determines if housing needs to be increased.
      *
      * This method adjusts housing resources and requirements according to the
      * population size and other relevant data from the `Government` object. 
-     * It is triggered whenever there is a change in the city's conditions 
-     * (such as population growth) that affects housing needs.
+     * It is triggered whenever there is a change in poulation.
      *
      * @param g Pointer to the `Government` object that contains the latest city data.
      */

@@ -10,7 +10,7 @@ class Government;
  *
  * This class provides an interface for observing changes in the city's growth metrics. 
  * Derived classes implement the `update` function to define their response 
- * to changes in the `Government` class, such as economic, population, or infrastructure growth.
+ * to changes in the `Government` class.
  */
 class CityGrowthObserver {
 public:
@@ -28,7 +28,7 @@ public:
     /**
      * @brief Virtual destructor.
      *
-     * Ensures derived classes are properly cleaned up.
+     * Clean up of derived classes.
      */
     virtual ~CityGrowthObserver() = default;
 };
