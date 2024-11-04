@@ -194,7 +194,7 @@ void MassIntroduceCitizens()
 }
 int displayMenu()
 {
-    cout << "\n         ====== Game Menu ======\n";
+    cout << "\n         ====== Simulation Menu ======\n";
     cout << "           1) Add to the population\n";
     cout << "           2) Collect Taxes\n";
     cout << "           3) Increase infrastructure\n";
