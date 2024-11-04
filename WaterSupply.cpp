@@ -10,7 +10,6 @@ using namespace std;
 WaterSupply::WaterSupply(shared_ptr<Water> w) {
     working = true;
     waterResource = w;
-    waterToDistribute = waterResource->use(100); // Assumes Water has a use method returning int
     cout << "Water supply system initialized.\n";
 }
 
@@ -24,7 +23,7 @@ bool WaterSupply::getWorking() {
 }
 
 void WaterSupply::setWater(int w) {
-    waterToDistribute += waterResource->use(w);
+    waterToDistribute = w;
     cout << "Water supply level set to: " << waterToDistribute << endl;
 }
 
@@ -62,8 +61,4 @@ bool WaterSupply::repair() {
 
 void WaterSupply::notifyCitizens(const string& message) {
     cout << message << endl;
-
-    for (const auto& resident : residents) {
-        resident->reactToUtilities(working); // Assuming `reactToUtilities` is a method in Citizen
-    }
 }

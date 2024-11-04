@@ -24,7 +24,7 @@ int WasteManagement::removeWaste(shared_ptr<Building> b){
     if (working) {
         cout << "Removing waste from building...\n";
         recycle();
-        b->waste = 100;
+        b->setWaste(100);
         return 100;
     } else {
         cout << "Waste management system not operational. Waste removal postponed.\n";
@@ -39,25 +39,11 @@ void WasteManagement::recycle(){
 bool WasteManagement::repair(){
     working = true;
     cout << "Waste Management system repaired and operational.\n";
-    notifyCitizens('Notification: Waste Management Repaired');
+    notifyCitizens("Notification: Waste Management Repaired");
     return working;
 }
 
 void WasteManagement::notifyCitizens(const string &message)
 {
-    // for (Citizen* citizen : citizens) {
-    //     if (working) {
-    //         citizen->increaseSatisfaction(10);  // increase satisfaction if working
-    //     } else {
-    //         citizen->decreaseSatisfaction(10);  // decrease satisfaction if not working
-    //     }
-    // }
-
     cout << message << endl;;
-
-    vector<Citizen *>::iterator it = residents.begin();
-    for (it = residents.begin(); it != residents.end(); ++it)
-    {
-        (*it)->reactToUtilities(working);
-    }
 }

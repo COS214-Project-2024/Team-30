@@ -12,6 +12,11 @@
 
 using namespace std;
 
+class Building;      // Forward declaration
+class Coal;          // Forward declaration
+class Water;         // Forward declaration
+class PowerPlant;    // Forward declaration
+
 /**
  * @class Utilities
  * @brief Manages all utility services for a specific building, ensuring essential services are operational.
@@ -24,7 +29,7 @@ public:
      * @param c The coal source for electricity generation.
      * @param w The water source for water supply.
      */
-    Utilities(Building* b, Coal* c, Water* w);
+    Utilities(std::shared_ptr<Building> b, Coal* c, Water* w);
 
 private:
     unique_ptr<PowerPlant> powerPlant;         /**< PowerPlant instance responsible for electricity generation. */

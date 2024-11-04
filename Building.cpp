@@ -84,12 +84,10 @@ BuildingState *Building::getState()
 // {
 // }
 
-void Building::update()
-{
-}
-
-void Building::recieveUtilities()
-{
+void Building::receiveUtilities(Coal* c, Water* w) {
+    // Convert `this` to `shared_ptr` and pass it to Utilities
+    std::shared_ptr<Building> buildingPtr = shared_from_this();
+    utils = std::make_unique<Utilities>(buildingPtr, c, w);
 }
 
 void Building::takeDamage(int damage)
@@ -231,7 +229,7 @@ void Building::setPower(int power)
 {
     this->power = power;
 }
-void Building::setSewerage(int sewerage)
+void Building::setSewage(int sewerage)
 {
     this->sewerage = sewerage;
 }

@@ -9,12 +9,14 @@
 #include "BuildingComponent.h"
 #include "Emergencies.h"
 #include "Citizen.h"
+#include "Utilities.h"
+#include "Resource.h"
 
 class Emergencies;
 
 using namespace std;
 //
-class Building
+class Building : public std::enable_shared_from_this<Building> 
 //  : public BuildingComponent
 {
 protected:
@@ -27,6 +29,8 @@ protected:
     bool runningUtils;
     vector<shared_ptr<Citizen>> residents;
     static int nextID;
+    std::unique_ptr<Utilities> utils;
+
 
     //Utilities
     int water;
@@ -51,13 +55,12 @@ public:
     bool hasOccupant(int citizenID) const;
     void printResidents();
     bool containsCitizen(shared_ptr<Citizen> citizen);
-    string getName();
     int getID();
     // void add(std::unique_ptr<BuildingComponent> component) override;
     // void remove(std::unique_ptr<BuildingComponent> component) override;
     void takeDamage(int damage);
-    void update();
-    void recieveUtilities(); // Utilities
+
+    void receiveUtilities(Coal* c, Water* w); // Utilities
     // Utilities* setUtilities();
 
     void addCitizen(shared_ptr<Citizen> citizen);
@@ -69,7 +72,7 @@ public:
     
     void setWater(int water);
     void setPower(int power);
-    void setSewerage(int sewerage);
+    void setSewage(int sewerage);
     void setWaste(int waste);
 
     int getWater();

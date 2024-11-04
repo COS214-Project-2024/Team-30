@@ -3,6 +3,7 @@
 
 #include "Building.h"
 #include "Coal.h"
+#include "Government.h"
 
 #include <memory>
 #include <vector>
@@ -15,6 +16,7 @@ using namespace std;
  * @brief Represents a power plant responsible for generating electricity and monitoring coal resources.
  */
 class PowerPlant {
+
 public:
     /**
      * @brief Constructs a PowerPlant instance with a specified coal resource.

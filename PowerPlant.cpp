@@ -72,9 +72,4 @@ bool PowerPlant::repair()
 void PowerPlant::notifyCitizens(const string &message)
 {
     cout << message << endl;
-
-    for (const auto& citizen : residents) // Use range-based for loop for clarity
-    {
-        citizen->reactToUtilities(working);
-    }
 }

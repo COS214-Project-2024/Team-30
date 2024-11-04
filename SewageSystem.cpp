@@ -23,7 +23,7 @@ int SewageSystem::manageDisposal(shared_ptr<Building> b) {
     if (working) {
         cout << "Managing sewage disposal for building...\n";
         manageTreatment();
-        b->sewage = 100;
+        b->setSewage(100);
         return 100;  // Returning a success code as described in the documentation
     } else {
         cout << "Sewage system not operational. Disposal postponed.\n";
@@ -44,8 +44,4 @@ bool SewageSystem::repair() {
 
 void SewageSystem::notifyCitizens(const string &message) {
     cout << message << endl;
-
-    for (auto& resident : residents) {
-        resident->reactToUtilities(working);
-    }
 }
