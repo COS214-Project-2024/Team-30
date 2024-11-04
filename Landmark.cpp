@@ -4,7 +4,7 @@
 #include "Underconstruction.h"
 
 // Constructor for Landmark
-Landmark::Landmark() {
+Landmark::Landmark() :Building(){
     setState(std::make_unique<Underconstruction>()); // Use smart pointer
     capacity = 100;
     buildingHealth = 90;

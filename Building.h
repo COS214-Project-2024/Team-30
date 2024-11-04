@@ -3,7 +3,7 @@
 
 #include <vector>
 #include <memory> // Include for smart pointers
-#include<algorithm>
+#include <algorithm>
 #include "BuildingState.h"
 // #include "Utilities.h"
 #include "BuildingComponent.h"
@@ -19,15 +19,17 @@ class Building
 {
 protected:
     // vector<Utilities*> utilities;
+    int id;
     unique_ptr<BuildingState> currState; // Use unique_ptr for ownership
     int capacity;
     int buildingHealth;
     int price; //? whats price : price is gonna work with city budget in government
     bool runningUtils;
     vector<shared_ptr<Citizen>> residents;
+    static int nextID;
 
 public:
-    // Building(); //Building constructor
+    Building(); //Building constructor
     // Building(BuildingState* initialState); //set state to underconstruction
     virtual ~Building();
     int getCapacity();
@@ -35,13 +37,15 @@ public:
     BuildingState *getState();
     void setState(unique_ptr<BuildingState> state); // Accept a unique_ptr
     void setCapacity(int capacity);
-    void processState();                            // request() function for State DP
+    void processState(); // request() function for State DP
     virtual string getType() = 0;
     void displayInfo(); // removed override keyword. testing without the building component
     void simulateEmergency(Emergencies &emergency);
     bool hasOccupant(int citizenID) const;
-
-
+    void printResidents();
+    bool containsCitizen(shared_ptr<Citizen> citizen);
+    string getName();
+    int getID();
     // void add(std::unique_ptr<BuildingComponent> component) override;
     // void remove(std::unique_ptr<BuildingComponent> component) override;
     void takeDamage(int damage);

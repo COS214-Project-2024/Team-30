@@ -4,7 +4,7 @@
 #include "Underconstruction.h"
 
 // Creates a Residential object
-Residential::Residential() {
+Residential::Residential() : Building(){
     // State of residential building should be under construction
     setState(std::make_unique<Underconstruction>()); // Use smart pointer
     capacity = 4;

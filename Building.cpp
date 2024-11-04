@@ -11,6 +11,10 @@
 // Building::Building(BuildingState *initialState) : currState(nullptr){
 //     this->currState->setState();
 // }
+int Building::nextID = 1; // or 0, depending on your starting point for IDs
+
+Building::Building() : id(nextID++)
+{}
 
 // sets state of building to underconstruction
 void Building::setState(unique_ptr<BuildingState> state)
@@ -51,6 +55,8 @@ void Building::processState()
 void Building::displayInfo()
 {
     std::cout << "-------------------------------------------------------------" << std::endl;
+    std::cout << std::setw(20) << std::left << "Building ID:" 
+              << std::setw(20) << getID() << std::endl; // New line for Building ID
     std::cout << std::setw(20) << std::left << "Building Type:" 
               << std::setw(20) << getType() << std::endl;
     std::cout << std::setw(20) << std::left << "Building State:" 
@@ -143,4 +149,36 @@ Building::~Building()
 
 int Building::getCapacity(){
     return capacity;
+}
+
+
+bool Building::containsCitizen(shared_ptr<Citizen> citizen)
+{
+    auto it = find(residents.begin(),residents.end(),citizen);
+    if (it == residents.end())
+    {
+
+        return false;
+    }
+    return true;
+}
+
+void Building::printResidents()
+{
+    if (residents.empty()) {
+        cout << "No residents in the building." << endl;
+        return;
+    }
+    cout << "Residents' ID numbers:\n";
+    for (const auto& resident : residents) {
+        if (resident) {
+            cout << resident->getID() << "\n";
+        }
+    }
+    cout << endl;
+
+}
+int Building::getID()
+{
+    return id;
 }
