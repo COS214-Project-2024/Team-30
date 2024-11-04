@@ -59,8 +59,15 @@ class BuildingState {
      */
     virtual void handle() = 0;
 
-    
+    /**
+     * @brief Changes the state of the Building to a new state.
+     *
+     * This pure virtual function must be implemented by derived classes to handle
+     * transitions to a different state.
+     */
     virtual void changeState() = 0;
+
+
     virtual string getStatus() = 0;
      virtual unique_ptr<BuildingState> clone() const = 0;  // Clone for deep copy. this will ensure that when we use prototype to create objects, they wont share states.
 };
