@@ -18,6 +18,12 @@ class LandmarkFactory : public BuildingFactory {
     protected:
     
     public:
+     /**
+     * @brief Creates a new Landmark Building object.
+     *
+     * Overrides the createBuilding method to create an instance of a landmark building.
+     * @return A unique pointer to a newly created landmark Building object.
+     */
     unique_ptr<Building> createBuilding() override; // Change to return unique_ptr<Building>
 };
 
