@@ -14,6 +14,9 @@
 class BuildingFactory
 {
 public:
+    /**
+     * @brief Virtual destructor for BuildingFactory.
+     */
     virtual ~BuildingFactory();
 
 protected:
