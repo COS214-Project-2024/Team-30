@@ -30,6 +30,12 @@ class BuildingState {
     weak_ptr<Building> building; // Use weak_ptr to prevent circular references
 
     public:
+    /**
+     * @brief Weak reference to the associated Building.
+     *
+     * Using weak_ptr prevents circular references between Building and BuildingState,
+     * helping manage memory and avoid potential memory leaks.
+     */
     virtual ~BuildingState() {}
 
     void setBuilding(shared_ptr<Building> currbuilding); // Accept shared_ptr
