@@ -35,6 +35,12 @@ class Built : public BuildingState{
      * @return A string indicating that the building is currently in a fully constructed state.
      */
     string getStatus() override;
+    /**
+     * @brief Clones the Built state object.
+     *
+     * Creates a deep copy of the current "Built" state.
+     * @return A unique pointer to a new Built state object.
+     */
     unique_ptr<BuildingState> clone() const override;
 
 
