@@ -6,7 +6,7 @@
 #include <algorithm>
 #include "BuildingState.h"
 // #include "Utilities.h"
-#include "BuildingComponent.h"
+// #include "BuildingComponent.h"
 #include "Emergencies.h"
 #include "Citizen.h"
 
