@@ -7,8 +7,8 @@
  * @param capacity The maximum number of passengers the private transport can carry.
  * @param from A shared pointer to the Building where the transport is initially located.
  */
-privateTransport::privateTransport(string name, int capacity, shared_ptr<Building> from)
-        : Transport(name, capacity, from) {}
+privateTransport::privateTransport(int capacity, shared_ptr<Building> from)
+        : Transport(capacity, from) {}
 
 /**
  * @brief Travels to a specified building and transports passengers.
@@ -20,15 +20,20 @@ privateTransport::privateTransport(string name, int capacity, shared_ptr<Buildin
  * @param to A shared pointer to the Building where the private transport will travel.
  */
 void privateTransport::Travel(shared_ptr<Building> to) {
-    /*if (to) {
-        for (const auto& cit : passengers) {
-            to->addCitizen(move(cit));  // Move the citizen to the destination building.
-            cout << this->name << " has moved by private transport citizen with ID " << cit->getID() << endl;
+    shared_ptr<Road> node = to->getRoad();
+    while(node->getNext() != to->getRoad())
+    {
+        if (node->containsBuilding(to))
+        {
+            from = to;
+            this->removeAllPeople();
+            cout << "The passengers have been dropped off at the destination!\n";
         }
-        from = to;  // Update the 'from' building to the new location.
-    } else {
-        cout << "Invalid destination building." << endl;  // Handle invalid destination.
-    }*/
-    shared_ptr<Building> node = to;
+        else
+        {
+            cout << "Moving off of road " << node->getID() << endl;
+            node->setNext(node->getNext());
+        }
+    }
 
 }

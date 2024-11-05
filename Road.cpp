@@ -14,8 +14,9 @@ Road::Road() : id(++numSigns) {}
  *
  * @param building Unique pointer to the building to be added.
  */
-void Road::addBuilding(unique_ptr<Building> building) {
+void Road::addBuilding(shared_ptr<Building> building) {
     if (building) {
+        building->setRoad(shared_from_this());
         buildings.push_back(move(building));
     }
 }
@@ -63,8 +64,8 @@ bool Road::removeLight() {
  *
  * @return The name of the road as a string.
  */
-string Road::getName() const {
-    return name;
+int Road::getID() const{
+    return id;
 }
 
 /**
@@ -100,4 +101,15 @@ void Road::setNext(shared_ptr<Road> road)
 shared_ptr<Road> Road::getNext()
 {
     return this->next;
+}
+
+bool Road::containsBuilding(shared_ptr<Building> b)
+{
+    auto it = find(buildings.begin(), buildings.end(), b);
+    if (it == buildings.end())
+    {
+        //isnt in
+        return false;
+    } 
+    return true;
 }

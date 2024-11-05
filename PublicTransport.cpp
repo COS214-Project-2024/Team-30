@@ -1,8 +1,8 @@
 #include "PublicTransport.h"
 #include <iostream>
 
-publicTransport::publicTransport(std::string name, int capacity, shared_ptr<Building> from)
-        : Transport(name, capacity, from) {}
+publicTransport::publicTransport(int capacity, shared_ptr<Building> from)
+        : Transport(capacity, from) {}
 
 /**
  * @brief Travels to a specified building and transports passengers.
@@ -15,10 +15,10 @@ publicTransport::publicTransport(std::string name, int capacity, shared_ptr<Buil
  */
 void publicTransport::Travel(shared_ptr<Building> to) {
     if (to) {
-        cout << "Traveling to " << to->getName() << " by public transport.\n";
+        cout << "Traveling to " << to->getID() << " by public transport.\n";
         for (const auto& cit : passengers) {
             to->addCitizen(cit);
-            cout << "Passenger with ID " << cit->getID() << " has been transported to " << to->getName() << ".\n";
+            cout << "Passenger with ID " << cit->getID() << " has been transported to " << to->getID() << ".\n";
         }
         passengers.clear();  // Clear the list of passengers after transporting them.
         from = to;           // Update the 'from' building to the new location.

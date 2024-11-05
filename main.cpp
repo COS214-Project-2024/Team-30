@@ -15,6 +15,14 @@
 #include "Infrastructure.h"
 #include "Economy.h"
 #include "PopulationGrowth.h"
+#include "BillboardSign.h"
+#include "Roadsign.h"
+#include "PrivateTransport.h"
+#include "Plane.h"
+#include "Taxi.h"
+#include "Train.h"
+#include "SetRedLightsCommand.h"
+
 using namespace std;
 // Function to display the main menu and capture user selection
 
@@ -192,6 +200,86 @@ void MassIntroduceCitizens()
     std::cout << "City categorization by Economy: " << cityGovernment->categorize() << std::endl;
     std::cout << "------------------------------------------------------------------------------\n";
 }
+
+
+void TestTravelling()
+{
+    ResidentialFactory residentialFactory;
+    shared_ptr<Building> b1 = residentialFactory.createBuilding();
+    shared_ptr<Building> b2 = residentialFactory.createBuilding();
+    shared_ptr<Building> b3 = residentialFactory.createBuilding();
+
+    //citizens:
+    shared_ptr<Citizen> c1 = make_shared<Citizen>();
+    shared_ptr<Citizen> c2 = make_shared<Citizen>();
+    shared_ptr<Citizen> c3 = make_shared<Citizen>();
+    shared_ptr<Citizen> c4 = make_shared<Citizen>();
+    shared_ptr<Citizen> c5 = make_shared<Citizen>();
+    shared_ptr<Citizen> c6 = make_shared<Citizen>();
+    shared_ptr<Citizen> c7 = make_shared<Citizen>();
+    shared_ptr<Citizen> c8 = make_shared<Citizen>();
+    shared_ptr<Citizen> c9 = make_shared<Citizen>();
+    shared_ptr<Citizen> c10 = make_shared<Citizen>();
+    shared_ptr<Citizen> c11 = make_shared<Citizen>();
+    //signs:
+    Sign mySign("This is my first sign");
+    //BillboardSigns
+    BillboardSign myBill("this is a billboard"); //what if as we traverse we print the messages for wgat we see in the billboards?
+    BillboardSign myBill2("Advertisement");
+    //Roadsigns
+    RoadSign stopSign("STOP");
+    RoadSign yield("Yield");
+    //trafficLights:
+    unique_ptr<TrafficLight> t1;
+    unique_ptr<TrafficLight> t2;
+    unique_ptr<TrafficLight> t3;
+    //commands
+    shared_ptr<trafficCommand> cmd;
+    //Planes
+    shared_ptr<Plane> myPlane = make_shared<Plane>(5,b1);
+    //PrivateTransport
+    shared_ptr<privateTransport> myPrivate = make_shared<privateTransport>(5,b1);
+    //Taxi
+    shared_ptr<Taxi> myTaxi = make_shared<Taxi>(5,b1);
+    //Trains
+    shared_ptr<Train> myTrain = make_shared<Train>(5,b1,cmd);
+  
+    //Roads
+    shared_ptr<Road> r1 = make_shared<Road>();
+    shared_ptr<Road> r2 = make_shared<Road>();
+    shared_ptr<Road> r3 = make_shared<Road>();
+    shared_ptr<Road> r4 = make_shared<Road>();
+    //Area
+    shared_ptr<Area> a1 = make_shared<Area>("Generic area 7even");
+    //SetRedLightsCommand
+    SetRedLightsCommand SetRedLightsCommand(a1);
+
+
+    b1->addCitizen(c1);
+    b1->addCitizen(c2);
+    b1->addCitizen(c3);
+    b1->addCitizen(c4);
+    b1->addCitizen(c5);
+
+    r1->addBuilding(b1);
+    r2->addBuilding(b2);
+    r3->addBuilding(b3);   
+
+    a1->addRoad(r1);
+    a1->addRoad(r2);
+    a1->addRoad(r3);
+    a1->addRoad(r4);
+
+    r1->addSign(mySign);
+    r2->addSign(myBill);
+    r2->addSign(myBill2);
+
+    myPlane->addPeople(c1);
+    
+    
+}
+
+
 int displayMenu()
 {
     cout << "\n         ====== Simulation Menu ======\n";
@@ -251,6 +339,9 @@ void handleMenuSelection(int choice)
     case 11:
         simulateJobOpportunites();
         break;
+    case 12:
+        TestTravelling();
+        break;
     default:
         cout << "Invalid selection. Please try again.\n";
         break;
@@ -302,3 +393,4 @@ int main()
 
     return 0;
 }
+

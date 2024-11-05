@@ -15,12 +15,13 @@ using namespace std;
  */
 class Plane : public publicTransport {
 public:
+    Plane() : publicTransport(0,nullptr) {}
     /**
      * @brief Constructs a Plane with a specified name and capacity.
      * @param name The name of the plane.
      * @param capacity The maximum number of passengers the plane can carry.
      */
-    Plane(string name, int capacity);
+    Plane(int capacity, shared_ptr<Building> from);
 
     /**
      * @brief Travels to a specified building.

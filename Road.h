@@ -7,58 +7,54 @@
 #include <list>
 #include <string>
 #include <memory>
-#include "Building.h"
 #include "Sign.h"
 #include "TrafficLight.h"
+#include "Building.h"
+
+// Forward declaration to avoid circular dependency
+class Building;
 
 using namespace std;
-
-class Building;
 
 /**
  * @brief Represents a road in the traffic system.
  *
  * The Road class maintains a collection of buildings, signs, and a traffic light,
- * and allows for managing connections to other roads (left, right, straight).
+ * and allows for managing connections to other roads.
  */
-class Road {
+class Road : public enable_shared_from_this<Road> {
 private:
-    int id; ///< The id of the road
-    vector<unique_ptr<Building>> buildings; ///< Buildings located on this road.
+    int id; ///< The ID of the road.
+    vector<shared_ptr<Building>> buildings; ///< Buildings located on this road.
     vector<Sign> signs; ///< Signs associated with this road.
     unique_ptr<TrafficLight> light; ///< Traffic light for this road.
-    char state; ///< The state of the road, acting as a memento.
-    shared_ptr<Road> next;
+    char state; ///< The state of the traffic light, used as a memento.
+    shared_ptr<Road> next; ///< Pointer to the next road.
 
 public:
     static int numSigns;
+
     /**
-     * @brief Constructs a Road object with a specified name.
-     *
-     * @param name The name of the road.
+     * @brief Constructs a Road object.
      */
     Road();
 
     /**
      * @brief Sets the traffic light on this road to red.
-     *
-     * Changes the state of the traffic light to indicate that vehicles must stop.
      */
     void setLightRed();
 
     /**
-     * @brief Resets the traffic light to its default state.
-     *
-     * This method returns the traffic light to its original setting (e.g., green).
+     * @brief Resets the traffic light to its previous state.
      */
     void resetLight();
 
     /**
      * @brief Adds a building to this road.
-     *
-     * @param building A unique pointer to the building to be added.
+     * 
+     * @param building A shared pointer to the building to be added.
      */
-    void addBuilding(unique_ptr<Building> building);
+    void addBuilding(shared_ptr<Building> building);
 
     /**
      * @brief Adds a sign to this road.
@@ -82,18 +78,35 @@ public:
     bool removeLight();
 
     /**
-     * @brief Gets the name of the road.
+     * @brief Gets the ID of the road.
      *
-     * @return The name of the road.
+     * @return The ID of the road.
      */
-    string getName() const;
+    int getID() const;
 
+    /**
+     * @brief Sets the next road in the sequence.
+     * 
+     * @param r A shared pointer to the next road.
+     */
     void setNext(shared_ptr<Road> r);
 
+    /**
+     * @brief Gets the next road in the sequence.
+     *
+     * @return A shared pointer to the next road.
+     */
     shared_ptr<Road> getNext();
 
-    ~Road() = default; ///< Default destructor.
+    /**
+     * @brief Checks if the road contains a specific building.
+     *
+     * @param b A shared pointer to the building to check for.
+     * @return True if the building is found, otherwise false.
+     */
+    bool containsBuilding(shared_ptr<Building> b);
 
+    ~Road() = default; ///< Default destructor.
 };
 
 #endif // ROAD_H

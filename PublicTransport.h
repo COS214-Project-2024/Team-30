@@ -20,7 +20,7 @@ public:
      * @param capacity The maximum number of passengers the public transport can carry.
      * @param from A shared pointer to the Building where the transport is initially located.
      */
-    publicTransport(string name, int capacity, shared_ptr<Building> from);
+    publicTransport(int capacity, shared_ptr<Building> from);
 
     /**
      * @brief Travels to a specified building and transports passengers.

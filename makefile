@@ -47,7 +47,21 @@ SRCS = main.cpp \
        PopulationGrowth.cpp\
        Infrastructure.cpp\
        Housing.cpp\
-       Economy.cpp
+       Economy.cpp\
+       Road.cpp\
+       Transport.cpp\
+       PrivateTransport.cpp\
+       PublicTransport.cpp\
+       Plane.cpp\
+       SetRedLightsCommand.cpp\
+       Sign.cpp\
+       Taxi.cpp\
+       Train.cpp\
+       Roadsign.cpp\
+       BillboardSign.cpp\
+       TrafficLight.cpp\
+       Area.cpp\
+       trafficCommand.cpp
 
 # Add emergencyMain.cpp to the source files
 EMERGENCY_SRCS = emergencyMain.cpp

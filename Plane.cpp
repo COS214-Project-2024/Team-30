@@ -1,5 +1,7 @@
 #include "Plane.h"
 
+Plane::Plane(int capacity, shared_ptr<Building> from)
+        : publicTransport(capacity, from) {}
 /**
  * @brief Travels to a specified building and transports passengers
  *
@@ -9,13 +11,9 @@
  */
 void Plane::Travel(shared_ptr<Building> to) {
     if (to) {
-        for (const auto& cit : passengers) {
-            to->addCitizen(cit);  // Add each passenger to the destination building.
-            cout << name << " transported citizen with ID " << cit->getID()
-                 << " to building: " << to->getName() << endl;
-        }
-        passengers.clear();  // Clear all passengers after they have been moved.
-        from = to;           // Update the 'from' building to the new location.
+        from = to;
+        this->removeAllPeople();
+        cout << "The plane has landed and the passangers have been dropped off!\n";
     } else {
         cout << "Invalid destination building." << endl;  // Handle invalid destination.
     }
