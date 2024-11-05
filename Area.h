@@ -12,8 +12,7 @@ using namespace std;
  * @class Area
  * @brief Represents an area containing roads and manages traffic lights within those roads.
  *
- * The Area class allows for adding, removing, and connecting roads,
- * as well as controlling the traffic light states for all roads in the area.
+ * Area serves as a container for the roads
  */
 class Area {
 private:
