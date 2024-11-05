@@ -1,9 +1,11 @@
+
 #include "Steel.h"
 #include <iostream>
 
 Steel::Steel(int capacity)
-    : Resource(capacity)
+    
 {
+    this->capacity = capacity;
 }
 
 int Steel::getCapacity() const
@@ -29,5 +31,3 @@ int Steel::use(int amount)
         return 0;
     }
 }
-
-

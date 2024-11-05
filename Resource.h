@@ -1,16 +1,10 @@
+
 #ifndef RESOURCE_H
 #define RESOURCE_H
 
 #include <string>
 #include <unordered_map>
 #include <vector>
-
-#include "ResourceObserver.h"
-#include "Steel.h"
-#include "Water.h"
-#include "Coal.h"
-#include "Concrete.h"
-#include "Wood.h"
 
 /**
  * @class Resource
@@ -27,12 +21,6 @@ class Resource
 
     public: 
         /**
-         * @brief Constructs a Resource object with a specified capacity.
-         * @param capacity Initial capacity of the resource.
-         */
-        Resource(int capacity);
-
-        /**
          * @brief Virtual destructor for the Resource class.
          */
         virtual ~Resource() = default;
@@ -41,26 +29,24 @@ class Resource
          * @brief Gets the current capacity of the resource.
          * @return The current capacity as an integer.
          */
-        virtual int getCapacity() const = 0;
+         virtual int getCapacity() const = 0; // Pure virtual function
+
 
         /**
          * @brief Uses a specified amount of the resource.
          * @param amount Amount of the resource to use.
          * @return The actual amount used.
          */
-        virtual int use(int amount) = 0;
+        virtual int use(int amount) = 0;     // Pure virtual function
+        
 
         /**
          * @brief Refills the resource by a specified amount.
          * @param amount Amount to add to the resource's capacity.
          */
-        virtual void refill(int amount) = 0;
-
-        /**
-         * @brief Checks if the resource level is critical.
-         * @return True if the resource is at a critical level, false otherwise.
-         */
-        bool isCritical() const;
+         virtual void refill(int amount) = 0; // Pure virtual function
+        
 };      
 
 #endif
+

@@ -1,3 +1,4 @@
+
 #ifndef WATER_H
 #define WATER_H
 #include "Resource.h"
@@ -13,7 +14,7 @@ class Water : public Resource
 {
     private:
         // int capacity; ///< Capacity of the water resource (commented out, as it's not in use).
-
+         int capacity;
     public: 
         /**
          * @brief Constructs a Water object with a specified capacity.
@@ -42,3 +43,4 @@ class Water : public Resource
 };
 
 #endif
+

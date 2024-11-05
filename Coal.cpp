@@ -1,9 +1,10 @@
+
 #include "Coal.h"
 #include <iostream>
 
 Coal::Coal(int capacity)
-    : Resource(capacity)
 {
+    this->capacity = capacity;
 }
 
 int Coal::getCapacity() const
@@ -29,5 +30,3 @@ int Coal::use(int amount)
         return 0;
     }
 }
-
-

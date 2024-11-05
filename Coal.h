@@ -12,7 +12,7 @@
 class Coal : public Resource
 {
     private: 
-        // int capacity; ///< Capacity of the coal resource (commented out, as it's not in use).
+         int capacity; ///< Capacity of the coal resource (commented out, as it's not in use).
 
     public: 
         /**
@@ -20,7 +20,6 @@ class Coal : public Resource
          * @param capacity Initial capacity of the coal resource.
          */
         Coal(int capacity);
-
         /**
          * @brief Gets the current capacity of the coal resource.
          * @return The current capacity as an integer.

@@ -1,6 +1,8 @@
+
 #ifndef STEEL_H
 #define STEEL_H
 #include "Resource.h"
+class Resource;
 
 /**
  * @class Steel
@@ -12,7 +14,7 @@
 class Steel : public Resource
 {
     private: 
-        // int capacity; ///< Capacity of the steel resource (commented out, as it's not in use).
+         int capacity; ///< Capacity of the steel resource (commented out, as it's not in use).
 
     public: 
         /**
@@ -42,3 +44,4 @@ class Steel : public Resource
 };
 
 #endif
+

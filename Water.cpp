@@ -1,9 +1,10 @@
+
 #include "Water.h"
 #include <iostream>
 
 Water::Water(int capacity)
-    : Resource(capacity)
 {
+    this->capacity = capacity;
 }
 
 int Water::getCapacity() const
@@ -29,5 +30,3 @@ int Water::use(int amount)
         return 0;
     }
 }
-
-

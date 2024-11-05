@@ -17,7 +17,7 @@ using namespace std;
 class Wood : public Resource
 {
     private: 
-        // int capacity; ///< Capacity of the wood resource (commented out, as it's not in use).
+         int capacity; ///< Capacity of the wood resource (commented out, as it's not in use).
 
     public: 
         /**

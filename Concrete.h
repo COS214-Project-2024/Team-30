@@ -12,7 +12,7 @@
 class Concrete : public Resource
 {
     private: 
-        // int capacity; ///< Capacity of the concrete resource (commented out, as it's not in use).
+         int capacity; ///< Capacity of the concrete resource (commented out, as it's not in use).
 
     public: 
         /**

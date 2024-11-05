@@ -2,8 +2,8 @@
 #include <iostream>
 
 Wood::Wood(int capacity)
-    : Resource(capacity)
 {
+    this->capacity = capacity;
 }
 
 int Wood::getCapacity() const
@@ -20,7 +20,7 @@ int Wood::use(int amount)
 {
     if (amount <= capacity) {
         capacity -= amount;  
-        std::cout << "Using " << amount << " of wood. Remaining capacity: " << capacity << endl;
+        std::cout << "Using " << amount << " of wood. Remaining capacity: " << capacity << std::endl;
         return capacity;
     } 
     else 
@@ -29,5 +29,3 @@ int Wood::use(int amount)
         return 0;
     }
 }
-
-

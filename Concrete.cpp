@@ -1,9 +1,11 @@
+
 #include "Concrete.h"
 #include <iostream>
 
 Concrete::Concrete(int capacity)
-    : Resource(capacity)
+    
 {
+    this->capacity = capacity;
 }
 
 int Concrete::getCapacity() const
@@ -29,5 +31,3 @@ int Concrete::use(int amount)
         return 0;
     }
 }
-
-
