@@ -106,6 +106,8 @@ public:
      */
     bool containsBuilding(shared_ptr<Building> b);
 
+    vector<Sign> getSigns();
+
     ~Road() = default; ///< Default destructor.
 };
 

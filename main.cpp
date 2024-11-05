@@ -222,13 +222,16 @@ void TestTravelling()
     shared_ptr<Citizen> c10 = make_shared<Citizen>();
     shared_ptr<Citizen> c11 = make_shared<Citizen>();
     //signs:
-    Sign mySign("This is my first sign");
+    Sign mySign("Hey look at me! Im a sign");
     //BillboardSigns
     BillboardSign myBill("this is a billboard"); //what if as we traverse we print the messages for wgat we see in the billboards?
-    BillboardSign myBill2("Advertisement");
+    BillboardSign myBill2("Come on over to Krispy Kreme!");
+    BillboardSign myBill3("Be sure to drive safely!");
+    BillboardSign mybill4("Come watch the rugby with us at Pirates rugby club!");
     //Roadsigns
     RoadSign stopSign("STOP");
     RoadSign yield("Yield");
+    RoadSign school("Drive slowly in the school areas!\n");
     //trafficLights:
     unique_ptr<TrafficLight> t1;
     unique_ptr<TrafficLight> t2;
@@ -253,6 +256,13 @@ void TestTravelling()
     shared_ptr<Area> a1 = make_shared<Area>("Generic area 7even");
     //SetRedLightsCommand
     SetRedLightsCommand SetRedLightsCommand(a1);
+    r1->addSign(mySign);
+    r1->addSign(myBill);
+    r1->addSign(myBill2);
+    r2->addSign(yield);
+    r2->addSign(myBill2);
+    r3->addSign(myBill3);
+    r3->addSign(mybill4);
 
 
     b1->addCitizen(c1);
@@ -274,8 +284,31 @@ void TestTravelling()
     r2->addSign(myBill);
     r2->addSign(myBill2);
 
+    cout << "Residents before loading the plane:\n";
+    b1->printResidents();
     myPlane->addPeople(c1);
-    
+    cout << "Residents after loading the plane:\n";
+    b1->printResidents();
+    cout << "Building 2 before travel:\n";
+    b2->printResidents();
+    myPlane->Travel(b2);
+    cout << "Building 2 after travel:\n";
+    b2->printResidents();
+
+    cout << "The private vehicle is now going to take passengers from b1 to b3\n";
+    cout << "Building before loading the car with citizen 3:\n";
+    b1->printResidents();
+    myPrivate->addPeople(c3);
+    b1->printResidents();
+    cout << "b3 residents before travel:\n";
+    b3->printResidents();
+    cout << "Building 3 is on road: ";
+    cout << b3->getRoad()->getID() << endl;
+    cout << "Road 3 ID: " << r3->getID() << endl;
+    myPrivate->Travel(b3);
+    cout << "Lets look at the updated b3 residents!!:\n";
+    b3->printResidents();
+
     
 }
 
@@ -339,7 +372,7 @@ void handleMenuSelection(int choice)
     case 11:
         simulateJobOpportunites();
         break;
-    case 12:
+    case 5:
         TestTravelling();
         break;
     default:

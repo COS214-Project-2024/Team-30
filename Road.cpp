@@ -113,3 +113,8 @@ bool Road::containsBuilding(shared_ptr<Building> b)
     } 
     return true;
 }
+
+vector<Sign> Road::getSigns()
+{
+    return signs;
+}
