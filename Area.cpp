@@ -11,17 +11,19 @@ Area::Area(string name) : name(move(name)) {}
  * @param newRoad new shared pointer
  */
 void Area::addRoad(shared_ptr<Road> newRoad) {
-    shared_ptr<Road> node = head;
-    if (!head)
-    {
+    if (!head) {
         head = newRoad;
         newRoad->setNext(head);
+    } else {
+        shared_ptr<Road> node = head;
+        while (node->getNext() != head) {
+            node = node->getNext();
+        }
+        node->setNext(newRoad);
+        newRoad->setNext(head);
     }
-    while (node->getNext()!= head)
-        node = node->getNext();
-    node->setNext(newRoad);
-    newRoad->setNext(head);
 }
+
 
 /**
  * @brief Connects roads in the area.

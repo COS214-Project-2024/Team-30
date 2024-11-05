@@ -117,6 +117,7 @@ void Building::simulateEmergency(Emergencies& emergency) {
 void Building::addCitizen(shared_ptr<Citizen> citizen) {
     if (residents.size() < capacity) {
         residents.push_back(citizen);
+        cout << "Citizen: " << citizen->getID() << " was added\n";
     } else {
         cout << "Building is at full capacity!" << endl;
     }
@@ -169,7 +170,7 @@ void Building::printResidents()
         cout << "No residents in the building." << endl;
         return;
     }
-    cout << "Residents' ID numbers:\n";
+    cout << "Building " << this->getID() << " Residents' ID numbers:\n";
     for (const auto& resident : residents) {
         if (resident) {
             cout << resident->getID() << "\n";
