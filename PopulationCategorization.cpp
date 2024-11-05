@@ -1,5 +1,5 @@
 #include "PopulationCategorization.h" 
-using namespace std;
+
 /**
  * @brief Categorizes a government entity based on its population.
  *
@@ -13,7 +13,7 @@ using namespace std;
  *         - "Medium City" if population is between 5000 and 49999,
  *         - "Large City" if population is 50000 or more.
  */
-string PopulationCategorization::categorize(Government* g)
+std::string PopulationCategorization::categorize(Government* g)
 {
     int population = g->getPopulationNum();
     

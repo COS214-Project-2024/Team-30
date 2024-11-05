@@ -3,6 +3,7 @@
 
 #include "PublicTransport.h"
 #include "TrafficCommand.h"
+#include "SetRedLightsCommand.h"
 #include <memory>
 
 using namespace std;
@@ -16,10 +17,9 @@ using namespace std;
  */
 class Train : public publicTransport {
 private:
-    shared_ptr<trafficCommand> trafficCmd; 
+    std::shared_ptr<trafficCommand> trafficCmd;
 
 public:
-    Train() : publicTransport(0,nullptr){}
     /**
      * @brief Constructs a Train object with a specified name, capacity, and starting building.
      *
@@ -28,7 +28,8 @@ public:
      * @param from A shared pointer to the building from which the train departs.
      * @param cmd A shared pointer to a trafficCommand that controls traffic lights during travel.
      */
-    Train(int capacity, shared_ptr<Building> from, shared_ptr<trafficCommand> cmd);
+    Train(int capacity, shared_ptr<Building> from, shared_ptr<trafficCommand> cmd)
+            : publicTransport(capacity,from), trafficCmd(cmd) {}
 
     /**
      * @brief Travels from the current building to the specified destination building.

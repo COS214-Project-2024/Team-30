@@ -1,21 +1,6 @@
 #include "Train.h"
 
 /**
- * @brief Constructs a Train object with a specified name, capacity, and starting building.
- *
- * This constructor also accepts a traffic command that will be executed during travel.
- *
- * @param name The name of the train.
- * @param capacity The maximum capacity of passengers the train can carry.
- * @param from A shared pointer to the building from which the train departs.
- * @param cmd A shared pointer to a trafficCommand that controls traffic lights during travel.
- */
-Train::Train(int capacity, shared_ptr<Building> from, shared_ptr<trafficCommand> cmd) : publicTransport(capacity,from)
-{
-    this->trafficCmd = cmd;
-}
-
-/**
  * @brief Travels from the current building to the specified destination building.
  *
  * Executes the associated traffic command to set all traffic lights to red

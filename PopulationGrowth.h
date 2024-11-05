@@ -3,7 +3,6 @@
 
 #include "CityGrowthObserver.h"
 
-using namespace std;
 /**
  * @class PopulationGrowth
  * @brief A class that observes and responds to changes in the population of a government.
@@ -39,3 +38,21 @@ private:
 };
 
 #endif
+
+
+
+// #ifndef POPULATIONGROWTH_H
+// #define POPULATIONGROWTH_H
+
+// #include "CityGrowthObserver.h"
+
+// class PopulationGrowth : public CityGrowthObserver {
+// public:
+//     void update(Government* g) override;
+//     void printInfo(Government* g);
+// private:
+//     int oldPop=0; 
+//     double bR;
+// };
+
+// #endif

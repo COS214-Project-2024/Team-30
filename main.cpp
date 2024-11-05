@@ -22,6 +22,7 @@
 #include "Taxi.h"
 #include "Train.h"
 #include "SetRedLightsCommand.h"
+#include "TrafficCommand.h"
 
 using namespace std;
 // Function to display the main menu and capture user selection
@@ -58,10 +59,6 @@ void CollectTaxes()
     cout << endl;
     cout << endl;
 }
-
-
-
-// inc infrastructure
 
 void IncreaseInfurstructure()
 {
@@ -236,10 +233,7 @@ void TestTravelling()
     RoadSign stopSign("STOP");
     RoadSign yield("Yield");
     RoadSign school("Drive slowly in the school areas!\n");
-    //trafficLights:
-    unique_ptr<TrafficLight> t1;
-    unique_ptr<TrafficLight> t2;
-    unique_ptr<TrafficLight> t3;
+
     //commands
     shared_ptr<trafficCommand> cmd;
     //Planes
@@ -248,8 +242,6 @@ void TestTravelling()
     shared_ptr<privateTransport> myPrivate = make_shared<privateTransport>(5,b1);
     //Taxi
     shared_ptr<Taxi> myTaxi = make_shared<Taxi>(5,b1);
-    //Trains
-    shared_ptr<Train> myTrain = make_shared<Train>(5,b1,cmd);
   
     //Roads
     shared_ptr<Road> r1 = make_shared<Road>();
@@ -258,8 +250,6 @@ void TestTravelling()
     shared_ptr<Road> r4 = make_shared<Road>();
     //Area
     shared_ptr<Area> a1 = make_shared<Area>("Generic area 7even");
-    //SetRedLightsCommand
-    SetRedLightsCommand SetRedLightsCommand(a1);
     r1->addSign(mySign);
     r1->addSign(myBill);
     r1->addSign(myBill2);
@@ -313,7 +303,38 @@ void TestTravelling()
     cout << "Lets look at the updated b3 residents!!:\n";
     b3->printResidents();
 
-    
+
+    shared_ptr<trafficCommand> redLightsCmd = make_shared<SetRedLightsCommand>(a1);
+    shared_ptr<Train> myTrain = make_shared<Train>(5, b1, redLightsCmd);
+
+    //trafficLights:
+    unique_ptr<TrafficLight> t1 = make_unique<TrafficLight>();
+    unique_ptr<TrafficLight> t2 = make_unique<TrafficLight>();
+    unique_ptr<TrafficLight> t3 = make_unique<TrafficLight>();
+
+    t1->changeState();
+    t2->changeState();
+    r1->addLight(move(t1));
+    r2->addLight(move(t2));
+    r2->addLight(move(t1));
+
+    b1->addCitizen(c1);
+    b1->addCitizen(c2);
+
+    cout << "Building 1 residents before train travel:\n";
+    b1->printResidents();
+    myTrain->addPeople(c4);
+    cout << "Building 1 residents after loading the train:\'n";
+    b1->printResidents();
+
+    cout << "Train is travelling to Building 2...\n";
+    myTrain->Travel(b2);
+
+    cout << "Building 2 residents after train travel:\n";
+    b2->printResidents();
+
+
+
 }
 
 
@@ -330,8 +351,7 @@ int displayMenu()
     cout << "           8) City Growth: Mass Increase Population\n";
     cout << "           9) Print City Information\n";
     cout << "           10) Print Citizens Summary\n";
-    cout << "           11) Create Job Opportunities\n";
-    cout << "           12) Distribute Utilities\n";  // New option for distributing utilities
+    cout << "           11) Create Job Opportunities\n"; // New option for job opportunities
     cout << "           0) Exit Game\n";
     cout << "\nPlease make a selection: ";
     int choice;
@@ -339,9 +359,9 @@ int displayMenu()
     return choice;
 }
 
-
 void handleMenuSelection(int choice)
 {
+
     switch (choice)
     {
     case 0:
@@ -377,23 +397,14 @@ void handleMenuSelection(int choice)
     case 11:
         simulateJobOpportunites();
         break;
-
-    case 12: {
-        cityGovernment->distributeUtilities();
-        cout << "Utilities distributed to all buildings and residents notified.\n";
-        break;
-    }
-
     case 5:
         TestTravelling();
         break;
-
     default:
         cout << "Invalid selection. Please try again.\n";
         break;
     }
 }
-
 
 void display_city_intro()
 {
@@ -437,7 +448,7 @@ int main()
         choice = displayMenu();
         handleMenuSelection(choice);
     } while (choice != 0);
-// end of main
+
     return 0;
 }
 
