@@ -1,7 +1,7 @@
 #ifndef TAXI_H
 #define TAXI_H
 
-#include "Transport.h"
+#include "PublicTransport.h"
 
 /**
  * @brief Represents a taxi that can transport citizens between buildings.
@@ -9,15 +9,16 @@
  * The Taxi class inherits from the Transport class and provides functionality
  * for traveling to a specified building while managing a list of passengers.
  */
-class Taxi : public Transport {
+class Taxi : public publicTransport {
 public:
+
     /**
      * @brief Constructs a Taxi object with a specified name and capacity.
      *
-     * @param name The name of the taxi.
      * @param capacity The maximum number of passengers the taxi can carry.
+     * @param from The building 
      */
-    Taxi(string name, int capacity);
+    Taxi(int capacity, shared_ptr<Building> from);
 
     /**
      * @brief Travels to a specified building and transports passengers.

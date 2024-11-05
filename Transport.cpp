@@ -3,8 +3,8 @@
 
 using namespace std;
 
-Transport::Transport(string name, int capacity, shared_ptr<Building> from)
-        : name(move(name)), capacity(capacity), from(move(from)) {}
+Transport::Transport( int capacity, shared_ptr<Building> from)
+        : capacity(capacity), from(move(from)) {}
 
 /**
  * @brief Adds a citizen as a passenger to the transport if they are present in the starting building.

@@ -1,7 +1,7 @@
 #ifndef SETREDLIGHTSCOMMAND_H
 #define SETREDLIGHTSCOMMAND_H
 
-#include "trafficCommand.h"
+#include "TrafficCommand.h"
 #include "Area.h"
 
 using namespace std;

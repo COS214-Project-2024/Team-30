@@ -10,8 +10,7 @@
  * @param from A shared pointer to the building from which the train departs.
  * @param cmd A shared pointer to a trafficCommand that controls traffic lights during travel.
  */
-Train::Train(string name, int capacity, shared_ptr<Building> from, shared_ptr<trafficCommand> cmd)
-        : publicTransport(name, capacity, from)
+Train::Train(int capacity, shared_ptr<Building> from, shared_ptr<trafficCommand> cmd) : publicTransport(capacity,from)
 {
     this->trafficCmd = cmd;
 }
@@ -30,12 +29,9 @@ void Train::Travel(shared_ptr<Building> to) {
     }
 
     if (to) {
-        for (const auto& cit : passengers) {
-            to->addCitizen(cit);
-            cout << name << " transported citizen with ID " << cit->getID() << " to building: " << to->getName() << endl;
-        }
-        passengers.clear();  // Clear all passengers after they have been moved.
-        from = to;           // Update the 'from' building to the new location.
+        from = to;
+        this->removeAllPeople();
+        cout << "The passengers have been moved to the destination via train!/n";
     } else {
         cout << "Invalid destination building." << endl;
     }

@@ -34,7 +34,7 @@ public:
      * @param capacity Maximum capacity of the transport.
      * @param from Shared pointer to the building from which the transport starts.
      */
-    Transport(string name, int capacity, shared_ptr<Building> from);
+    Transport(int capacity, shared_ptr<Building> from);
 
     /**
      * @brief Default destructor for the Transport class.

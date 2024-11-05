@@ -1,5 +1,8 @@
 #include "Taxi.h"
 
+Taxi::Taxi(int capacity, shared_ptr<Building> from)
+        : publicTransport(capacity, from) {}
+
 /**
  * @brief Travels to a specified building and transports passengers.
  *
@@ -8,14 +11,26 @@
  * @param to the new building to travel to
  */
 void Taxi::Travel(shared_ptr<Building> to) {
-    if (to) {
-        for (const auto& cit : passengers) {
-            to->addCitizen(cit);
-            cout << name << " transported citizen with ID " << cit->getID() << " to building: " << to->getName() << endl;
+    shared_ptr<Road> node = to->getRoad();
+    if (node->containsBuilding(to))
+        {
+            from = to;
+            this->removeAllPeople();
+            cout << "The passengers have been dropped off at the destination by the Taxi!\n";
         }
-        passengers.clear();  // Clear all passengers after they have been moved.
-        from = to;           // Update the 'from' building to the new location.
-    } else {
-        cout << "Invalid destination building." << endl;
+    while(node->getNext() != to->getRoad())
+    {
+        if (node->containsBuilding(to))
+        {
+            from = to;
+            this->removeAllPeople();
+            cout << "The passengers have been dropped off at the destination by the Taxi!\n";
+        }
+        else
+        {
+            cout << "Taxi is moving off of road " << node->getID() << endl;
+            node->setNext(node->getNext());
+        }
     }
 }
+

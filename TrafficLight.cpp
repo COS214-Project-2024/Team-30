@@ -22,7 +22,8 @@ TrafficLight::TrafficLight() : state('R'), id(++numLights) {}
  * - Yellow ('Y') to Red ('R')
  */
 void TrafficLight::changeState() {
-    switch (state) {
+    char c = state;
+    switch (c) {
         case 'R':
             state = 'G';
             return;
