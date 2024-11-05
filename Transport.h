@@ -15,16 +15,14 @@ class Building;
 /**
  * @brief Abstract base class representing a transport vehicle.
  *
- * The Transport class manages passengers, their capacity, and the building
- * from which they travel. It provides methods for adding and removing passengers,
- * as well as for traveling to a new destination building.
+ * Template class to create the first comnposite node
  */
 class Transport {
 protected:
-    vector<shared_ptr<Citizen>> passengers; ///< List of passengers currently in the transport.
-    int capacity; ///< Maximum number of passengers the transport can carry.
+    vector<shared_ptr<Citizen>> passengers; ///< List of passengers currently in the transport
+    int capacity; ///< Maximum number of passengers the transport can carry
     string name; ///< Name of the transport.
-    shared_ptr<Building> from; ///< The building from which the transport departs.
+    shared_ptr<Building> from; ///< The building from which the transport departs
 
 public:
     /**
