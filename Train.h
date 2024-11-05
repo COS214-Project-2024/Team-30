@@ -12,7 +12,7 @@ using namespace std;
  * @brief A class representing a train that inherits from publicTransport.
  *
  * The Train class adds functionality for controlling traffic lights through
- * a traffic command when traveling to a destination.
+ * a traffic command 
  */
 class Train : public publicTransport {
 private:
@@ -33,8 +33,7 @@ public:
     /**
      * @brief Travels from the current building to the specified destination building.
      *
-     * Executes the associated traffic command to set all traffic lights to red
-     * before transporting passengers to the destination building.
+     * Executes the traffic command to set the areas lights to red
      *
      * @param to A shared pointer to the building to which the train will travel.
      */
