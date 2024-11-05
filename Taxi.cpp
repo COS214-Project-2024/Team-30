@@ -11,26 +11,37 @@ Taxi::Taxi(int capacity, shared_ptr<Building> from)
  * @param to the new building to travel to
  */
 void Taxi::Travel(shared_ptr<Building> to) {
-    shared_ptr<Road> node = to->getRoad();
+    shared_ptr<Road> node = from->getRoad();
     if (node->containsBuilding(to))
-        {
-            from = to;
-            this->removeAllPeople();
-            cout << "The passengers have been dropped off at the destination by the Taxi!\n";
-        }
-    while(node->getNext() != to->getRoad())
     {
+        from = to;
+        this->removeAllPeople();
+        cout << "The Taxi passengers have been dropped off at the destination, it was on the same road!\n";
+        return;
+    }
+    while(node->getNext() != from->getRoad())
+    {
+        vector<Sign> signs = node->getSigns();
+        if (!signs.empty()) {
+            cout << "On this road we see:\n";
+            for (Sign &sign: signs) {
+                cout << "A " << sign.getType() << "that says: '" <<sign.getMessage() << endl;
+            }
+        }
+
         if (node->containsBuilding(to))
         {
             from = to;
             this->removeAllPeople();
-            cout << "The passengers have been dropped off at the destination by the Taxi!\n";
+            cout << "The passengers have been dropped off at the destination!\n";
+            return;
         }
         else
         {
-            cout << "Taxi is moving off of road " << node->getID() << endl;
-            node->setNext(node->getNext());
+            cout << "Moving off of road " << node->getID() << endl;
+            node = node->getNext();
         }
     }
+
 }
 
