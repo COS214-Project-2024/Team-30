@@ -6,17 +6,24 @@
 #include <algorithm>
 #include "BuildingState.h"
 // #include "Utilities.h"
-#include "BuildingComponent.h"
+// #include "BuildingComponent.h"
 #include "Emergencies.h"
 #include "Citizen.h"
+
+#include "Coal.h"
+#include "Water.h"
 #include "Road.h"
 
+// #include "Utilities.h"
+
 class Emergencies;
+class Utilities;
 class Road;
+
 
 using namespace std;
 //
-class Building
+class Building : public std::enable_shared_from_this<Building> 
 //  : public BuildingComponent
 {
 protected:
@@ -29,6 +36,12 @@ protected:
     bool runningUtils;
     vector<shared_ptr<Citizen>> residents;
     static int nextID;
+    std::unique_ptr<Utilities> utils;
+    //Utilities
+    int water;
+    int power;
+    int waste;
+    int sewerage;
     shared_ptr<Road> road;
 
 public:
@@ -47,18 +60,37 @@ public:
     bool hasOccupant(int citizenID) const;
     void printResidents();
     bool containsCitizen(shared_ptr<Citizen> citizen);
-    //string getName();
     int getID();
     // void add(std::unique_ptr<BuildingComponent> component) override;
     // void remove(std::unique_ptr<BuildingComponent> component) override;
     void takeDamage(int damage);
     void update();
-    void recieveUtilities(); // Utilities
+
     // Utilities* setUtilities();
 
     void addCitizen(shared_ptr<Citizen> citizen);
     void removeCitizen(shared_ptr<Citizen> citizen);
     void notifyCitizensOfEmergency(int damage);
+
+
+    void setUtilities();
+    
+    void setWater(int water);
+    void setPower(int power);
+    void setSewerage(int sewerage);
+    void setWaste(int waste);
+
+    int getWater();
+    int getPower();
+    int getSewerage();
+    int getWaste();
+
+    void receiveWater(int);
+    void receiveElectricity(int);
+    void receiveUtilities(shared_ptr<Coal> c, shared_ptr<Water> w);
+    void checkConstructionStatus();
+    std::vector<std::shared_ptr<Citizen>>& getResidents() ;
+
 
     virtual unique_ptr<Building> clone() = 0; // Return unique_ptr
     void setRoad(shared_ptr<Road> road);

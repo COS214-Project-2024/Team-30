@@ -59,6 +59,10 @@ void CollectTaxes()
     cout << endl;
 }
 
+
+
+// inc infrastructure
+
 void IncreaseInfurstructure()
 {
     cout << endl;
@@ -326,7 +330,8 @@ int displayMenu()
     cout << "           8) City Growth: Mass Increase Population\n";
     cout << "           9) Print City Information\n";
     cout << "           10) Print Citizens Summary\n";
-    cout << "           11) Create Job Opportunities\n"; // New option for job opportunities
+    cout << "           11) Create Job Opportunities\n";
+    cout << "           12) Distribute Utilities\n";  // New option for distributing utilities
     cout << "           0) Exit Game\n";
     cout << "\nPlease make a selection: ";
     int choice;
@@ -334,9 +339,9 @@ int displayMenu()
     return choice;
 }
 
+
 void handleMenuSelection(int choice)
 {
-
     switch (choice)
     {
     case 0:
@@ -372,14 +377,23 @@ void handleMenuSelection(int choice)
     case 11:
         simulateJobOpportunites();
         break;
+
+    case 12: {
+        cityGovernment->distributeUtilities();
+        cout << "Utilities distributed to all buildings and residents notified.\n";
+        break;
+    }
+
     case 5:
         TestTravelling();
         break;
+
     default:
         cout << "Invalid selection. Please try again.\n";
         break;
     }
 }
+
 
 void display_city_intro()
 {
@@ -423,7 +437,7 @@ int main()
         choice = displayMenu();
         handleMenuSelection(choice);
     } while (choice != 0);
-
+// end of main
     return 0;
 }
 

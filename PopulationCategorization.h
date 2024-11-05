@@ -5,6 +5,7 @@
 #include "CategorizationStrategy.h"
 #include "Government.h"
 
+using namespace std;
 /**
  * @class PopulationCategorization
  * @brief Concrete strategy for categorizing population growth.
@@ -23,22 +24,7 @@ public:
      * @param g A pointer to the `Government` instance from which data is accessed.
      * @return A string representing the population category.
      */
-    std::string categorize(Government* g) override;
+    string categorize(Government* g) override;
 };
 
 #endif
-
-// #ifndef POPULATIONSTRATEGY_H
-// #define POPULATIONSTRATEGY_H
-
-// #include <string>
-
-// #include "CategorizationStrategy.h"
-// #include "Government.h"
-
-// class PopulationCategorization : public CategorizationStrategy {
-// public:
-//     std::string categorize(Government* g) override;
-// };
-
-// #endif
