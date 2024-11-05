@@ -9,12 +9,17 @@
 // #include "BuildingComponent.h"
 #include "Emergencies.h"
 #include "Citizen.h"
+
 #include "Coal.h"
 #include "Water.h"
+#include "Road.h"
+
 // #include "Utilities.h"
 
 class Emergencies;
 class Utilities;
+class Road;
+
 
 using namespace std;
 //
@@ -32,14 +37,12 @@ protected:
     vector<shared_ptr<Citizen>> residents;
     static int nextID;
     std::unique_ptr<Utilities> utils;
-
-
     //Utilities
     int water;
     int power;
     int waste;
     int sewerage;
-
+    shared_ptr<Road> road;
 
 public:
     Building(); //Building constructor
@@ -90,6 +93,8 @@ public:
 
 
     virtual unique_ptr<Building> clone() = 0; // Return unique_ptr
+    void setRoad(shared_ptr<Road> road);
+    shared_ptr<Road> getRoad();
 };
 
 #endif
