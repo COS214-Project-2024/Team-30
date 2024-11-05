@@ -89,9 +89,6 @@ BuildingState *Building::getState()
 // {
 // }
 
-void Building::update()
-{
-}
 
 void Building::takeDamage(int damage)
 {
