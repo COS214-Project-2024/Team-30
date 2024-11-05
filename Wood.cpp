@@ -29,5 +29,3 @@ int Wood::use(int amount)
         return 0;
     }
 }
-
-

@@ -1,3 +1,4 @@
+
 #include "Water.h"
 #include <iostream>
 
@@ -29,5 +30,3 @@ int Water::use(int amount)
         return 0;
     }
 }
-
-

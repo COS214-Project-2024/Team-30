@@ -51,6 +51,10 @@ void CollectTaxes()
     cout << endl;
 }
 
+
+
+// inc infrastructure
+
 void IncreaseInfurstructure()
 {
     cout << endl;

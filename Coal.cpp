@@ -1,3 +1,4 @@
+
 #include "Coal.h"
 #include <iostream>
 
@@ -29,5 +30,3 @@ int Coal::use(int amount)
         return 0;
     }
 }
-
-

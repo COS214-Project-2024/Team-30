@@ -1,3 +1,4 @@
+
 #include "Concrete.h"
 #include <iostream>
 
@@ -30,5 +31,3 @@ int Concrete::use(int amount)
         return 0;
     }
 }
-
-

@@ -1,3 +1,4 @@
+
 #include "Steel.h"
 #include <iostream>
 
@@ -30,5 +31,3 @@ int Steel::use(int amount)
         return 0;
     }
 }
-
-
