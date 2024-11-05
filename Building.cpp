@@ -182,3 +182,14 @@ int Building::getID()
 {
     return id;
 }
+
+void Building::setRoad(shared_ptr<Road> road)
+{
+    this->road = road;
+}
+
+shared_ptr<Road> Building::getRoad()
+{
+    return this->road;
+}
+

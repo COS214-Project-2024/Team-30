@@ -38,10 +38,11 @@ void Area::addRoad(shared_ptr<Road> newRoad) {
 void Area::displayRoads() const {
     shared_ptr<Road> node;
     node = head;
-    cout << "Roads in this area:\n" << node->getName();
+    cout << "Roads in this area:\n" << node->getID();
     while (node->getNext() != head)
     {
-        cout << node->getName() << endl;
+        cout << node->getID() << endl;
+        node = node->getNext();
     }
 
 }

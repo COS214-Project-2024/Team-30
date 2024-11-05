@@ -9,8 +9,10 @@
 #include "BuildingComponent.h"
 #include "Emergencies.h"
 #include "Citizen.h"
+#include "Road.h"
 
 class Emergencies;
+class Road;
 
 using namespace std;
 //
@@ -27,6 +29,7 @@ protected:
     bool runningUtils;
     vector<shared_ptr<Citizen>> residents;
     static int nextID;
+    shared_ptr<Road> road;
 
 public:
     Building(); //Building constructor
@@ -44,7 +47,7 @@ public:
     bool hasOccupant(int citizenID) const;
     void printResidents();
     bool containsCitizen(shared_ptr<Citizen> citizen);
-    string getName();
+    //string getName();
     int getID();
     // void add(std::unique_ptr<BuildingComponent> component) override;
     // void remove(std::unique_ptr<BuildingComponent> component) override;
@@ -58,6 +61,8 @@ public:
     void notifyCitizensOfEmergency(int damage);
 
     virtual unique_ptr<Building> clone() = 0; // Return unique_ptr
+    void setRoad(shared_ptr<Road> road);
+    shared_ptr<Road> getRoad();
 };
 
 #endif
