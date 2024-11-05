@@ -1,7 +1,6 @@
 #include "Economy.h"
 #include <iostream>
 
-using namespace std;
 /**
  * @brief Updates the economic state based on the Government's current population and employment data.
  *
@@ -14,13 +13,24 @@ using namespace std;
  */
 void Economy::update(Government* g)
 {
-    cout << "\n=================================================================" << endl;
-    cout << "                      Economic State                                    " << endl;
-    cout << "=================================================================" << endl;
-    cout << "Economy has grown to support population: " << g->getPopulationNum() << endl;
-     cout << "=================================================================" << endl;
+    std::cout << "\n=================================================================" << std::endl;
+    std::cout << "                      Economic State                                    " << std::endl;
+    std::cout << "=================================================================" << std::endl;
+    std::cout << "Economy has grown to support population: " << g->getPopulationNum() << std::endl;
+     std::cout << "=================================================================" << std::endl;
     g->calculateEmploymentRate();
-     cout << "\n=================================================================" << endl;
-    cout << "\nRevised information on city" << endl;
+     std::cout << "\n=================================================================" << std::endl;
+    std::cout << "\nRevised information on city" << std::endl;
     g->printInfo();
 }
+
+// #include "Economy.h"
+// #include <iostream>
+
+// void Economy::update(Government* g)
+// {
+//     std::cout << "Economy is growing to support population: " << g->getPopulationNum() << std::endl;
+//     g->calculateEmploymentRate();
+//     std::cout<<"\nRevised information on city"<<std::endl;
+//     g->printInfo();
+// }

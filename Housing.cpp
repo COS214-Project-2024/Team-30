@@ -1,21 +1,19 @@
 #include "Housing.h"
 #include <iostream>
 
-using namespace std;
-
 void Housing::update(Government* g)
 {
-    cout << "\n=================================================================" << endl;
-    cout<<  "                 Review on Housing Needs\n";
-    cout << "=================================================================" << endl;
+    std::cout << "\n=================================================================" << std::endl;
+    std::cout<<  "                 Review on Housing Needs\n";
+    std::cout << "=================================================================" << std::endl;
     int ResCap =g->ResidentialCapacity();
     if(ResCap<g->getPopulationNum()){
-        cout<<"The current capacity of Residential buildings is "<<ResCap<<" .\n";
-        cout<<"Please consider building new Residential buildings to support the current growth in population.\n\n";
+        std::cout<<"The current capacity of Residential buildings is "<<ResCap<<" .\n";
+        std::cout<<"Please consider building new Residential buildings to support the current growth in population.\n\n";
     }else{
-        cout<<"Current Residential Capacity: "<<ResCap<<"\n";
-        cout<<"The current Residential capacity is sufficient.\n";
+        std::cout<<"Current Residential Capacity: "<<ResCap<<"\n";
+        std::cout<<"The current Residential capacity is sufficient.\n";
     }
-    cout << "=================================================================" << endl;
+    std::cout << "=================================================================" << std::endl;
 
 }

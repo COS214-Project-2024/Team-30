@@ -55,8 +55,10 @@ void Area::displayRoads() const {
 void Area::setAllLightsToRed() {
     shared_ptr<Road> node = head;
     node->setLightRed();
-    while (node->getNext() != head)
+    while (node->getNext() != head) {
         node->setLightRed();
+        node = node->getNext();
+    }
 }
 
 /**
@@ -65,7 +67,9 @@ void Area::setAllLightsToRed() {
 void Area::resetAllLights() {
     shared_ptr<Road> node = head;
     node->resetLight();
-    while (node->getNext() != head)
+    while (node->getNext() != head) {
         node->resetLight();
+        node = node->getNext();
+    }
 }
 

@@ -5,7 +5,6 @@
 #include "Government.h"
 class Government;
 
-using namespace std;
 /**
  * @class CategorizationStrategy
  * @brief Abstract base class for strategies used to categorize the city's growth status.
@@ -25,7 +24,7 @@ public:
      * @param g Pointer to the `Government` object whose state is used for categorization.
      * @return A string representing the category of the city.
      */
-    virtual string categorize(Government* g) = 0;
+    virtual std::string categorize(Government* g) = 0;
 
     /**
      * @brief Virtual destructor.
@@ -36,3 +35,20 @@ public:
 };
 
 #endif
+
+
+
+// #ifndef CATEGORIZATIONSTRATEGY_H
+// #define CATEGORIZATIONSTRATEGY_H
+
+// #include <string>
+// #include "Government.h"
+// class Government;
+
+// class CategorizationStrategy{
+//     public:
+//         virtual std::string categorize(Government* g)=0;  
+
+// };
+
+// #endif

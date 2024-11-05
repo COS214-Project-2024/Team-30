@@ -27,8 +27,6 @@ private:
     vector<std::shared_ptr<Citizen>> population;
     vector<std::shared_ptr<Building>> infrastructure;
     std::vector<CityGrowthObserver*> observers;
-    shared_ptr<Coal> coal;
-    shared_ptr<Water> water;
 
 //objects 
     ResidentialFactory residentialFactory;
@@ -77,9 +75,6 @@ public:
     //
     void setCityBudget(int budget);
     int getCityBudget();
-
-    //
-    void distributeUtilities();
 };
 
 #endif
