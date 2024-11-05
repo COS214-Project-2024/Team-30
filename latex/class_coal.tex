@@ -1,0 +1,129 @@
+\doxysection{Coal Class Reference}
+\hypertarget{class_coal}{}\label{class_coal}\index{Coal@{Coal}}
+
+
+Represents a coal resource with a limited capacity.  
+
+
+
+
+{\ttfamily \#include $<$Coal.\+h$>$}
+
+Inheritance diagram for Coal\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_coal}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_coal_a04cf749e4f8f075e7a03d9fd3acde712}{Coal}} (int capacity)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_coal}{Coal} object with a specified capacity. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_coal_a27843441c9722528a15e31377a6b9ffd}{get\+Capacity}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the current capacity of the coal resource. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_coal_a8e89e70c1e7e453eb5388a02e184a74a}{refill}} (int amount) override
+\begin{DoxyCompactList}\small\item\em Refills the coal resource by a specified amount. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_coal_a913cf988b07a5d636937432962965e78}{use}} (int amount) override
+\begin{DoxyCompactList}\small\item\em Uses a specified amount of coal from the resource. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_resource}{Resource}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Resource} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \doxylink{class_resource}{Resource} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_resource}{Resource}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries capacity}
+\begin{DoxyCompactList}\small\item\em Capacity of the resource. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a coal resource with a limited capacity. 
+
+The \doxylink{class_coal}{Coal} class extends the \doxylink{class_resource}{Resource} class, providing functionality for managing a coal resource with refill and usage capabilities. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_coal_a04cf749e4f8f075e7a03d9fd3acde712}\index{Coal@{Coal}!Coal@{Coal}}
+\index{Coal@{Coal}!Coal@{Coal}}
+\doxysubsubsection{\texorpdfstring{Coal()}{Coal()}}
+{\footnotesize\ttfamily \label{class_coal_a04cf749e4f8f075e7a03d9fd3acde712} 
+Coal\+::\+Coal (\begin{DoxyParamCaption}\item[{int}]{capacity}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_coal}{Coal} object with a specified capacity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em capacity} & Initial capacity of the coal resource. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_coal_a27843441c9722528a15e31377a6b9ffd}\index{Coal@{Coal}!getCapacity@{getCapacity}}
+\index{getCapacity@{getCapacity}!Coal@{Coal}}
+\doxysubsubsection{\texorpdfstring{getCapacity()}{getCapacity()}}
+{\footnotesize\ttfamily \label{class_coal_a27843441c9722528a15e31377a6b9ffd} 
+int Coal\+::get\+Capacity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the current capacity of the coal resource. 
+
+\begin{DoxyReturn}{Returns}
+The current capacity as an integer. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_resource_aa54b7fb57467a4ad6b3eef325253ff58}{Resource}}.
+
+\Hypertarget{class_coal_a8e89e70c1e7e453eb5388a02e184a74a}\index{Coal@{Coal}!refill@{refill}}
+\index{refill@{refill}!Coal@{Coal}}
+\doxysubsubsection{\texorpdfstring{refill()}{refill()}}
+{\footnotesize\ttfamily \label{class_coal_a8e89e70c1e7e453eb5388a02e184a74a} 
+void Coal\+::refill (\begin{DoxyParamCaption}\item[{int}]{amount}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Refills the coal resource by a specified amount. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & Amount of coal to add to the resource. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_resource_a494c92291836c994eb228cb137136af9}{Resource}}.
+
+\Hypertarget{class_coal_a913cf988b07a5d636937432962965e78}\index{Coal@{Coal}!use@{use}}
+\index{use@{use}!Coal@{Coal}}
+\doxysubsubsection{\texorpdfstring{use()}{use()}}
+{\footnotesize\ttfamily \label{class_coal_a913cf988b07a5d636937432962965e78} 
+int Coal\+::use (\begin{DoxyParamCaption}\item[{int}]{amount}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Uses a specified amount of coal from the resource. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & Amount of coal to use from the resource. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The actual amount of coal used. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_resource_af21f50c27d3e59243933f7c96e475d7a}{Resource}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Coal.\+h\item 
+Coal.\+cpp\end{DoxyCompactItemize}

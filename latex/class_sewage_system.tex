@@ -1,0 +1,116 @@
+\doxysection{Sewage\+System Class Reference}
+\hypertarget{class_sewage_system}{}\label{class_sewage_system}\index{SewageSystem@{SewageSystem}}
+
+
+Manages sewage disposal and treatment for buildings.  
+
+
+
+
+{\ttfamily \#include $<$Sewage\+System.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_sewage_system_a523579d06af3a5d8a046c90cc3138745}\label{class_sewage_system_a523579d06af3a5d8a046c90cc3138745} 
+{\bfseries Sewage\+System} ()
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_sewage_system}{Sewage\+System} instance. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sewage_system_add0a94f46c405a5e5ae72967fe8ebb99}{set\+Working}} (bool b)
+\begin{DoxyCompactList}\small\item\em Sets the operational status of the sewage system. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_sewage_system_aeea8bcd3791cfca722eebdc2c52d165d}{get\+Working}} ()
+\begin{DoxyCompactList}\small\item\em Checks the operational status of the sewage system. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_sewage_system_a7d08998e61b77fce99c1f2241ec01bf3}{manage\+Disposal}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$ b)
+\begin{DoxyCompactList}\small\item\em Manages sewage disposal for a specified building. \end{DoxyCompactList}\item 
+\Hypertarget{class_sewage_system_a8d50e84e503cc3517d0e92fd7943228a}\label{class_sewage_system_a8d50e84e503cc3517d0e92fd7943228a} 
+void {\bfseries manage\+Treatment} ()
+\begin{DoxyCompactList}\small\item\em Manages sewage treatment for a specified building. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_sewage_system_ae2636149e3824e9b1b7ba471127819c1}{repair}} ()
+\begin{DoxyCompactList}\small\item\em Repairs the sewage system, returning it to working condition. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sewage_system_a5e571d9a1c8705d0faa7b401af40670e}{notify\+Citizens}} (const string \&message)
+\begin{DoxyCompactList}\small\item\em Sends a notification message to citizens regarding utility services. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages sewage disposal and treatment for buildings. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_sewage_system_aeea8bcd3791cfca722eebdc2c52d165d}\index{SewageSystem@{SewageSystem}!getWorking@{getWorking}}
+\index{getWorking@{getWorking}!SewageSystem@{SewageSystem}}
+\doxysubsubsection{\texorpdfstring{getWorking()}{getWorking()}}
+{\footnotesize\ttfamily \label{class_sewage_system_aeea8bcd3791cfca722eebdc2c52d165d} 
+bool Sewage\+System\+::get\+Working (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Checks the operational status of the sewage system. 
+
+\begin{DoxyReturn}{Returns}
+True if operational, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_sewage_system_a7d08998e61b77fce99c1f2241ec01bf3}\index{SewageSystem@{SewageSystem}!manageDisposal@{manageDisposal}}
+\index{manageDisposal@{manageDisposal}!SewageSystem@{SewageSystem}}
+\doxysubsubsection{\texorpdfstring{manageDisposal()}{manageDisposal()}}
+{\footnotesize\ttfamily \label{class_sewage_system_a7d08998e61b77fce99c1f2241ec01bf3} 
+int Sewage\+System\+::manage\+Disposal (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Manages sewage disposal for a specified building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & The building for which sewage disposal is managed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An integer representing the reset value, typically 100. 
+\end{DoxyReturn}
+\Hypertarget{class_sewage_system_a5e571d9a1c8705d0faa7b401af40670e}\index{SewageSystem@{SewageSystem}!notifyCitizens@{notifyCitizens}}
+\index{notifyCitizens@{notifyCitizens}!SewageSystem@{SewageSystem}}
+\doxysubsubsection{\texorpdfstring{notifyCitizens()}{notifyCitizens()}}
+{\footnotesize\ttfamily \label{class_sewage_system_a5e571d9a1c8705d0faa7b401af40670e} 
+void Sewage\+System\+::notify\+Citizens (\begin{DoxyParamCaption}\item[{const string \&}]{message}{}\end{DoxyParamCaption})}
+
+
+
+Sends a notification message to citizens regarding utility services. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The message to notify citizens. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_sewage_system_ae2636149e3824e9b1b7ba471127819c1}\index{SewageSystem@{SewageSystem}!repair@{repair}}
+\index{repair@{repair}!SewageSystem@{SewageSystem}}
+\doxysubsubsection{\texorpdfstring{repair()}{repair()}}
+{\footnotesize\ttfamily \label{class_sewage_system_ae2636149e3824e9b1b7ba471127819c1} 
+bool Sewage\+System\+::repair (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Repairs the sewage system, returning it to working condition. 
+
+\begin{DoxyReturn}{Returns}
+True if the repair was successful, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_sewage_system_add0a94f46c405a5e5ae72967fe8ebb99}\index{SewageSystem@{SewageSystem}!setWorking@{setWorking}}
+\index{setWorking@{setWorking}!SewageSystem@{SewageSystem}}
+\doxysubsubsection{\texorpdfstring{setWorking()}{setWorking()}}
+{\footnotesize\ttfamily \label{class_sewage_system_add0a94f46c405a5e5ae72967fe8ebb99} 
+void Sewage\+System\+::set\+Working (\begin{DoxyParamCaption}\item[{bool}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Sets the operational status of the sewage system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & Boolean indicating if the sewage system is working. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Sewage\+System.\+h\item 
+Sewage\+System.\+cpp\end{DoxyCompactItemize}

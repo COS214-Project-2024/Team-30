@@ -1,0 +1,44 @@
+\doxysection{Power\+Plant.\+h}
+\hypertarget{_power_plant_8h_source}{}\label{_power_plant_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ POWERPLANT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ POWERPLANT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Building.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Coal.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Government.h"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_power_plant}{PowerPlant}}\ \{}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_power_plant_aab6bd06eddb76915a4721d9f69a224c6}{PowerPlant}}(shared\_ptr<Coal>\ c);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_power_plant_abb9cc127f567e6df9711a41cde0c9e09}{setWorking}}(\textcolor{keywordtype}{bool}\ b);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_power_plant_aaef4ce4895e22cf0f89c61548fbcc2db}{getWorking}}();}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_power_plant_a28cb7e4dbcd73ab0d37d73a8dedeeb97}{setCoal}}(\textcolor{keywordtype}{int}\ w);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_power_plant_af5feb730e3a393c737098f549876a1e1}{getCoal}}();}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_power_plant_a70c1d1f91f2aa6b32468d1f2e0155d17}{generateElectricity}}(shared\_ptr<Building>\ b);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_power_plant_a14dac155268e3ba1b14c63bdd939009d}{repair}}();}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_power_plant_a4bd320aab2c499f7552808bc54518297}{notifyCitizens}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ message);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{bool}\ working;\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{int}\ coalToDistribute;\ }
+\DoxyCodeLine{00073\ \ \ \ \ shared\_ptr<Coal>\ coalResource;\ }
+\DoxyCodeLine{00074\ \};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ POWERPLANT\_H}}
+
+\end{DoxyCode}

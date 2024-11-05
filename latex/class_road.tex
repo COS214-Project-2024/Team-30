@@ -1,0 +1,252 @@
+\doxysection{Road Class Reference}
+\hypertarget{class_road}{}\label{class_road}\index{Road@{Road}}
+
+
+Represents a road in the traffic system.  
+
+
+
+
+{\ttfamily \#include $<$Road.\+h$>$}
+
+Inheritance diagram for Road\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_road}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_road_a90bb6be2a5c3b6997849a915e2af0cf0}{Road}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_road}{Road} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_road_a0ab7062a1ce2cca9e40a28005452654f}{set\+Light\+Red}} ()
+\begin{DoxyCompactList}\small\item\em Sets the traffic light on this road to red. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_road_abbffec0fdcb178952657247641be2b07}{reset\+Light}} ()
+\begin{DoxyCompactList}\small\item\em Resets the traffic light to its previous state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_road_a62bc3c5f5d4c40ffb314f99fcdb9a447}{add\+Building}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$ building)
+\begin{DoxyCompactList}\small\item\em Adds a building to this road. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_road_a917d9fcd0c75602f4b29e2bfa02c82a3}{add\+Sign}} (const \mbox{\hyperlink{class_sign}{Sign}} \&sign)
+\begin{DoxyCompactList}\small\item\em Adds a sign to this road. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_road_a80ffc39669405b4b97afbdf8212af41b}{add\+Light}} (unique\+\_\+ptr$<$ \mbox{\hyperlink{class_traffic_light}{Traffic\+Light}} $>$ light)
+\begin{DoxyCompactList}\small\item\em Adds a traffic light to this road. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_road_a4a352b5f89cc0bec97444c0265354b86}{remove\+Light}} ()
+\begin{DoxyCompactList}\small\item\em Removes the traffic light from this road. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_road_a943c9e7f599c6b6f78efa297ab7e4824}{get\+ID}} () const
+\begin{DoxyCompactList}\small\item\em Gets the ID of the road. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_road_af4e9518fbbdfee2b416f25e8862511a9}{set\+Next}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{class_road}{Road}} $>$ r)
+\begin{DoxyCompactList}\small\item\em Sets the next road in the sequence. \end{DoxyCompactList}\item 
+shared\+\_\+ptr$<$ \mbox{\hyperlink{class_road}{Road}} $>$ \mbox{\hyperlink{class_road_aa5c5ce16f78020c5d55bd36e9b573a1a}{get\+Next}} ()
+\begin{DoxyCompactList}\small\item\em Gets the next road in the sequence. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_road_a9e5891209ce8b6bed1efa96ab522eb2f}{contains\+Building}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$ b)
+\begin{DoxyCompactList}\small\item\em Checks if the road contains a specific building. \end{DoxyCompactList}\item 
+\Hypertarget{class_road_a0f2e3fa1570a1812b6c41c7e13851d65}\label{class_road_a0f2e3fa1570a1812b6c41c7e13851d65} 
+vector$<$ \mbox{\hyperlink{class_sign}{Sign}} $>$ {\bfseries get\+Signs} ()
+\item 
+\Hypertarget{class_road_a7cd2aa6deb4007a78a4642bad2aac149}\label{class_road_a7cd2aa6deb4007a78a4642bad2aac149} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Road} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_road_ae206ec257aaf8b6958f0af92649ede1f}\label{class_road_ae206ec257aaf8b6958f0af92649ede1f} 
+static int {\bfseries num\+Signs} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a road in the traffic system. 
+
+The \doxylink{class_road}{Road} class maintains a collection of buildings, signs, and a traffic light, and allows for managing connections to other roads. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_road_a90bb6be2a5c3b6997849a915e2af0cf0}\index{Road@{Road}!Road@{Road}}
+\index{Road@{Road}!Road@{Road}}
+\doxysubsubsection{\texorpdfstring{Road()}{Road()}}
+{\footnotesize\ttfamily \label{class_road_a90bb6be2a5c3b6997849a915e2af0cf0} 
+Road\+::\+Road (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_road}{Road} object. 
+
+Constructs a new \doxylink{class_road}{Road} object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the road. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_road_a62bc3c5f5d4c40ffb314f99fcdb9a447}\index{Road@{Road}!addBuilding@{addBuilding}}
+\index{addBuilding@{addBuilding}!Road@{Road}}
+\doxysubsubsection{\texorpdfstring{addBuilding()}{addBuilding()}}
+{\footnotesize\ttfamily \label{class_road_a62bc3c5f5d4c40ffb314f99fcdb9a447} 
+void Road\+::add\+Building (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$}]{building}{}\end{DoxyParamCaption})}
+
+
+
+Adds a building to this road. 
+
+Adds a building to the road.
+
+
+\begin{DoxyParams}{Parameters}
+{\em building} & A shared pointer to the building to be added.\\
+\hline
+{\em building} & Unique pointer to the building to be added. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_road_a80ffc39669405b4b97afbdf8212af41b}\index{Road@{Road}!addLight@{addLight}}
+\index{addLight@{addLight}!Road@{Road}}
+\doxysubsubsection{\texorpdfstring{addLight()}{addLight()}}
+{\footnotesize\ttfamily \label{class_road_a80ffc39669405b4b97afbdf8212af41b} 
+void Road\+::add\+Light (\begin{DoxyParamCaption}\item[{unique\+\_\+ptr$<$ \mbox{\hyperlink{class_traffic_light}{Traffic\+Light}} $>$}]{light}{}\end{DoxyParamCaption})}
+
+
+
+Adds a traffic light to this road. 
+
+Adds a traffic light to the road.
+
+
+\begin{DoxyParams}{Parameters}
+{\em light} & A unique pointer to the traffic light to be added.\\
+\hline
+\end{DoxyParams}
+Only one traffic light can be added to the road. If a traffic light already exists, a message is printed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em light} & Unique pointer to the traffic light to be added. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_road_a917d9fcd0c75602f4b29e2bfa02c82a3}\index{Road@{Road}!addSign@{addSign}}
+\index{addSign@{addSign}!Road@{Road}}
+\doxysubsubsection{\texorpdfstring{addSign()}{addSign()}}
+{\footnotesize\ttfamily \label{class_road_a917d9fcd0c75602f4b29e2bfa02c82a3} 
+void Road\+::add\+Sign (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sign}{Sign}} \&}]{sign}{}\end{DoxyParamCaption})}
+
+
+
+Adds a sign to this road. 
+
+Adds a sign to the road.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sign} & The sign to be added.\\
+\hline
+{\em sign} & The sign to be added to the road. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_road_a9e5891209ce8b6bed1efa96ab522eb2f}\index{Road@{Road}!containsBuilding@{containsBuilding}}
+\index{containsBuilding@{containsBuilding}!Road@{Road}}
+\doxysubsubsection{\texorpdfstring{containsBuilding()}{containsBuilding()}}
+{\footnotesize\ttfamily \label{class_road_a9e5891209ce8b6bed1efa96ab522eb2f} 
+bool Road\+::contains\+Building (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Checks if the road contains a specific building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & A shared pointer to the building to check for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the building is found, otherwise false. 
+\end{DoxyReturn}
+\Hypertarget{class_road_a943c9e7f599c6b6f78efa297ab7e4824}\index{Road@{Road}!getID@{getID}}
+\index{getID@{getID}!Road@{Road}}
+\doxysubsubsection{\texorpdfstring{getID()}{getID()}}
+{\footnotesize\ttfamily \label{class_road_a943c9e7f599c6b6f78efa297ab7e4824} 
+int Road\+::get\+ID (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the ID of the road. 
+
+Gets the name of the road.
+
+\begin{DoxyReturn}{Returns}
+The ID of the road.
+
+The name of the road as a string. 
+\end{DoxyReturn}
+\Hypertarget{class_road_aa5c5ce16f78020c5d55bd36e9b573a1a}\index{Road@{Road}!getNext@{getNext}}
+\index{getNext@{getNext}!Road@{Road}}
+\doxysubsubsection{\texorpdfstring{getNext()}{getNext()}}
+{\footnotesize\ttfamily \label{class_road_aa5c5ce16f78020c5d55bd36e9b573a1a} 
+shared\+\_\+ptr$<$ \mbox{\hyperlink{class_road}{Road}} $>$ Road\+::get\+Next (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the next road in the sequence. 
+
+\begin{DoxyReturn}{Returns}
+A shared pointer to the next road. 
+\end{DoxyReturn}
+\Hypertarget{class_road_a4a352b5f89cc0bec97444c0265354b86}\index{Road@{Road}!removeLight@{removeLight}}
+\index{removeLight@{removeLight}!Road@{Road}}
+\doxysubsubsection{\texorpdfstring{removeLight()}{removeLight()}}
+{\footnotesize\ttfamily \label{class_road_a4a352b5f89cc0bec97444c0265354b86} 
+bool Road\+::remove\+Light (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Removes the traffic light from this road. 
+
+Removes the traffic light from the road.
+
+\begin{DoxyReturn}{Returns}
+True if the light was removed successfully, otherwise false.
+
+true if the light was removed successfully, false if no light was present. 
+\end{DoxyReturn}
+\Hypertarget{class_road_abbffec0fdcb178952657247641be2b07}\index{Road@{Road}!resetLight@{resetLight}}
+\index{resetLight@{resetLight}!Road@{Road}}
+\doxysubsubsection{\texorpdfstring{resetLight()}{resetLight()}}
+{\footnotesize\ttfamily \label{class_road_abbffec0fdcb178952657247641be2b07} 
+void Road\+::reset\+Light (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Resets the traffic light to its previous state. 
+
+If a traffic light is present and the previous state is valid, it is reset to that state. \Hypertarget{class_road_a0ab7062a1ce2cca9e40a28005452654f}\index{Road@{Road}!setLightRed@{setLightRed}}
+\index{setLightRed@{setLightRed}!Road@{Road}}
+\doxysubsubsection{\texorpdfstring{setLightRed()}{setLightRed()}}
+{\footnotesize\ttfamily \label{class_road_a0ab7062a1ce2cca9e40a28005452654f} 
+void Road\+::set\+Light\+Red (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Sets the traffic light on this road to red. 
+
+Sets the traffic light state to red (\textquotesingle{}R\textquotesingle{}).
+
+If a traffic light is present, changes its state to red and saves the previous state for future restoration. \Hypertarget{class_road_af4e9518fbbdfee2b416f25e8862511a9}\index{Road@{Road}!setNext@{setNext}}
+\index{setNext@{setNext}!Road@{Road}}
+\doxysubsubsection{\texorpdfstring{setNext()}{setNext()}}
+{\footnotesize\ttfamily \label{class_road_af4e9518fbbdfee2b416f25e8862511a9} 
+void Road\+::set\+Next (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{class_road}{Road}} $>$}]{r}{}\end{DoxyParamCaption})}
+
+
+
+Sets the next road in the sequence. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & A shared pointer to the next road. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Road.\+h\item 
+Road.\+cpp\end{DoxyCompactItemize}

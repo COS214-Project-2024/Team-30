@@ -1,0 +1,119 @@
+\doxysection{public\+Transport Class Reference}
+\hypertarget{classpublic_transport}{}\label{classpublic_transport}\index{publicTransport@{publicTransport}}
+
+
+Represents a public transport vehicle.  
+
+
+
+
+{\ttfamily \#include $<$Public\+Transport.\+h$>$}
+
+Inheritance diagram for public\+Transport\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classpublic_transport}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classpublic_transport_af78f4442c72d71ffd247778971e9edea}{public\+Transport}} (int \mbox{\hyperlink{class_transport_ab2127104025de74395560f28e5013c49}{capacity}}, shared\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$ \mbox{\hyperlink{class_transport_a4cd90ad107fb4d74fe552e5bfeec8906}{from}})
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classpublic_transport}{public\+Transport} object with a specified name, capacity, and starting building. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classpublic_transport_ad03775efcd3b1863bfabe349dd75779a}{Travel}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$ to) override
+\begin{DoxyCompactList}\small\item\em Travels to a specified building and transports passengers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_transport}{Transport}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_transport_af5fcea9f143cf6253669d42e671e621f}{Transport}} (int \mbox{\hyperlink{class_transport_ab2127104025de74395560f28e5013c49}{capacity}}, shared\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$ \mbox{\hyperlink{class_transport_a4cd90ad107fb4d74fe552e5bfeec8906}{from}})
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_transport}{Transport} object. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Transport} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor for the \doxylink{class_transport}{Transport} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transport_a6402b0ed712db7843cc5af0ef1547822}{add\+People}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{class_citizen}{Citizen}} $>$ c)
+\begin{DoxyCompactList}\small\item\em Adds a citizen as a passenger to the transport. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transport_a8cac500f5aa447e49508eac53dfd02cb}{remove\+People}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{class_citizen}{Citizen}} $>$ c)
+\begin{DoxyCompactList}\small\item\em Removes a specified citizen from the transport. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transport_ac0cb30d8c2b199845dad845ad2a86664}{remove\+All\+People}} ()
+\begin{DoxyCompactList}\small\item\em Removes all passengers from the transport. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transport_a32956c6a1af21f15961cca6ff1cf084a}{print\+Passengers}} ()
+\begin{DoxyCompactList}\small\item\em Prints the IDs of all passengers currently in the transport. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_transport}{Transport}}}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{class_citizen}{Citizen}} $>$ $>$ {\bfseries passengers}
+\begin{DoxyCompactList}\small\item\em List of passengers currently in the transport. \end{DoxyCompactList}\item 
+int {\bfseries capacity}
+\begin{DoxyCompactList}\small\item\em Maximum number of passengers the transport can carry. \end{DoxyCompactList}\item 
+string {\bfseries name}
+\begin{DoxyCompactList}\small\item\em Name of the transport. \end{DoxyCompactList}\item 
+shared\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$ {\bfseries from}
+\begin{DoxyCompactList}\small\item\em The building from which the transport departs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a public transport vehicle. 
+
+This class inherits from the \doxylink{class_transport}{Transport} class and provides functionality specific to public transportation methods. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classpublic_transport_af78f4442c72d71ffd247778971e9edea}\index{publicTransport@{publicTransport}!publicTransport@{publicTransport}}
+\index{publicTransport@{publicTransport}!publicTransport@{publicTransport}}
+\doxysubsubsection{\texorpdfstring{publicTransport()}{publicTransport()}}
+{\footnotesize\ttfamily \label{classpublic_transport_af78f4442c72d71ffd247778971e9edea} 
+public\+Transport\+::public\+Transport (\begin{DoxyParamCaption}\item[{int}]{capacity}{, }\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$}]{from}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classpublic_transport}{public\+Transport} object with a specified name, capacity, and starting building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the public transport. \\
+\hline
+{\em capacity} & The maximum number of passengers the public transport can carry. \\
+\hline
+{\em from} & A shared pointer to the \doxylink{class_building}{Building} where the transport is initially located. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classpublic_transport_ad03775efcd3b1863bfabe349dd75779a}\index{publicTransport@{publicTransport}!Travel@{Travel}}
+\index{Travel@{Travel}!publicTransport@{publicTransport}}
+\doxysubsubsection{\texorpdfstring{Travel()}{Travel()}}
+{\footnotesize\ttfamily \label{classpublic_transport_ad03775efcd3b1863bfabe349dd75779a} 
+void public\+Transport\+::\+Travel (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$}]{to}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Travels to a specified building and transports passengers. 
+
+This method overrides the Travel method from the \doxylink{class_transport}{Transport} class and defines the behavior of public transport when traveling to a destination.
+
+
+\begin{DoxyParams}{Parameters}
+{\em to} & A shared pointer to the \doxylink{class_building}{Building} where the public transport will travel.\\
+\hline
+\end{DoxyParams}
+This method overrides the Travel method from the \doxylink{class_transport}{Transport} class, allowing public transport to move to a new destination building and transfer all passengers to that building.
+
+
+\begin{DoxyParams}{Parameters}
+{\em to} & A shared pointer to the \doxylink{class_building}{Building} where the public transport will travel. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_transport_ad6c779cd332fd684bf6599eb925f8eaf}{Transport}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_plane_acf4247dcf03ba20277926ac5d84b2ea7}{Plane}}, \mbox{\hyperlink{class_taxi_ab44129dabe0823574cfad975d7e6b4df}{Taxi}}, and \mbox{\hyperlink{class_train_a32ee7c05edaee0956bd7643bcc7a8c6c}{Train}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Public\+Transport.\+h\item 
+Public\+Transport.\+cpp\end{DoxyCompactItemize}

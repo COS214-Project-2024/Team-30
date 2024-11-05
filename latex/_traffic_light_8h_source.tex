@@ -1,0 +1,36 @@
+\doxysection{Traffic\+Light.\+h}
+\hypertarget{_traffic_light_8h_source}{}\label{_traffic_light_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ TRAFFICLIGHTS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ TRAFFICLIGHTS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_traffic_light}{TrafficLight}}\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{char}\ state;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ numLights;\ \ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_traffic_light_a89cfcfb09daf2403b4fbc46b2a452121}{id}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_traffic_light_a28e72db41dcbd224a0a811d08ae20c3f}{TrafficLight}}();}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_traffic_light_ad6e9162f7356b2b8e08d53a2c8d45e3c}{changeState}}();}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{class_traffic_light_abf3d7d4da37ccc7056e3ad7f4dfb1efd}{getState}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_traffic_light_a2721635832745566393adf7761a500a8}{getID}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_traffic_light_a911541837bb4651d872822bab130bf76}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_traffic_light}{TrafficLight}}\&\ other)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\textcolor{keywordtype}{id}\ ==\ other.\mbox{\hyperlink{class_traffic_light_a89cfcfb09daf2403b4fbc46b2a452121}{id}};}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_traffic_light_a93c61deb2f32918f17ebe9fec8f06d3d}{setState}}(\textcolor{keywordtype}{char}\ c)\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ state\ =\ c;}
+\DoxyCodeLine{00068\ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TRAFFICLIGHTS\_H}}
+\DoxyCodeLine{00072\ }
+
+\end{DoxyCode}

@@ -1,0 +1,23 @@
+\doxysection{Resource\+Factory.\+h}
+\hypertarget{_resource_factory_8h_source}{}\label{_resource_factory_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ RESOURCE\_FACTORY\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ RESOURCE\_FACTORY\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Resource.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_resource_factory}{ResourceFactory}}}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{public}:\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_resource_factory_a941cac965aad93281163406180472f67}{ResourceFactory}}();}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_resource_factory_aa494d0057442667fac62f69bdc4c8fac}{\string~ResourceFactory}}()\ =\ \textcolor{keywordflow}{default};\ }
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ std::unique\_ptr<Resource>\ \mbox{\hyperlink{class_resource_factory_a3a04dbbadb83935ad7bd6930bfa20d54}{createResource}}(\textcolor{keyword}{const}\ std::string\&\ type,\ \textcolor{keywordtype}{int}\ capacity)\ =\ 0;}
+\DoxyCodeLine{00037\ \};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

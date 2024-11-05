@@ -1,0 +1,158 @@
+\doxysection{Sign Class Reference}
+\hypertarget{class_sign}{}\label{class_sign}\index{Sign@{Sign}}
+
+
+Represents a generic sign with a message and type.  
+
+
+
+
+{\ttfamily \#include $<$Sign.\+h$>$}
+
+Inheritance diagram for Sign\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_sign}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sign_a54917551622fad174ee26185bff9d300}{Sign}} (const string \&message)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_sign}{Sign} object with a specified message. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_sign_ac414ada2884e4a9cd40f8ed38a1aab4e}{\texorpdfstring{$\sim$}{\string~}\+Sign}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \doxylink{class_sign}{Sign} class. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_sign_a3a568f1b4ce80d02227f11b56976568a}{get\+ID}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the unique identifier of the sign. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_sign_a6f39933f7715938f1d94102fea1b9f3c}{get\+Message}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the message displayed on the sign. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_sign_aaea8ae0522336ee2db5c63a6c164e332}{get\+Type}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the type of the sign. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_sign_a42b57ece0db9682ba590223f08b73615}{operator==}} (const \mbox{\hyperlink{class_sign}{Sign}} \&other) const
+\begin{DoxyCompactList}\small\item\em Compares two \doxylink{class_sign}{Sign} objects for equality based on their IDs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_sign_a6f7a6b8515d83c3f63a486f9f84ffa6e}\label{class_sign_a6f7a6b8515d83c3f63a486f9f84ffa6e} 
+string {\bfseries message}
+\item 
+\Hypertarget{class_sign_a75316db957d9c9903290e8848624bf1a}\label{class_sign_a75316db957d9c9903290e8848624bf1a} 
+string {\bfseries type}
+\item 
+\Hypertarget{class_sign_ae0d1d066074ef4bb3c648db7de53616b}\label{class_sign_ae0d1d066074ef4bb3c648db7de53616b} 
+int {\bfseries ID}
+\begin{DoxyCompactList}\small\item\em Unique identifier for each sign instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_sign_a4834d84ed367a89792446baa47034ddb}\label{class_sign_a4834d84ed367a89792446baa47034ddb} 
+static int {\bfseries num\+Signs} = 0
+\begin{DoxyCompactList}\small\item\em Static member variable to keep track of the number of sign instances created. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a generic sign with a message and type. 
+
+The \doxylink{class_sign}{Sign} class keeps track of the total number of signs to note IDs 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_sign_a54917551622fad174ee26185bff9d300}\index{Sign@{Sign}!Sign@{Sign}}
+\index{Sign@{Sign}!Sign@{Sign}}
+\doxysubsubsection{\texorpdfstring{Sign()}{Sign()}}
+{\footnotesize\ttfamily \label{class_sign_a54917551622fad174ee26185bff9d300} 
+Sign\+::\+Sign (\begin{DoxyParamCaption}\item[{const string \&}]{message}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_sign}{Sign} object with a specified message. 
+
+This constructor initializes the sign\textquotesingle{}s message and increments the total sign count, assigning a unique ID to this sign.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The message to be displayed on the sign.\\
+\hline
+\end{DoxyParams}
+The constructor initializes the message and assigns a unique ID to the sign. It also sets the type of the sign to "{}\+Generic sign"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The message to be displayed on the sign. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_sign_ac414ada2884e4a9cd40f8ed38a1aab4e}\index{Sign@{Sign}!````~Sign@{\texorpdfstring{$\sim$}{\string~}Sign}}
+\index{````~Sign@{\texorpdfstring{$\sim$}{\string~}Sign}!Sign@{Sign}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Sign()}{\string~Sign()}}
+{\footnotesize\ttfamily \label{class_sign_ac414ada2884e4a9cd40f8ed38a1aab4e} 
+virtual Sign\+::\texorpdfstring{$\sim$}{\string~}\+Sign (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Virtual destructor for the \doxylink{class_sign}{Sign} class. 
+
+Allows derived classes to properly clean up resources. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_sign_a3a568f1b4ce80d02227f11b56976568a}\index{Sign@{Sign}!getID@{getID}}
+\index{getID@{getID}!Sign@{Sign}}
+\doxysubsubsection{\texorpdfstring{getID()}{getID()}}
+{\footnotesize\ttfamily \label{class_sign_a3a568f1b4ce80d02227f11b56976568a} 
+int Sign\+::get\+ID (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the unique identifier of the sign. 
+
+\begin{DoxyReturn}{Returns}
+The ID of the sign. 
+\end{DoxyReturn}
+\Hypertarget{class_sign_a6f39933f7715938f1d94102fea1b9f3c}\index{Sign@{Sign}!getMessage@{getMessage}}
+\index{getMessage@{getMessage}!Sign@{Sign}}
+\doxysubsubsection{\texorpdfstring{getMessage()}{getMessage()}}
+{\footnotesize\ttfamily \label{class_sign_a6f39933f7715938f1d94102fea1b9f3c} 
+string Sign\+::get\+Message (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the message displayed on the sign. 
+
+\begin{DoxyReturn}{Returns}
+The message associated with the sign. 
+\end{DoxyReturn}
+\Hypertarget{class_sign_aaea8ae0522336ee2db5c63a6c164e332}\index{Sign@{Sign}!getType@{getType}}
+\index{getType@{getType}!Sign@{Sign}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \label{class_sign_aaea8ae0522336ee2db5c63a6c164e332} 
+string Sign\+::get\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the type of the sign. 
+
+\begin{DoxyReturn}{Returns}
+The type of the sign. 
+\end{DoxyReturn}
+\Hypertarget{class_sign_a42b57ece0db9682ba590223f08b73615}\index{Sign@{Sign}!operator==@{operator==}}
+\index{operator==@{operator==}!Sign@{Sign}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \label{class_sign_a42b57ece0db9682ba590223f08b73615} 
+bool Sign\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sign}{Sign}} \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Compares two \doxylink{class_sign}{Sign} objects for equality based on their IDs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The other \doxylink{class_sign}{Sign} object to compare against. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if both \doxylink{class_sign}{Sign} objects have the same ID, otherwise false. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Sign.\+h\item 
+Sign.\+cpp\end{DoxyCompactItemize}

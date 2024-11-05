@@ -1,0 +1,162 @@
+\doxysection{Power\+Plant Class Reference}
+\hypertarget{class_power_plant}{}\label{class_power_plant}\index{PowerPlant@{PowerPlant}}
+
+
+Represents a power plant responsible for generating electricity and monitoring coal resources.  
+
+
+
+
+{\ttfamily \#include $<$Power\+Plant.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_power_plant_aab6bd06eddb76915a4721d9f69a224c6}{Power\+Plant}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{class_coal}{Coal}} $>$ c)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_power_plant}{Power\+Plant} instance with a specified coal resource. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_power_plant_abb9cc127f567e6df9711a41cde0c9e09}{set\+Working}} (bool b)
+\begin{DoxyCompactList}\small\item\em Sets the operational status of the power plant. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_power_plant_aaef4ce4895e22cf0f89c61548fbcc2db}{get\+Working}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the power plant is operational. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_power_plant_a28cb7e4dbcd73ab0d37d73a8dedeeb97}{set\+Coal}} (int w)
+\begin{DoxyCompactList}\small\item\em Sets the coal supply level for the power plant. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_power_plant_af5feb730e3a393c737098f549876a1e1}{get\+Coal}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the current coal level in the power plant. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_power_plant_a70c1d1f91f2aa6b32468d1f2e0155d17}{generate\+Electricity}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$ b)
+\begin{DoxyCompactList}\small\item\em Generates electricity for a specified building. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_power_plant_a14dac155268e3ba1b14c63bdd939009d}{repair}} ()
+\begin{DoxyCompactList}\small\item\em Repairs the power plant, making it operational again. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_power_plant_a4bd320aab2c499f7552808bc54518297}{notify\+Citizens}} (const string \&message)
+\begin{DoxyCompactList}\small\item\em Sends a notification message to citizens regarding the power plant\textquotesingle{}s status. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a power plant responsible for generating electricity and monitoring coal resources. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_power_plant_aab6bd06eddb76915a4721d9f69a224c6}\index{PowerPlant@{PowerPlant}!PowerPlant@{PowerPlant}}
+\index{PowerPlant@{PowerPlant}!PowerPlant@{PowerPlant}}
+\doxysubsubsection{\texorpdfstring{PowerPlant()}{PowerPlant()}}
+{\footnotesize\ttfamily \label{class_power_plant_aab6bd06eddb76915a4721d9f69a224c6} 
+Power\+Plant\+::\+Power\+Plant (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{class_coal}{Coal}} $>$}]{c}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_power_plant}{Power\+Plant} instance with a specified coal resource. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Shared pointer to a \doxylink{class_coal}{Coal} instance used as the power plant\textquotesingle{}s fuel source. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_power_plant_a70c1d1f91f2aa6b32468d1f2e0155d17}\index{PowerPlant@{PowerPlant}!generateElectricity@{generateElectricity}}
+\index{generateElectricity@{generateElectricity}!PowerPlant@{PowerPlant}}
+\doxysubsubsection{\texorpdfstring{generateElectricity()}{generateElectricity()}}
+{\footnotesize\ttfamily \label{class_power_plant_a70c1d1f91f2aa6b32468d1f2e0155d17} 
+int Power\+Plant\+::generate\+Electricity (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Generates electricity for a specified building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & Shared pointer to the \doxylink{class_building}{Building} receiving electricity. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The amount of electricity generated, or 0 if generation fails. 
+\end{DoxyReturn}
+\Hypertarget{class_power_plant_af5feb730e3a393c737098f549876a1e1}\index{PowerPlant@{PowerPlant}!getCoal@{getCoal}}
+\index{getCoal@{getCoal}!PowerPlant@{PowerPlant}}
+\doxysubsubsection{\texorpdfstring{getCoal()}{getCoal()}}
+{\footnotesize\ttfamily \label{class_power_plant_af5feb730e3a393c737098f549876a1e1} 
+int Power\+Plant\+::get\+Coal (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the current coal level in the power plant. 
+
+\begin{DoxyReturn}{Returns}
+The amount of coal currently available for power generation. 
+\end{DoxyReturn}
+\Hypertarget{class_power_plant_aaef4ce4895e22cf0f89c61548fbcc2db}\index{PowerPlant@{PowerPlant}!getWorking@{getWorking}}
+\index{getWorking@{getWorking}!PowerPlant@{PowerPlant}}
+\doxysubsubsection{\texorpdfstring{getWorking()}{getWorking()}}
+{\footnotesize\ttfamily \label{class_power_plant_aaef4ce4895e22cf0f89c61548fbcc2db} 
+bool Power\+Plant\+::get\+Working (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Checks if the power plant is operational. 
+
+\begin{DoxyReturn}{Returns}
+True if the power plant is operational, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_power_plant_a4bd320aab2c499f7552808bc54518297}\index{PowerPlant@{PowerPlant}!notifyCitizens@{notifyCitizens}}
+\index{notifyCitizens@{notifyCitizens}!PowerPlant@{PowerPlant}}
+\doxysubsubsection{\texorpdfstring{notifyCitizens()}{notifyCitizens()}}
+{\footnotesize\ttfamily \label{class_power_plant_a4bd320aab2c499f7552808bc54518297} 
+void Power\+Plant\+::notify\+Citizens (\begin{DoxyParamCaption}\item[{const string \&}]{message}{}\end{DoxyParamCaption})}
+
+
+
+Sends a notification message to citizens regarding the power plant\textquotesingle{}s status. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The message to notify citizens. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_power_plant_a14dac155268e3ba1b14c63bdd939009d}\index{PowerPlant@{PowerPlant}!repair@{repair}}
+\index{repair@{repair}!PowerPlant@{PowerPlant}}
+\doxysubsubsection{\texorpdfstring{repair()}{repair()}}
+{\footnotesize\ttfamily \label{class_power_plant_a14dac155268e3ba1b14c63bdd939009d} 
+bool Power\+Plant\+::repair (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Repairs the power plant, making it operational again. 
+
+\begin{DoxyReturn}{Returns}
+True if the repair was successful, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_power_plant_a28cb7e4dbcd73ab0d37d73a8dedeeb97}\index{PowerPlant@{PowerPlant}!setCoal@{setCoal}}
+\index{setCoal@{setCoal}!PowerPlant@{PowerPlant}}
+\doxysubsubsection{\texorpdfstring{setCoal()}{setCoal()}}
+{\footnotesize\ttfamily \label{class_power_plant_a28cb7e4dbcd73ab0d37d73a8dedeeb97} 
+void Power\+Plant\+::set\+Coal (\begin{DoxyParamCaption}\item[{int}]{w}{}\end{DoxyParamCaption})}
+
+
+
+Sets the coal supply level for the power plant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & The amount of coal available for distribution. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_power_plant_abb9cc127f567e6df9711a41cde0c9e09}\index{PowerPlant@{PowerPlant}!setWorking@{setWorking}}
+\index{setWorking@{setWorking}!PowerPlant@{PowerPlant}}
+\doxysubsubsection{\texorpdfstring{setWorking()}{setWorking()}}
+{\footnotesize\ttfamily \label{class_power_plant_abb9cc127f567e6df9711a41cde0c9e09} 
+void Power\+Plant\+::set\+Working (\begin{DoxyParamCaption}\item[{bool}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Sets the operational status of the power plant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & Boolean indicating whether the power plant is operational. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Power\+Plant.\+h\item 
+Power\+Plant.\+cpp\end{DoxyCompactItemize}

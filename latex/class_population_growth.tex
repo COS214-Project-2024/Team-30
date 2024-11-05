@@ -1,0 +1,95 @@
+\doxysection{Population\+Growth Class Reference}
+\hypertarget{class_population_growth}{}\label{class_population_growth}\index{PopulationGrowth@{PopulationGrowth}}
+
+
+A class that observes and responds to changes in the population of a government.  
+
+
+
+
+{\ttfamily \#include $<$Population\+Growth.\+h$>$}
+
+Inheritance diagram for Population\+Growth\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_population_growth}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_population_growth_aa8e82d12cd491f97ba00031a96dc9638}{update}} (\mbox{\hyperlink{class_government}{Government}} \texorpdfstring{$\ast$}{*}g) override
+\begin{DoxyCompactList}\small\item\em Updates the observer with the current population data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_population_growth_ae3c0f5fd54023f72c3cb213c398489db}{print\+Info}} (\mbox{\hyperlink{class_government}{Government}} \texorpdfstring{$\ast$}{*}g)
+\begin{DoxyCompactList}\small\item\em Prints information about the government\textquotesingle{}s population. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_city_growth_observer}{City\+Growth\+Observer}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_city_growth_observer_adff38dfadf2315d3f745b285b05a75ca}{\texorpdfstring{$\sim$}{\string~}\+City\+Growth\+Observer}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class that observes and responds to changes in the population of a government. 
+
+This class implements the \doxylink{class_city_growth_observer}{City\+Growth\+Observer} interface and provides functionality to update and print information related to population growth. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_population_growth_ae3c0f5fd54023f72c3cb213c398489db}\index{PopulationGrowth@{PopulationGrowth}!printInfo@{printInfo}}
+\index{printInfo@{printInfo}!PopulationGrowth@{PopulationGrowth}}
+\doxysubsubsection{\texorpdfstring{printInfo()}{printInfo()}}
+{\footnotesize\ttfamily \label{class_population_growth_ae3c0f5fd54023f72c3cb213c398489db} 
+void Population\+Growth\+::print\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_government}{Government}} \texorpdfstring{$\ast$}{*}}]{g}{}\end{DoxyParamCaption})}
+
+
+
+Prints information about the government\textquotesingle{}s population. 
+
+This method retrieves the current population of the specified government and displays relevant information about its growth and other metrics.
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & A pointer to a \doxylink{class_government}{Government} object whose information is to be printed.\\
+\hline
+\end{DoxyParams}
+This method outputs the current birth rate, old population, and new population of the specified government to the console in a formatted manner.
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & A pointer to a \doxylink{class_government}{Government} object whose information is to be printed. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_population_growth_aa8e82d12cd491f97ba00031a96dc9638}\index{PopulationGrowth@{PopulationGrowth}!update@{update}}
+\index{update@{update}!PopulationGrowth@{PopulationGrowth}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_population_growth_aa8e82d12cd491f97ba00031a96dc9638} 
+void Population\+Growth\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_government}{Government}} \texorpdfstring{$\ast$}{*}}]{g}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Updates the observer with the current population data. 
+
+This method is called to notify the observer of changes in the government object. It should handle any updates necessary to reflect the new population.
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & A pointer to a \doxylink{class_government}{Government} object containing the updated population information.\\
+\hline
+\end{DoxyParams}
+This method calculates the birth rate based on the difference between the current population and the previous population, then calls print\+Info to display the updated information. The old population value is updated after the calculation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & A pointer to a \doxylink{class_government}{Government} object containing the updated population information. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_city_growth_observer_a9595ca3a6d7083525f4a99459ec5e24e}{City\+Growth\+Observer}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Population\+Growth.\+h\item 
+Population\+Growth.\+cpp\end{DoxyCompactItemize}

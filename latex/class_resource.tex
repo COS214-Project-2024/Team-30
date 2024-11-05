@@ -1,0 +1,106 @@
+\doxysection{Resource Class Reference}
+\hypertarget{class_resource}{}\label{class_resource}\index{Resource@{Resource}}
+
+
+An abstract base class representing a general resource with a limited capacity.  
+
+
+
+
+{\ttfamily \#include $<$Resource.\+h$>$}
+
+Inheritance diagram for Resource\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_resource}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_resource_a8c2e5de50dc887e6a15ef1b344fef1ae}\label{class_resource_a8c2e5de50dc887e6a15ef1b344fef1ae} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Resource} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \doxylink{class_resource}{Resource} class. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_resource_aa54b7fb57467a4ad6b3eef325253ff58}{get\+Capacity}} () const =0
+\begin{DoxyCompactList}\small\item\em Gets the current capacity of the resource. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_resource_af21f50c27d3e59243933f7c96e475d7a}{use}} (int amount)=0
+\begin{DoxyCompactList}\small\item\em Uses a specified amount of the resource. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_resource_a494c92291836c994eb228cb137136af9}{refill}} (int amount)=0
+\begin{DoxyCompactList}\small\item\em Refills the resource by a specified amount. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_resource_ad9f149ff9c7459fcf3ea9b176ea43a1a}\label{class_resource_ad9f149ff9c7459fcf3ea9b176ea43a1a} 
+int {\bfseries capacity}
+\begin{DoxyCompactList}\small\item\em Capacity of the resource. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An abstract base class representing a general resource with a limited capacity. 
+
+The \doxylink{class_resource}{Resource} class provides a common interface for various types of resources such as \doxylink{class_steel}{Steel}, \doxylink{class_water}{Water}, \doxylink{class_coal}{Coal}, \doxylink{class_concrete}{Concrete}, and \doxylink{class_wood}{Wood}. Derived classes must implement methods for getting capacity, using, and refilling the resource. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_resource_aa54b7fb57467a4ad6b3eef325253ff58}\index{Resource@{Resource}!getCapacity@{getCapacity}}
+\index{getCapacity@{getCapacity}!Resource@{Resource}}
+\doxysubsubsection{\texorpdfstring{getCapacity()}{getCapacity()}}
+{\footnotesize\ttfamily \label{class_resource_aa54b7fb57467a4ad6b3eef325253ff58} 
+virtual int Resource\+::get\+Capacity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the current capacity of the resource. 
+
+\begin{DoxyReturn}{Returns}
+The current capacity as an integer. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_coal_a27843441c9722528a15e31377a6b9ffd}{Coal}}, \mbox{\hyperlink{class_concrete_a4b3e559084948ab72025246442a98804}{Concrete}}, \mbox{\hyperlink{class_steel_ac3ec26666a6fc21c04e99c4de39f5330}{Steel}}, \mbox{\hyperlink{class_water_a4ec64ed40cf8bbf9fdf1e4be95841c65}{Water}}, and \mbox{\hyperlink{class_wood_a8c11afd038a57e9ebb2a4f9d88737337}{Wood}}.
+
+\Hypertarget{class_resource_a494c92291836c994eb228cb137136af9}\index{Resource@{Resource}!refill@{refill}}
+\index{refill@{refill}!Resource@{Resource}}
+\doxysubsubsection{\texorpdfstring{refill()}{refill()}}
+{\footnotesize\ttfamily \label{class_resource_a494c92291836c994eb228cb137136af9} 
+virtual void Resource\+::refill (\begin{DoxyParamCaption}\item[{int}]{amount}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Refills the resource by a specified amount. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & Amount to add to the resource\textquotesingle{}s capacity. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_coal_a8e89e70c1e7e453eb5388a02e184a74a}{Coal}}, \mbox{\hyperlink{class_concrete_a52638f8e2b637f4edda1c8e9f18634b3}{Concrete}}, \mbox{\hyperlink{class_steel_a1d925ecc98126044591edcd81c99b855}{Steel}}, \mbox{\hyperlink{class_water_a74c115bcb87b6df9a2d4be7433fd0e3e}{Water}}, and \mbox{\hyperlink{class_wood_a49eabcbe91e3e392769603832b7bdfb0}{Wood}}.
+
+\Hypertarget{class_resource_af21f50c27d3e59243933f7c96e475d7a}\index{Resource@{Resource}!use@{use}}
+\index{use@{use}!Resource@{Resource}}
+\doxysubsubsection{\texorpdfstring{use()}{use()}}
+{\footnotesize\ttfamily \label{class_resource_af21f50c27d3e59243933f7c96e475d7a} 
+virtual int Resource\+::use (\begin{DoxyParamCaption}\item[{int}]{amount}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Uses a specified amount of the resource. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & Amount of the resource to use. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The actual amount used. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_coal_a913cf988b07a5d636937432962965e78}{Coal}}, \mbox{\hyperlink{class_concrete_a5ebd13ae1ac3c4fc72da1dfffe4201d3}{Concrete}}, \mbox{\hyperlink{class_steel_a62f6d54970f846f97c06d17091b4b1ff}{Steel}}, \mbox{\hyperlink{class_water_a5ccf140c1d5921b656db0777d95fb76e}{Water}}, and \mbox{\hyperlink{class_wood_a77d2ff6af4da96c53c5645c84b8f91f8}{Wood}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Resource.\+h\end{DoxyCompactItemize}

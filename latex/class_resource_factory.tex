@@ -1,0 +1,56 @@
+\doxysection{Resource\+Factory Class Reference}
+\hypertarget{class_resource_factory}{}\label{class_resource_factory}\index{ResourceFactory@{ResourceFactory}}
+
+
+An abstract factory class for creating different types of resources.  
+
+
+
+
+{\ttfamily \#include $<$Resource\+Factory.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_resource_factory_a941cac965aad93281163406180472f67}\label{class_resource_factory_a941cac965aad93281163406180472f67} 
+{\bfseries Resource\+Factory} ()
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_resource_factory}{Resource\+Factory} object. \end{DoxyCompactList}\item 
+\Hypertarget{class_resource_factory_aa494d0057442667fac62f69bdc4c8fac}\label{class_resource_factory_aa494d0057442667fac62f69bdc4c8fac} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Resource\+Factory} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \doxylink{class_resource_factory}{Resource\+Factory} class. \end{DoxyCompactList}\item 
+virtual std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_resource}{Resource}} $>$ \mbox{\hyperlink{class_resource_factory_a3a04dbbadb83935ad7bd6930bfa20d54}{create\+Resource}} (const std\+::string \&type, int capacity)=0
+\begin{DoxyCompactList}\small\item\em Creates a resource of a specified type with a given capacity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An abstract factory class for creating different types of resources. 
+
+The \doxylink{class_resource_factory}{Resource\+Factory} class provides an interface for creating resources such as \doxylink{class_water}{Water}, \doxylink{class_wood}{Wood}, \doxylink{class_steel}{Steel}, \doxylink{class_coal}{Coal}, and \doxylink{class_concrete}{Concrete}. Derived factory classes should implement the {\ttfamily create\+Resource} method to instantiate specific resource types based on the provided type and capacity. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_resource_factory_a3a04dbbadb83935ad7bd6930bfa20d54}\index{ResourceFactory@{ResourceFactory}!createResource@{createResource}}
+\index{createResource@{createResource}!ResourceFactory@{ResourceFactory}}
+\doxysubsubsection{\texorpdfstring{createResource()}{createResource()}}
+{\footnotesize\ttfamily \label{class_resource_factory_a3a04dbbadb83935ad7bd6930bfa20d54} 
+virtual std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_resource}{Resource}} $>$ Resource\+Factory\+::create\+Resource (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{type}{, }\item[{int}]{capacity}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Creates a resource of a specified type with a given capacity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of resource to create (e.\+g., "{}\+Water"{}, "{}\+Wood"{}). \\
+\hline
+{\em capacity} & The initial capacity of the created resource. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A unique pointer to the created \doxylink{class_resource}{Resource} object. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Resource\+Factory.\+h\item 
+Resource\+Factory.\+cpp\end{DoxyCompactItemize}

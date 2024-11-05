@@ -1,0 +1,125 @@
+\doxysection{Population Class Reference}
+\hypertarget{class_population}{}\label{class_population}\index{Population@{Population}}
+
+
+Represents the population component in the city model.  
+
+
+
+
+{\ttfamily \#include $<$Population.\+h$>$}
+
+Inheritance diagram for Population\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_population}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_population_af757a16b2076803fddb2be9a68875e1a}{get\+Population}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the current population size. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_population_a94a7fb9bac2e291c6c4d81951efffaae}{set\+Population}} (int a)
+\begin{DoxyCompactList}\small\item\em Sets the population size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_government}{Government}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Government} (string)
+\item 
+void \mbox{\hyperlink{class_government_a730066cdbf27613977f0c310871699fb}{population\+Growth}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_citizen}{Citizen}} $>$)
+\begin{DoxyCompactList}\small\item\em Adds a citizen to the population and assigns them a home. \end{DoxyCompactList}\item 
+void {\bfseries calculate\+Employment\+Rate} ()
+\begin{DoxyCompactList}\small\item\em Calculates the employment rate based on the population. \end{DoxyCompactList}\item 
+void {\bfseries increase\+Infurstructure} ()
+\begin{DoxyCompactList}\small\item\em Increases infrastructure if the budget allows. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_government_a1b8cb2786a87fb6b525bf967bfa9f995}{population\+Decline}} (int i)
+\begin{DoxyCompactList}\small\item\em Removes a citizen from the population based on their ID. \end{DoxyCompactList}\item 
+void {\bfseries collect\+Taxes} ()
+\begin{DoxyCompactList}\small\item\em Collects taxes from all citizens and updates the city budget. \end{DoxyCompactList}\item 
+void {\bfseries print\+Info} ()
+\begin{DoxyCompactList}\small\item\em Prints interface for the Game showing statistics for the city. \end{DoxyCompactList}\item 
+void {\bfseries pay\+Day} ()
+\begin{DoxyCompactList}\small\item\em Function for citizen to get paid and become happier. \end{DoxyCompactList}\item 
+void {\bfseries job\+Opportunities} ()
+\begin{DoxyCompactList}\small\item\em Function for provided job opportunities to citizens. \end{DoxyCompactList}\item 
+void {\bfseries print\+Citizen\+Summary} ()
+\begin{DoxyCompactList}\small\item\em Print a summary for citizens. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_government_a839ed0e9ef2130c9511e3a422a7415fc}{population\+Satisfaction\+Rate}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the population satisfaction rate. \end{DoxyCompactList}\item 
+vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_citizen}{Citizen}} $>$ $>$ \mbox{\hyperlink{class_government_aff0ca88bc99e3a2f25c26231d3dacaa5}{get\+People}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the current population of the city. \end{DoxyCompactList}\item 
+vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$ $>$ \mbox{\hyperlink{class_government_a4851e90ff3bdb942ecf6cd8144fd669d}{get\+Infrastructure}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the current infrastructure of the city. \end{DoxyCompactList}\item 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Government} ()
+\begin{DoxyCompactList}\small\item\em Default destructor for the \doxylink{class_government}{Government} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_government_abc318cb7da45eb79857e01b07781fd68}{attach}} (\mbox{\hyperlink{class_city_growth_observer}{City\+Growth\+Observer}} \texorpdfstring{$\ast$}{*}ob)
+\begin{DoxyCompactList}\small\item\em Attaches an observer to the city growth notifications. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_government_a0a914b2cb99994fceb92a5938df608dc}{detach}} (\mbox{\hyperlink{class_city_growth_observer}{City\+Growth\+Observer}} \texorpdfstring{$\ast$}{*}ob)
+\begin{DoxyCompactList}\small\item\em Detaches an observer from the city growth notifications. \end{DoxyCompactList}\item 
+void {\bfseries notify\+Observers} ()
+\begin{DoxyCompactList}\small\item\em Notifies all observers about changes in the city growth. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_government_a649ed9c623bb0ef4536ab9e72f99f443}{set\+Strategy}} (\mbox{\hyperlink{class_categorization_strategy}{Categorization\+Strategy}} \texorpdfstring{$\ast$}{*}str)
+\begin{DoxyCompactList}\small\item\em Sets the categorization strategy for the government. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_government_a161d861505f44a123a244609a4e6b2c0}{categorize}} ()
+\begin{DoxyCompactList}\small\item\em Categorizes the city based on the current strategy. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_government_af8610fa7b1315f5b212736bc19b0d8c5}{get\+Population\+Num}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the current population number. \end{DoxyCompactList}\item 
+int {\bfseries get\+Numberof\+Unemployed\+Citizens} ()
+\begin{DoxyCompactList}\small\item\em function to calculate unemployment rate \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_government_ae049f3b356400ad333161d1c813a9192}{get\+Number\+Of\+Employed\+Citizens}} ()
+\begin{DoxyCompactList}\small\item\em helper function which is used for employment rate. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_government_a2be40db91795c8a76af02551e966b7ae}{get\+Employment\+Rate}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the current employment rate. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_government_ace6fe3e6f2a223fdcb870dd94fbbc2d2}{Residential\+Capacity}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the total residential capacity of all buildings. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_government_a124c832ceb9b04682653cb81d7c66afe}{set\+City\+Budget}} (int budget)
+\begin{DoxyCompactList}\small\item\em Sets the city budget. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_government_a5d39f955eb2e1d6e1556f1d9eb31354a}{get\+City\+Budget}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the current city budget. \end{DoxyCompactList}\item 
+void {\bfseries distribute\+Utilities} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the population component in the city model. 
+
+The {\ttfamily \doxylink{class_population}{Population}} class extends {\ttfamily \doxylink{class_government}{Government}} and provides methods to get and set the population size. It serves as an interface for managing population-\/specific data within the city\textquotesingle{}s government framework. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_population_af757a16b2076803fddb2be9a68875e1a}\index{Population@{Population}!getPopulation@{getPopulation}}
+\index{getPopulation@{getPopulation}!Population@{Population}}
+\doxysubsubsection{\texorpdfstring{getPopulation()}{getPopulation()}}
+{\footnotesize\ttfamily \label{class_population_af757a16b2076803fddb2be9a68875e1a} 
+int Population\+::get\+Population (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the current population size. 
+
+\begin{DoxyReturn}{Returns}
+The current population as an integer. 
+\end{DoxyReturn}
+\Hypertarget{class_population_a94a7fb9bac2e291c6c4d81951efffaae}\index{Population@{Population}!setPopulation@{setPopulation}}
+\index{setPopulation@{setPopulation}!Population@{Population}}
+\doxysubsubsection{\texorpdfstring{setPopulation()}{setPopulation()}}
+{\footnotesize\ttfamily \label{class_population_a94a7fb9bac2e291c6c4d81951efffaae} 
+void Population\+::set\+Population (\begin{DoxyParamCaption}\item[{int}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Sets the population size. 
+
+Updates the population to a new value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & The new population size to set. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Population.\+h\item 
+Population.\+cpp\end{DoxyCompactItemize}

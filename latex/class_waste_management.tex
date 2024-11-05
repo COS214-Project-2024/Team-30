@@ -1,0 +1,116 @@
+\doxysection{Waste\+Management Class Reference}
+\hypertarget{class_waste_management}{}\label{class_waste_management}\index{WasteManagement@{WasteManagement}}
+
+
+Manages waste removal and recycling for buildings.  
+
+
+
+
+{\ttfamily \#include $<$Waste\+Management.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_waste_management_a8fe7cc0ad7b4ff564ac5a3333ff03a80}\label{class_waste_management_a8fe7cc0ad7b4ff564ac5a3333ff03a80} 
+{\bfseries Waste\+Management} ()
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_waste_management}{Waste\+Management} instance. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_waste_management_a63bbfb9107c5827bb31c5b69f040aeeb}{set\+Working}} (bool b)
+\begin{DoxyCompactList}\small\item\em Sets the operational status of the waste management system. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_waste_management_a5adc18f918e80552c1fa9885052caf19}{get\+Working}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the waste management system is operational. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_waste_management_a4e0960971937109d77b428582d101954}{remove\+Waste}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$ b)
+\begin{DoxyCompactList}\small\item\em Removes waste from a specified building. \end{DoxyCompactList}\item 
+\Hypertarget{class_waste_management_a25907989e3943fac3a0ba56582334ef1}\label{class_waste_management_a25907989e3943fac3a0ba56582334ef1} 
+void {\bfseries recycle} ()
+\begin{DoxyCompactList}\small\item\em Recycles waste for buildings. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_waste_management_a236268161309852545f784a89b1bf114}{repair}} ()
+\begin{DoxyCompactList}\small\item\em Repairs the waste management system, returning it to working condition. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_waste_management_afae99ed82c68577401d596da6855025d}{notify\+Citizens}} (const string \&message)
+\begin{DoxyCompactList}\small\item\em Sends a notification message to citizens regarding the waste management services. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages waste removal and recycling for buildings. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_waste_management_a5adc18f918e80552c1fa9885052caf19}\index{WasteManagement@{WasteManagement}!getWorking@{getWorking}}
+\index{getWorking@{getWorking}!WasteManagement@{WasteManagement}}
+\doxysubsubsection{\texorpdfstring{getWorking()}{getWorking()}}
+{\footnotesize\ttfamily \label{class_waste_management_a5adc18f918e80552c1fa9885052caf19} 
+bool Waste\+Management\+::get\+Working (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Checks if the waste management system is operational. 
+
+\begin{DoxyReturn}{Returns}
+True if operational, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_waste_management_afae99ed82c68577401d596da6855025d}\index{WasteManagement@{WasteManagement}!notifyCitizens@{notifyCitizens}}
+\index{notifyCitizens@{notifyCitizens}!WasteManagement@{WasteManagement}}
+\doxysubsubsection{\texorpdfstring{notifyCitizens()}{notifyCitizens()}}
+{\footnotesize\ttfamily \label{class_waste_management_afae99ed82c68577401d596da6855025d} 
+void Waste\+Management\+::notify\+Citizens (\begin{DoxyParamCaption}\item[{const string \&}]{message}{}\end{DoxyParamCaption})}
+
+
+
+Sends a notification message to citizens regarding the waste management services. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The message to notify citizens. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_waste_management_a4e0960971937109d77b428582d101954}\index{WasteManagement@{WasteManagement}!removeWaste@{removeWaste}}
+\index{removeWaste@{removeWaste}!WasteManagement@{WasteManagement}}
+\doxysubsubsection{\texorpdfstring{removeWaste()}{removeWaste()}}
+{\footnotesize\ttfamily \label{class_waste_management_a4e0960971937109d77b428582d101954} 
+int Waste\+Management\+::remove\+Waste (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Removes waste from a specified building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & Shared pointer to the building from which waste is removed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Amount of waste removed, or 0 if removal fails. 
+\end{DoxyReturn}
+\Hypertarget{class_waste_management_a236268161309852545f784a89b1bf114}\index{WasteManagement@{WasteManagement}!repair@{repair}}
+\index{repair@{repair}!WasteManagement@{WasteManagement}}
+\doxysubsubsection{\texorpdfstring{repair()}{repair()}}
+{\footnotesize\ttfamily \label{class_waste_management_a236268161309852545f784a89b1bf114} 
+bool Waste\+Management\+::repair (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Repairs the waste management system, returning it to working condition. 
+
+\begin{DoxyReturn}{Returns}
+True if the repair was successful, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_waste_management_a63bbfb9107c5827bb31c5b69f040aeeb}\index{WasteManagement@{WasteManagement}!setWorking@{setWorking}}
+\index{setWorking@{setWorking}!WasteManagement@{WasteManagement}}
+\doxysubsubsection{\texorpdfstring{setWorking()}{setWorking()}}
+{\footnotesize\ttfamily \label{class_waste_management_a63bbfb9107c5827bb31c5b69f040aeeb} 
+void Waste\+Management\+::set\+Working (\begin{DoxyParamCaption}\item[{bool}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Sets the operational status of the waste management system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & Boolean indicating if the waste management system is operational. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Waste\+Management.\+h\item 
+Waste\+Management.\+cpp\end{DoxyCompactItemize}

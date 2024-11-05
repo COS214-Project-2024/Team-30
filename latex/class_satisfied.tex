@@ -1,0 +1,65 @@
+\doxysection{Satisfied Class Reference}
+\hypertarget{class_satisfied}{}\label{class_satisfied}\index{Satisfied@{Satisfied}}
+Inheritance diagram for Satisfied\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_satisfied}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_satisfied_a44c9a23908c8508c2806d7f52f213a64}{change\+State}} (\mbox{\hyperlink{class_citizen}{Citizen}} \&citizen) override
+\begin{DoxyCompactList}\small\item\em Changes the emotional state of the given citizen to \doxylink{class_unsatisfied}{Unsatisfied} if their happiness meter falls below 50. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_satisfied_a6728d674959674e0502d208ecaf40317}{get\+Current\+Emotion}} () override
+\begin{DoxyCompactList}\small\item\em Retrieves the emotional state of the \doxylink{class_satisfied}{Satisfied} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_emotional_state}{Emotional\+State}}}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_satisfied_a44c9a23908c8508c2806d7f52f213a64}\index{Satisfied@{Satisfied}!changeState@{changeState}}
+\index{changeState@{changeState}!Satisfied@{Satisfied}}
+\doxysubsubsection{\texorpdfstring{changeState()}{changeState()}}
+{\footnotesize\ttfamily \label{class_satisfied_a44c9a23908c8508c2806d7f52f213a64} 
+void Satisfied\+::change\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_citizen}{Citizen}} \&}]{citizen}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Changes the emotional state of the given citizen to \doxylink{class_unsatisfied}{Unsatisfied} if their happiness meter falls below 50. 
+
+This method checks the happiness meter of the specified citizen. If the meter is less than 50, the citizen\textquotesingle{}s emotional state is changed to \doxylink{class_unsatisfied}{Unsatisfied}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em citizen} & A reference to the \doxylink{class_citizen}{Citizen} object whose emotional state is being modified. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_emotional_state}{Emotional\+State}}.
+
+\Hypertarget{class_satisfied_a6728d674959674e0502d208ecaf40317}\index{Satisfied@{Satisfied}!getCurrentEmotion@{getCurrentEmotion}}
+\index{getCurrentEmotion@{getCurrentEmotion}!Satisfied@{Satisfied}}
+\doxysubsubsection{\texorpdfstring{getCurrentEmotion()}{getCurrentEmotion()}}
+{\footnotesize\ttfamily \label{class_satisfied_a6728d674959674e0502d208ecaf40317} 
+string Satisfied\+::get\+Current\+Emotion (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retrieves the emotional state of the \doxylink{class_satisfied}{Satisfied} object. 
+
+This method returns a string representing the current emotional state of the \doxylink{class_satisfied}{Satisfied} object.
+
+\begin{DoxyReturn}{Returns}
+A string indicating the emotional state, which is "{}\+Satisfied"{}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_emotional_state}{Emotional\+State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Satisfied.\+h\item 
+Satisfied.\+cpp\end{DoxyCompactItemize}

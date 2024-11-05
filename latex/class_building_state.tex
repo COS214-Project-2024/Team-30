@@ -1,0 +1,159 @@
+\doxysection{Building\+State Class Reference}
+\hypertarget{class_building_state}{}\label{class_building_state}\index{BuildingState@{BuildingState}}
+
+
+Abstract base class representing the state of a \doxylink{class_building}{Building}.  
+
+
+
+
+{\ttfamily \#include $<$Building\+State.\+h$>$}
+
+Inheritance diagram for Building\+State\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_building_state}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_building_state_ae46db57162e8447b387804f3db72d39a}\label{class_building_state_ae46db57162e8447b387804f3db72d39a} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Building\+State} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \doxylink{class_building_state}{Building\+State}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_building_state_a03d48c21325c46dba368df773ac407b7}{set\+Building}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$ currbuilding)
+\begin{DoxyCompactList}\small\item\em Sets the associated \doxylink{class_building}{Building} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_building_state_a177c78289404bdd13b0decdd387d6f62}{set\+State}} ()
+\begin{DoxyCompactList}\small\item\em Sets the associated \doxylink{class_building}{Building} object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_building_state_aabeae6e7f93c80e3240835e1b44ca006}{handle}} ()=0
+\begin{DoxyCompactList}\small\item\em Handles state-\/specific behavior. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_building_state_a8ed10f519a44f000fc2e944b0bafb744}{change\+State}} ()=0
+\begin{DoxyCompactList}\small\item\em Changes the state of the \doxylink{class_building}{Building} to a new state. \end{DoxyCompactList}\item 
+virtual string \mbox{\hyperlink{class_building_state_ac945970c0214492db190e7da6399e2c2}{get\+Status}} ()=0
+\begin{DoxyCompactList}\small\item\em Gets the status of the current state. \end{DoxyCompactList}\item 
+virtual unique\+\_\+ptr$<$ \mbox{\hyperlink{class_building_state}{Building\+State}} $>$ \mbox{\hyperlink{class_building_state_ade4ebd1df3cdc6adb8f5a19d19b7dd65}{clone}} () const =0
+\begin{DoxyCompactList}\small\item\em Clones the \doxylink{class_building_state}{Building\+State} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+weak\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$ \mbox{\hyperlink{class_building_state_a1f7a9d13deac3270e8aff1307575e6bc}{building}}
+\begin{DoxyCompactList}\small\item\em Weak reference to the associated \doxylink{class_building}{Building}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class representing the state of a \doxylink{class_building}{Building}. 
+
+The \doxylink{class_building_state}{Building\+State} class defines the interface for handling state-\/specific behavior of a \doxylink{class_building}{Building}. Derived classes must implement the abstract methods to define specific state behaviors and transitions. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_building_state_a8ed10f519a44f000fc2e944b0bafb744}\index{BuildingState@{BuildingState}!changeState@{changeState}}
+\index{changeState@{changeState}!BuildingState@{BuildingState}}
+\doxysubsubsection{\texorpdfstring{changeState()}{changeState()}}
+{\footnotesize\ttfamily \label{class_building_state_a8ed10f519a44f000fc2e944b0bafb744} 
+virtual void Building\+State\+::change\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Changes the state of the \doxylink{class_building}{Building} to a new state. 
+
+This pure virtual function must be implemented by derived classes to handle transitions to a different state. 
+
+Implemented in \mbox{\hyperlink{class_built_a6f68562cc84a1b3dcf2d3d0ea0be1c82}{Built}}, \mbox{\hyperlink{class_destroyed_ab1daa8ca72610d835e9a80badd7d4a6d}{Destroyed}}, and \mbox{\hyperlink{class_underconstruction_a1d04cee73a9f438118d4a04afba374e4}{Underconstruction}}.
+
+\Hypertarget{class_building_state_ade4ebd1df3cdc6adb8f5a19d19b7dd65}\index{BuildingState@{BuildingState}!clone@{clone}}
+\index{clone@{clone}!BuildingState@{BuildingState}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \label{class_building_state_ade4ebd1df3cdc6adb8f5a19d19b7dd65} 
+virtual unique\+\_\+ptr$<$ \mbox{\hyperlink{class_building_state}{Building\+State}} $>$ Building\+State\+::clone (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Clones the \doxylink{class_building_state}{Building\+State} object. 
+
+This pure virtual function must be implemented by derived classes to create a deep copy of the \doxylink{class_building_state}{Building\+State}. Ensures that when using the prototype pattern, objects do not share states. \begin{DoxyReturn}{Returns}
+A unique pointer to a new cloned \doxylink{class_building_state}{Building\+State} object. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_built_a16d46bfae21a641b61530e42fa213afa}{Built}}, \mbox{\hyperlink{class_destroyed_a3cc863c0bbedd253a74ff3e56994b30a}{Destroyed}}, and \mbox{\hyperlink{class_underconstruction_a43cd1a7546fb7813f79d468eafdbe4aa}{Underconstruction}}.
+
+\Hypertarget{class_building_state_ac945970c0214492db190e7da6399e2c2}\index{BuildingState@{BuildingState}!getStatus@{getStatus}}
+\index{getStatus@{getStatus}!BuildingState@{BuildingState}}
+\doxysubsubsection{\texorpdfstring{getStatus()}{getStatus()}}
+{\footnotesize\ttfamily \label{class_building_state_ac945970c0214492db190e7da6399e2c2} 
+virtual string Building\+State\+::get\+Status (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the status of the current state. 
+
+This pure virtual function must be implemented by derived classes to return a string representing the current state status. \begin{DoxyReturn}{Returns}
+A string indicating the status of the current state. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_built_af31e2cc2ad46cd4dd6771cda63c10405}{Built}}, \mbox{\hyperlink{class_destroyed_aadadd0c550f4582248415f88b7d25642}{Destroyed}}, and \mbox{\hyperlink{class_underconstruction_aae9835c991dc69c385553d96013771af}{Underconstruction}}.
+
+\Hypertarget{class_building_state_aabeae6e7f93c80e3240835e1b44ca006}\index{BuildingState@{BuildingState}!handle@{handle}}
+\index{handle@{handle}!BuildingState@{BuildingState}}
+\doxysubsubsection{\texorpdfstring{handle()}{handle()}}
+{\footnotesize\ttfamily \label{class_building_state_aabeae6e7f93c80e3240835e1b44ca006} 
+virtual void Building\+State\+::handle (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Handles state-\/specific behavior. 
+
+This pure virtual function must be implemented by derived classes to perform actions associated with the current state. 
+
+Implemented in \mbox{\hyperlink{class_built_a0f2703f5523f7d221316380eab21cc5d}{Built}}, \mbox{\hyperlink{class_destroyed_adeaff6ff09450ec7fddea06aba881593}{Destroyed}}, and \mbox{\hyperlink{class_underconstruction_afdf47d8988e55a0f7a4bde1543dee9ae}{Underconstruction}}.
+
+\Hypertarget{class_building_state_a03d48c21325c46dba368df773ac407b7}\index{BuildingState@{BuildingState}!setBuilding@{setBuilding}}
+\index{setBuilding@{setBuilding}!BuildingState@{BuildingState}}
+\doxysubsubsection{\texorpdfstring{setBuilding()}{setBuilding()}}
+{\footnotesize\ttfamily \label{class_building_state_a03d48c21325c46dba368df773ac407b7} 
+void Building\+State\+::set\+Building (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$}]{currbuilding}{}\end{DoxyParamCaption})}
+
+
+
+Sets the associated \doxylink{class_building}{Building} object. 
+
+Assigns the current \doxylink{class_building}{Building} instance to the state using a shared pointer. 
+\begin{DoxyParams}{Parameters}
+{\em currbuilding} & Shared pointer to the current \doxylink{class_building}{Building} object. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_building_state_a177c78289404bdd13b0decdd387d6f62}\index{BuildingState@{BuildingState}!setState@{setState}}
+\index{setState@{setState}!BuildingState@{BuildingState}}
+\doxysubsubsection{\texorpdfstring{setState()}{setState()}}
+{\footnotesize\ttfamily \label{class_building_state_a177c78289404bdd13b0decdd387d6f62} 
+void Building\+State\+::set\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Sets the associated \doxylink{class_building}{Building} object. 
+
+Assigns the current \doxylink{class_building}{Building} instance to the state using a shared pointer. 
+\begin{DoxyParams}{Parameters}
+{\em currbuilding} & Shared pointer to the current \doxylink{class_building}{Building} object. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_building_state_a1f7a9d13deac3270e8aff1307575e6bc}\index{BuildingState@{BuildingState}!building@{building}}
+\index{building@{building}!BuildingState@{BuildingState}}
+\doxysubsubsection{\texorpdfstring{building}{building}}
+{\footnotesize\ttfamily \label{class_building_state_a1f7a9d13deac3270e8aff1307575e6bc} 
+weak\+\_\+ptr$<$\mbox{\hyperlink{class_building}{Building}}$>$ Building\+State\+::building\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Weak reference to the associated \doxylink{class_building}{Building}. 
+
+Using weak\+\_\+ptr prevents circular references between \doxylink{class_building}{Building} and \doxylink{class_building_state}{Building\+State}, helping manage memory and avoid potential memory leaks. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Building\+State.\+h\item 
+Building\+State.\+cpp\end{DoxyCompactItemize}

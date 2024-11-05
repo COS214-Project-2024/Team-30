@@ -1,0 +1,63 @@
+\doxysection{Road.\+h}
+\hypertarget{_road_8h_source}{}\label{_road_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ROAD\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ROAD\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}Sign.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}TrafficLight.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}Building.h"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ Forward\ declaration\ to\ avoid\ circular\ dependency}}
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_building}{Building}};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_road}{Road}}\ :\ \textcolor{keyword}{public}\ enable\_shared\_from\_this<Road>\ \{}
+\DoxyCodeLine{00026\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{int}\ id;\ }
+\DoxyCodeLine{00028\ \ \ \ \ vector<shared\_ptr<Building>>\ buildings;\ }
+\DoxyCodeLine{00029\ \ \ \ \ vector<Sign>\ signs;\ }
+\DoxyCodeLine{00030\ \ \ \ \ unique\_ptr<TrafficLight>\ light;\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{char}\ state;\ }
+\DoxyCodeLine{00032\ \ \ \ \ shared\_ptr<Road>\ next;\ }
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ numSigns;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{class_road_a90bb6be2a5c3b6997849a915e2af0cf0}{Road}}();}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_road_a0ab7062a1ce2cca9e40a28005452654f}{setLightRed}}();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_road_abbffec0fdcb178952657247641be2b07}{resetLight}}();}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_road_a62bc3c5f5d4c40ffb314f99fcdb9a447}{addBuilding}}(shared\_ptr<Building>\ building);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_road_a917d9fcd0c75602f4b29e2bfa02c82a3}{addSign}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_sign}{Sign}}\&\ sign);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_road_a80ffc39669405b4b97afbdf8212af41b}{addLight}}(unique\_ptr<TrafficLight>\ light);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_road_a4a352b5f89cc0bec97444c0265354b86}{removeLight}}();}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_road_a943c9e7f599c6b6f78efa297ab7e4824}{getID}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_road_af4e9518fbbdfee2b416f25e8862511a9}{setNext}}(shared\_ptr<Road>\ r);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00099\ \ \ \ \ shared\_ptr<Road>\ \mbox{\hyperlink{class_road_aa5c5ce16f78020c5d55bd36e9b573a1a}{getNext}}();}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_road_a9e5891209ce8b6bed1efa96ab522eb2f}{containsBuilding}}(shared\_ptr<Building>\ b);}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ vector<Sign>\ getSigns();}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \mbox{\hyperlink{class_road_a7cd2aa6deb4007a78a4642bad2aac149}{\string~Road}}()\ =\ \textcolor{keywordflow}{default};\ }
+\DoxyCodeLine{00112\ \};}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ROAD\_H}}
+
+\end{DoxyCode}

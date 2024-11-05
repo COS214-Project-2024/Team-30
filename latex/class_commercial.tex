@@ -1,0 +1,158 @@
+\doxysection{Commercial Class Reference}
+\hypertarget{class_commercial}{}\label{class_commercial}\index{Commercial@{Commercial}}
+Inheritance diagram for Commercial\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_commercial}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_commercial_a183a9571cce706224fa8388155f3f6e9}{build}} () override
+\item 
+unique\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$ \mbox{\hyperlink{class_commercial_a7752e1a7b82b7821e5ce3d518a371a80}{clone}} () override
+\item 
+string \mbox{\hyperlink{class_commercial_ac5bed5f728da7d42b5b07157bcfd7a32}{get\+Type}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_building}{Building}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries get\+Capacity} ()
+\item 
+\mbox{\hyperlink{class_building_state}{Building\+State}} \texorpdfstring{$\ast$}{*} {\bfseries get\+State} ()
+\item 
+void {\bfseries set\+State} (unique\+\_\+ptr$<$ \mbox{\hyperlink{class_building_state}{Building\+State}} $>$ state)
+\item 
+void {\bfseries set\+Capacity} (int capacity)
+\item 
+void {\bfseries process\+State} ()
+\item 
+void {\bfseries display\+Info} ()
+\item 
+void {\bfseries simulate\+Emergency} (\mbox{\hyperlink{class_emergencies}{Emergencies}} \&emergency)
+\item 
+bool {\bfseries has\+Occupant} (int citizen\+ID) const
+\item 
+void {\bfseries print\+Residents} ()
+\item 
+bool {\bfseries contains\+Citizen} (shared\+\_\+ptr$<$ \mbox{\hyperlink{class_citizen}{Citizen}} $>$ citizen)
+\item 
+int {\bfseries get\+ID} ()
+\item 
+void {\bfseries take\+Damage} (int damage)
+\item 
+void {\bfseries update} ()
+\item 
+void {\bfseries add\+Citizen} (shared\+\_\+ptr$<$ \mbox{\hyperlink{class_citizen}{Citizen}} $>$ citizen)
+\item 
+void {\bfseries remove\+Citizen} (shared\+\_\+ptr$<$ \mbox{\hyperlink{class_citizen}{Citizen}} $>$ citizen)
+\item 
+void {\bfseries notify\+Citizens\+Of\+Emergency} (int damage)
+\item 
+void {\bfseries set\+Utilities} ()
+\item 
+void {\bfseries set\+Water} (int water)
+\item 
+void {\bfseries set\+Power} (int power)
+\item 
+void {\bfseries set\+Sewerage} (int sewerage)
+\item 
+void {\bfseries set\+Waste} (int waste)
+\item 
+int {\bfseries get\+Water} ()
+\item 
+int {\bfseries get\+Power} ()
+\item 
+int {\bfseries get\+Sewerage} ()
+\item 
+int {\bfseries get\+Waste} ()
+\item 
+void {\bfseries receive\+Water} (int)
+\item 
+void {\bfseries receive\+Electricity} (int)
+\item 
+void {\bfseries receive\+Utilities} (shared\+\_\+ptr$<$ \mbox{\hyperlink{class_coal}{Coal}} $>$ c, shared\+\_\+ptr$<$ \mbox{\hyperlink{class_water}{Water}} $>$ w)
+\item 
+void {\bfseries check\+Construction\+Status} ()
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_citizen}{Citizen}} $>$ $>$ \& {\bfseries get\+Residents} ()
+\item 
+void {\bfseries set\+Road} (shared\+\_\+ptr$<$ \mbox{\hyperlink{class_road}{Road}} $>$ road)
+\item 
+shared\+\_\+ptr$<$ \mbox{\hyperlink{class_road}{Road}} $>$ {\bfseries get\+Road} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_building}{Building}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries id}
+\item 
+unique\+\_\+ptr$<$ \mbox{\hyperlink{class_building_state}{Building\+State}} $>$ {\bfseries curr\+State}
+\item 
+int {\bfseries capacity}
+\item 
+int {\bfseries building\+Health}
+\item 
+int {\bfseries price}
+\item 
+bool {\bfseries running\+Utils}
+\item 
+vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{class_citizen}{Citizen}} $>$ $>$ {\bfseries residents}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_utilities}{Utilities}} $>$ {\bfseries utils}
+\item 
+int {\bfseries water}
+\item 
+int {\bfseries power}
+\item 
+int {\bfseries waste}
+\item 
+int {\bfseries sewerage}
+\item 
+shared\+\_\+ptr$<$ \mbox{\hyperlink{class_road}{Road}} $>$ {\bfseries road}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{class_building}{Building}}}
+\begin{DoxyCompactItemize}
+\item 
+static int {\bfseries next\+ID} = 1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_commercial_a183a9571cce706224fa8388155f3f6e9}\index{Commercial@{Commercial}!build@{build}}
+\index{build@{build}!Commercial@{Commercial}}
+\doxysubsubsection{\texorpdfstring{build()}{build()}}
+{\footnotesize\ttfamily \label{class_commercial_a183a9571cce706224fa8388155f3f6e9} 
+void Commercial\+::build (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_building}{Building}}.
+
+\Hypertarget{class_commercial_a7752e1a7b82b7821e5ce3d518a371a80}\index{Commercial@{Commercial}!clone@{clone}}
+\index{clone@{clone}!Commercial@{Commercial}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \label{class_commercial_a7752e1a7b82b7821e5ce3d518a371a80} 
+unique\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$ Commercial\+::clone (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_building}{Building}}.
+
+\Hypertarget{class_commercial_ac5bed5f728da7d42b5b07157bcfd7a32}\index{Commercial@{Commercial}!getType@{getType}}
+\index{getType@{getType}!Commercial@{Commercial}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \label{class_commercial_ac5bed5f728da7d42b5b07157bcfd7a32} 
+string Commercial\+::get\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_building}{Building}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Commercial.\+h\item 
+Commercial.\+cpp\end{DoxyCompactItemize}

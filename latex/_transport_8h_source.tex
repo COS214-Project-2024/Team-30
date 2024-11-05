@@ -1,0 +1,45 @@
+\doxysection{Transport.\+h}
+\hypertarget{_transport_8h_source}{}\label{_transport_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ TRANSPORT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ TRANSPORT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Citizen.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Building.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_building}{Building}};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_transport}{Transport}}\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00022\ \ \ \ \ vector<shared\_ptr<Citizen>>\ \mbox{\hyperlink{class_transport_a4fda3123cea69f727b6304cd426882f7}{passengers}};\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_transport_ab2127104025de74395560f28e5013c49}{capacity}};\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_transport_a8cb75d3ab2f6a838282f8bde2e251928}{name}};\ }
+\DoxyCodeLine{00025\ \ \ \ \ shared\_ptr<Building>\ \mbox{\hyperlink{class_transport_a4cd90ad107fb4d74fe552e5bfeec8906}{from}};\ }
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_transport_af5fcea9f143cf6253669d42e671e621f}{Transport}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_transport_ab2127104025de74395560f28e5013c49}{capacity}},\ shared\_ptr<Building>\ \mbox{\hyperlink{class_transport_a4cd90ad107fb4d74fe552e5bfeec8906}{from}});}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_transport_ac3e3efa8367c9139707870808d0ef96f}{\string~Transport}}()\ =\ \textcolor{keywordflow}{default};\ \textcolor{comment}{//\ default\ destructor}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_transport_a6402b0ed712db7843cc5af0ef1547822}{addPeople}}(shared\_ptr<Citizen>\ c);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_transport_a8cac500f5aa447e49508eac53dfd02cb}{removePeople}}(shared\_ptr<Citizen>\ c);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_transport_ad6c779cd332fd684bf6599eb925f8eaf}{Travel}}(shared\_ptr<Building>\ to)\ =\ 0;}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_transport_ac0cb30d8c2b199845dad845ad2a86664}{removeAllPeople}}();}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_transport_a32956c6a1af21f15961cca6ff1cf084a}{printPassengers}}();}
+\DoxyCodeLine{00079\ \};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TRANSPORT\_H}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ }
+
+\end{DoxyCode}

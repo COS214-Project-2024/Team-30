@@ -1,0 +1,75 @@
+\doxysection{Earthquake Class Reference}
+\hypertarget{class_earthquake}{}\label{class_earthquake}\index{Earthquake@{Earthquake}}
+Inheritance diagram for Earthquake\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_earthquake}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_earthquake_aee5a02b346f07063e827f0cbc8cdfae4}{access\+Damage}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$ building\+Type) override
+\begin{DoxyCompactList}\small\item\em Calculates and applies earthquake damage to a specified building. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_earthquake_ac574d12af4770e3e8b34af2366c66adb}{get\+Type\+Of\+Emergency}} () override
+\begin{DoxyCompactList}\small\item\em Retrieves the type of emergency represented by the \doxylink{class_earthquake}{Earthquake} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_emergencies}{Emergencies}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries get\+Damage} ()
+\item 
+void {\bfseries set\+Damage} (int damage)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_emergencies}{Emergencies}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries damage}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_earthquake_aee5a02b346f07063e827f0cbc8cdfae4}\index{Earthquake@{Earthquake}!accessDamage@{accessDamage}}
+\index{accessDamage@{accessDamage}!Earthquake@{Earthquake}}
+\doxysubsubsection{\texorpdfstring{accessDamage()}{accessDamage()}}
+{\footnotesize\ttfamily \label{class_earthquake_aee5a02b346f07063e827f0cbc8cdfae4} 
+void Earthquake\+::access\+Damage (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$}]{building\+Type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Calculates and applies earthquake damage to a specified building. 
+
+This function simulates an earthquake by randomly determining its severity (mild, serious, or severe) and calculating the corresponding damage. It then applies the calculated damage to the specified building and notifies the citizens within that building of the emergency.
+
+
+\begin{DoxyParams}{Parameters}
+{\em building\+Type} & A shared pointer to the \doxylink{class_building}{Building} object that will take damage from the earthquake. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_emergencies}{Emergencies}}.
+
+\Hypertarget{class_earthquake_ac574d12af4770e3e8b34af2366c66adb}\index{Earthquake@{Earthquake}!getTypeOfEmergency@{getTypeOfEmergency}}
+\index{getTypeOfEmergency@{getTypeOfEmergency}!Earthquake@{Earthquake}}
+\doxysubsubsection{\texorpdfstring{getTypeOfEmergency()}{getTypeOfEmergency()}}
+{\footnotesize\ttfamily \label{class_earthquake_ac574d12af4770e3e8b34af2366c66adb} 
+string Earthquake\+::get\+Type\+Of\+Emergency (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retrieves the type of emergency represented by the \doxylink{class_earthquake}{Earthquake} class. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string A string indicating the type of emergency, which is "{}\+Earthquake"{} in this case. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_emergencies}{Emergencies}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Earthquake.\+h\item 
+Earthquake.\+cpp\end{DoxyCompactItemize}

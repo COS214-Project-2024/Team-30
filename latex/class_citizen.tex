@@ -1,0 +1,415 @@
+\doxysection{Citizen Class Reference}
+\hypertarget{class_citizen}{}\label{class_citizen}\index{Citizen@{Citizen}}
+Inheritance diagram for Citizen\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_citizen}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_citizen_a3951355c9f2d7260debedd29b163dbe6}{Citizen}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_citizen}{Citizen} object with initial randomized attributes. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_citizen_a232da22ce465b355dc6a6eb0d08ce275}{pay\+Tax}} ()
+\begin{DoxyCompactList}\small\item\em Calculates and deducts the \doxylink{class_citizen}{Citizen}\textquotesingle{}s tax payment from their income. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_citizen_a8863ba237be1ed8f661a05e3e9f5b1c6}{get\+Employment\+Status}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the employment status of the \doxylink{class_citizen}{Citizen} as a string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_citizen_a1c1f3181ca55c0e29149e9608698699e}{pay\+Taxes}} ()
+\begin{DoxyCompactList}\small\item\em Deducts the \doxylink{class_citizen}{Citizen}\textquotesingle{}s tax payment from their account balance. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_citizen_a4522f875f5e6f26659bb3a8add95a224}{get\+Paid}} ()
+\begin{DoxyCompactList}\small\item\em Adds the \doxylink{class_citizen}{Citizen}\textquotesingle{}s income to their account balance. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_citizen_ac94050ccb3911c6bfe6da17caa232a58}{get\+Account\+Balance}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the current account balance of the \doxylink{class_citizen}{Citizen}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_citizen_ad4f2f83da52c0b4c54847bf7dbba827b}{assign\+To\+Building}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$ building)
+\begin{DoxyCompactList}\small\item\em Assigns the \doxylink{class_citizen}{Citizen} to a specified building. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_citizen_a67a477c44799f50705647c629ceded24}{set\+Home}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$ home)
+\begin{DoxyCompactList}\small\item\em Sets the home for the citizen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_citizen_a18bf12ed3cb529a1424cae4d66e7c40d}{react\+To\+Emergency}} (int damage)
+\begin{DoxyCompactList}\small\item\em Adjusts the \doxylink{class_citizen}{Citizen}\textquotesingle{}s happiness in response to an emergency event. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_citizen_acc1356cca2cb01bf8f6a239d8fd05787}{get\+Happiness\+Meter}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the current happiness level of the \doxylink{class_citizen}{Citizen}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_citizen_a47f5f28cd9dbecc1592a349014198044}{get\+ID}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the \doxylink{class_citizen}{Citizen}\textquotesingle{}s unique ID. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_citizen_a31d0cbc439f4f0f3c7937ed768fc7003}{get\+Income}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the \doxylink{class_citizen}{Citizen}\textquotesingle{}s income. \end{DoxyCompactList}\item 
+shared\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$ \mbox{\hyperlink{class_citizen_a48d5698a385ae1c44877c64169f93f50}{get\+Home}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the citizen\textquotesingle{}s home. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_citizen_af94378805ef0f3af4cca2df6b2bbb2a6}{get\+Emotional\+State}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the emotional state of the \doxylink{class_citizen}{Citizen} as a string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_citizen_a93ca70b42f762dc4136d6e10caac79d0}{set\+Emotional\+State}} (unique\+\_\+ptr$<$ \mbox{\hyperlink{class_emotional_state}{Emotional\+State}} $>$ emotional\+State)
+\begin{DoxyCompactList}\small\item\em Sets the \doxylink{class_citizen}{Citizen}\textquotesingle{}s emotional state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_citizen_ad01beeca4ec51f63065933e868289669}{set\+Employment\+Status}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_employment_status}{Employment\+Status}} $>$ status)
+\begin{DoxyCompactList}\small\item\em Sets a new employment status for the \doxylink{class_citizen}{Citizen}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_citizen_a2ea7fa16af49e15f39ad5e1806f93c35}{print\+Details}} ()
+\begin{DoxyCompactList}\small\item\em Prints the details of the \doxylink{class_citizen}{Citizen} in a formatted output. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_citizen_aed6c73dc3b7ef8be473891fc998bd21b}{respond\+To\+Tax}} ()
+\begin{DoxyCompactList}\small\item\em Adjusts the \doxylink{class_citizen}{Citizen}\textquotesingle{}s happiness in response to paying taxes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_citizen_a797e89a15e46b7bacc56d398be555b6a}{respond\+To\+Payment}} ()
+\begin{DoxyCompactList}\small\item\em Adjusts the \doxylink{class_citizen}{Citizen}\textquotesingle{}s happiness in response to receiving a payment. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_citizen_aaefd4bfda57b4721aa07e887726ed86e}{react\+To\+Not\+Getting\+Hired}} ()
+\begin{DoxyCompactList}\small\item\em Adjusts the \doxylink{class_citizen}{Citizen}\textquotesingle{}s emotional response when not hired. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_citizen_a8fbabf23a49051a6bc51cef2cb59521d}{respond\+To\+Job\+Change}} (bool gained\+Job)
+\begin{DoxyCompactList}\small\item\em Adjusts the \doxylink{class_citizen}{Citizen}\textquotesingle{}s happiness based on a change in employment status. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_citizen_a240a2f8162d2eba1b0bff922bdceb5b8}{respond\+To\+Increased\+Infrastructure}} ()
+\begin{DoxyCompactList}\small\item\em Increases the \doxylink{class_citizen}{Citizen}\textquotesingle{}s happiness in response to improved infrastructure. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_citizen_a95d5e425cc155c1d36fdc1502df559ee}{get\+Hired}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_employment_status}{Employment\+Status}} $>$ new\+Job)
+\begin{DoxyCompactList}\small\item\em Updates the \doxylink{class_citizen}{Citizen}\textquotesingle{}s employment status when they are hired. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_citizen_aab8333e5a32b9297fb36c7ced87107e6}{get\+Fired}} ()
+\begin{DoxyCompactList}\small\item\em Transitions the \doxylink{class_citizen}{Citizen} to an unemployed status when they are fired. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_citizen_a934142a877b92adc3a2f32b9c764f5f3}{set\+Happiness\+Meter}} (int happiness\+Meter)
+\begin{DoxyCompactList}\small\item\em Sets the happiness level for a \doxylink{class_citizen}{Citizen}. \end{DoxyCompactList}\item 
+\Hypertarget{class_citizen_a8b5c041d0b689bbb7e7997d2ecc8d63e}\label{class_citizen_a8b5c041d0b689bbb7e7997d2ecc8d63e} 
+void {\bfseries react\+To\+Utilities} (bool utilities\+Active)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_citizen_a3951355c9f2d7260debedd29b163dbe6}\index{Citizen@{Citizen}!Citizen@{Citizen}}
+\index{Citizen@{Citizen}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{Citizen()}{Citizen()}}
+{\footnotesize\ttfamily \label{class_citizen_a3951355c9f2d7260debedd29b163dbe6} 
+Citizen\+::\+Citizen (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_citizen}{Citizen} object with initial randomized attributes. 
+
+Initializes the \doxylink{class_citizen}{Citizen} with a unique ID, a zero account balance, randomly assigned employment status, tax bracket, and emotional state. Additionally, assigns an initial happiness level and calls functions to set income and adjust account balance. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_citizen_ad4f2f83da52c0b4c54847bf7dbba827b}\index{Citizen@{Citizen}!assignToBuilding@{assignToBuilding}}
+\index{assignToBuilding@{assignToBuilding}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{assignToBuilding()}{assignToBuilding()}}
+{\footnotesize\ttfamily \label{class_citizen_ad4f2f83da52c0b4c54847bf7dbba827b} 
+void Citizen\+::assign\+To\+Building (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$}]{building}{}\end{DoxyParamCaption})}
+
+
+
+Assigns the \doxylink{class_citizen}{Citizen} to a specified building. 
+
+This function assigns the \doxylink{class_citizen}{Citizen} to a building, represented by a shared pointer. If a valid building pointer is provided, the \doxylink{class_citizen}{Citizen} is added to the building\textquotesingle{}s list of occupants.
+
+
+\begin{DoxyParams}{Parameters}
+{\em building} & A shared pointer to the \doxylink{class_building}{Building} object. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_citizen_ac94050ccb3911c6bfe6da17caa232a58}\index{Citizen@{Citizen}!getAccountBalance@{getAccountBalance}}
+\index{getAccountBalance@{getAccountBalance}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{getAccountBalance()}{getAccountBalance()}}
+{\footnotesize\ttfamily \label{class_citizen_ac94050ccb3911c6bfe6da17caa232a58} 
+int Citizen\+::get\+Account\+Balance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the current account balance of the \doxylink{class_citizen}{Citizen}. 
+
+\begin{DoxyReturn}{Returns}
+int The \doxylink{class_citizen}{Citizen}\textquotesingle{}s account balance. 
+\end{DoxyReturn}
+\Hypertarget{class_citizen_af94378805ef0f3af4cca2df6b2bbb2a6}\index{Citizen@{Citizen}!getEmotionalState@{getEmotionalState}}
+\index{getEmotionalState@{getEmotionalState}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{getEmotionalState()}{getEmotionalState()}}
+{\footnotesize\ttfamily \label{class_citizen_af94378805ef0f3af4cca2df6b2bbb2a6} 
+string Citizen\+::get\+Emotional\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the emotional state of the \doxylink{class_citizen}{Citizen} as a string. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string The \doxylink{class_citizen}{Citizen}\textquotesingle{}s current emotional state. 
+\end{DoxyReturn}
+\Hypertarget{class_citizen_a8863ba237be1ed8f661a05e3e9f5b1c6}\index{Citizen@{Citizen}!getEmploymentStatus@{getEmploymentStatus}}
+\index{getEmploymentStatus@{getEmploymentStatus}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{getEmploymentStatus()}{getEmploymentStatus()}}
+{\footnotesize\ttfamily \label{class_citizen_a8863ba237be1ed8f661a05e3e9f5b1c6} 
+string Citizen\+::get\+Employment\+Status (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the employment status of the \doxylink{class_citizen}{Citizen} as a string. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string The \doxylink{class_citizen}{Citizen}\textquotesingle{}s current employment status. 
+\end{DoxyReturn}
+\Hypertarget{class_citizen_aab8333e5a32b9297fb36c7ced87107e6}\index{Citizen@{Citizen}!getFired@{getFired}}
+\index{getFired@{getFired}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{getFired()}{getFired()}}
+{\footnotesize\ttfamily \label{class_citizen_aab8333e5a32b9297fb36c7ced87107e6} 
+void Citizen\+::get\+Fired (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Transitions the \doxylink{class_citizen}{Citizen} to an unemployed status when they are fired. 
+
+If the \doxylink{class_citizen}{Citizen} is currently employed, this function resets their employment status to \doxylink{class_unemployed}{Unemployed} and decreases their happiness meter by 20, ensuring it does not fall below 0. Prints a message indicating the \doxylink{class_citizen}{Citizen} has been fired. \Hypertarget{class_citizen_acc1356cca2cb01bf8f6a239d8fd05787}\index{Citizen@{Citizen}!getHappinessMeter@{getHappinessMeter}}
+\index{getHappinessMeter@{getHappinessMeter}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{getHappinessMeter()}{getHappinessMeter()}}
+{\footnotesize\ttfamily \label{class_citizen_acc1356cca2cb01bf8f6a239d8fd05787} 
+int Citizen\+::get\+Happiness\+Meter (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the current happiness level of the \doxylink{class_citizen}{Citizen}. 
+
+\begin{DoxyReturn}{Returns}
+int The \doxylink{class_citizen}{Citizen}\textquotesingle{}s happiness level. 
+\end{DoxyReturn}
+\Hypertarget{class_citizen_a95d5e425cc155c1d36fdc1502df559ee}\index{Citizen@{Citizen}!getHired@{getHired}}
+\index{getHired@{getHired}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{getHired()}{getHired()}}
+{\footnotesize\ttfamily \label{class_citizen_a95d5e425cc155c1d36fdc1502df559ee} 
+void Citizen\+::get\+Hired (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_employment_status}{Employment\+Status}} $>$}]{new\+Job}{}\end{DoxyParamCaption})}
+
+
+
+Updates the \doxylink{class_citizen}{Citizen}\textquotesingle{}s employment status when they are hired. 
+
+If the \doxylink{class_citizen}{Citizen} is currently unemployed, assigns the new job and updates the happiness meter accordingly, capping it at 100. Prints a message indicating the \doxylink{class_citizen}{Citizen}\textquotesingle{}s new employment status.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Job} & A unique pointer to the new \doxylink{class_employment_status}{Employment\+Status} object. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_citizen_a48d5698a385ae1c44877c64169f93f50}\index{Citizen@{Citizen}!getHome@{getHome}}
+\index{getHome@{getHome}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{getHome()}{getHome()}}
+{\footnotesize\ttfamily \label{class_citizen_a48d5698a385ae1c44877c64169f93f50} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$ Citizen\+::get\+Home (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the citizen\textquotesingle{}s home. 
+
+This function returns a shared pointer to the {\ttfamily \doxylink{class_building}{Building}} instance representing the citizen\textquotesingle{}s home. The home is shared, so multiple entities can hold references to it.
+
+\begin{DoxyReturn}{Returns}
+std\+::shared\+\_\+ptr$<$\+Building$>$ A shared pointer to the \doxylink{class_building}{Building} instance representing the citizen\textquotesingle{}s home. 
+\end{DoxyReturn}
+\Hypertarget{class_citizen_a47f5f28cd9dbecc1592a349014198044}\index{Citizen@{Citizen}!getID@{getID}}
+\index{getID@{getID}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{getID()}{getID()}}
+{\footnotesize\ttfamily \label{class_citizen_a47f5f28cd9dbecc1592a349014198044} 
+int Citizen\+::get\+ID (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the \doxylink{class_citizen}{Citizen}\textquotesingle{}s unique ID. 
+
+\begin{DoxyReturn}{Returns}
+int The unique ID of the \doxylink{class_citizen}{Citizen}. 
+\end{DoxyReturn}
+\Hypertarget{class_citizen_a31d0cbc439f4f0f3c7937ed768fc7003}\index{Citizen@{Citizen}!getIncome@{getIncome}}
+\index{getIncome@{getIncome}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{getIncome()}{getIncome()}}
+{\footnotesize\ttfamily \label{class_citizen_a31d0cbc439f4f0f3c7937ed768fc7003} 
+int Citizen\+::get\+Income (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the \doxylink{class_citizen}{Citizen}\textquotesingle{}s income. 
+
+\begin{DoxyReturn}{Returns}
+int The \doxylink{class_citizen}{Citizen}\textquotesingle{}s income amount. 
+\end{DoxyReturn}
+\Hypertarget{class_citizen_a4522f875f5e6f26659bb3a8add95a224}\index{Citizen@{Citizen}!getPaid@{getPaid}}
+\index{getPaid@{getPaid}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{getPaid()}{getPaid()}}
+{\footnotesize\ttfamily \label{class_citizen_a4522f875f5e6f26659bb3a8add95a224} 
+void Citizen\+::get\+Paid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Adds the \doxylink{class_citizen}{Citizen}\textquotesingle{}s income to their account balance. 
+
+This method increments the account balance by the income amount if citizen is employed. Otherwise, citizen cannot be paid hence happiness decreases by a single unit \Hypertarget{class_citizen_a232da22ce465b355dc6a6eb0d08ce275}\index{Citizen@{Citizen}!payTax@{payTax}}
+\index{payTax@{payTax}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{payTax()}{payTax()}}
+{\footnotesize\ttfamily \label{class_citizen_a232da22ce465b355dc6a6eb0d08ce275} 
+int Citizen\+::pay\+Tax (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Calculates and deducts the \doxylink{class_citizen}{Citizen}\textquotesingle{}s tax payment from their income. 
+
+This method determines the amount of tax the \doxylink{class_citizen}{Citizen} should pay based on their current tax bracket and income. If the tax amount exceeds their income, it deducts the remaining income instead. The tax amount is then returned, which can be added to the city budget.
+
+\begin{DoxyReturn}{Returns}
+int The actual tax amount paid, capped at the \doxylink{class_citizen}{Citizen}\textquotesingle{}s income if they cannot cover the full tax amount. 
+\end{DoxyReturn}
+\Hypertarget{class_citizen_a1c1f3181ca55c0e29149e9608698699e}\index{Citizen@{Citizen}!payTaxes@{payTaxes}}
+\index{payTaxes@{payTaxes}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{payTaxes()}{payTaxes()}}
+{\footnotesize\ttfamily \label{class_citizen_a1c1f3181ca55c0e29149e9608698699e} 
+void Citizen\+::pay\+Taxes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Deducts the \doxylink{class_citizen}{Citizen}\textquotesingle{}s tax payment from their account balance. 
+
+This method calculates the amount to pay in taxes based on the \doxylink{class_citizen}{Citizen}\textquotesingle{}s income and current tax bracket, then deducts this amount from their account balance. \Hypertarget{class_citizen_a2ea7fa16af49e15f39ad5e1806f93c35}\index{Citizen@{Citizen}!printDetails@{printDetails}}
+\index{printDetails@{printDetails}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{printDetails()}{printDetails()}}
+{\footnotesize\ttfamily \label{class_citizen_a2ea7fa16af49e15f39ad5e1806f93c35} 
+void Citizen\+::print\+Details (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Prints the details of the \doxylink{class_citizen}{Citizen} in a formatted output. 
+
+Displays the \doxylink{class_citizen}{Citizen}\textquotesingle{}s ID, employment status, income, emotional state, tax bracket, account balance, and happiness meter with a stylized border for clarity. \Hypertarget{class_citizen_a18bf12ed3cb529a1424cae4d66e7c40d}\index{Citizen@{Citizen}!reactToEmergency@{reactToEmergency}}
+\index{reactToEmergency@{reactToEmergency}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{reactToEmergency()}{reactToEmergency()}}
+{\footnotesize\ttfamily \label{class_citizen_a18bf12ed3cb529a1424cae4d66e7c40d} 
+void Citizen\+::react\+To\+Emergency (\begin{DoxyParamCaption}\item[{int}]{damage}{}\end{DoxyParamCaption})}
+
+
+
+Adjusts the \doxylink{class_citizen}{Citizen}\textquotesingle{}s happiness in response to an emergency event. 
+
+The function decreases the \doxylink{class_citizen}{Citizen}\textquotesingle{}s happiness meter based on the severity of the damage. Minor, medium, and severe damages cause progressively greater happiness reductions, capped at a minimum of 0. After updating the happiness meter, the function checks for an emotional state change.
+
+
+\begin{DoxyParams}{Parameters}
+{\em damage} & An integer representing the severity of the emergency damage. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_citizen_aaefd4bfda57b4721aa07e887726ed86e}\index{Citizen@{Citizen}!reactToNotGettingHired@{reactToNotGettingHired}}
+\index{reactToNotGettingHired@{reactToNotGettingHired}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{reactToNotGettingHired()}{reactToNotGettingHired()}}
+{\footnotesize\ttfamily \label{class_citizen_aaefd4bfda57b4721aa07e887726ed86e} 
+void Citizen\+::react\+To\+Not\+Getting\+Hired (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Adjusts the \doxylink{class_citizen}{Citizen}\textquotesingle{}s emotional response when not hired. 
+
+This function is triggered when the \doxylink{class_citizen}{Citizen} does not get hired, reducing their happiness by a fixed amount. It then updates the \doxylink{class_citizen}{Citizen}\textquotesingle{}s emotional state based on the new happiness level.
+
+\begin{DoxyNote}{Note}
+The happiness meter is reduced by 5 points, and the emotional state is updated by calling the change\+State() method on the current state. 
+\end{DoxyNote}
+\Hypertarget{class_citizen_a240a2f8162d2eba1b0bff922bdceb5b8}\index{Citizen@{Citizen}!respondToIncreasedInfrastructure@{respondToIncreasedInfrastructure}}
+\index{respondToIncreasedInfrastructure@{respondToIncreasedInfrastructure}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{respondToIncreasedInfrastructure()}{respondToIncreasedInfrastructure()}}
+{\footnotesize\ttfamily \label{class_citizen_a240a2f8162d2eba1b0bff922bdceb5b8} 
+void Citizen\+::respond\+To\+Increased\+Infrastructure (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Increases the \doxylink{class_citizen}{Citizen}\textquotesingle{}s happiness in response to improved infrastructure. 
+
+Adds a small boost to the \doxylink{class_citizen}{Citizen}\textquotesingle{}s happiness meter, capping it at 100. If the happiness change warrants it, triggers a change in the \doxylink{class_citizen}{Citizen}\textquotesingle{}s emotional state. \Hypertarget{class_citizen_a8fbabf23a49051a6bc51cef2cb59521d}\index{Citizen@{Citizen}!respondToJobChange@{respondToJobChange}}
+\index{respondToJobChange@{respondToJobChange}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{respondToJobChange()}{respondToJobChange()}}
+{\footnotesize\ttfamily \label{class_citizen_a8fbabf23a49051a6bc51cef2cb59521d} 
+void Citizen\+::respond\+To\+Job\+Change (\begin{DoxyParamCaption}\item[{bool}]{gained\+Job}{}\end{DoxyParamCaption})}
+
+
+
+Adjusts the \doxylink{class_citizen}{Citizen}\textquotesingle{}s happiness based on a change in employment status. 
+
+If the \doxylink{class_citizen}{Citizen} gained a job, their happiness meter increases; if they lost a job, it decreases. The happiness level is then clamped within a range of 0 to 100. If necessary, an emotional state change is triggered.
+
+
+\begin{DoxyParams}{Parameters}
+{\em gained\+Job} & A boolean indicating whether the \doxylink{class_citizen}{Citizen} gained (true) or lost (false) a job. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_citizen_a797e89a15e46b7bacc56d398be555b6a}\index{Citizen@{Citizen}!respondToPayment@{respondToPayment}}
+\index{respondToPayment@{respondToPayment}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{respondToPayment()}{respondToPayment()}}
+{\footnotesize\ttfamily \label{class_citizen_a797e89a15e46b7bacc56d398be555b6a} 
+void Citizen\+::respond\+To\+Payment (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Adjusts the \doxylink{class_citizen}{Citizen}\textquotesingle{}s happiness in response to receiving a payment. 
+
+Increases the \doxylink{class_citizen}{Citizen}\textquotesingle{}s happiness meter by 20, capping it at a maximum of 100. If necessary, this triggers an emotional state change based on the new happiness level. \Hypertarget{class_citizen_aed6c73dc3b7ef8be473891fc998bd21b}\index{Citizen@{Citizen}!respondToTax@{respondToTax}}
+\index{respondToTax@{respondToTax}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{respondToTax()}{respondToTax()}}
+{\footnotesize\ttfamily \label{class_citizen_aed6c73dc3b7ef8be473891fc998bd21b} 
+void Citizen\+::respond\+To\+Tax (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Adjusts the \doxylink{class_citizen}{Citizen}\textquotesingle{}s happiness in response to paying taxes. 
+
+If the \doxylink{class_citizen}{Citizen} is unemployed, a higher penalty is applied to the happiness meter than for employed citizens. Happiness is capped at a minimum of 0, and if necessary, an emotional state change is triggered. \Hypertarget{class_citizen_a93ca70b42f762dc4136d6e10caac79d0}\index{Citizen@{Citizen}!setEmotionalState@{setEmotionalState}}
+\index{setEmotionalState@{setEmotionalState}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{setEmotionalState()}{setEmotionalState()}}
+{\footnotesize\ttfamily \label{class_citizen_a93ca70b42f762dc4136d6e10caac79d0} 
+void Citizen\+::set\+Emotional\+State (\begin{DoxyParamCaption}\item[{unique\+\_\+ptr$<$ \mbox{\hyperlink{class_emotional_state}{Emotional\+State}} $>$}]{emotional\+State}{}\end{DoxyParamCaption})}
+
+
+
+Sets the \doxylink{class_citizen}{Citizen}\textquotesingle{}s emotional state. 
+
+Assigns a new emotional state to the \doxylink{class_citizen}{Citizen}, using move semantics to transfer ownership.
+
+
+\begin{DoxyParams}{Parameters}
+{\em emotional\+State} & A unique pointer to the new \doxylink{class_emotional_state}{Emotional\+State}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_citizen_ad01beeca4ec51f63065933e868289669}\index{Citizen@{Citizen}!setEmploymentStatus@{setEmploymentStatus}}
+\index{setEmploymentStatus@{setEmploymentStatus}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{setEmploymentStatus()}{setEmploymentStatus()}}
+{\footnotesize\ttfamily \label{class_citizen_ad01beeca4ec51f63065933e868289669} 
+void Citizen\+::set\+Employment\+Status (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_employment_status}{Employment\+Status}} $>$}]{status}{}\end{DoxyParamCaption})}
+
+
+
+Sets a new employment status for the \doxylink{class_citizen}{Citizen}. 
+
+This function changes the \doxylink{class_citizen}{Citizen}\textquotesingle{}s employment status to a new value using move semantics to transfer ownership of the \doxylink{class_employment_status}{Employment\+Status} unique pointer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em status} & A unique pointer to the new \doxylink{class_employment_status}{Employment\+Status} object. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_citizen_a934142a877b92adc3a2f32b9c764f5f3}\index{Citizen@{Citizen}!setHappinessMeter@{setHappinessMeter}}
+\index{setHappinessMeter@{setHappinessMeter}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{setHappinessMeter()}{setHappinessMeter()}}
+{\footnotesize\ttfamily \label{class_citizen_a934142a877b92adc3a2f32b9c764f5f3} 
+void Citizen\+::set\+Happiness\+Meter (\begin{DoxyParamCaption}\item[{int}]{happiness\+Meter}{}\end{DoxyParamCaption})}
+
+
+
+Sets the happiness level for a \doxylink{class_citizen}{Citizen}. 
+
+This function updates the \doxylink{class_citizen}{Citizen}\textquotesingle{}s happiness meter with a specified integer value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em happiness} & The new happiness level to set for the \doxylink{class_citizen}{Citizen}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_citizen_a67a477c44799f50705647c629ceded24}\index{Citizen@{Citizen}!setHome@{setHome}}
+\index{setHome@{setHome}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{setHome()}{setHome()}}
+{\footnotesize\ttfamily \label{class_citizen_a67a477c44799f50705647c629ceded24} 
+void Citizen\+::set\+Home (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$}]{home}{}\end{DoxyParamCaption})}
+
+
+
+Sets the home for the citizen. 
+
+This method assigns a shared pointer to a {\ttfamily \doxylink{class_building}{Building}} object as the citizen\textquotesingle{}s home. The ownership of the building is shared, allowing multiple {\ttfamily \doxylink{class_citizen}{Citizen}} instances or other entities to reference the same building.
+
+
+\begin{DoxyParams}{Parameters}
+{\em building} & A {\ttfamily std\+::shared\+\_\+ptr} to a {\ttfamily \doxylink{class_building}{Building}} object representing the home of the citizen. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Citizen.\+h\item 
+Citizen.\+cpp\end{DoxyCompactItemize}

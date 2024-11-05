@@ -1,0 +1,100 @@
+\doxysection{Tax\+Bracket Class Reference}
+\hypertarget{class_tax_bracket}{}\label{class_tax_bracket}\index{TaxBracket@{TaxBracket}}
+Inheritance diagram for Tax\+Bracket\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_tax_bracket}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual int \mbox{\hyperlink{class_tax_bracket_ad08c6daea9b91653ba1190f78de7feb4}{getamount\+To\+Pay}} (int income)=0
+\item 
+virtual string \mbox{\hyperlink{class_tax_bracket_a3cf8e85c762abe511693b4345a2e2a9c}{get\+Tax\+Bracket}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_tax_bracket_a876c3dcf01ef61d687a89ebc1432f25c}{set\+Tax\+Rate}} (double rate)=0
+\item 
+double \mbox{\hyperlink{class_tax_bracket_aaf90b6d0f376ccf94d7cdd6e22f4ae0b}{get\+Tax\+Rate}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the tax rate associated with the \doxylink{class_tax_bracket}{Tax\+Bracket}. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_tax_bracket_abba420aa7c67039eb57039eca57f8fd6}{\texorpdfstring{$\sim$}{\string~}\+Tax\+Bracket}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{class_tax_bracket}{Tax\+Bracket} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_tax_bracket_a4ff5ecd196648ed3a57bf341c435dcc0}\label{class_tax_bracket_a4ff5ecd196648ed3a57bf341c435dcc0} 
+int {\bfseries amount\+To\+Pay}
+\item 
+\Hypertarget{class_tax_bracket_a7c55793ead3103ecc098ef41d2583667}\label{class_tax_bracket_a7c55793ead3103ecc098ef41d2583667} 
+string {\bfseries type}
+\item 
+\Hypertarget{class_tax_bracket_a296231e0a03f5aa88024c0f7f49c75e2}\label{class_tax_bracket_a296231e0a03f5aa88024c0f7f49c75e2} 
+double {\bfseries tax\+Rate}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_tax_bracket_abba420aa7c67039eb57039eca57f8fd6}\index{TaxBracket@{TaxBracket}!````~TaxBracket@{\texorpdfstring{$\sim$}{\string~}TaxBracket}}
+\index{````~TaxBracket@{\texorpdfstring{$\sim$}{\string~}TaxBracket}!TaxBracket@{TaxBracket}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}TaxBracket()}{\string~TaxBracket()}}
+{\footnotesize\ttfamily \label{class_tax_bracket_abba420aa7c67039eb57039eca57f8fd6} 
+Tax\+Bracket\+::\texorpdfstring{$\sim$}{\string~}\+Tax\+Bracket (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor for the \doxylink{class_tax_bracket}{Tax\+Bracket} class. 
+
+This destructor is called when an instance of \doxylink{class_tax_bracket}{Tax\+Bracket} is destroyed. It performs any necessary cleanup operations. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_tax_bracket_ad08c6daea9b91653ba1190f78de7feb4}\index{TaxBracket@{TaxBracket}!getamountToPay@{getamountToPay}}
+\index{getamountToPay@{getamountToPay}!TaxBracket@{TaxBracket}}
+\doxysubsubsection{\texorpdfstring{getamountToPay()}{getamountToPay()}}
+{\footnotesize\ttfamily \label{class_tax_bracket_ad08c6daea9b91653ba1190f78de7feb4} 
+virtual int Tax\+Bracket\+::getamount\+To\+Pay (\begin{DoxyParamCaption}\item[{int}]{income}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_highest_tax_bracket_ae6831f6e9bb18a8a8cae36046f3e356a}{Highest\+Tax\+Bracket}}, \mbox{\hyperlink{class_lowest_tax_bracket_aa3fe7ed28fed3fedc28d7a53b97d975f}{Lowest\+Tax\+Bracket}}, and \mbox{\hyperlink{class_middle_tax_bracket_a462436a51f5aabef0b381beaf650b780}{Middle\+Tax\+Bracket}}.
+
+\Hypertarget{class_tax_bracket_a3cf8e85c762abe511693b4345a2e2a9c}\index{TaxBracket@{TaxBracket}!getTaxBracket@{getTaxBracket}}
+\index{getTaxBracket@{getTaxBracket}!TaxBracket@{TaxBracket}}
+\doxysubsubsection{\texorpdfstring{getTaxBracket()}{getTaxBracket()}}
+{\footnotesize\ttfamily \label{class_tax_bracket_a3cf8e85c762abe511693b4345a2e2a9c} 
+virtual string Tax\+Bracket\+::get\+Tax\+Bracket (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_highest_tax_bracket_a13115b896d0aa34ebddc7163f280f794}{Highest\+Tax\+Bracket}}, \mbox{\hyperlink{class_lowest_tax_bracket_a549c7178637ce771eb281ffca73db058}{Lowest\+Tax\+Bracket}}, and \mbox{\hyperlink{class_middle_tax_bracket_a661cb371f502aba1caab2240769d77c0}{Middle\+Tax\+Bracket}}.
+
+\Hypertarget{class_tax_bracket_aaf90b6d0f376ccf94d7cdd6e22f4ae0b}\index{TaxBracket@{TaxBracket}!getTaxRate@{getTaxRate}}
+\index{getTaxRate@{getTaxRate}!TaxBracket@{TaxBracket}}
+\doxysubsubsection{\texorpdfstring{getTaxRate()}{getTaxRate()}}
+{\footnotesize\ttfamily \label{class_tax_bracket_aaf90b6d0f376ccf94d7cdd6e22f4ae0b} 
+double Tax\+Bracket\+::get\+Tax\+Rate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the tax rate associated with the \doxylink{class_tax_bracket}{Tax\+Bracket}. 
+
+This method returns the current tax rate for the \doxylink{class_tax_bracket}{Tax\+Bracket} object.
+
+\begin{DoxyReturn}{Returns}
+The tax rate as a double. 
+\end{DoxyReturn}
+\Hypertarget{class_tax_bracket_a876c3dcf01ef61d687a89ebc1432f25c}\index{TaxBracket@{TaxBracket}!setTaxRate@{setTaxRate}}
+\index{setTaxRate@{setTaxRate}!TaxBracket@{TaxBracket}}
+\doxysubsubsection{\texorpdfstring{setTaxRate()}{setTaxRate()}}
+{\footnotesize\ttfamily \label{class_tax_bracket_a876c3dcf01ef61d687a89ebc1432f25c} 
+virtual void Tax\+Bracket\+::set\+Tax\+Rate (\begin{DoxyParamCaption}\item[{double}]{rate}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_highest_tax_bracket_a9123fdd4000e1bb286c6ac1f89899ca8}{Highest\+Tax\+Bracket}}, \mbox{\hyperlink{class_lowest_tax_bracket_a798e906937367d648f6d73dbddd3d034}{Lowest\+Tax\+Bracket}}, and \mbox{\hyperlink{class_middle_tax_bracket_ab69747729c1c2451ab6207ab543f56b5}{Middle\+Tax\+Bracket}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Tax\+Bracket.\+h\item 
+Tax\+Bracket.\+cpp\end{DoxyCompactItemize}

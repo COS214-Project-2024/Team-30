@@ -1,0 +1,62 @@
+\doxysection{Infrastructure Class Reference}
+\hypertarget{class_infrastructure}{}\label{class_infrastructure}\index{Infrastructure@{Infrastructure}}
+
+
+A class that observes and manages infrastructure adjustments based on city growth.  
+
+
+
+
+{\ttfamily \#include $<$Infrastructure.\+h$>$}
+
+Inheritance diagram for Infrastructure\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_infrastructure}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_infrastructure_ad722e2cb3c9c0c82c2d954a090f91299}{update}} (\mbox{\hyperlink{class_government}{Government}} \texorpdfstring{$\ast$}{*}g) override
+\begin{DoxyCompactList}\small\item\em Updates the infrastructure in response to population changes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_city_growth_observer}{City\+Growth\+Observer}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_city_growth_observer_adff38dfadf2315d3f745b285b05a75ca}{\texorpdfstring{$\sim$}{\string~}\+City\+Growth\+Observer}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class that observes and manages infrastructure adjustments based on city growth. 
+
+The \doxylink{class_infrastructure}{Infrastructure} class implements the \doxylink{class_city_growth_observer}{City\+Growth\+Observer} interface to respond to changes in the population of a government entity. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_infrastructure_ad722e2cb3c9c0c82c2d954a090f91299}\index{Infrastructure@{Infrastructure}!update@{update}}
+\index{update@{update}!Infrastructure@{Infrastructure}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_infrastructure_ad722e2cb3c9c0c82c2d954a090f91299} 
+void Infrastructure\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_government}{Government}} \texorpdfstring{$\ast$}{*}}]{g}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Updates the infrastructure in response to population changes. 
+
+This method is called whenever there is an update in the city\textquotesingle{}s population.
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & A pointer to a \doxylink{class_government}{Government} object that provides the updated population information. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_city_growth_observer_a9595ca3a6d7083525f4a99459ec5e24e}{City\+Growth\+Observer}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Infrastructure.\+h\item 
+Infrastructure.\+cpp\end{DoxyCompactItemize}

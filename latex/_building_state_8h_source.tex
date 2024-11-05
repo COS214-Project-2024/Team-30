@@ -1,0 +1,38 @@
+\doxysection{Building\+State.\+h}
+\hypertarget{_building_state_8h_source}{}\label{_building_state_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ BUILDINGSTATE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ BUILDINGSTATE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <memory>}\ \ \textcolor{comment}{//\ Include\ for\ smart\ pointers}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}\ \ \textcolor{comment}{//\ Include\ for\ std::string}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_building}{Building}};}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_building_state}{BuildingState}}\ \{}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00030\ \ \ \ \ weak\_ptr<Building>\ \mbox{\hyperlink{class_building_state_a1f7a9d13deac3270e8aff1307575e6bc}{building}};\ \textcolor{comment}{//\ Use\ weak\_ptr\ to\ prevent\ circular\ references}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_building_state_ae46db57162e8447b387804f3db72d39a}{\string~BuildingState}}()\ \{\}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_building_state_a03d48c21325c46dba368df773ac407b7}{setBuilding}}(shared\_ptr<Building>\ currbuilding);\ \textcolor{comment}{//\ Accept\ shared\_ptr}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_building_state_a177c78289404bdd13b0decdd387d6f62}{setState}}();}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_building_state_aabeae6e7f93c80e3240835e1b44ca006}{handle}}()\ =\ 0;}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_building_state_a8ed10f519a44f000fc2e944b0bafb744}{changeState}}()\ =\ 0;}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_building_state_ac945970c0214492db190e7da6399e2c2}{getStatus}}()\ =\ 0;}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \textcolor{keyword}{virtual}\ unique\_ptr<BuildingState>\ \mbox{\hyperlink{class_building_state_ade4ebd1df3cdc6adb8f5a19d19b7dd65}{clone}}()\ \textcolor{keyword}{const}\ =\ 0;\ \ \textcolor{comment}{//\ Clone\ for\ deep\ copy.\ this\ will\ ensure\ that\ when\ we\ use\ prototype\ to\ create\ objects,\ they\ wont\ share\ states.}}
+\DoxyCodeLine{00087\ \};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

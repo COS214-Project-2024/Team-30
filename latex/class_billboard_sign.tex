@@ -1,0 +1,78 @@
+\doxysection{Billboard\+Sign Class Reference}
+\hypertarget{class_billboard_sign}{}\label{class_billboard_sign}\index{BillboardSign@{BillboardSign}}
+
+
+Represents a billboard sign that inherits from the \doxylink{class_sign}{Sign} class.  
+
+
+
+
+{\ttfamily \#include $<$Billboard\+Sign.\+h$>$}
+
+Inheritance diagram for Billboard\+Sign\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_billboard_sign}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_billboard_sign_abc482bab4dc1c11b224d2322f62a8296}{Billboard\+Sign}} (const string \&message)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_billboard_sign}{Billboard\+Sign} with a specified message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_sign}{Sign}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sign_a54917551622fad174ee26185bff9d300}{Sign}} (const string \&message)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_sign}{Sign} object with a specified message. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_sign_ac414ada2884e4a9cd40f8ed38a1aab4e}{\texorpdfstring{$\sim$}{\string~}\+Sign}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \doxylink{class_sign}{Sign} class. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_sign_a3a568f1b4ce80d02227f11b56976568a}{get\+ID}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the unique identifier of the sign. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_sign_a6f39933f7715938f1d94102fea1b9f3c}{get\+Message}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the message displayed on the sign. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_sign_aaea8ae0522336ee2db5c63a6c164e332}{get\+Type}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the type of the sign. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_sign_a42b57ece0db9682ba590223f08b73615}{operator==}} (const \mbox{\hyperlink{class_sign}{Sign}} \&other) const
+\begin{DoxyCompactList}\small\item\em Compares two \doxylink{class_sign}{Sign} objects for equality based on their IDs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_sign}{Sign}}}
+\begin{DoxyCompactItemize}
+\item 
+string {\bfseries message}
+\item 
+string {\bfseries type}
+\item 
+int {\bfseries ID}
+\begin{DoxyCompactList}\small\item\em Unique identifier for each sign instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{class_sign}{Sign}}}
+\begin{DoxyCompactItemize}
+\item 
+static int {\bfseries num\+Signs} = 0
+\begin{DoxyCompactList}\small\item\em Static member variable to keep track of the number of sign instances created. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a billboard sign that inherits from the \doxylink{class_sign}{Sign} class. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_billboard_sign_abc482bab4dc1c11b224d2322f62a8296}\index{BillboardSign@{BillboardSign}!BillboardSign@{BillboardSign}}
+\index{BillboardSign@{BillboardSign}!BillboardSign@{BillboardSign}}
+\doxysubsubsection{\texorpdfstring{BillboardSign()}{BillboardSign()}}
+{\footnotesize\ttfamily \label{class_billboard_sign_abc482bab4dc1c11b224d2322f62a8296} 
+Billboard\+Sign\+::\+Billboard\+Sign (\begin{DoxyParamCaption}\item[{const string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \doxylink{class_billboard_sign}{Billboard\+Sign} with a specified message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The message to be displayed on the billboard sign \\
+\hline
+\end{DoxyParams}
+\texorpdfstring{$<$}{<} Sets the type of sign to "{}\+Bill\+Board\+Sign"{}
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Billboard\+Sign.\+h\end{DoxyCompactItemize}

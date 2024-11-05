@@ -1,0 +1,31 @@
+\doxysection{Emergencies.\+h}
+\hypertarget{_emergencies_8h_source}{}\label{_emergencies_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ EMERGENCIES\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ EMERGENCIES\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Building.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <cstdlib>}\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <ctime>}\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_emergencies}{Emergencies}}}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{int}\ damage;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ accessDamage(shared\_ptr<Building>\ buildingType)\ =\ 0;\ \textcolor{comment}{//\ Updated\ parameter\ to\ use\ unique\_ptr}}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{string}\ getTypeOfEmergency()\ =\ 0;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{comment}{//\ Emergencies();}}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ getDamage();}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ setDamage(\textcolor{keywordtype}{int}\ damage);}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_emergencies}{\string~Emergencies}}();\ \textcolor{comment}{//\ Ensure\ virtual\ destructor\ for\ proper\ cleanup}}
+\DoxyCodeLine{00024\ \};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

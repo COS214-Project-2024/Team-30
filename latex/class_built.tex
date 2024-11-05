@@ -1,0 +1,119 @@
+\doxysection{Built Class Reference}
+\hypertarget{class_built}{}\label{class_built}\index{Built@{Built}}
+
+
+Represents the "{}\+Built"{} state of a \doxylink{class_building}{Building}.  
+
+
+
+
+{\ttfamily \#include $<$Built.\+h$>$}
+
+Inheritance diagram for Built\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_built}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_built_a0f2703f5523f7d221316380eab21cc5d}{handle}} () override
+\begin{DoxyCompactList}\small\item\em Handles the behavior specific to the "{}\+Built"{} state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_built_a6f68562cc84a1b3dcf2d3d0ea0be1c82}{change\+State}} () override
+\begin{DoxyCompactList}\small\item\em Changes the state of the \doxylink{class_building}{Building} to a different state. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_built_af31e2cc2ad46cd4dd6771cda63c10405}{get\+Status}} () override
+\begin{DoxyCompactList}\small\item\em Gets the status of the "{}\+Built"{} state. \end{DoxyCompactList}\item 
+unique\+\_\+ptr$<$ \mbox{\hyperlink{class_building_state}{Building\+State}} $>$ \mbox{\hyperlink{class_built_a16d46bfae21a641b61530e42fa213afa}{clone}} () const override
+\begin{DoxyCompactList}\small\item\em Clones the \doxylink{class_built}{Built} state object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_building_state}{Building\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Building\+State} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \doxylink{class_building_state}{Building\+State}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_building_state_a03d48c21325c46dba368df773ac407b7}{set\+Building}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$ currbuilding)
+\begin{DoxyCompactList}\small\item\em Sets the associated \doxylink{class_building}{Building} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_building_state_a177c78289404bdd13b0decdd387d6f62}{set\+State}} ()
+\begin{DoxyCompactList}\small\item\em Sets the associated \doxylink{class_building}{Building} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_building_state}{Building\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+weak\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$ \mbox{\hyperlink{class_building_state_a1f7a9d13deac3270e8aff1307575e6bc}{building}}
+\begin{DoxyCompactList}\small\item\em Weak reference to the associated \doxylink{class_building}{Building}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the "{}\+Built"{} state of a \doxylink{class_building}{Building}. 
+
+The \doxylink{class_built}{Built} class implements state-\/specific behavior for buildings that are fully constructed and operational. It provides concrete implementations of the methods defined in the \doxylink{class_building_state}{Building\+State} interface for managing this state. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_built_a6f68562cc84a1b3dcf2d3d0ea0be1c82}\index{Built@{Built}!changeState@{changeState}}
+\index{changeState@{changeState}!Built@{Built}}
+\doxysubsubsection{\texorpdfstring{changeState()}{changeState()}}
+{\footnotesize\ttfamily \label{class_built_a6f68562cc84a1b3dcf2d3d0ea0be1c82} 
+void Built\+::change\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Changes the state of the \doxylink{class_building}{Building} to a different state. 
+
+Implements the logic for transitioning from the "{}\+Built"{} state to another state. 
+
+Implements \mbox{\hyperlink{class_building_state_a8ed10f519a44f000fc2e944b0bafb744}{Building\+State}}.
+
+\Hypertarget{class_built_a16d46bfae21a641b61530e42fa213afa}\index{Built@{Built}!clone@{clone}}
+\index{clone@{clone}!Built@{Built}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \label{class_built_a16d46bfae21a641b61530e42fa213afa} 
+unique\+\_\+ptr$<$ \mbox{\hyperlink{class_building_state}{Building\+State}} $>$ Built\+::clone (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Clones the \doxylink{class_built}{Built} state object. 
+
+Creates a deep copy of the current "{}\+Built"{} state. \begin{DoxyReturn}{Returns}
+A unique pointer to a new \doxylink{class_built}{Built} state object. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_building_state_ade4ebd1df3cdc6adb8f5a19d19b7dd65}{Building\+State}}.
+
+\Hypertarget{class_built_af31e2cc2ad46cd4dd6771cda63c10405}\index{Built@{Built}!getStatus@{getStatus}}
+\index{getStatus@{getStatus}!Built@{Built}}
+\doxysubsubsection{\texorpdfstring{getStatus()}{getStatus()}}
+{\footnotesize\ttfamily \label{class_built_af31e2cc2ad46cd4dd6771cda63c10405} 
+string Built\+::get\+Status (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the status of the "{}\+Built"{} state. 
+
+\begin{DoxyReturn}{Returns}
+A string indicating that the building is currently in a fully constructed state. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_building_state_ac945970c0214492db190e7da6399e2c2}{Building\+State}}.
+
+\Hypertarget{class_built_a0f2703f5523f7d221316380eab21cc5d}\index{Built@{Built}!handle@{handle}}
+\index{handle@{handle}!Built@{Built}}
+\doxysubsubsection{\texorpdfstring{handle()}{handle()}}
+{\footnotesize\ttfamily \label{class_built_a0f2703f5523f7d221316380eab21cc5d} 
+void Built\+::handle (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Handles the behavior specific to the "{}\+Built"{} state. 
+
+This method defines the actions taken while the building is in the "{}\+Built"{} state. 
+
+Implements \mbox{\hyperlink{class_building_state_aabeae6e7f93c80e3240835e1b44ca006}{Building\+State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Built.\+h\item 
+Built.\+cpp\end{DoxyCompactItemize}

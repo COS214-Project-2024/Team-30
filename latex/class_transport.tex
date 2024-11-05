@@ -1,0 +1,179 @@
+\doxysection{Transport Class Reference}
+\hypertarget{class_transport}{}\label{class_transport}\index{Transport@{Transport}}
+
+
+Abstract base class representing a transport vehicle.  
+
+
+
+
+{\ttfamily \#include $<$Transport.\+h$>$}
+
+Inheritance diagram for Transport\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_transport}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_transport_af5fcea9f143cf6253669d42e671e621f}{Transport}} (int \mbox{\hyperlink{class_transport_ab2127104025de74395560f28e5013c49}{capacity}}, shared\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$ \mbox{\hyperlink{class_transport_a4cd90ad107fb4d74fe552e5bfeec8906}{from}})
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_transport}{Transport} object. \end{DoxyCompactList}\item 
+\Hypertarget{class_transport_ac3e3efa8367c9139707870808d0ef96f}\label{class_transport_ac3e3efa8367c9139707870808d0ef96f} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Transport} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor for the \doxylink{class_transport}{Transport} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transport_a6402b0ed712db7843cc5af0ef1547822}{add\+People}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{class_citizen}{Citizen}} $>$ c)
+\begin{DoxyCompactList}\small\item\em Adds a citizen as a passenger to the transport. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transport_a8cac500f5aa447e49508eac53dfd02cb}{remove\+People}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{class_citizen}{Citizen}} $>$ c)
+\begin{DoxyCompactList}\small\item\em Removes a specified citizen from the transport. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_transport_ad6c779cd332fd684bf6599eb925f8eaf}{Travel}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$ to)=0
+\begin{DoxyCompactList}\small\item\em Abstract method for traveling to a new building. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transport_ac0cb30d8c2b199845dad845ad2a86664}{remove\+All\+People}} ()
+\begin{DoxyCompactList}\small\item\em Removes all passengers from the transport. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transport_a32956c6a1af21f15961cca6ff1cf084a}{print\+Passengers}} ()
+\begin{DoxyCompactList}\small\item\em Prints the IDs of all passengers currently in the transport. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_transport_a4fda3123cea69f727b6304cd426882f7}\label{class_transport_a4fda3123cea69f727b6304cd426882f7} 
+vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{class_citizen}{Citizen}} $>$ $>$ {\bfseries passengers}
+\begin{DoxyCompactList}\small\item\em List of passengers currently in the transport. \end{DoxyCompactList}\item 
+\Hypertarget{class_transport_ab2127104025de74395560f28e5013c49}\label{class_transport_ab2127104025de74395560f28e5013c49} 
+int {\bfseries capacity}
+\begin{DoxyCompactList}\small\item\em Maximum number of passengers the transport can carry. \end{DoxyCompactList}\item 
+\Hypertarget{class_transport_a8cb75d3ab2f6a838282f8bde2e251928}\label{class_transport_a8cb75d3ab2f6a838282f8bde2e251928} 
+string {\bfseries name}
+\begin{DoxyCompactList}\small\item\em Name of the transport. \end{DoxyCompactList}\item 
+\Hypertarget{class_transport_a4cd90ad107fb4d74fe552e5bfeec8906}\label{class_transport_a4cd90ad107fb4d74fe552e5bfeec8906} 
+shared\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$ {\bfseries from}
+\begin{DoxyCompactList}\small\item\em The building from which the transport departs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class representing a transport vehicle. 
+
+Template class to create the first comnposite node 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_transport_af5fcea9f143cf6253669d42e671e621f}\index{Transport@{Transport}!Transport@{Transport}}
+\index{Transport@{Transport}!Transport@{Transport}}
+\doxysubsubsection{\texorpdfstring{Transport()}{Transport()}}
+{\footnotesize\ttfamily \label{class_transport_af5fcea9f143cf6253669d42e671e621f} 
+Transport\+::\+Transport (\begin{DoxyParamCaption}\item[{int}]{capacity}{, }\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$}]{from}{}\end{DoxyParamCaption})}
+
+
+
+Construct a new \doxylink{class_transport}{Transport} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the transport. \\
+\hline
+{\em capacity} & Maximum capacity of the transport. \\
+\hline
+{\em from} & Shared pointer to the building from which the transport starts. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_transport_a6402b0ed712db7843cc5af0ef1547822}\index{Transport@{Transport}!addPeople@{addPeople}}
+\index{addPeople@{addPeople}!Transport@{Transport}}
+\doxysubsubsection{\texorpdfstring{addPeople()}{addPeople()}}
+{\footnotesize\ttfamily \label{class_transport_a6402b0ed712db7843cc5af0ef1547822} 
+void Transport\+::add\+People (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{class_citizen}{Citizen}} $>$}]{c}{}\end{DoxyParamCaption})}
+
+
+
+Adds a citizen as a passenger to the transport. 
+
+Adds a citizen as a passenger to the transport if they are present in the starting building.
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Shared pointer to the citizen to be added as a passenger.\\
+\hline
+\end{DoxyParams}
+Checks if the specified citizen is in the building and not already a passenger. If the transport is not at full capacity, the citizen is added to the passenger list.
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & A shared pointer to the \doxylink{class_citizen}{Citizen} to be added as a passenger. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_transport_a32956c6a1af21f15961cca6ff1cf084a}\index{Transport@{Transport}!printPassengers@{printPassengers}}
+\index{printPassengers@{printPassengers}!Transport@{Transport}}
+\doxysubsubsection{\texorpdfstring{printPassengers()}{printPassengers()}}
+{\footnotesize\ttfamily \label{class_transport_a32956c6a1af21f15961cca6ff1cf084a} 
+void Transport\+::print\+Passengers (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Prints the IDs of all passengers currently in the transport. 
+
+Displays a message if there are no passengers in the vehicle.
+
+If there are no passengers, a message is displayed indicating that the transport is empty. \Hypertarget{class_transport_ac0cb30d8c2b199845dad845ad2a86664}\index{Transport@{Transport}!removeAllPeople@{removeAllPeople}}
+\index{removeAllPeople@{removeAllPeople}!Transport@{Transport}}
+\doxysubsubsection{\texorpdfstring{removeAllPeople()}{removeAllPeople()}}
+{\footnotesize\ttfamily \label{class_transport_ac0cb30d8c2b199845dad845ad2a86664} 
+void Transport\+::remove\+All\+People (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Removes all passengers from the transport. 
+
+Removes all passengers from the transport and adds them back to the building.
+
+All passengers are transferred back to the building they came from.
+
+Iteratively transfers each passenger back to the building from which they were transported. \Hypertarget{class_transport_a8cac500f5aa447e49508eac53dfd02cb}\index{Transport@{Transport}!removePeople@{removePeople}}
+\index{removePeople@{removePeople}!Transport@{Transport}}
+\doxysubsubsection{\texorpdfstring{removePeople()}{removePeople()}}
+{\footnotesize\ttfamily \label{class_transport_a8cac500f5aa447e49508eac53dfd02cb} 
+void Transport\+::remove\+People (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{class_citizen}{Citizen}} $>$}]{c}{}\end{DoxyParamCaption})}
+
+
+
+Removes a specified citizen from the transport. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Shared pointer to the citizen to be removed.\\
+\hline
+\end{DoxyParams}
+Checks if the transport is empty before attempting to remove the citizen. If the citizen is found, they are removed from the passenger list and added back to the building.
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & A shared pointer to the \doxylink{class_citizen}{Citizen} to be removed from the transport. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_transport_ad6c779cd332fd684bf6599eb925f8eaf}\index{Transport@{Transport}!Travel@{Travel}}
+\index{Travel@{Travel}!Transport@{Transport}}
+\doxysubsubsection{\texorpdfstring{Travel()}{Travel()}}
+{\footnotesize\ttfamily \label{class_transport_ad6c779cd332fd684bf6599eb925f8eaf} 
+virtual void Transport\+::\+Travel (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$}]{to}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Abstract method for traveling to a new building. 
+
+This method must be implemented by derived classes to define the specific travel behavior.
+
+
+\begin{DoxyParams}{Parameters}
+{\em to} & Shared pointer to the destination building. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_plane_acf4247dcf03ba20277926ac5d84b2ea7}{Plane}}, \mbox{\hyperlink{classprivate_transport_a420e98b89f562d7fd6ed237ce62ba1ad}{private\+Transport}}, \mbox{\hyperlink{classpublic_transport_ad03775efcd3b1863bfabe349dd75779a}{public\+Transport}}, \mbox{\hyperlink{class_taxi_ab44129dabe0823574cfad975d7e6b4df}{Taxi}}, and \mbox{\hyperlink{class_train_a32ee7c05edaee0956bd7643bcc7a8c6c}{Train}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Transport.\+h\item 
+Transport.\+cpp\end{DoxyCompactItemize}

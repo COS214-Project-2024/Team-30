@@ -1,0 +1,71 @@
+\doxysection{City\+Growth\+Observer Class Reference}
+\hypertarget{class_city_growth_observer}{}\label{class_city_growth_observer}\index{CityGrowthObserver@{CityGrowthObserver}}
+
+
+Abstract base class for observers that monitor and respond to city growth changes.  
+
+
+
+
+{\ttfamily \#include $<$City\+Growth\+Observer.\+h$>$}
+
+Inheritance diagram for City\+Growth\+Observer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_city_growth_observer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_city_growth_observer_a9595ca3a6d7083525f4a99459ec5e24e}{update}} (\mbox{\hyperlink{class_government}{Government}} \texorpdfstring{$\ast$}{*}g)=0
+\begin{DoxyCompactList}\small\item\em Updates the observer with the latest changes from the \doxylink{class_government}{Government}. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_city_growth_observer_adff38dfadf2315d3f745b285b05a75ca}{\texorpdfstring{$\sim$}{\string~}\+City\+Growth\+Observer}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for observers that monitor and respond to city growth changes. 
+
+This class provides an interface for observing changes in the city\textquotesingle{}s growth metrics. Derived classes implement the {\ttfamily update} function to define their response to changes in the {\ttfamily \doxylink{class_government}{Government}} class. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_city_growth_observer_adff38dfadf2315d3f745b285b05a75ca}\index{CityGrowthObserver@{CityGrowthObserver}!````~CityGrowthObserver@{\texorpdfstring{$\sim$}{\string~}CityGrowthObserver}}
+\index{````~CityGrowthObserver@{\texorpdfstring{$\sim$}{\string~}CityGrowthObserver}!CityGrowthObserver@{CityGrowthObserver}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CityGrowthObserver()}{\string~CityGrowthObserver()}}
+{\footnotesize\ttfamily \label{class_city_growth_observer_adff38dfadf2315d3f745b285b05a75ca} 
+virtual City\+Growth\+Observer\+::\texorpdfstring{$\sim$}{\string~}\+City\+Growth\+Observer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Virtual destructor. 
+
+Clean up of derived classes. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_city_growth_observer_a9595ca3a6d7083525f4a99459ec5e24e}\index{CityGrowthObserver@{CityGrowthObserver}!update@{update}}
+\index{update@{update}!CityGrowthObserver@{CityGrowthObserver}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_city_growth_observer_a9595ca3a6d7083525f4a99459ec5e24e} 
+virtual void City\+Growth\+Observer\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_government}{Government}} \texorpdfstring{$\ast$}{*}}]{g}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Updates the observer with the latest changes from the \doxylink{class_government}{Government}. 
+
+This function is called by the {\ttfamily \doxylink{class_government}{Government}} class to notify the observer of any relevant changes in city growth factors. Derived classes should implement this function to specify how they respond to such updates.
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Pointer to the {\ttfamily \doxylink{class_government}{Government}} object that notifies the observer of changes. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_economy_a80192ae5da54771017a24dfb1b521f03}{Economy}}, \mbox{\hyperlink{class_housing_a10c9690331414049cfcd81d5aa8cc504}{Housing}}, \mbox{\hyperlink{class_infrastructure_ad722e2cb3c9c0c82c2d954a090f91299}{Infrastructure}}, and \mbox{\hyperlink{class_population_growth_aa8e82d12cd491f97ba00031a96dc9638}{Population\+Growth}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+City\+Growth\+Observer.\+h\end{DoxyCompactItemize}

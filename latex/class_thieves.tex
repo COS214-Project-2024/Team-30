@@ -1,0 +1,75 @@
+\doxysection{Thieves Class Reference}
+\hypertarget{class_thieves}{}\label{class_thieves}\index{Thieves@{Thieves}}
+Inheritance diagram for Thieves\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_thieves}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_thieves_a1aa655c524de9e6e02f598563200e65b}{access\+Damage}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$ building\+Type) override
+\begin{DoxyCompactList}\small\item\em Calculates and applies theft damage to a specified building. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_thieves_a8fbcc2cfcf9ba4e294f9fbf9fa9cb742}{get\+Type\+Of\+Emergency}} () override
+\begin{DoxyCompactList}\small\item\em Retrieves the type of emergency represented by the \doxylink{class_thieves}{Thieves} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_emergencies}{Emergencies}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries get\+Damage} ()
+\item 
+void {\bfseries set\+Damage} (int damage)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_emergencies}{Emergencies}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries damage}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_thieves_a1aa655c524de9e6e02f598563200e65b}\index{Thieves@{Thieves}!accessDamage@{accessDamage}}
+\index{accessDamage@{accessDamage}!Thieves@{Thieves}}
+\doxysubsubsection{\texorpdfstring{accessDamage()}{accessDamage()}}
+{\footnotesize\ttfamily \label{class_thieves_a1aa655c524de9e6e02f598563200e65b} 
+void Thieves\+::access\+Damage (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$}]{building\+Type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Calculates and applies theft damage to a specified building. 
+
+This function simulates a theft incident by randomly determining its severity (minor, moderate, or major) and calculating the corresponding damage. It then applies the calculated damage to the specified building and notifies the citizens within that building of the emergency.
+
+
+\begin{DoxyParams}{Parameters}
+{\em building\+Type} & A shared pointer to the \doxylink{class_building}{Building} object that will take damage from the theft. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_emergencies}{Emergencies}}.
+
+\Hypertarget{class_thieves_a8fbcc2cfcf9ba4e294f9fbf9fa9cb742}\index{Thieves@{Thieves}!getTypeOfEmergency@{getTypeOfEmergency}}
+\index{getTypeOfEmergency@{getTypeOfEmergency}!Thieves@{Thieves}}
+\doxysubsubsection{\texorpdfstring{getTypeOfEmergency()}{getTypeOfEmergency()}}
+{\footnotesize\ttfamily \label{class_thieves_a8fbcc2cfcf9ba4e294f9fbf9fa9cb742} 
+string Thieves\+::get\+Type\+Of\+Emergency (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retrieves the type of emergency represented by the \doxylink{class_thieves}{Thieves} class. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string A string indicating the type of emergency, which is "{}\+Theft"{} in this case. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_emergencies}{Emergencies}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Thieves.\+h\item 
+Thieves.\+cpp\end{DoxyCompactItemize}

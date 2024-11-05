@@ -1,0 +1,60 @@
+\doxysection{Residential\+Factory Class Reference}
+\hypertarget{class_residential_factory}{}\label{class_residential_factory}\index{ResidentialFactory@{ResidentialFactory}}
+
+
+Factory class for creating \doxylink{class_residential}{Residential} \doxylink{class_building}{Building} objects.  
+
+
+
+
+{\ttfamily \#include $<$Residential\+Factory.\+h$>$}
+
+Inheritance diagram for Residential\+Factory\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_residential_factory}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+unique\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$ \mbox{\hyperlink{class_residential_factory_a438c8a3146ccfce9885d08a44fca0738}{create\+Building}} () override
+\begin{DoxyCompactList}\small\item\em Creates a new \doxylink{class_residential}{Residential} \doxylink{class_building}{Building} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_building_factory}{Building\+Factory}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Building\+Factory} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \doxylink{class_building_factory}{Building\+Factory}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_building_factory}{Building\+Factory}}}
+
+
+\doxysubsection{Detailed Description}
+Factory class for creating \doxylink{class_residential}{Residential} \doxylink{class_building}{Building} objects. 
+
+The \doxylink{class_residential_factory}{Residential\+Factory} class implements the \doxylink{class_building_factory}{Building\+Factory} interface to create instances of residential buildings. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_residential_factory_a438c8a3146ccfce9885d08a44fca0738}\index{ResidentialFactory@{ResidentialFactory}!createBuilding@{createBuilding}}
+\index{createBuilding@{createBuilding}!ResidentialFactory@{ResidentialFactory}}
+\doxysubsubsection{\texorpdfstring{createBuilding()}{createBuilding()}}
+{\footnotesize\ttfamily \label{class_residential_factory_a438c8a3146ccfce9885d08a44fca0738} 
+unique\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$ Residential\+Factory\+::create\+Building (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Creates a new \doxylink{class_residential}{Residential} \doxylink{class_building}{Building} object. 
+
+Overrides the create\+Building method to create an instance of a residential building. \begin{DoxyReturn}{Returns}
+A unique pointer to a newly created residential \doxylink{class_building}{Building} object. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_building_factory_a9cc16978d58c7aab0f047d4eb80e4d30}{Building\+Factory}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Residential\+Factory.\+h\item 
+Residential\+Factory.\+cpp\end{DoxyCompactItemize}

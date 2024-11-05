@@ -1,0 +1,162 @@
+\doxysection{Water\+Supply Class Reference}
+\hypertarget{class_water_supply}{}\label{class_water_supply}\index{WaterSupply@{WaterSupply}}
+
+
+Manages water distribution for buildings and observes water resources.  
+
+
+
+
+{\ttfamily \#include $<$Water\+Supply.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_water_supply_a490ba135c56c73f71fe420ddf7b24792}{Water\+Supply}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{class_water}{Water}} $>$ w)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_water_supply}{Water\+Supply} instance with a given water resource. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_water_supply_a004e5d42e85df6a8bdcc6747f4d0ce81}{set\+Working}} (bool w)
+\begin{DoxyCompactList}\small\item\em Sets the operational status of the water supply system. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_water_supply_a345bb2c3c04b90e7e0edfb35a9a44737}{get\+Working}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the water supply system is operational. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_water_supply_a725b065752f6a14150888ad93788fbef}{set\+Water}} (int w)
+\begin{DoxyCompactList}\small\item\em Sets the amount of water to distribute. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_water_supply_acf04c68ceb8afa044a43e959a4d64985}{get\+Water}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the current water distribution level. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_water_supply_a1919e957557ecb6a4c30725c9bf9c447}{distribute\+Water}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$ b)
+\begin{DoxyCompactList}\small\item\em Distributes water to a specified building. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_water_supply_a083deeccff1bba3052ddab432ab19f14}{repair}} ()
+\begin{DoxyCompactList}\small\item\em Repairs the water supply system, returning it to working condition. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_water_supply_a385f22b9ad6d73ac296b29cb3f3e36ce}{notify\+Citizens}} (const string \&message)
+\begin{DoxyCompactList}\small\item\em Sends a notification message to citizens regarding the status of water supply services. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages water distribution for buildings and observes water resources. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_water_supply_a490ba135c56c73f71fe420ddf7b24792}\index{WaterSupply@{WaterSupply}!WaterSupply@{WaterSupply}}
+\index{WaterSupply@{WaterSupply}!WaterSupply@{WaterSupply}}
+\doxysubsubsection{\texorpdfstring{WaterSupply()}{WaterSupply()}}
+{\footnotesize\ttfamily \label{class_water_supply_a490ba135c56c73f71fe420ddf7b24792} 
+Water\+Supply\+::\+Water\+Supply (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{class_water}{Water}} $>$}]{w}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_water_supply}{Water\+Supply} instance with a given water resource. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & Shared pointer to the \doxylink{class_water}{Water} resource. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_water_supply_a1919e957557ecb6a4c30725c9bf9c447}\index{WaterSupply@{WaterSupply}!distributeWater@{distributeWater}}
+\index{distributeWater@{distributeWater}!WaterSupply@{WaterSupply}}
+\doxysubsubsection{\texorpdfstring{distributeWater()}{distributeWater()}}
+{\footnotesize\ttfamily \label{class_water_supply_a1919e957557ecb6a4c30725c9bf9c447} 
+int Water\+Supply\+::distribute\+Water (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Distributes water to a specified building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & Shared pointer to the building receiving water. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The amount of water distributed, or 0 if distribution fails. 
+\end{DoxyReturn}
+\Hypertarget{class_water_supply_acf04c68ceb8afa044a43e959a4d64985}\index{WaterSupply@{WaterSupply}!getWater@{getWater}}
+\index{getWater@{getWater}!WaterSupply@{WaterSupply}}
+\doxysubsubsection{\texorpdfstring{getWater()}{getWater()}}
+{\footnotesize\ttfamily \label{class_water_supply_acf04c68ceb8afa044a43e959a4d64985} 
+int Water\+Supply\+::get\+Water (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the current water distribution level. 
+
+\begin{DoxyReturn}{Returns}
+Amount of water available for distribution. 
+\end{DoxyReturn}
+\Hypertarget{class_water_supply_a345bb2c3c04b90e7e0edfb35a9a44737}\index{WaterSupply@{WaterSupply}!getWorking@{getWorking}}
+\index{getWorking@{getWorking}!WaterSupply@{WaterSupply}}
+\doxysubsubsection{\texorpdfstring{getWorking()}{getWorking()}}
+{\footnotesize\ttfamily \label{class_water_supply_a345bb2c3c04b90e7e0edfb35a9a44737} 
+bool Water\+Supply\+::get\+Working (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Checks if the water supply system is operational. 
+
+\begin{DoxyReturn}{Returns}
+True if operational, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_water_supply_a385f22b9ad6d73ac296b29cb3f3e36ce}\index{WaterSupply@{WaterSupply}!notifyCitizens@{notifyCitizens}}
+\index{notifyCitizens@{notifyCitizens}!WaterSupply@{WaterSupply}}
+\doxysubsubsection{\texorpdfstring{notifyCitizens()}{notifyCitizens()}}
+{\footnotesize\ttfamily \label{class_water_supply_a385f22b9ad6d73ac296b29cb3f3e36ce} 
+void Water\+Supply\+::notify\+Citizens (\begin{DoxyParamCaption}\item[{const string \&}]{message}{}\end{DoxyParamCaption})}
+
+
+
+Sends a notification message to citizens regarding the status of water supply services. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The message to notify citizens. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_water_supply_a083deeccff1bba3052ddab432ab19f14}\index{WaterSupply@{WaterSupply}!repair@{repair}}
+\index{repair@{repair}!WaterSupply@{WaterSupply}}
+\doxysubsubsection{\texorpdfstring{repair()}{repair()}}
+{\footnotesize\ttfamily \label{class_water_supply_a083deeccff1bba3052ddab432ab19f14} 
+bool Water\+Supply\+::repair (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Repairs the water supply system, returning it to working condition. 
+
+\begin{DoxyReturn}{Returns}
+True if the repair was successful, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_water_supply_a725b065752f6a14150888ad93788fbef}\index{WaterSupply@{WaterSupply}!setWater@{setWater}}
+\index{setWater@{setWater}!WaterSupply@{WaterSupply}}
+\doxysubsubsection{\texorpdfstring{setWater()}{setWater()}}
+{\footnotesize\ttfamily \label{class_water_supply_a725b065752f6a14150888ad93788fbef} 
+void Water\+Supply\+::set\+Water (\begin{DoxyParamCaption}\item[{int}]{w}{}\end{DoxyParamCaption})}
+
+
+
+Sets the amount of water to distribute. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & Amount of water to add to the water distribution level. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_water_supply_a004e5d42e85df6a8bdcc6747f4d0ce81}\index{WaterSupply@{WaterSupply}!setWorking@{setWorking}}
+\index{setWorking@{setWorking}!WaterSupply@{WaterSupply}}
+\doxysubsubsection{\texorpdfstring{setWorking()}{setWorking()}}
+{\footnotesize\ttfamily \label{class_water_supply_a004e5d42e85df6a8bdcc6747f4d0ce81} 
+void Water\+Supply\+::set\+Working (\begin{DoxyParamCaption}\item[{bool}]{w}{}\end{DoxyParamCaption})}
+
+
+
+Sets the operational status of the water supply system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & Boolean indicating if the water supply system is operational. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Water\+Supply.\+h\item 
+Water\+Supply.\+cpp\end{DoxyCompactItemize}

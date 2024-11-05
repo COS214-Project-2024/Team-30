@@ -1,0 +1,74 @@
+\doxysection{Categorization\+Strategy Class Reference}
+\hypertarget{class_categorization_strategy}{}\label{class_categorization_strategy}\index{CategorizationStrategy@{CategorizationStrategy}}
+
+
+Abstract base class for strategies used to categorize the city\textquotesingle{}s growth status.  
+
+
+
+
+{\ttfamily \#include $<$Categorization\+Strategy.\+h$>$}
+
+Inheritance diagram for Categorization\+Strategy\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_categorization_strategy}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual string \mbox{\hyperlink{class_categorization_strategy_a26fd318c2e5d90d66680e9aa5c3ad515}{categorize}} (\mbox{\hyperlink{class_government}{Government}} \texorpdfstring{$\ast$}{*}g)=0
+\begin{DoxyCompactList}\small\item\em Categorizes the city based on the current state of the \doxylink{class_government}{Government}. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_categorization_strategy_ad8fc8f72f65f14f46a3f63160d64c25a}{\texorpdfstring{$\sim$}{\string~}\+Categorization\+Strategy}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for strategies used to categorize the city\textquotesingle{}s growth status. 
+
+This class provides an interface for defining various categorization strategies based on values managed by the {\ttfamily \doxylink{class_government}{Government}} class. Derived classes must implement the {\ttfamily categorize} function to determine the category of city growth. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_categorization_strategy_ad8fc8f72f65f14f46a3f63160d64c25a}\index{CategorizationStrategy@{CategorizationStrategy}!````~CategorizationStrategy@{\texorpdfstring{$\sim$}{\string~}CategorizationStrategy}}
+\index{````~CategorizationStrategy@{\texorpdfstring{$\sim$}{\string~}CategorizationStrategy}!CategorizationStrategy@{CategorizationStrategy}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CategorizationStrategy()}{\string~CategorizationStrategy()}}
+{\footnotesize\ttfamily \label{class_categorization_strategy_ad8fc8f72f65f14f46a3f63160d64c25a} 
+virtual Categorization\+Strategy\+::\texorpdfstring{$\sim$}{\string~}\+Categorization\+Strategy (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Virtual destructor. 
+
+Clean up of derived classes. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_categorization_strategy_a26fd318c2e5d90d66680e9aa5c3ad515}\index{CategorizationStrategy@{CategorizationStrategy}!categorize@{categorize}}
+\index{categorize@{categorize}!CategorizationStrategy@{CategorizationStrategy}}
+\doxysubsubsection{\texorpdfstring{categorize()}{categorize()}}
+{\footnotesize\ttfamily \label{class_categorization_strategy_a26fd318c2e5d90d66680e9aa5c3ad515} 
+virtual string Categorization\+Strategy\+::categorize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_government}{Government}} \texorpdfstring{$\ast$}{*}}]{g}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Categorizes the city based on the current state of the \doxylink{class_government}{Government}. 
+
+This function is intended to be overridden by derived classes to provide specific categorization logic based on growth factors.
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Pointer to the {\ttfamily \doxylink{class_government}{Government}} object whose state is used for categorization. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string representing the category of the city. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_economy_categorization_a5cd201a6606869fff6d5b22c9c5de848}{Economy\+Categorization}}, and \mbox{\hyperlink{class_population_categorization_ad5af6f9c9f6a6559121c983735630388}{Population\+Categorization}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Categorization\+Strategy.\+h\end{DoxyCompactItemize}

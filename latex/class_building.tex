@@ -1,0 +1,170 @@
+\doxysection{Building Class Reference}
+\hypertarget{class_building}{}\label{class_building}\index{Building@{Building}}
+Inheritance diagram for Building\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.660079cm]{class_building}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_building_a5eeee6f6d62a67c3c1c085f26b6b7540}\label{class_building_a5eeee6f6d62a67c3c1c085f26b6b7540} 
+int {\bfseries get\+Capacity} ()
+\item 
+\Hypertarget{class_building_a053e6599f9abb8c3ea7644ad24db7332}\label{class_building_a053e6599f9abb8c3ea7644ad24db7332} 
+virtual void {\bfseries build} ()=0
+\item 
+\Hypertarget{class_building_adc8d545ed124ed1e7421727d539d71bd}\label{class_building_adc8d545ed124ed1e7421727d539d71bd} 
+\mbox{\hyperlink{class_building_state}{Building\+State}} \texorpdfstring{$\ast$}{*} {\bfseries get\+State} ()
+\item 
+\Hypertarget{class_building_a1c0033a55a893f5e86676267776dd2f1}\label{class_building_a1c0033a55a893f5e86676267776dd2f1} 
+void {\bfseries set\+State} (unique\+\_\+ptr$<$ \mbox{\hyperlink{class_building_state}{Building\+State}} $>$ state)
+\item 
+\Hypertarget{class_building_ae303e3786ed80430ef8dd00da7f2ee27}\label{class_building_ae303e3786ed80430ef8dd00da7f2ee27} 
+void {\bfseries set\+Capacity} (int capacity)
+\item 
+\Hypertarget{class_building_a9740d4d04a713ec97866203108e93ab3}\label{class_building_a9740d4d04a713ec97866203108e93ab3} 
+void {\bfseries process\+State} ()
+\item 
+\Hypertarget{class_building_a3e9506e9d555798ee74fa3ed621fb4fc}\label{class_building_a3e9506e9d555798ee74fa3ed621fb4fc} 
+virtual string {\bfseries get\+Type} ()=0
+\item 
+\Hypertarget{class_building_ae55c2701fd670a15a1c799c9a4da0e85}\label{class_building_ae55c2701fd670a15a1c799c9a4da0e85} 
+void {\bfseries display\+Info} ()
+\item 
+\Hypertarget{class_building_a20990ad801056584033853ba67a97fcc}\label{class_building_a20990ad801056584033853ba67a97fcc} 
+void {\bfseries simulate\+Emergency} (\mbox{\hyperlink{class_emergencies}{Emergencies}} \&emergency)
+\item 
+\Hypertarget{class_building_a1195b2de81b1a473ac3d186df5496f9e}\label{class_building_a1195b2de81b1a473ac3d186df5496f9e} 
+bool {\bfseries has\+Occupant} (int citizen\+ID) const
+\item 
+\Hypertarget{class_building_aa5df7e40dad8e90f7cdc12279b014774}\label{class_building_aa5df7e40dad8e90f7cdc12279b014774} 
+void {\bfseries print\+Residents} ()
+\item 
+\Hypertarget{class_building_a8e5584c05b8385eceedce365a038c21f}\label{class_building_a8e5584c05b8385eceedce365a038c21f} 
+bool {\bfseries contains\+Citizen} (shared\+\_\+ptr$<$ \mbox{\hyperlink{class_citizen}{Citizen}} $>$ citizen)
+\item 
+\Hypertarget{class_building_a2b67df0d64d94c440a48f1beb4055185}\label{class_building_a2b67df0d64d94c440a48f1beb4055185} 
+int {\bfseries get\+ID} ()
+\item 
+\Hypertarget{class_building_af8a680e97ac6ca07462936f1f70db0fd}\label{class_building_af8a680e97ac6ca07462936f1f70db0fd} 
+void {\bfseries take\+Damage} (int damage)
+\item 
+\Hypertarget{class_building_abe0a85eed4538bd993302ae8a1209d85}\label{class_building_abe0a85eed4538bd993302ae8a1209d85} 
+void {\bfseries update} ()
+\item 
+\Hypertarget{class_building_a4fad57544e259901bbef4d7b593ad7a8}\label{class_building_a4fad57544e259901bbef4d7b593ad7a8} 
+void {\bfseries add\+Citizen} (shared\+\_\+ptr$<$ \mbox{\hyperlink{class_citizen}{Citizen}} $>$ citizen)
+\item 
+\Hypertarget{class_building_a0365d07835e22eb1ced4ded60f0e4fac}\label{class_building_a0365d07835e22eb1ced4ded60f0e4fac} 
+void {\bfseries remove\+Citizen} (shared\+\_\+ptr$<$ \mbox{\hyperlink{class_citizen}{Citizen}} $>$ citizen)
+\item 
+\Hypertarget{class_building_adee441e51322eb7a31b4a1684fbe90f5}\label{class_building_adee441e51322eb7a31b4a1684fbe90f5} 
+void {\bfseries notify\+Citizens\+Of\+Emergency} (int damage)
+\item 
+\Hypertarget{class_building_aa2d499f020f0c70f24af901a2830955a}\label{class_building_aa2d499f020f0c70f24af901a2830955a} 
+void {\bfseries set\+Utilities} ()
+\item 
+\Hypertarget{class_building_a40a6349de185947eaf2be4c68ae5c55b}\label{class_building_a40a6349de185947eaf2be4c68ae5c55b} 
+void {\bfseries set\+Water} (int water)
+\item 
+\Hypertarget{class_building_ac3efd035a8c12fa42ff17dafef9bbc39}\label{class_building_ac3efd035a8c12fa42ff17dafef9bbc39} 
+void {\bfseries set\+Power} (int power)
+\item 
+\Hypertarget{class_building_a2758ab25d439e08fd9616db64e8a4d81}\label{class_building_a2758ab25d439e08fd9616db64e8a4d81} 
+void {\bfseries set\+Sewerage} (int sewerage)
+\item 
+\Hypertarget{class_building_a6ad9aa1c77f9ad0a71cb58d631f482e7}\label{class_building_a6ad9aa1c77f9ad0a71cb58d631f482e7} 
+void {\bfseries set\+Waste} (int waste)
+\item 
+\Hypertarget{class_building_a7a8c36070e4bdbb28137aa529a3e0713}\label{class_building_a7a8c36070e4bdbb28137aa529a3e0713} 
+int {\bfseries get\+Water} ()
+\item 
+\Hypertarget{class_building_a72354a53671aba5e0abc893f5df054da}\label{class_building_a72354a53671aba5e0abc893f5df054da} 
+int {\bfseries get\+Power} ()
+\item 
+\Hypertarget{class_building_a9b41360761eaf698c704dcf11682c716}\label{class_building_a9b41360761eaf698c704dcf11682c716} 
+int {\bfseries get\+Sewerage} ()
+\item 
+\Hypertarget{class_building_abad14fcde3f4ca1ab3e52b91cf829429}\label{class_building_abad14fcde3f4ca1ab3e52b91cf829429} 
+int {\bfseries get\+Waste} ()
+\item 
+\Hypertarget{class_building_aab43bb2aa4c0983f3090bff68df630af}\label{class_building_aab43bb2aa4c0983f3090bff68df630af} 
+void {\bfseries receive\+Water} (int)
+\item 
+\Hypertarget{class_building_a4f52c2fc8b4e2ca82b5e03e445bab36a}\label{class_building_a4f52c2fc8b4e2ca82b5e03e445bab36a} 
+void {\bfseries receive\+Electricity} (int)
+\item 
+\Hypertarget{class_building_a566af1d886f35b5698c9659f5d8eebd2}\label{class_building_a566af1d886f35b5698c9659f5d8eebd2} 
+void {\bfseries receive\+Utilities} (shared\+\_\+ptr$<$ \mbox{\hyperlink{class_coal}{Coal}} $>$ c, shared\+\_\+ptr$<$ \mbox{\hyperlink{class_water}{Water}} $>$ w)
+\item 
+\Hypertarget{class_building_a8013d6e71184654e5ac281d065678eec}\label{class_building_a8013d6e71184654e5ac281d065678eec} 
+void {\bfseries check\+Construction\+Status} ()
+\item 
+\Hypertarget{class_building_a3447b9b61a0f5dd17b5f32e87ac58196}\label{class_building_a3447b9b61a0f5dd17b5f32e87ac58196} 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_citizen}{Citizen}} $>$ $>$ \& {\bfseries get\+Residents} ()
+\item 
+\Hypertarget{class_building_a25ad76bce8c754e544a08c910691fb86}\label{class_building_a25ad76bce8c754e544a08c910691fb86} 
+virtual unique\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$ {\bfseries clone} ()=0
+\item 
+\Hypertarget{class_building_ada3cbb9243c844cf2d64cbf55aa13e5b}\label{class_building_ada3cbb9243c844cf2d64cbf55aa13e5b} 
+void {\bfseries set\+Road} (shared\+\_\+ptr$<$ \mbox{\hyperlink{class_road}{Road}} $>$ road)
+\item 
+\Hypertarget{class_building_a20b4cc791eadc0563c058a2fd55e19a9}\label{class_building_a20b4cc791eadc0563c058a2fd55e19a9} 
+shared\+\_\+ptr$<$ \mbox{\hyperlink{class_road}{Road}} $>$ {\bfseries get\+Road} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_building_af9581adc0ff79e571cafe0bc3df17a45}\label{class_building_af9581adc0ff79e571cafe0bc3df17a45} 
+int {\bfseries id}
+\item 
+\Hypertarget{class_building_a3b7ec13f969fe2737c5a345ae54a3611}\label{class_building_a3b7ec13f969fe2737c5a345ae54a3611} 
+unique\+\_\+ptr$<$ \mbox{\hyperlink{class_building_state}{Building\+State}} $>$ {\bfseries curr\+State}
+\item 
+\Hypertarget{class_building_a3a56eeb880c304f705b84fb5e96c0c0b}\label{class_building_a3a56eeb880c304f705b84fb5e96c0c0b} 
+int {\bfseries capacity}
+\item 
+\Hypertarget{class_building_a6872ce08bf87af22068ee2f36d5d56d5}\label{class_building_a6872ce08bf87af22068ee2f36d5d56d5} 
+int {\bfseries building\+Health}
+\item 
+\Hypertarget{class_building_a77a1f9859e41ae9d665e08db6c6aab8e}\label{class_building_a77a1f9859e41ae9d665e08db6c6aab8e} 
+int {\bfseries price}
+\item 
+\Hypertarget{class_building_a597dbd924f2d70547deac221bb0a4576}\label{class_building_a597dbd924f2d70547deac221bb0a4576} 
+bool {\bfseries running\+Utils}
+\item 
+\Hypertarget{class_building_aea45de70add2e2912b7955447b20129c}\label{class_building_aea45de70add2e2912b7955447b20129c} 
+vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{class_citizen}{Citizen}} $>$ $>$ {\bfseries residents}
+\item 
+\Hypertarget{class_building_ab2f30da62c124242eba9dfc1bd21abaf}\label{class_building_ab2f30da62c124242eba9dfc1bd21abaf} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_utilities}{Utilities}} $>$ {\bfseries utils}
+\item 
+\Hypertarget{class_building_a847bbc2748b436b47068f708a6ff3562}\label{class_building_a847bbc2748b436b47068f708a6ff3562} 
+int {\bfseries water}
+\item 
+\Hypertarget{class_building_a017aaf7c766eb8a013c262f9c0f270b7}\label{class_building_a017aaf7c766eb8a013c262f9c0f270b7} 
+int {\bfseries power}
+\item 
+\Hypertarget{class_building_a707bc1698a1c9ad16b280cb9f8686288}\label{class_building_a707bc1698a1c9ad16b280cb9f8686288} 
+int {\bfseries waste}
+\item 
+\Hypertarget{class_building_a8520ca76e2eececde2b16a9b989c7155}\label{class_building_a8520ca76e2eececde2b16a9b989c7155} 
+int {\bfseries sewerage}
+\item 
+\Hypertarget{class_building_a6246980254fd4fcdcba66420f06db5bb}\label{class_building_a6246980254fd4fcdcba66420f06db5bb} 
+shared\+\_\+ptr$<$ \mbox{\hyperlink{class_road}{Road}} $>$ {\bfseries road}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_building_a1961f5f8b99807bab6685fa14a258102}\label{class_building_a1961f5f8b99807bab6685fa14a258102} 
+static int {\bfseries next\+ID} = 1
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Building.\+h\item 
+Building.\+cpp\end{DoxyCompactItemize}

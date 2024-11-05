@@ -1,0 +1,27 @@
+\doxysection{Residential.\+h}
+\hypertarget{_residential_8h_source}{}\label{_residential_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ RESIDENTIAL\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ RESIDENTIAL\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Building.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}ResidentialFactory.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <memory>}\ \textcolor{comment}{//\ Include\ for\ smart\ pointers}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_residential}{Residential}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_building}{Building}}\ \{}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00012\ \ \ \ \ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{class_residential}{Residential}}();}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{void}\ build()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00016\ \ \ \ \ unique\_ptr<Building>\ clone()\ \textcolor{keyword}{override};\ \textcolor{comment}{//\ Change\ to\ return\ unique\_ptr<Building>}}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{string}\ getType()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{comment}{//\ void\ displayInfo();}}
+\DoxyCodeLine{00020\ \};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

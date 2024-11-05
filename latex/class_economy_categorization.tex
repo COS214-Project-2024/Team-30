@@ -1,0 +1,82 @@
+\doxysection{Economy\+Categorization Class Reference}
+\hypertarget{class_economy_categorization}{}\label{class_economy_categorization}\index{EconomyCategorization@{EconomyCategorization}}
+
+
+A strategy class that categorizes the economic state of the city based on \doxylink{class_government}{Government} data.  
+
+
+
+
+{\ttfamily \#include $<$Economy\+Categorization.\+h$>$}
+
+Inheritance diagram for Economy\+Categorization\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_economy_categorization}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_economy_categorization_a5cd201a6606869fff6d5b22c9c5de848}{categorize}} (\mbox{\hyperlink{class_government}{Government}} \texorpdfstring{$\ast$}{*}g) override
+\begin{DoxyCompactList}\small\item\em Categorizes the economic state of the city. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_categorization_strategy}{Categorization\+Strategy}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_categorization_strategy_ad8fc8f72f65f14f46a3f63160d64c25a}{\texorpdfstring{$\sim$}{\string~}\+Categorization\+Strategy}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A strategy class that categorizes the economic state of the city based on \doxylink{class_government}{Government} data. 
+
+This class implements the {\ttfamily \doxylink{class_categorization_strategy}{Categorization\+Strategy}} interface to provide a categorization strategy specifically for the economy of the city. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_economy_categorization_a5cd201a6606869fff6d5b22c9c5de848}\index{EconomyCategorization@{EconomyCategorization}!categorize@{categorize}}
+\index{categorize@{categorize}!EconomyCategorization@{EconomyCategorization}}
+\doxysubsubsection{\texorpdfstring{categorize()}{categorize()}}
+{\footnotesize\ttfamily \label{class_economy_categorization_a5cd201a6606869fff6d5b22c9c5de848} 
+string Economy\+Categorization\+::categorize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_government}{Government}} \texorpdfstring{$\ast$}{*}}]{g}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Categorizes the economic state of the city. 
+
+Categorizes the economic state of the city based on the employment rate.
+
+This function examines an economic condition and returns a string appropriately.
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & A pointer to the {\ttfamily \doxylink{class_government}{Government}} object that provides the necessary data for categorization. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string representing the economic category of the city.
+\end{DoxyReturn}
+This function retrieves the employment rate from the {\ttfamily \doxylink{class_government}{Government}} object to assess the current level of economic activity. It returns a string representing the economic category\+:
+\begin{DoxyItemize}
+\item "{}\+Low Economic Activity"{} if employment rate is below 45\%
+\item "{}\+Medium Economic Activity"{} if employment rate is between 45\% and 70\%
+\item "{}\+High Economic Activity"{} if employment rate is above 70\%
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & A pointer to the {\ttfamily \doxylink{class_government}{Government}} object that provides the employment rate data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string representing the economic activity level of the city. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_categorization_strategy_a26fd318c2e5d90d66680e9aa5c3ad515}{Categorization\+Strategy}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Economy\+Categorization.\+h\item 
+Economy\+Categorization.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,62 @@
+\doxysection{Housing Class Reference}
+\hypertarget{class_housing}{}\label{class_housing}\index{Housing@{Housing}}
+
+
+Observer class for monitoring if housing needs are met.  
+
+
+
+
+{\ttfamily \#include $<$Housing.\+h$>$}
+
+Inheritance diagram for Housing\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_housing}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_housing_a10c9690331414049cfcd81d5aa8cc504}{update}} (\mbox{\hyperlink{class_government}{Government}} \texorpdfstring{$\ast$}{*}g) override
+\begin{DoxyCompactList}\small\item\em Determines if housing needs to be increased. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_city_growth_observer}{City\+Growth\+Observer}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_city_growth_observer_adff38dfadf2315d3f745b285b05a75ca}{\texorpdfstring{$\sim$}{\string~}\+City\+Growth\+Observer}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Observer class for monitoring if housing needs are met. 
+
+The {\ttfamily \doxylink{class_housing}{Housing}} class is a concrete observer that implements the {\ttfamily \doxylink{class_city_growth_observer}{City\+Growth\+Observer}} interface. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_housing_a10c9690331414049cfcd81d5aa8cc504}\index{Housing@{Housing}!update@{update}}
+\index{update@{update}!Housing@{Housing}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_housing_a10c9690331414049cfcd81d5aa8cc504} 
+void Housing\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_government}{Government}} \texorpdfstring{$\ast$}{*}}]{g}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Determines if housing needs to be increased. 
+
+This method adjusts housing resources and requirements according to the population size and other relevant data from the {\ttfamily \doxylink{class_government}{Government}} object. It is triggered whenever there is a change in poulation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Pointer to the {\ttfamily \doxylink{class_government}{Government}} object that contains the latest city data. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_city_growth_observer_a9595ca3a6d7083525f4a99459ec5e24e}{City\+Growth\+Observer}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Housing.\+h\item 
+Housing.\+cpp\end{DoxyCompactItemize}

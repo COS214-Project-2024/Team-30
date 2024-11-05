@@ -1,0 +1,122 @@
+\doxysection{Middle\+Tax\+Bracket Class Reference}
+\hypertarget{class_middle_tax_bracket}{}\label{class_middle_tax_bracket}\index{MiddleTaxBracket@{MiddleTaxBracket}}
+Inheritance diagram for Middle\+Tax\+Bracket\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_middle_tax_bracket}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_middle_tax_bracket_a4b0fb11c9fc63c33b1971a185c775c2f}{Middle\+Tax\+Bracket}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_middle_tax_bracket}{Middle\+Tax\+Bracket} with a predefined tax rate. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_middle_tax_bracket_a462436a51f5aabef0b381beaf650b780}{getamount\+To\+Pay}} (int income) override
+\begin{DoxyCompactList}\small\item\em Calculates the amount of tax to be paid based on the given income. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_middle_tax_bracket_a661cb371f502aba1caab2240769d77c0}{get\+Tax\+Bracket}} () override
+\begin{DoxyCompactList}\small\item\em Retrieves the name of the tax bracket. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_middle_tax_bracket_ab69747729c1c2451ab6207ab543f56b5}{set\+Tax\+Rate}} (double rate) override
+\begin{DoxyCompactList}\small\item\em Sets a new tax rate for the \doxylink{class_middle_tax_bracket}{Middle\+Tax\+Bracket}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_tax_bracket}{Tax\+Bracket}}}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_tax_bracket_aaf90b6d0f376ccf94d7cdd6e22f4ae0b}{get\+Tax\+Rate}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the tax rate associated with the \doxylink{class_tax_bracket}{Tax\+Bracket}. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_tax_bracket_abba420aa7c67039eb57039eca57f8fd6}{\texorpdfstring{$\sim$}{\string~}\+Tax\+Bracket}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{class_tax_bracket}{Tax\+Bracket} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_tax_bracket}{Tax\+Bracket}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries amount\+To\+Pay}
+\item 
+string {\bfseries type}
+\item 
+double {\bfseries tax\+Rate}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_middle_tax_bracket_a4b0fb11c9fc63c33b1971a185c775c2f}\index{MiddleTaxBracket@{MiddleTaxBracket}!MiddleTaxBracket@{MiddleTaxBracket}}
+\index{MiddleTaxBracket@{MiddleTaxBracket}!MiddleTaxBracket@{MiddleTaxBracket}}
+\doxysubsubsection{\texorpdfstring{MiddleTaxBracket()}{MiddleTaxBracket()}}
+{\footnotesize\ttfamily \label{class_middle_tax_bracket_a4b0fb11c9fc63c33b1971a185c775c2f} 
+Middle\+Tax\+Bracket\+::\+Middle\+Tax\+Bracket (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_middle_tax_bracket}{Middle\+Tax\+Bracket} with a predefined tax rate. 
+
+This constructor initializes the tax rate for the \doxylink{class_middle_tax_bracket}{Middle\+Tax\+Bracket} to 0.\+35 (35\%). 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_middle_tax_bracket_a462436a51f5aabef0b381beaf650b780}\index{MiddleTaxBracket@{MiddleTaxBracket}!getamountToPay@{getamountToPay}}
+\index{getamountToPay@{getamountToPay}!MiddleTaxBracket@{MiddleTaxBracket}}
+\doxysubsubsection{\texorpdfstring{getamountToPay()}{getamountToPay()}}
+{\footnotesize\ttfamily \label{class_middle_tax_bracket_a462436a51f5aabef0b381beaf650b780} 
+int Middle\+Tax\+Bracket\+::getamount\+To\+Pay (\begin{DoxyParamCaption}\item[{int}]{income}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Calculates the amount of tax to be paid based on the given income. 
+
+This method computes the tax amount by multiplying the provided income by the tax rate of the \doxylink{class_middle_tax_bracket}{Middle\+Tax\+Bracket}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em income} & The income amount used to calculate the tax. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The calculated tax amount as an integer. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_tax_bracket}{Tax\+Bracket}}.
+
+\Hypertarget{class_middle_tax_bracket_a661cb371f502aba1caab2240769d77c0}\index{MiddleTaxBracket@{MiddleTaxBracket}!getTaxBracket@{getTaxBracket}}
+\index{getTaxBracket@{getTaxBracket}!MiddleTaxBracket@{MiddleTaxBracket}}
+\doxysubsubsection{\texorpdfstring{getTaxBracket()}{getTaxBracket()}}
+{\footnotesize\ttfamily \label{class_middle_tax_bracket_a661cb371f502aba1caab2240769d77c0} 
+string Middle\+Tax\+Bracket\+::get\+Tax\+Bracket (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retrieves the name of the tax bracket. 
+
+This method returns the string representation of the tax bracket, which is "{}\+Middle\+Tax\+Bracket"{}.
+
+\begin{DoxyReturn}{Returns}
+A string indicating the tax bracket name. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_tax_bracket}{Tax\+Bracket}}.
+
+\Hypertarget{class_middle_tax_bracket_ab69747729c1c2451ab6207ab543f56b5}\index{MiddleTaxBracket@{MiddleTaxBracket}!setTaxRate@{setTaxRate}}
+\index{setTaxRate@{setTaxRate}!MiddleTaxBracket@{MiddleTaxBracket}}
+\doxysubsubsection{\texorpdfstring{setTaxRate()}{setTaxRate()}}
+{\footnotesize\ttfamily \label{class_middle_tax_bracket_ab69747729c1c2451ab6207ab543f56b5} 
+void Middle\+Tax\+Bracket\+::set\+Tax\+Rate (\begin{DoxyParamCaption}\item[{double}]{rate}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sets a new tax rate for the \doxylink{class_middle_tax_bracket}{Middle\+Tax\+Bracket}. 
+
+This method allows the user to update the tax rate for the \doxylink{class_middle_tax_bracket}{Middle\+Tax\+Bracket} to the specified value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rate} & The new tax rate to be set, as a double. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_tax_bracket}{Tax\+Bracket}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Middle\+Tax\+Bracket.\+h\item 
+Middle\+Tax\+Bracket.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,119 @@
+\doxysection{Underconstruction Class Reference}
+\hypertarget{class_underconstruction}{}\label{class_underconstruction}\index{Underconstruction@{Underconstruction}}
+
+
+Represents the "{}\+Under Construction"{} state of a \doxylink{class_building}{Building}.  
+
+
+
+
+{\ttfamily \#include $<$Underconstruction.\+h$>$}
+
+Inheritance diagram for Underconstruction\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_underconstruction}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_underconstruction_afdf47d8988e55a0f7a4bde1543dee9ae}{handle}} () override
+\begin{DoxyCompactList}\small\item\em Handles the behavior specific to the "{}\+Under Construction"{} state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_underconstruction_a1d04cee73a9f438118d4a04afba374e4}{change\+State}} () override
+\begin{DoxyCompactList}\small\item\em Changes the state of the \doxylink{class_building}{Building} to a different state. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_underconstruction_aae9835c991dc69c385553d96013771af}{get\+Status}} () override
+\begin{DoxyCompactList}\small\item\em Gets the status of the "{}\+Under Construction"{} state. \end{DoxyCompactList}\item 
+unique\+\_\+ptr$<$ \mbox{\hyperlink{class_building_state}{Building\+State}} $>$ \mbox{\hyperlink{class_underconstruction_a43cd1a7546fb7813f79d468eafdbe4aa}{clone}} () const override
+\begin{DoxyCompactList}\small\item\em Clones the \doxylink{class_underconstruction}{Underconstruction} state object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_building_state}{Building\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Building\+State} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \doxylink{class_building_state}{Building\+State}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_building_state_a03d48c21325c46dba368df773ac407b7}{set\+Building}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$ currbuilding)
+\begin{DoxyCompactList}\small\item\em Sets the associated \doxylink{class_building}{Building} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_building_state_a177c78289404bdd13b0decdd387d6f62}{set\+State}} ()
+\begin{DoxyCompactList}\small\item\em Sets the associated \doxylink{class_building}{Building} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_building_state}{Building\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+weak\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$ \mbox{\hyperlink{class_building_state_a1f7a9d13deac3270e8aff1307575e6bc}{building}}
+\begin{DoxyCompactList}\small\item\em Weak reference to the associated \doxylink{class_building}{Building}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the "{}\+Under Construction"{} state of a \doxylink{class_building}{Building}. 
+
+The \doxylink{class_underconstruction}{Underconstruction} class implements state-\/specific behavior for buildings that are currently under construction. It provides concrete implementations of the methods defined in the \doxylink{class_building_state}{Building\+State} interface. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_underconstruction_a1d04cee73a9f438118d4a04afba374e4}\index{Underconstruction@{Underconstruction}!changeState@{changeState}}
+\index{changeState@{changeState}!Underconstruction@{Underconstruction}}
+\doxysubsubsection{\texorpdfstring{changeState()}{changeState()}}
+{\footnotesize\ttfamily \label{class_underconstruction_a1d04cee73a9f438118d4a04afba374e4} 
+void Underconstruction\+::change\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Changes the state of the \doxylink{class_building}{Building} to a different state. 
+
+Implements the logic for transitioning from the "{}\+Under Construction"{} state to another state. 
+
+Implements \mbox{\hyperlink{class_building_state_a8ed10f519a44f000fc2e944b0bafb744}{Building\+State}}.
+
+\Hypertarget{class_underconstruction_a43cd1a7546fb7813f79d468eafdbe4aa}\index{Underconstruction@{Underconstruction}!clone@{clone}}
+\index{clone@{clone}!Underconstruction@{Underconstruction}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \label{class_underconstruction_a43cd1a7546fb7813f79d468eafdbe4aa} 
+unique\+\_\+ptr$<$ \mbox{\hyperlink{class_building_state}{Building\+State}} $>$ Underconstruction\+::clone (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Clones the \doxylink{class_underconstruction}{Underconstruction} state object. 
+
+Creates a deep copy of the current "{}\+Under Construction"{} state. \begin{DoxyReturn}{Returns}
+A unique pointer to a new \doxylink{class_underconstruction}{Underconstruction} state object. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_building_state_ade4ebd1df3cdc6adb8f5a19d19b7dd65}{Building\+State}}.
+
+\Hypertarget{class_underconstruction_aae9835c991dc69c385553d96013771af}\index{Underconstruction@{Underconstruction}!getStatus@{getStatus}}
+\index{getStatus@{getStatus}!Underconstruction@{Underconstruction}}
+\doxysubsubsection{\texorpdfstring{getStatus()}{getStatus()}}
+{\footnotesize\ttfamily \label{class_underconstruction_aae9835c991dc69c385553d96013771af} 
+std\+::string Underconstruction\+::get\+Status (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the status of the "{}\+Under Construction"{} state. 
+
+\begin{DoxyReturn}{Returns}
+A string indicating that the building is currently under construction. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_building_state_ac945970c0214492db190e7da6399e2c2}{Building\+State}}.
+
+\Hypertarget{class_underconstruction_afdf47d8988e55a0f7a4bde1543dee9ae}\index{Underconstruction@{Underconstruction}!handle@{handle}}
+\index{handle@{handle}!Underconstruction@{Underconstruction}}
+\doxysubsubsection{\texorpdfstring{handle()}{handle()}}
+{\footnotesize\ttfamily \label{class_underconstruction_afdf47d8988e55a0f7a4bde1543dee9ae} 
+void Underconstruction\+::handle (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Handles the behavior specific to the "{}\+Under Construction"{} state. 
+
+This method defines the actions taken while the building is in the "{}\+Under Construction"{} state. 
+
+Implements \mbox{\hyperlink{class_building_state_aabeae6e7f93c80e3240835e1b44ca006}{Building\+State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Underconstruction.\+h\item 
+Underconstruction.\+cpp\end{DoxyCompactItemize}

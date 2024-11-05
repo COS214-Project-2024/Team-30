@@ -1,0 +1,21 @@
+\doxysection{Industrial\+Factory.\+h}
+\hypertarget{_industrial_factory_8h_source}{}\label{_industrial_factory_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ INDUSTRIALFACTORY\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ INDUSTRIALFACTORY\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Building.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}BuildingFactory.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <memory>}\ \textcolor{comment}{//\ Include\ for\ smart\ pointers}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_industrial_factory}{IndustrialFactory}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_building_factory}{BuildingFactory}}\ \{}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ unique\_ptr<Building>\ \mbox{\hyperlink{class_industrial_factory_a6d0b5ba16266a8435241e12f1819119f}{createBuilding}}()\ \textcolor{keyword}{override};\ \textcolor{comment}{//\ Change\ to\ return\ unique\_ptr<Building>}}
+\DoxyCodeLine{00027\ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

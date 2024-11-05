@@ -1,0 +1,79 @@
+\doxysection{Set\+Red\+Lights\+Command Class Reference}
+\hypertarget{class_set_red_lights_command}{}\label{class_set_red_lights_command}\index{SetRedLightsCommand@{SetRedLightsCommand}}
+
+
+Command to set all traffic lights in an area to red.  
+
+
+
+
+{\ttfamily \#include $<$Set\+Red\+Lights\+Command.\+h$>$}
+
+Inheritance diagram for Set\+Red\+Lights\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_set_red_lights_command}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_set_red_lights_command_ac57da4c0fe9a097a50f4f3a65ed1c560}{Set\+Red\+Lights\+Command}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{class_area}{Area}} $>$ area)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_set_red_lights_command}{Set\+Red\+Lights\+Command} with the specified area. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_set_red_lights_command_a5735e3b174290df8b6eb471a1a5c0190}{execute}} () override
+\begin{DoxyCompactList}\small\item\em Executes the command to set all traffic lights to red. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classtraffic_command}{traffic\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classtraffic_command_a2650e58ebd6202b62bcc1a0b0833fb64}{\texorpdfstring{$\sim$}{\string~}traffic\+Command}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \doxylink{classtraffic_command}{traffic\+Command}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Command to set all traffic lights in an area to red. 
+
+The \doxylink{class_set_red_lights_command}{Set\+Red\+Lights\+Command} class is responsible for executing the command to change all traffic lights in a specified area to red for a specific duration and then reset them to their original state. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_set_red_lights_command_ac57da4c0fe9a097a50f4f3a65ed1c560}\index{SetRedLightsCommand@{SetRedLightsCommand}!SetRedLightsCommand@{SetRedLightsCommand}}
+\index{SetRedLightsCommand@{SetRedLightsCommand}!SetRedLightsCommand@{SetRedLightsCommand}}
+\doxysubsubsection{\texorpdfstring{SetRedLightsCommand()}{SetRedLightsCommand()}}
+{\footnotesize\ttfamily \label{class_set_red_lights_command_ac57da4c0fe9a097a50f4f3a65ed1c560} 
+Set\+Red\+Lights\+Command\+::\+Set\+Red\+Lights\+Command (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{class_area}{Area}} $>$}]{area}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \doxylink{class_set_red_lights_command}{Set\+Red\+Lights\+Command} with the specified area. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em area} & Pointer to the area whose traffic lights are to be changed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_set_red_lights_command_a5735e3b174290df8b6eb471a1a5c0190}\index{SetRedLightsCommand@{SetRedLightsCommand}!execute@{execute}}
+\index{execute@{execute}!SetRedLightsCommand@{SetRedLightsCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{class_set_red_lights_command_a5735e3b174290df8b6eb471a1a5c0190} 
+void Set\+Red\+Lights\+Command\+::execute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Executes the command to set all traffic lights to red. 
+
+Executes the command to set all traffic lights in the area to red.
+
+This method sets all lights in the area to red, waits for a duration, and then resets them to their original state.
+
+This method changes the state of all traffic lights in the associated area to red, waits for a duration of 5 seconds to simulate the red light duration, and then resets all lights to their original state. 
+
+Implements \mbox{\hyperlink{classtraffic_command_a0b96986b7f1441076984ccdd43819f6d}{traffic\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Set\+Red\+Lights\+Command.\+h\item 
+Set\+Red\+Lights\+Command.\+cpp\end{DoxyCompactItemize}

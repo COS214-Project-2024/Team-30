@@ -1,0 +1,82 @@
+\doxysection{Population\+Categorization Class Reference}
+\hypertarget{class_population_categorization}{}\label{class_population_categorization}\index{PopulationCategorization@{PopulationCategorization}}
+
+
+\doxylink{class_concrete}{Concrete} strategy for categorizing population growth.  
+
+
+
+
+{\ttfamily \#include $<$Population\+Categorization.\+h$>$}
+
+Inheritance diagram for Population\+Categorization\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_population_categorization}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_population_categorization_ad5af6f9c9f6a6559121c983735630388}{categorize}} (\mbox{\hyperlink{class_government}{Government}} \texorpdfstring{$\ast$}{*}g) override
+\begin{DoxyCompactList}\small\item\em Categorizes the population based on criteria. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_categorization_strategy}{Categorization\+Strategy}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_categorization_strategy_ad8fc8f72f65f14f46a3f63160d64c25a}{\texorpdfstring{$\sim$}{\string~}\+Categorization\+Strategy}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_concrete}{Concrete} strategy for categorizing population growth. 
+
+This class implements the {\ttfamily \doxylink{class_categorization_strategy}{Categorization\+Strategy}} interface to provide a specific categorization based on population in the city. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_population_categorization_ad5af6f9c9f6a6559121c983735630388}\index{PopulationCategorization@{PopulationCategorization}!categorize@{categorize}}
+\index{categorize@{categorize}!PopulationCategorization@{PopulationCategorization}}
+\doxysubsubsection{\texorpdfstring{categorize()}{categorize()}}
+{\footnotesize\ttfamily \label{class_population_categorization_ad5af6f9c9f6a6559121c983735630388} 
+string Population\+Categorization\+::categorize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_government}{Government}} \texorpdfstring{$\ast$}{*}}]{g}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Categorizes the population based on criteria. 
+
+Categorizes a government entity based on its population.
+
+This method uses data from the {\ttfamily \doxylink{class_government}{Government}} class to determine and return a categorization of population growth.
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & A pointer to the {\ttfamily \doxylink{class_government}{Government}} instance from which data is accessed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string representing the population category.
+\end{DoxyReturn}
+This function takes a pointer to a \doxylink{class_government}{Government} object and evaluates its population number to categorize it into one of three categories\+: "{}\+Small City"{}, "{}\+Medium City"{}, or "{}\+Large City"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Pointer to a \doxylink{class_government}{Government} object whose population is to be evaluated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string representing the category of the city based on its population.
+\begin{DoxyItemize}
+\item "{}\+Small City"{} if population is less than 5000,
+\item "{}\+Medium City"{} if population is between 5000 and 49999,
+\item "{}\+Large City"{} if population is 50000 or more. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_categorization_strategy_a26fd318c2e5d90d66680e9aa5c3ad515}{Categorization\+Strategy}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Population\+Categorization.\+h\item 
+Population\+Categorization.\+cpp\end{DoxyCompactItemize}

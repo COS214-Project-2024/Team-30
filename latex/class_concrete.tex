@@ -1,0 +1,129 @@
+\doxysection{Concrete Class Reference}
+\hypertarget{class_concrete}{}\label{class_concrete}\index{Concrete@{Concrete}}
+
+
+Represents a concrete resource with a limited capacity.  
+
+
+
+
+{\ttfamily \#include $<$Concrete.\+h$>$}
+
+Inheritance diagram for Concrete\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_concrete}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_concrete_a94063bf13d28035921e1049a8787248e}{Concrete}} (int capacity)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_concrete}{Concrete} object with a specified capacity. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_concrete_a4b3e559084948ab72025246442a98804}{get\+Capacity}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the current capacity of the concrete resource. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_concrete_a52638f8e2b637f4edda1c8e9f18634b3}{refill}} (int amount) override
+\begin{DoxyCompactList}\small\item\em Refills the concrete resource by a specified amount. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_concrete_a5ebd13ae1ac3c4fc72da1dfffe4201d3}{use}} (int amount) override
+\begin{DoxyCompactList}\small\item\em Uses a specified amount of concrete from the resource. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_resource}{Resource}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Resource} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \doxylink{class_resource}{Resource} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_resource}{Resource}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries capacity}
+\begin{DoxyCompactList}\small\item\em Capacity of the resource. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a concrete resource with a limited capacity. 
+
+The \doxylink{class_concrete}{Concrete} class extends the \doxylink{class_resource}{Resource} class, providing functionality for managing a concrete resource with refill and usage capabilities. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_concrete_a94063bf13d28035921e1049a8787248e}\index{Concrete@{Concrete}!Concrete@{Concrete}}
+\index{Concrete@{Concrete}!Concrete@{Concrete}}
+\doxysubsubsection{\texorpdfstring{Concrete()}{Concrete()}}
+{\footnotesize\ttfamily \label{class_concrete_a94063bf13d28035921e1049a8787248e} 
+Concrete\+::\+Concrete (\begin{DoxyParamCaption}\item[{int}]{capacity}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_concrete}{Concrete} object with a specified capacity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em capacity} & Initial capacity of the concrete resource. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_concrete_a4b3e559084948ab72025246442a98804}\index{Concrete@{Concrete}!getCapacity@{getCapacity}}
+\index{getCapacity@{getCapacity}!Concrete@{Concrete}}
+\doxysubsubsection{\texorpdfstring{getCapacity()}{getCapacity()}}
+{\footnotesize\ttfamily \label{class_concrete_a4b3e559084948ab72025246442a98804} 
+int Concrete\+::get\+Capacity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the current capacity of the concrete resource. 
+
+\begin{DoxyReturn}{Returns}
+The current capacity as an integer. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_resource_aa54b7fb57467a4ad6b3eef325253ff58}{Resource}}.
+
+\Hypertarget{class_concrete_a52638f8e2b637f4edda1c8e9f18634b3}\index{Concrete@{Concrete}!refill@{refill}}
+\index{refill@{refill}!Concrete@{Concrete}}
+\doxysubsubsection{\texorpdfstring{refill()}{refill()}}
+{\footnotesize\ttfamily \label{class_concrete_a52638f8e2b637f4edda1c8e9f18634b3} 
+void Concrete\+::refill (\begin{DoxyParamCaption}\item[{int}]{amount}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Refills the concrete resource by a specified amount. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & Amount of concrete to add to the resource. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_resource_a494c92291836c994eb228cb137136af9}{Resource}}.
+
+\Hypertarget{class_concrete_a5ebd13ae1ac3c4fc72da1dfffe4201d3}\index{Concrete@{Concrete}!use@{use}}
+\index{use@{use}!Concrete@{Concrete}}
+\doxysubsubsection{\texorpdfstring{use()}{use()}}
+{\footnotesize\ttfamily \label{class_concrete_a5ebd13ae1ac3c4fc72da1dfffe4201d3} 
+int Concrete\+::use (\begin{DoxyParamCaption}\item[{int}]{amount}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Uses a specified amount of concrete from the resource. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & Amount of concrete to use from the resource. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The actual amount of concrete used. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_resource_af21f50c27d3e59243933f7c96e475d7a}{Resource}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Concrete.\+h\item 
+Concrete.\+cpp\end{DoxyCompactItemize}

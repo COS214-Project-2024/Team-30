@@ -1,0 +1,21 @@
+\doxysection{Office\+Job.\+h}
+\hypertarget{_office_job_8h_source}{}\label{_office_job_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ OFFICEJOB\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ OFFICEJOB\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}EmploymentStatus.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_office_job}{OfficeJob}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_employment_status}{EmploymentStatus}}}
+\DoxyCodeLine{00006\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00008\ \ \ \ \ \mbox{\hyperlink{class_office_job}{OfficeJob}}();}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordtype}{int}\ getIncome()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{string}\ getJobType()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00011\ \ \ \ \ unique\_ptr<EmploymentStatus>\ getEmploymentStatus()\ \textcolor{keyword}{override};\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{int}\ getHoursOfWork()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

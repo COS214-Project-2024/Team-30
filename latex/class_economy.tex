@@ -1,0 +1,71 @@
+\doxysection{Economy Class Reference}
+\hypertarget{class_economy}{}\label{class_economy}\index{Economy@{Economy}}
+
+
+\doxylink{class_concrete}{Concrete} observer class that monitors and updates the economic state of the city.  
+
+
+
+
+{\ttfamily \#include $<$Economy.\+h$>$}
+
+Inheritance diagram for Economy\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_economy}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_economy_a80192ae5da54771017a24dfb1b521f03}{update}} (\mbox{\hyperlink{class_government}{Government}} \texorpdfstring{$\ast$}{*}g) override
+\begin{DoxyCompactList}\small\item\em Updates the economic state based on the current status of the \doxylink{class_government}{Government}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_city_growth_observer}{City\+Growth\+Observer}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_city_growth_observer_adff38dfadf2315d3f745b285b05a75ca}{\texorpdfstring{$\sim$}{\string~}\+City\+Growth\+Observer}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_concrete}{Concrete} observer class that monitors and updates the economic state of the city. 
+
+The {\ttfamily \doxylink{class_economy}{Economy}} class inherits from {\ttfamily \doxylink{class_city_growth_observer}{City\+Growth\+Observer}} and implements the {\ttfamily update} method to respond to changes in the city’s economy. This observer may adjust various economic indicators within the {\ttfamily \doxylink{class_government}{Government}} object to reflect current economic conditions. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_economy_a80192ae5da54771017a24dfb1b521f03}\index{Economy@{Economy}!update@{update}}
+\index{update@{update}!Economy@{Economy}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_economy_a80192ae5da54771017a24dfb1b521f03} 
+void Economy\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_government}{Government}} \texorpdfstring{$\ast$}{*}}]{g}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Updates the economic state based on the current status of the \doxylink{class_government}{Government}. 
+
+Updates the economic state based on the \doxylink{class_government}{Government}\textquotesingle{}s current population and employment data.
+
+This method is called when the {\ttfamily \doxylink{class_government}{Government}} notifies its observers of changes. The {\ttfamily \doxylink{class_economy}{Economy}} observer will assess the economic factors in {\ttfamily \doxylink{class_government}{Government}} and adjust accordingly.
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Pointer to the {\ttfamily \doxylink{class_government}{Government}} object.\\
+\hline
+\end{DoxyParams}
+This implementation displays a message indicating that the economy is adapting to support the current population. It then calls {\ttfamily calculate\+Employment\+Rate} on the {\ttfamily \doxylink{class_government}{Government}} object to adjust the employment rate, reflecting the current state of the economy. Finally, it outputs revised city information.
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Pointer to the {\ttfamily \doxylink{class_government}{Government}} object that provides the current economic and population data. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_city_growth_observer_a9595ca3a6d7083525f4a99459ec5e24e}{City\+Growth\+Observer}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Economy.\+h\item 
+Economy.\+cpp\end{DoxyCompactItemize}

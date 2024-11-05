@@ -1,0 +1,133 @@
+\doxysection{Area Class Reference}
+\hypertarget{class_area}{}\label{class_area}\index{Area@{Area}}
+
+
+Represents an area containing roads and manages traffic lights within those roads.  
+
+
+
+
+{\ttfamily \#include $<$Area.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_area_aff27e3d7c6f0e33cc8d6480e169bfe54}{Area}} (string name)
+\begin{DoxyCompactList}\small\item\em Constructs an \doxylink{class_area}{Area} with a specified name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_area_a26ebe840f66bfae67ad1b350ecde242b}{set\+All\+Lights\+To\+Red}} ()
+\begin{DoxyCompactList}\small\item\em Sets all traffic lights on the roads in the area to red. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_area_a1849a2845328d11d0f3503ca129361ba}{reset\+All\+Lights}} ()
+\begin{DoxyCompactList}\small\item\em Resets all traffic lights on the roads in the area to their default state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_area_ae73cb915702de2d66a9c59277c94f216}{add\+Road}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{class_road}{Road}} $>$ road)
+\begin{DoxyCompactList}\small\item\em Adds a road to the area. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_area_a76e58abc5970080e0332c8616cc8cafa}{remove\+Road}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{class_road}{Road}} $>$ road)
+\begin{DoxyCompactList}\small\item\em Removes a road from the area. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_area_a6b95a75e99ba592a60fee3a22f94fe84}{display\+Roads}} () const
+\begin{DoxyCompactList}\small\item\em Displays all roads in the area. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents an area containing roads and manages traffic lights within those roads. 
+
+\doxylink{class_area}{Area} serves as a container for the roads 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_area_aff27e3d7c6f0e33cc8d6480e169bfe54}\index{Area@{Area}!Area@{Area}}
+\index{Area@{Area}!Area@{Area}}
+\doxysubsubsection{\texorpdfstring{Area()}{Area()}}
+{\footnotesize\ttfamily \label{class_area_aff27e3d7c6f0e33cc8d6480e169bfe54} 
+Area\+::\+Area (\begin{DoxyParamCaption}\item[{string}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Constructs an \doxylink{class_area}{Area} with a specified name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the area. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_area_ae73cb915702de2d66a9c59277c94f216}\index{Area@{Area}!addRoad@{addRoad}}
+\index{addRoad@{addRoad}!Area@{Area}}
+\doxysubsubsection{\texorpdfstring{addRoad()}{addRoad()}}
+{\footnotesize\ttfamily \label{class_area_ae73cb915702de2d66a9c59277c94f216} 
+void Area\+::add\+Road (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{class_road}{Road}} $>$}]{new\+Road}{}\end{DoxyParamCaption})}
+
+
+
+Adds a road to the area. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em road} & A shared pointer to the road to be added.\\
+\hline
+{\em new\+Road} & new shared pointer \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_area_a6b95a75e99ba592a60fee3a22f94fe84}\index{Area@{Area}!displayRoads@{displayRoads}}
+\index{displayRoads@{displayRoads}!Area@{Area}}
+\doxysubsubsection{\texorpdfstring{displayRoads()}{displayRoads()}}
+{\footnotesize\ttfamily \label{class_area_a6b95a75e99ba592a60fee3a22f94fe84} 
+void Area\+::display\+Roads (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Displays all roads in the area. 
+
+Connects roads in the area.
+
+
+\begin{DoxyParams}{Parameters}
+{\em from} & A shared pointer to the originating road. \\
+\hline
+{\em to\+Left} & shared pointer to left road \\
+\hline
+{\em to\+Right} & shared pointer to right road \\
+\hline
+{\em to\+Straight} & shared pointer to straight road\\
+\hline
+\end{DoxyParams}
+displays adjacency list \Hypertarget{class_area_a76e58abc5970080e0332c8616cc8cafa}\index{Area@{Area}!removeRoad@{removeRoad}}
+\index{removeRoad@{removeRoad}!Area@{Area}}
+\doxysubsubsection{\texorpdfstring{removeRoad()}{removeRoad()}}
+{\footnotesize\ttfamily \label{class_area_a76e58abc5970080e0332c8616cc8cafa} 
+void Area\+::remove\+Road (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{class_road}{Road}} $>$}]{road}{}\end{DoxyParamCaption})}
+
+
+
+Removes a road from the area. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em road} & A shared pointer to the road to be removed. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_area_a1849a2845328d11d0f3503ca129361ba}\index{Area@{Area}!resetAllLights@{resetAllLights}}
+\index{resetAllLights@{resetAllLights}!Area@{Area}}
+\doxysubsubsection{\texorpdfstring{resetAllLights()}{resetAllLights()}}
+{\footnotesize\ttfamily \label{class_area_a1849a2845328d11d0f3503ca129361ba} 
+void Area\+::reset\+All\+Lights (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Resets all traffic lights on the roads in the area to their default state. 
+
+Resets all traffic lights on the roads in the area as \textquotesingle{}memento\textquotesingle{}. \Hypertarget{class_area_a26ebe840f66bfae67ad1b350ecde242b}\index{Area@{Area}!setAllLightsToRed@{setAllLightsToRed}}
+\index{setAllLightsToRed@{setAllLightsToRed}!Area@{Area}}
+\doxysubsubsection{\texorpdfstring{setAllLightsToRed()}{setAllLightsToRed()}}
+{\footnotesize\ttfamily \label{class_area_a26ebe840f66bfae67ad1b350ecde242b} 
+void Area\+::set\+All\+Lights\+To\+Red (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Sets all traffic lights on the roads in the area to red. 
+
+Sets all traffic lights to stop all cars. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Area.\+h\item 
+Area.\+cpp\end{DoxyCompactItemize}

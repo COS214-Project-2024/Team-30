@@ -1,0 +1,38 @@
+\doxysection{Waste\+Management.\+h}
+\hypertarget{_waste_management_8h_source}{}\label{_waste_management_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ WASTEMANAGEMENT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ WASTEMANAGEMENT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Building.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Citizen.h"{}}\ \textcolor{comment}{//\ Assuming\ this\ is\ the\ class\ for\ Citizen\ objects}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <memory>}\ \textcolor{comment}{//\ for\ smart\ pointers}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_waste_management}{WasteManagement}}\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_waste_management_a8fe7cc0ad7b4ff564ac5a3333ff03a80}{WasteManagement}}();}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_waste_management_a63bbfb9107c5827bb31c5b69f040aeeb}{setWorking}}(\textcolor{keywordtype}{bool}\ b);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_waste_management_a5adc18f918e80552c1fa9885052caf19}{getWorking}}();}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_waste_management_a4e0960971937109d77b428582d101954}{removeWaste}}(shared\_ptr<Building>\ b);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_waste_management_a25907989e3943fac3a0ba56582334ef1}{recycle}}();}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_waste_management_a236268161309852545f784a89b1bf114}{repair}}();}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_waste_management_afae99ed82c68577401d596da6855025d}{notifyCitizens}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ message);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{bool}\ working;\ }
+\DoxyCodeLine{00062\ \};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ WASTEMANAGEMENT\_H}}
+
+\end{DoxyCode}

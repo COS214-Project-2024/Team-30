@@ -1,0 +1,148 @@
+\doxysection{Traffic\+Light Class Reference}
+\hypertarget{class_traffic_light}{}\label{class_traffic_light}\index{TrafficLight@{TrafficLight}}
+
+
+Represents a traffic light with a state that can change.  
+
+
+
+
+{\ttfamily \#include $<$Traffic\+Light.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_traffic_light_a28e72db41dcbd224a0a811d08ae20c3f}{Traffic\+Light}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_traffic_light}{Traffic\+Light} object and initializes its state to \textquotesingle{}Red\textquotesingle{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_traffic_light_ad6e9162f7356b2b8e08d53a2c8d45e3c}{change\+State}} ()
+\begin{DoxyCompactList}\small\item\em Changes the state of the traffic light. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{class_traffic_light_abf3d7d4da37ccc7056e3ad7f4dfb1efd}{get\+State}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the current state of the traffic light. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_traffic_light_a2721635832745566393adf7761a500a8}{get\+ID}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the unique ID of the traffic light. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_traffic_light_a911541837bb4651d872822bab130bf76}{operator==}} (const \mbox{\hyperlink{class_traffic_light}{Traffic\+Light}} \&other) const
+\begin{DoxyCompactList}\small\item\em Compares two \doxylink{class_traffic_light}{Traffic\+Light} instances for equality based on their IDs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_traffic_light_a93c61deb2f32918f17ebe9fec8f06d3d}{set\+State}} (char c)
+\begin{DoxyCompactList}\small\item\em Sets the state of the traffic light to the specified character. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_traffic_light_a89cfcfb09daf2403b4fbc46b2a452121}\label{class_traffic_light_a89cfcfb09daf2403b4fbc46b2a452121} 
+int {\bfseries id}
+\begin{DoxyCompactList}\small\item\em Unique identifier for the traffic light instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a traffic light with a state that can change. 
+
+The \doxylink{class_traffic_light}{Traffic\+Light} class manages the state of a traffic light, which can be red, yellow, or green. It also provides a unique identifier for each traffic light instance. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_traffic_light_a28e72db41dcbd224a0a811d08ae20c3f}\index{TrafficLight@{TrafficLight}!TrafficLight@{TrafficLight}}
+\index{TrafficLight@{TrafficLight}!TrafficLight@{TrafficLight}}
+\doxysubsubsection{\texorpdfstring{TrafficLight()}{TrafficLight()}}
+{\footnotesize\ttfamily \label{class_traffic_light_a28e72db41dcbd224a0a811d08ae20c3f} 
+Traffic\+Light\+::\+Traffic\+Light (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_traffic_light}{Traffic\+Light} object and initializes its state to \textquotesingle{}Red\textquotesingle{}. 
+
+Constructor for the \doxylink{class_traffic_light}{Traffic\+Light} class.
+
+This constructor assigns a unique ID to the traffic light.
+
+Initializes the traffic light to the \textquotesingle{}Red\textquotesingle{} state and assigns a unique ID to each traffic light instance. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_traffic_light_ad6e9162f7356b2b8e08d53a2c8d45e3c}\index{TrafficLight@{TrafficLight}!changeState@{changeState}}
+\index{changeState@{changeState}!TrafficLight@{TrafficLight}}
+\doxysubsubsection{\texorpdfstring{changeState()}{changeState()}}
+{\footnotesize\ttfamily \label{class_traffic_light_ad6e9162f7356b2b8e08d53a2c8d45e3c} 
+void Traffic\+Light\+::change\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Changes the state of the traffic light. 
+
+The traffic light cycles through the following states\+:
+\begin{DoxyItemize}
+\item Red (\textquotesingle{}R\textquotesingle{}) to Green (\textquotesingle{}G\textquotesingle{})
+\item Green (\textquotesingle{}G\textquotesingle{}) to Yellow (\textquotesingle{}Y\textquotesingle{})
+\item Yellow (\textquotesingle{}Y\textquotesingle{}) to Red (\textquotesingle{}R\textquotesingle{})
+\end{DoxyItemize}
+
+This method cycles through the traffic light states\+:
+\begin{DoxyItemize}
+\item Red (\textquotesingle{}R\textquotesingle{}) to Green (\textquotesingle{}G\textquotesingle{})
+\item Green (\textquotesingle{}G\textquotesingle{}) to Yellow (\textquotesingle{}Y\textquotesingle{})
+\item Yellow (\textquotesingle{}Y\textquotesingle{}) to Red (\textquotesingle{}R\textquotesingle{}) 
+\end{DoxyItemize}\Hypertarget{class_traffic_light_a2721635832745566393adf7761a500a8}\index{TrafficLight@{TrafficLight}!getID@{getID}}
+\index{getID@{getID}!TrafficLight@{TrafficLight}}
+\doxysubsubsection{\texorpdfstring{getID()}{getID()}}
+{\footnotesize\ttfamily \label{class_traffic_light_a2721635832745566393adf7761a500a8} 
+int Traffic\+Light\+::get\+ID (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the unique ID of the traffic light. 
+
+Gets the unique ID of the traffic light.
+
+\begin{DoxyReturn}{Returns}
+The ID of the traffic light instance. 
+\end{DoxyReturn}
+\Hypertarget{class_traffic_light_abf3d7d4da37ccc7056e3ad7f4dfb1efd}\index{TrafficLight@{TrafficLight}!getState@{getState}}
+\index{getState@{getState}!TrafficLight@{TrafficLight}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily \label{class_traffic_light_abf3d7d4da37ccc7056e3ad7f4dfb1efd} 
+char Traffic\+Light\+::get\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the current state of the traffic light. 
+
+Gets the current state of the traffic light.
+
+\begin{DoxyReturn}{Returns}
+The current state of the traffic light as a character (\textquotesingle{}R\textquotesingle{}, \textquotesingle{}Y\textquotesingle{}, or \textquotesingle{}G\textquotesingle{}). 
+\end{DoxyReturn}
+\Hypertarget{class_traffic_light_a911541837bb4651d872822bab130bf76}\index{TrafficLight@{TrafficLight}!operator==@{operator==}}
+\index{operator==@{operator==}!TrafficLight@{TrafficLight}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \label{class_traffic_light_a911541837bb4651d872822bab130bf76} 
+bool Traffic\+Light\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_traffic_light}{Traffic\+Light}} \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Compares two \doxylink{class_traffic_light}{Traffic\+Light} instances for equality based on their IDs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The other \doxylink{class_traffic_light}{Traffic\+Light} instance to compare against. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if both traffic lights have the same ID; otherwise, false. 
+\end{DoxyReturn}
+\Hypertarget{class_traffic_light_a93c61deb2f32918f17ebe9fec8f06d3d}\index{TrafficLight@{TrafficLight}!setState@{setState}}
+\index{setState@{setState}!TrafficLight@{TrafficLight}}
+\doxysubsubsection{\texorpdfstring{setState()}{setState()}}
+{\footnotesize\ttfamily \label{class_traffic_light_a93c61deb2f32918f17ebe9fec8f06d3d} 
+void Traffic\+Light\+::set\+State (\begin{DoxyParamCaption}\item[{char}]{c}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the state of the traffic light to the specified character. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & The character representing the desired state (\textquotesingle{}R\textquotesingle{}, \textquotesingle{}Y\textquotesingle{}, or \textquotesingle{}G\textquotesingle{}). \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Traffic\+Light.\+h\item 
+Traffic\+Light.\+cpp\end{DoxyCompactItemize}

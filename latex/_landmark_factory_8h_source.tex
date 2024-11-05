@@ -1,0 +1,22 @@
+\doxysection{Landmark\+Factory.\+h}
+\hypertarget{_landmark_factory_8h_source}{}\label{_landmark_factory_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ LANDMARKFACTORY\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ LANDMARKFACTORY\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Building.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}BuildingFactory.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <memory>}\ \textcolor{comment}{//\ Include\ for\ smart\ pointers}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_landmark_factory}{LandmarkFactory}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_building_factory}{BuildingFactory}}\ \{}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00019\ \ \ \ \ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \ \ unique\_ptr<Building>\ \mbox{\hyperlink{class_landmark_factory_a8aeddc351d42fb059b55ef4754d055fc}{createBuilding}}()\ \textcolor{keyword}{override};\ \textcolor{comment}{//\ Change\ to\ return\ unique\_ptr<Building>}}
+\DoxyCodeLine{00028\ \};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

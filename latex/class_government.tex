@@ -1,0 +1,293 @@
+\doxysection{Government Class Reference}
+\hypertarget{class_government}{}\label{class_government}\index{Government@{Government}}
+Inheritance diagram for Government\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_government}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_government_a817458cf82506459da761aac51db8989}\label{class_government_a817458cf82506459da761aac51db8989} 
+{\bfseries Government} (string)
+\item 
+void \mbox{\hyperlink{class_government_a730066cdbf27613977f0c310871699fb}{population\+Growth}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_citizen}{Citizen}} $>$)
+\begin{DoxyCompactList}\small\item\em Adds a citizen to the population and assigns them a home. \end{DoxyCompactList}\item 
+\Hypertarget{class_government_a5ea36342a72fa0cba37587d7bb0bf922}\label{class_government_a5ea36342a72fa0cba37587d7bb0bf922} 
+void {\bfseries calculate\+Employment\+Rate} ()
+\begin{DoxyCompactList}\small\item\em Calculates the employment rate based on the population. \end{DoxyCompactList}\item 
+\Hypertarget{class_government_abbba1efb27c10255f9e32b0406322dd7}\label{class_government_abbba1efb27c10255f9e32b0406322dd7} 
+void {\bfseries increase\+Infurstructure} ()
+\begin{DoxyCompactList}\small\item\em Increases infrastructure if the budget allows. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_government_a1b8cb2786a87fb6b525bf967bfa9f995}{population\+Decline}} (int i)
+\begin{DoxyCompactList}\small\item\em Removes a citizen from the population based on their ID. \end{DoxyCompactList}\item 
+\Hypertarget{class_government_a9d433ba34b9e0739dcb211c41f38c8ec}\label{class_government_a9d433ba34b9e0739dcb211c41f38c8ec} 
+void {\bfseries collect\+Taxes} ()
+\begin{DoxyCompactList}\small\item\em Collects taxes from all citizens and updates the city budget. \end{DoxyCompactList}\item 
+\Hypertarget{class_government_ac18e593951d2b29fda08c606e529f3cf}\label{class_government_ac18e593951d2b29fda08c606e529f3cf} 
+void {\bfseries print\+Info} ()
+\begin{DoxyCompactList}\small\item\em Prints interface for the Game showing statistics for the city. \end{DoxyCompactList}\item 
+\Hypertarget{class_government_a84fbe6ef38dff3fe5ef154588c7f02c0}\label{class_government_a84fbe6ef38dff3fe5ef154588c7f02c0} 
+void {\bfseries pay\+Day} ()
+\begin{DoxyCompactList}\small\item\em Function for citizen to get paid and become happier. \end{DoxyCompactList}\item 
+\Hypertarget{class_government_a3348f873d9fb890aef70517029350b6e}\label{class_government_a3348f873d9fb890aef70517029350b6e} 
+void {\bfseries job\+Opportunities} ()
+\begin{DoxyCompactList}\small\item\em Function for provided job opportunities to citizens. \end{DoxyCompactList}\item 
+\Hypertarget{class_government_a8caa41612ef50fa5f96be404053d0aad}\label{class_government_a8caa41612ef50fa5f96be404053d0aad} 
+void {\bfseries print\+Citizen\+Summary} ()
+\begin{DoxyCompactList}\small\item\em Print a summary for citizens. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_government_a839ed0e9ef2130c9511e3a422a7415fc}{population\+Satisfaction\+Rate}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the population satisfaction rate. \end{DoxyCompactList}\item 
+vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_citizen}{Citizen}} $>$ $>$ \mbox{\hyperlink{class_government_aff0ca88bc99e3a2f25c26231d3dacaa5}{get\+People}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the current population of the city. \end{DoxyCompactList}\item 
+vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$ $>$ \mbox{\hyperlink{class_government_a4851e90ff3bdb942ecf6cd8144fd669d}{get\+Infrastructure}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the current infrastructure of the city. \end{DoxyCompactList}\item 
+\Hypertarget{class_government_ad4b00db6938ff1ed64b22e3326e0b19c}\label{class_government_ad4b00db6938ff1ed64b22e3326e0b19c} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Government} ()
+\begin{DoxyCompactList}\small\item\em Default destructor for the \doxylink{class_government}{Government} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_government_abc318cb7da45eb79857e01b07781fd68}{attach}} (\mbox{\hyperlink{class_city_growth_observer}{City\+Growth\+Observer}} \texorpdfstring{$\ast$}{*}ob)
+\begin{DoxyCompactList}\small\item\em Attaches an observer to the city growth notifications. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_government_a0a914b2cb99994fceb92a5938df608dc}{detach}} (\mbox{\hyperlink{class_city_growth_observer}{City\+Growth\+Observer}} \texorpdfstring{$\ast$}{*}ob)
+\begin{DoxyCompactList}\small\item\em Detaches an observer from the city growth notifications. \end{DoxyCompactList}\item 
+\Hypertarget{class_government_a05816b4132101580e30789d1b59657e9}\label{class_government_a05816b4132101580e30789d1b59657e9} 
+void {\bfseries notify\+Observers} ()
+\begin{DoxyCompactList}\small\item\em Notifies all observers about changes in the city growth. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_government_a649ed9c623bb0ef4536ab9e72f99f443}{set\+Strategy}} (\mbox{\hyperlink{class_categorization_strategy}{Categorization\+Strategy}} \texorpdfstring{$\ast$}{*}str)
+\begin{DoxyCompactList}\small\item\em Sets the categorization strategy for the government. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_government_a161d861505f44a123a244609a4e6b2c0}{categorize}} ()
+\begin{DoxyCompactList}\small\item\em Categorizes the city based on the current strategy. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_government_af8610fa7b1315f5b212736bc19b0d8c5}{get\+Population\+Num}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the current population number. \end{DoxyCompactList}\item 
+\Hypertarget{class_government_ab6d580427ff574d8a489fc1ce3a4968e}\label{class_government_ab6d580427ff574d8a489fc1ce3a4968e} 
+int {\bfseries get\+Numberof\+Unemployed\+Citizens} ()
+\begin{DoxyCompactList}\small\item\em function to calculate unemployment rate \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_government_ae049f3b356400ad333161d1c813a9192}{get\+Number\+Of\+Employed\+Citizens}} ()
+\begin{DoxyCompactList}\small\item\em helper function which is used for employment rate. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_government_a2be40db91795c8a76af02551e966b7ae}{get\+Employment\+Rate}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the current employment rate. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_government_ace6fe3e6f2a223fdcb870dd94fbbc2d2}{Residential\+Capacity}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the total residential capacity of all buildings. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_government_a124c832ceb9b04682653cb81d7c66afe}{set\+City\+Budget}} (int budget)
+\begin{DoxyCompactList}\small\item\em Sets the city budget. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_government_a5d39f955eb2e1d6e1556f1d9eb31354a}{get\+City\+Budget}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the current city budget. \end{DoxyCompactList}\item 
+\Hypertarget{class_government_a985e2d2d98b3baf9b151ae06b5e518ce}\label{class_government_a985e2d2d98b3baf9b151ae06b5e518ce} 
+void {\bfseries distribute\+Utilities} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_government_abc318cb7da45eb79857e01b07781fd68}\index{Government@{Government}!attach@{attach}}
+\index{attach@{attach}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{attach()}{attach()}}
+{\footnotesize\ttfamily \label{class_government_abc318cb7da45eb79857e01b07781fd68} 
+void Government\+::attach (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_city_growth_observer}{City\+Growth\+Observer}} \texorpdfstring{$\ast$}{*}}]{ob}{}\end{DoxyParamCaption})}
+
+
+
+Attaches an observer to the city growth notifications. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ob} & A pointer to the observer to be added. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_government_a161d861505f44a123a244609a4e6b2c0}\index{Government@{Government}!categorize@{categorize}}
+\index{categorize@{categorize}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{categorize()}{categorize()}}
+{\footnotesize\ttfamily \label{class_government_a161d861505f44a123a244609a4e6b2c0} 
+std\+::string Government\+::categorize (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Categorizes the city based on the current strategy. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the category. 
+\end{DoxyReturn}
+\Hypertarget{class_government_a0a914b2cb99994fceb92a5938df608dc}\index{Government@{Government}!detach@{detach}}
+\index{detach@{detach}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{detach()}{detach()}}
+{\footnotesize\ttfamily \label{class_government_a0a914b2cb99994fceb92a5938df608dc} 
+void Government\+::detach (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_city_growth_observer}{City\+Growth\+Observer}} \texorpdfstring{$\ast$}{*}}]{ob}{}\end{DoxyParamCaption})}
+
+
+
+Detaches an observer from the city growth notifications. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ob} & A pointer to the observer to be removed. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_government_a5d39f955eb2e1d6e1556f1d9eb31354a}\index{Government@{Government}!getCityBudget@{getCityBudget}}
+\index{getCityBudget@{getCityBudget}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{getCityBudget()}{getCityBudget()}}
+{\footnotesize\ttfamily \label{class_government_a5d39f955eb2e1d6e1556f1d9eb31354a} 
+int Government\+::get\+City\+Budget (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the current city budget. 
+
+\begin{DoxyReturn}{Returns}
+The city budget as an integer. 
+\end{DoxyReturn}
+\Hypertarget{class_government_a2be40db91795c8a76af02551e966b7ae}\index{Government@{Government}!getEmploymentRate@{getEmploymentRate}}
+\index{getEmploymentRate@{getEmploymentRate}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{getEmploymentRate()}{getEmploymentRate()}}
+{\footnotesize\ttfamily \label{class_government_a2be40db91795c8a76af02551e966b7ae} 
+double Government\+::get\+Employment\+Rate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the current employment rate. 
+
+\begin{DoxyReturn}{Returns}
+The employment rate as a double. 
+\end{DoxyReturn}
+\Hypertarget{class_government_a4851e90ff3bdb942ecf6cd8144fd669d}\index{Government@{Government}!getInfrastructure@{getInfrastructure}}
+\index{getInfrastructure@{getInfrastructure}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{getInfrastructure()}{getInfrastructure()}}
+{\footnotesize\ttfamily \label{class_government_a4851e90ff3bdb942ecf6cd8144fd669d} 
+vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$ $>$ Government\+::get\+Infrastructure (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the current infrastructure of the city. 
+
+\begin{DoxyReturn}{Returns}
+A vector of shared pointers to buildings. 
+\end{DoxyReturn}
+\Hypertarget{class_government_ae049f3b356400ad333161d1c813a9192}\index{Government@{Government}!getNumberOfEmployedCitizens@{getNumberOfEmployedCitizens}}
+\index{getNumberOfEmployedCitizens@{getNumberOfEmployedCitizens}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{getNumberOfEmployedCitizens()}{getNumberOfEmployedCitizens()}}
+{\footnotesize\ttfamily \label{class_government_ae049f3b356400ad333161d1c813a9192} 
+int Government\+::get\+Number\+Of\+Employed\+Citizens (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+helper function which is used for employment rate. 
+
+\begin{DoxyReturn}{Returns}
+number as a int. 
+\end{DoxyReturn}
+\Hypertarget{class_government_aff0ca88bc99e3a2f25c26231d3dacaa5}\index{Government@{Government}!getPeople@{getPeople}}
+\index{getPeople@{getPeople}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{getPeople()}{getPeople()}}
+{\footnotesize\ttfamily \label{class_government_aff0ca88bc99e3a2f25c26231d3dacaa5} 
+vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_citizen}{Citizen}} $>$ $>$ Government\+::get\+People (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the current population of the city. 
+
+\begin{DoxyReturn}{Returns}
+A vector of shared pointers to citizens. 
+\end{DoxyReturn}
+\Hypertarget{class_government_af8610fa7b1315f5b212736bc19b0d8c5}\index{Government@{Government}!getPopulationNum@{getPopulationNum}}
+\index{getPopulationNum@{getPopulationNum}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{getPopulationNum()}{getPopulationNum()}}
+{\footnotesize\ttfamily \label{class_government_af8610fa7b1315f5b212736bc19b0d8c5} 
+int Government\+::get\+Population\+Num (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the current population number. 
+
+\begin{DoxyReturn}{Returns}
+The population number as an integer. 
+\end{DoxyReturn}
+\Hypertarget{class_government_a1b8cb2786a87fb6b525bf967bfa9f995}\index{Government@{Government}!populationDecline@{populationDecline}}
+\index{populationDecline@{populationDecline}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{populationDecline()}{populationDecline()}}
+{\footnotesize\ttfamily \label{class_government_a1b8cb2786a87fb6b525bf967bfa9f995} 
+void Government\+::population\+Decline (\begin{DoxyParamCaption}\item[{int}]{i}{}\end{DoxyParamCaption})}
+
+
+
+Removes a citizen from the population based on their ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & The ID of the citizen to be removed. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_government_a730066cdbf27613977f0c310871699fb}\index{Government@{Government}!populationGrowth@{populationGrowth}}
+\index{populationGrowth@{populationGrowth}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{populationGrowth()}{populationGrowth()}}
+{\footnotesize\ttfamily \label{class_government_a730066cdbf27613977f0c310871699fb} 
+void Government\+::population\+Growth (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_citizen}{Citizen}} $>$}]{citizen}{}\end{DoxyParamCaption})}
+
+
+
+Adds a citizen to the population and assigns them a home. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em citizen} & A shared pointer to the citizen being added. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_government_a839ed0e9ef2130c9511e3a422a7415fc}\index{Government@{Government}!populationSatisfactionRate@{populationSatisfactionRate}}
+\index{populationSatisfactionRate@{populationSatisfactionRate}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{populationSatisfactionRate()}{populationSatisfactionRate()}}
+{\footnotesize\ttfamily \label{class_government_a839ed0e9ef2130c9511e3a422a7415fc} 
+double Government\+::population\+Satisfaction\+Rate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Calculates the population satisfaction rate. 
+
+\begin{DoxyReturn}{Returns}
+The satisfaction rate as a double between 0 and 1. 
+\end{DoxyReturn}
+\Hypertarget{class_government_ace6fe3e6f2a223fdcb870dd94fbbc2d2}\index{Government@{Government}!ResidentialCapacity@{ResidentialCapacity}}
+\index{ResidentialCapacity@{ResidentialCapacity}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{ResidentialCapacity()}{ResidentialCapacity()}}
+{\footnotesize\ttfamily \label{class_government_ace6fe3e6f2a223fdcb870dd94fbbc2d2} 
+int Government\+::\+Residential\+Capacity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Calculates the total residential capacity of all buildings. 
+
+\begin{DoxyReturn}{Returns}
+The total residential capacity as an integer. 
+\end{DoxyReturn}
+\Hypertarget{class_government_a124c832ceb9b04682653cb81d7c66afe}\index{Government@{Government}!setCityBudget@{setCityBudget}}
+\index{setCityBudget@{setCityBudget}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{setCityBudget()}{setCityBudget()}}
+{\footnotesize\ttfamily \label{class_government_a124c832ceb9b04682653cb81d7c66afe} 
+void Government\+::set\+City\+Budget (\begin{DoxyParamCaption}\item[{int}]{city\+Budget}{}\end{DoxyParamCaption})}
+
+
+
+Sets the city budget. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em city\+Budget} & The budget to be set. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_government_a649ed9c623bb0ef4536ab9e72f99f443}\index{Government@{Government}!setStrategy@{setStrategy}}
+\index{setStrategy@{setStrategy}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{setStrategy()}{setStrategy()}}
+{\footnotesize\ttfamily \label{class_government_a649ed9c623bb0ef4536ab9e72f99f443} 
+void Government\+::set\+Strategy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_categorization_strategy}{Categorization\+Strategy}} \texorpdfstring{$\ast$}{*}}]{str}{}\end{DoxyParamCaption})}
+
+
+
+Sets the categorization strategy for the government. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & A pointer to the categorization strategy to be set. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Government.\+h\item 
+Government.\+cpp\end{DoxyCompactItemize}

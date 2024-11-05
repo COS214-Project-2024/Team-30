@@ -1,0 +1,129 @@
+\doxysection{Water Class Reference}
+\hypertarget{class_water}{}\label{class_water}\index{Water@{Water}}
+
+
+Represents a water resource with a limited capacity.  
+
+
+
+
+{\ttfamily \#include $<$Water.\+h$>$}
+
+Inheritance diagram for Water\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_water}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_water_af3820562b24df59ac7cd86b12789242e}{Water}} (int capacity)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_water}{Water} object with a specified capacity. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_water_a4ec64ed40cf8bbf9fdf1e4be95841c65}{get\+Capacity}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the current capacity of the water resource. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_water_a74c115bcb87b6df9a2d4be7433fd0e3e}{refill}} (int amount) override
+\begin{DoxyCompactList}\small\item\em Refills the water resource by a specified amount. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_water_a5ccf140c1d5921b656db0777d95fb76e}{use}} (int amount) override
+\begin{DoxyCompactList}\small\item\em Uses a specified amount of water from the resource. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_resource}{Resource}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Resource} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \doxylink{class_resource}{Resource} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_resource}{Resource}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries capacity}
+\begin{DoxyCompactList}\small\item\em Capacity of the resource. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a water resource with a limited capacity. 
+
+The \doxylink{class_water}{Water} class extends the \doxylink{class_resource}{Resource} class, providing functionality for managing a water resource with refill and usage capabilities. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_water_af3820562b24df59ac7cd86b12789242e}\index{Water@{Water}!Water@{Water}}
+\index{Water@{Water}!Water@{Water}}
+\doxysubsubsection{\texorpdfstring{Water()}{Water()}}
+{\footnotesize\ttfamily \label{class_water_af3820562b24df59ac7cd86b12789242e} 
+Water\+::\+Water (\begin{DoxyParamCaption}\item[{int}]{capacity}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_water}{Water} object with a specified capacity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em capacity} & Initial capacity of the water resource. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_water_a4ec64ed40cf8bbf9fdf1e4be95841c65}\index{Water@{Water}!getCapacity@{getCapacity}}
+\index{getCapacity@{getCapacity}!Water@{Water}}
+\doxysubsubsection{\texorpdfstring{getCapacity()}{getCapacity()}}
+{\footnotesize\ttfamily \label{class_water_a4ec64ed40cf8bbf9fdf1e4be95841c65} 
+int Water\+::get\+Capacity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the current capacity of the water resource. 
+
+\begin{DoxyReturn}{Returns}
+The current capacity as an integer. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_resource_aa54b7fb57467a4ad6b3eef325253ff58}{Resource}}.
+
+\Hypertarget{class_water_a74c115bcb87b6df9a2d4be7433fd0e3e}\index{Water@{Water}!refill@{refill}}
+\index{refill@{refill}!Water@{Water}}
+\doxysubsubsection{\texorpdfstring{refill()}{refill()}}
+{\footnotesize\ttfamily \label{class_water_a74c115bcb87b6df9a2d4be7433fd0e3e} 
+void Water\+::refill (\begin{DoxyParamCaption}\item[{int}]{amount}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Refills the water resource by a specified amount. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & Amount of water to add to the resource. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_resource_a494c92291836c994eb228cb137136af9}{Resource}}.
+
+\Hypertarget{class_water_a5ccf140c1d5921b656db0777d95fb76e}\index{Water@{Water}!use@{use}}
+\index{use@{use}!Water@{Water}}
+\doxysubsubsection{\texorpdfstring{use()}{use()}}
+{\footnotesize\ttfamily \label{class_water_a5ccf140c1d5921b656db0777d95fb76e} 
+int Water\+::use (\begin{DoxyParamCaption}\item[{int}]{amount}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Uses a specified amount of water from the resource. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & Amount of water to use from the resource. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The actual amount of water used. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_resource_af21f50c27d3e59243933f7c96e475d7a}{Resource}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Water.\+h\item 
+Water.\+cpp\end{DoxyCompactItemize}

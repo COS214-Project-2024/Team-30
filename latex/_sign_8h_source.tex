@@ -1,0 +1,36 @@
+\doxysection{Sign.\+h}
+\hypertarget{_sign_8h_source}{}\label{_sign_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SIGN\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SIGN\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_sign}{Sign}}\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{string}\ message;\ \textcolor{comment}{//message\ displayed}}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{string}\ type;\ \ \ \ \textcolor{comment}{//\ The\ type\ of\ the\ sign.}}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_sign_a4834d84ed367a89792446baa47034ddb}{numSigns}};\ \textcolor{comment}{//\ Static\ variable\ to\ count\ the\ number\ of\ signs\ created.}}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_sign_ae0d1d066074ef4bb3c648db7de53616b}{ID}};\ }
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_sign_a54917551622fad174ee26185bff9d300}{Sign}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ message);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_sign_ac414ada2884e4a9cd40f8ed38a1aab4e}{\string~Sign}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_sign_a3a568f1b4ce80d02227f11b56976568a}{getID}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_sign_a6f39933f7715938f1d94102fea1b9f3c}{getMessage}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_sign_aaea8ae0522336ee2db5c63a6c164e332}{getType}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_sign_a42b57ece0db9682ba590223f08b73615}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_sign}{Sign}}\&\ other)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>ID\ ==\ other.\mbox{\hyperlink{class_sign_ae0d1d066074ef4bb3c648db7de53616b}{ID}};}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SIGN\_H}}
+
+\end{DoxyCode}

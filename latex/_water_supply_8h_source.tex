@@ -1,0 +1,43 @@
+\doxysection{Water\+Supply.\+h}
+\hypertarget{_water_supply_8h_source}{}\label{_water_supply_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ WATERSUPPLY\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ WATERSUPPLY\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Building.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Water.h"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_water_supply}{WaterSupply}}\ \ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_water_supply_a490ba135c56c73f71fe420ddf7b24792}{WaterSupply}}(shared\_ptr<Water>\ w);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_water_supply_a004e5d42e85df6a8bdcc6747f4d0ce81}{setWorking}}(\textcolor{keywordtype}{bool}\ w);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_water_supply_a345bb2c3c04b90e7e0edfb35a9a44737}{getWorking}}();}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_water_supply_a725b065752f6a14150888ad93788fbef}{setWater}}(\textcolor{keywordtype}{int}\ w);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_water_supply_acf04c68ceb8afa044a43e959a4d64985}{getWater}}();}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_water_supply_a1919e957557ecb6a4c30725c9bf9c447}{distributeWater}}(shared\_ptr<Building>\ b);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_water_supply_a083deeccff1bba3052ddab432ab19f14}{repair}}();}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_water_supply_a385f22b9ad6d73ac296b29cb3f3e36ce}{notifyCitizens}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ message);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{bool}\ working;\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{int}\ waterToDistribute;\ }
+\DoxyCodeLine{00072\ \ \ \ \ shared\_ptr<Water>\ waterResource;\ }
+\DoxyCodeLine{00073\ \};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ WATERSUPPLY\_H}}
+
+\end{DoxyCode}

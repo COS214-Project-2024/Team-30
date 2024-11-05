@@ -1,0 +1,72 @@
+\doxysection{Citizen.\+h}
+\hypertarget{_citizen_8h_source}{}\label{_citizen_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CITIZEN\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CITIZEN\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}TaxBracket.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}EmploymentStatus.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}EmotionalState.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Satisfied.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Unsatisfied.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}OfficeJob.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}IndustrialJob.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}Unemployed.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}LowestTaxBracket.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}MiddleTaxBracket.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}HighestTaxBracket.h"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <random>}}
+\DoxyCodeLine{00020\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_building}{Building}};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_citizen}{Citizen}}\ :\ \textcolor{keyword}{public}\ std::enable\_shared\_from\_this<Citizen>}
+\DoxyCodeLine{00025\ \{}
+\DoxyCodeLine{00026\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{int}\ id;}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{int}\ income;}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{int}\ accountBalance;}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{int}\ happinessMeter;}
+\DoxyCodeLine{00031\ \ \ \ \ unique\_ptr<TaxBracket>\ taxBracket;}
+\DoxyCodeLine{00032\ \ \ \ \ unique\_ptr<EmploymentStatus>\ employmentStatus;}
+\DoxyCodeLine{00033\ \ \ \ \ unique\_ptr<EmotionalState>\ emotionalState;}
+\DoxyCodeLine{00034\ \ \ \ \ shared\_ptr<Building>\ home;}
+\DoxyCodeLine{00035\ \ \ \ \ shared\_ptr<Building>\ currentBuilding;}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ nextID;}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{class_citizen_a3951355c9f2d7260debedd29b163dbe6}{Citizen}}();}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_citizen_a232da22ce465b355dc6a6eb0d08ce275}{payTax}}();}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_citizen_a8863ba237be1ed8f661a05e3e9f5b1c6}{getEmploymentStatus}}();}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_citizen_a1c1f3181ca55c0e29149e9608698699e}{payTaxes}}();}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_citizen_a4522f875f5e6f26659bb3a8add95a224}{getPaid}}();}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_citizen_ac94050ccb3911c6bfe6da17caa232a58}{getAccountBalance}}();}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_citizen_ad4f2f83da52c0b4c54847bf7dbba827b}{assignToBuilding}}(shared\_ptr<Building>\ building);}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_citizen_a67a477c44799f50705647c629ceded24}{setHome}}(std::shared\_ptr<Building>\ home);}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_citizen_a18bf12ed3cb529a1424cae4d66e7c40d}{reactToEmergency}}(\textcolor{keywordtype}{int}\ damage);}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_citizen_acc1356cca2cb01bf8f6a239d8fd05787}{getHappinessMeter}}();}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_citizen_a47f5f28cd9dbecc1592a349014198044}{getID}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_citizen_a31d0cbc439f4f0f3c7937ed768fc7003}{getIncome}}();}
+\DoxyCodeLine{00139\ \ \ \ \ shared\_ptr<Building>\ \mbox{\hyperlink{class_citizen_a48d5698a385ae1c44877c64169f93f50}{getHome}}();}
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_citizen_af94378805ef0f3af4cca2df6b2bbb2a6}{getEmotionalState}}();}
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_citizen_a93ca70b42f762dc4136d6e10caac79d0}{setEmotionalState}}(unique\_ptr<EmotionalState>\ emotionalState);}
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_citizen_ad01beeca4ec51f63065933e868289669}{setEmploymentStatus}}(std::unique\_ptr<EmploymentStatus>\ status);}
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_citizen_a2ea7fa16af49e15f39ad5e1806f93c35}{printDetails}}();\ \textcolor{comment}{//\ helper\ to\ see\ that\ constructor\ works\ as\ expected}}
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_citizen_aed6c73dc3b7ef8be473891fc998bd21b}{respondToTax}}();}
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_citizen_a797e89a15e46b7bacc56d398be555b6a}{respondToPayment}}();}
+\DoxyCodeLine{00197\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_citizen_aaefd4bfda57b4721aa07e887726ed86e}{reactToNotGettingHired}}();}
+\DoxyCodeLine{00208\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_citizen_a8fbabf23a49051a6bc51cef2cb59521d}{respondToJobChange}}(\textcolor{keywordtype}{bool}\ gainedJob);}
+\DoxyCodeLine{00216\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_citizen_a240a2f8162d2eba1b0bff922bdceb5b8}{respondToIncreasedInfrastructure}}();}
+\DoxyCodeLine{00226\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_citizen_a95d5e425cc155c1d36fdc1502df559ee}{getHired}}(std::unique\_ptr<EmploymentStatus>\ newJob);}
+\DoxyCodeLine{00234\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_citizen_aab8333e5a32b9297fb36c7ced87107e6}{getFired}}();}
+\DoxyCodeLine{00242\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_citizen_a934142a877b92adc3a2f32b9c764f5f3}{setHappinessMeter}}(\textcolor{keywordtype}{int}\ happinessMeter);}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00244\ \ \ \ \ \textcolor{keywordtype}{void}\ reactToUtilities(\textcolor{keywordtype}{bool}\ utilitiesActive);}
+\DoxyCodeLine{00245\ \};}
+\DoxyCodeLine{00246\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

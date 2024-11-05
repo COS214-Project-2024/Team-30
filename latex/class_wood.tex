@@ -1,0 +1,129 @@
+\doxysection{Wood Class Reference}
+\hypertarget{class_wood}{}\label{class_wood}\index{Wood@{Wood}}
+
+
+Represents a wood resource with a limited capacity.  
+
+
+
+
+{\ttfamily \#include $<$Wood.\+h$>$}
+
+Inheritance diagram for Wood\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_wood}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_wood_a823274a975c3ae012ae676236330a699}{Wood}} (int capacity)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_wood}{Wood} object with a specified capacity. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_wood_a8c11afd038a57e9ebb2a4f9d88737337}{get\+Capacity}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the current capacity of the wood resource. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_wood_a49eabcbe91e3e392769603832b7bdfb0}{refill}} (int amount) override
+\begin{DoxyCompactList}\small\item\em Refills the wood resource by a specified amount. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_wood_a77d2ff6af4da96c53c5645c84b8f91f8}{use}} (int amount) override
+\begin{DoxyCompactList}\small\item\em Uses a specified amount of wood from the resource. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_resource}{Resource}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Resource} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \doxylink{class_resource}{Resource} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_resource}{Resource}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries capacity}
+\begin{DoxyCompactList}\small\item\em Capacity of the resource. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a wood resource with a limited capacity. 
+
+The \doxylink{class_wood}{Wood} class extends the \doxylink{class_resource}{Resource} class, providing functionality for managing a wood resource with refill and usage capabilities. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_wood_a823274a975c3ae012ae676236330a699}\index{Wood@{Wood}!Wood@{Wood}}
+\index{Wood@{Wood}!Wood@{Wood}}
+\doxysubsubsection{\texorpdfstring{Wood()}{Wood()}}
+{\footnotesize\ttfamily \label{class_wood_a823274a975c3ae012ae676236330a699} 
+Wood\+::\+Wood (\begin{DoxyParamCaption}\item[{int}]{capacity}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_wood}{Wood} object with a specified capacity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em capacity} & Initial capacity of the wood resource. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_wood_a8c11afd038a57e9ebb2a4f9d88737337}\index{Wood@{Wood}!getCapacity@{getCapacity}}
+\index{getCapacity@{getCapacity}!Wood@{Wood}}
+\doxysubsubsection{\texorpdfstring{getCapacity()}{getCapacity()}}
+{\footnotesize\ttfamily \label{class_wood_a8c11afd038a57e9ebb2a4f9d88737337} 
+int Wood\+::get\+Capacity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the current capacity of the wood resource. 
+
+\begin{DoxyReturn}{Returns}
+The current capacity as an integer. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_resource_aa54b7fb57467a4ad6b3eef325253ff58}{Resource}}.
+
+\Hypertarget{class_wood_a49eabcbe91e3e392769603832b7bdfb0}\index{Wood@{Wood}!refill@{refill}}
+\index{refill@{refill}!Wood@{Wood}}
+\doxysubsubsection{\texorpdfstring{refill()}{refill()}}
+{\footnotesize\ttfamily \label{class_wood_a49eabcbe91e3e392769603832b7bdfb0} 
+void Wood\+::refill (\begin{DoxyParamCaption}\item[{int}]{amount}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Refills the wood resource by a specified amount. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & Amount of wood to add to the resource. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_resource_a494c92291836c994eb228cb137136af9}{Resource}}.
+
+\Hypertarget{class_wood_a77d2ff6af4da96c53c5645c84b8f91f8}\index{Wood@{Wood}!use@{use}}
+\index{use@{use}!Wood@{Wood}}
+\doxysubsubsection{\texorpdfstring{use()}{use()}}
+{\footnotesize\ttfamily \label{class_wood_a77d2ff6af4da96c53c5645c84b8f91f8} 
+int Wood\+::use (\begin{DoxyParamCaption}\item[{int}]{amount}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Uses a specified amount of wood from the resource. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & Amount of wood to use from the resource. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The actual amount of wood used. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_resource_af21f50c27d3e59243933f7c96e475d7a}{Resource}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Wood.\+h\item 
+Wood.\+cpp\end{DoxyCompactItemize}

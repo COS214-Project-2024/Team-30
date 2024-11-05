@@ -1,0 +1,60 @@
+\doxysection{Commercial\+Factory Class Reference}
+\hypertarget{class_commercial_factory}{}\label{class_commercial_factory}\index{CommercialFactory@{CommercialFactory}}
+
+
+Factory class for creating \doxylink{class_commercial}{Commercial} \doxylink{class_building}{Building} objects.  
+
+
+
+
+{\ttfamily \#include $<$Commercial\+Factory.\+h$>$}
+
+Inheritance diagram for Commercial\+Factory\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_commercial_factory}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+unique\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$ \mbox{\hyperlink{class_commercial_factory_a9663b502e7a3c05726b9e2409a9152d3}{create\+Building}} () override
+\begin{DoxyCompactList}\small\item\em Creates a new \doxylink{class_commercial}{Commercial} \doxylink{class_building}{Building} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_building_factory}{Building\+Factory}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Building\+Factory} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \doxylink{class_building_factory}{Building\+Factory}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_building_factory}{Building\+Factory}}}
+
+
+\doxysubsection{Detailed Description}
+Factory class for creating \doxylink{class_commercial}{Commercial} \doxylink{class_building}{Building} objects. 
+
+The \doxylink{class_commercial_factory}{Commercial\+Factory} class implements the \doxylink{class_building_factory}{Building\+Factory} interface to create instances of commercial buildings. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_commercial_factory_a9663b502e7a3c05726b9e2409a9152d3}\index{CommercialFactory@{CommercialFactory}!createBuilding@{createBuilding}}
+\index{createBuilding@{createBuilding}!CommercialFactory@{CommercialFactory}}
+\doxysubsubsection{\texorpdfstring{createBuilding()}{createBuilding()}}
+{\footnotesize\ttfamily \label{class_commercial_factory_a9663b502e7a3c05726b9e2409a9152d3} 
+unique\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$ Commercial\+Factory\+::create\+Building (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Creates a new \doxylink{class_commercial}{Commercial} \doxylink{class_building}{Building} object. 
+
+Overrides the create\+Building method to create an instance of a commercial building. \begin{DoxyReturn}{Returns}
+A unique pointer to a newly created commercial \doxylink{class_building}{Building} object. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_building_factory_a9cc16978d58c7aab0f047d4eb80e4d30}{Building\+Factory}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Commercial\+Factory.\+h\item 
+Commercial\+Factory.\+cpp\end{DoxyCompactItemize}

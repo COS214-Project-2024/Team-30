@@ -1,0 +1,90 @@
+\doxysection{Government.\+h}
+\hypertarget{_government_8h_source}{}\label{_government_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ GOVERNMENT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ GOVERNMENT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <iomanip>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}CityGrowthObserver.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}CategorizationStrategy.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}Citizen.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}Building.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}BuildingFactory.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}ResidentialFactory.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}CommercialFactory.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}IndustrialFactory.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}CityGrowthObserver.h"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}CategorizationStrategy.h"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}Citizen.h"{}}}
+\DoxyCodeLine{00019\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_city_growth_observer}{CityGrowthObserver}};}
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_categorization_strategy}{CategorizationStrategy}};}
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_government}{Government}}\{}
+\DoxyCodeLine{00024\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00025\ \textcolor{comment}{//lists}}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{//vector<std::shared\_ptr<CityGrowthObserver>>\ observers;}}
+\DoxyCodeLine{00027\ \ \ \ \ vector<std::shared\_ptr<Citizen>>\ population;}
+\DoxyCodeLine{00028\ \ \ \ \ vector<std::shared\_ptr<Building>>\ infrastructure;}
+\DoxyCodeLine{00029\ \ \ \ \ std::vector<CityGrowthObserver*>\ observers;}
+\DoxyCodeLine{00030\ \ \ \ \ shared\_ptr<Coal>\ coal;}
+\DoxyCodeLine{00031\ \ \ \ \ shared\_ptr<Water>\ water;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{comment}{//objects\ }}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{class_residential_factory}{ResidentialFactory}}\ residentialFactory;}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_commercial_factory}{CommercialFactory}}\ commercialFactory;}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{class_industrial_factory}{IndustrialFactory}}\ industrialFactory;}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{class_categorization_strategy}{CategorizationStrategy}}*\ strategy;}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{//unique\_ptr<CategorizationStrategy>\ strategy;}}
+\DoxyCodeLine{00039\ \textcolor{comment}{//data\ \ \ \ }}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{string}\ cityName;}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{double}\ employmentRate;}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{int}\ citybudget;}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{int}\ populationNum;}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_government}{Government}}(\textcolor{keywordtype}{string});}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_government_a730066cdbf27613977f0c310871699fb}{populationGrowth}}(std::shared\_ptr<Citizen>\ );}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_government_a5ea36342a72fa0cba37587d7bb0bf922}{calculateEmploymentRate}}();}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_government_abbba1efb27c10255f9e32b0406322dd7}{increaseInfurstructure}}();}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_government_a1b8cb2786a87fb6b525bf967bfa9f995}{populationDecline}}(\textcolor{keywordtype}{int}\ i);}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_government_a9d433ba34b9e0739dcb211c41f38c8ec}{collectTaxes}}();}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_government_ac18e593951d2b29fda08c606e529f3cf}{printInfo}}();}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_government_a84fbe6ef38dff3fe5ef154588c7f02c0}{payDay}}();}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_government_a3348f873d9fb890aef70517029350b6e}{jobOpportunities}}();}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_government_a8caa41612ef50fa5f96be404053d0aad}{printCitizenSummary}}();}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_government_a839ed0e9ef2130c9511e3a422a7415fc}{populationSatisfactionRate}}();}
+\DoxyCodeLine{00057\ \ \ \ \ vector<std::shared\_ptr<Citizen>>\ \mbox{\hyperlink{class_government_aff0ca88bc99e3a2f25c26231d3dacaa5}{getPeople}}\ ();}
+\DoxyCodeLine{00058\ \ \ \ \ vector<std::shared\_ptr<Building>>\ \mbox{\hyperlink{class_government_a4851e90ff3bdb942ecf6cd8144fd669d}{getInfrastructure}}();}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{class_government_ad4b00db6938ff1ed64b22e3326e0b19c}{\string~Government}}();}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{comment}{//citygrowth\ observer}}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_government_abc318cb7da45eb79857e01b07781fd68}{attach}}(\mbox{\hyperlink{class_city_growth_observer}{CityGrowthObserver}}*\ ob);}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_government_a0a914b2cb99994fceb92a5938df608dc}{detach}}(\mbox{\hyperlink{class_city_growth_observer}{CityGrowthObserver}}*\ ob);}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_government_a05816b4132101580e30789d1b59657e9}{notifyObservers}}();}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_government_a649ed9c623bb0ef4536ab9e72f99f443}{setStrategy}}(\mbox{\hyperlink{class_categorization_strategy}{CategorizationStrategy}}*\ str);}
+\DoxyCodeLine{00068\ \ \ \ \ std::string\ \mbox{\hyperlink{class_government_a161d861505f44a123a244609a4e6b2c0}{categorize}}();}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_government_af8610fa7b1315f5b212736bc19b0d8c5}{getPopulationNum}}();}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_government_ab6d580427ff574d8a489fc1ce3a4968e}{getNumberofUnemployedCitizens}}();}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_government_ae049f3b356400ad333161d1c813a9192}{getNumberOfEmployedCitizens}}();}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_government_a2be40db91795c8a76af02551e966b7ae}{getEmploymentRate}}();}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_government_ace6fe3e6f2a223fdcb870dd94fbbc2d2}{ResidentialCapacity}}();}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_government_a124c832ceb9b04682653cb81d7c66afe}{setCityBudget}}(\textcolor{keywordtype}{int}\ budget);}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_government_a5d39f955eb2e1d6e1556f1d9eb31354a}{getCityBudget}}();}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ distributeUtilities();}
+\DoxyCodeLine{00083\ \};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,64 @@
+\doxysection{traffic\+Command Class Reference}
+\hypertarget{classtraffic_command}{}\label{classtraffic_command}\index{trafficCommand@{trafficCommand}}
+
+
+Abstract base class for traffic commands.  
+
+
+
+
+{\ttfamily \#include $<$Traffic\+Command.\+h$>$}
+
+Inheritance diagram for traffic\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtraffic_command}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classtraffic_command_a2650e58ebd6202b62bcc1a0b0833fb64}{\texorpdfstring{$\sim$}{\string~}traffic\+Command}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \doxylink{classtraffic_command}{traffic\+Command}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classtraffic_command_a0b96986b7f1441076984ccdd43819f6d}{execute}} ()=0
+\begin{DoxyCompactList}\small\item\em Pure virtual method to execute a traffic command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for traffic commands. 
+
+The \doxylink{classtraffic_command}{traffic\+Command} class defines the interface for various traffic commands that can be executed to control traffic lights and manage areas. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtraffic_command_a2650e58ebd6202b62bcc1a0b0833fb64}\index{trafficCommand@{trafficCommand}!````~trafficCommand@{\texorpdfstring{$\sim$}{\string~}trafficCommand}}
+\index{````~trafficCommand@{\texorpdfstring{$\sim$}{\string~}trafficCommand}!trafficCommand@{trafficCommand}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}trafficCommand()}{\string~trafficCommand()}}
+{\footnotesize\ttfamily \label{classtraffic_command_a2650e58ebd6202b62bcc1a0b0833fb64} 
+virtual traffic\+Command\+::\texorpdfstring{$\sim$}{\string~}traffic\+Command (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Virtual destructor for \doxylink{classtraffic_command}{traffic\+Command}. 
+
+Ensures proper cleanup of derived classes. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtraffic_command_a0b96986b7f1441076984ccdd43819f6d}\index{trafficCommand@{trafficCommand}!execute@{execute}}
+\index{execute@{execute}!trafficCommand@{trafficCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{classtraffic_command_a0b96986b7f1441076984ccdd43819f6d} 
+virtual void traffic\+Command\+::execute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual method to execute a traffic command. 
+
+This method must be implemented by derived classes to define specific traffic command behaviors. 
+
+Implemented in \mbox{\hyperlink{class_set_red_lights_command_a5735e3b174290df8b6eb471a1a5c0190}{Set\+Red\+Lights\+Command}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Traffic\+Command.\+h\end{DoxyCompactItemize}

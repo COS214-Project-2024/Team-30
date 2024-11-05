@@ -1,0 +1,75 @@
+\doxysection{Fires Class Reference}
+\hypertarget{class_fires}{}\label{class_fires}\index{Fires@{Fires}}
+Inheritance diagram for Fires\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_fires}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_fires_a9681b5eb55e17a14dfe4714d9f6b9263}{access\+Damage}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$ building\+Type) override
+\begin{DoxyCompactList}\small\item\em Calculates and applies fire damage to a specified building. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_fires_aef9ffc4010926878445248d27ef1ec33}{get\+Type\+Of\+Emergency}} () override
+\begin{DoxyCompactList}\small\item\em Retrieves the type of emergency represented by the \doxylink{class_fires}{Fires} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_emergencies}{Emergencies}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries get\+Damage} ()
+\item 
+void {\bfseries set\+Damage} (int damage)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_emergencies}{Emergencies}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries damage}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_fires_a9681b5eb55e17a14dfe4714d9f6b9263}\index{Fires@{Fires}!accessDamage@{accessDamage}}
+\index{accessDamage@{accessDamage}!Fires@{Fires}}
+\doxysubsubsection{\texorpdfstring{accessDamage()}{accessDamage()}}
+{\footnotesize\ttfamily \label{class_fires_a9681b5eb55e17a14dfe4714d9f6b9263} 
+void Fires\+::access\+Damage (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{class_building}{Building}} $>$}]{building\+Type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Calculates and applies fire damage to a specified building. 
+
+This function simulates a fire by randomly determining its severity (mild, moderate, or severe) and calculating the corresponding damage. It then applies the calculated damage to the specified building and notifies the citizens within that building of the emergency.
+
+
+\begin{DoxyParams}{Parameters}
+{\em building\+Type} & A shared pointer to the \doxylink{class_building}{Building} object that will take damage from the fire. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_emergencies}{Emergencies}}.
+
+\Hypertarget{class_fires_aef9ffc4010926878445248d27ef1ec33}\index{Fires@{Fires}!getTypeOfEmergency@{getTypeOfEmergency}}
+\index{getTypeOfEmergency@{getTypeOfEmergency}!Fires@{Fires}}
+\doxysubsubsection{\texorpdfstring{getTypeOfEmergency()}{getTypeOfEmergency()}}
+{\footnotesize\ttfamily \label{class_fires_aef9ffc4010926878445248d27ef1ec33} 
+string Fires\+::get\+Type\+Of\+Emergency (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retrieves the type of emergency represented by the \doxylink{class_fires}{Fires} class. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string A string indicating the type of emergency, which is "{}\+Fire"{} in this case. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_emergencies}{Emergencies}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Fires.\+h\item 
+Fires.\+cpp\end{DoxyCompactItemize}

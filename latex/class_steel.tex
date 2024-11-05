@@ -1,0 +1,129 @@
+\doxysection{Steel Class Reference}
+\hypertarget{class_steel}{}\label{class_steel}\index{Steel@{Steel}}
+
+
+Represents a steel resource with a limited capacity.  
+
+
+
+
+{\ttfamily \#include $<$Steel.\+h$>$}
+
+Inheritance diagram for Steel\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_steel}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_steel_ad8b87fab26014d074869a770d550c378}{Steel}} (int capacity)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_steel}{Steel} object with a specified capacity. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_steel_ac3ec26666a6fc21c04e99c4de39f5330}{get\+Capacity}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the current capacity of the steel resource. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_steel_a1d925ecc98126044591edcd81c99b855}{refill}} (int amount) override
+\begin{DoxyCompactList}\small\item\em Refills the steel resource by a specified amount. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_steel_a62f6d54970f846f97c06d17091b4b1ff}{use}} (int amount) override
+\begin{DoxyCompactList}\small\item\em Uses a specified amount of steel from the resource. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_resource}{Resource}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Resource} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \doxylink{class_resource}{Resource} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_resource}{Resource}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries capacity}
+\begin{DoxyCompactList}\small\item\em Capacity of the resource. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a steel resource with a limited capacity. 
+
+The \doxylink{class_steel}{Steel} class extends the \doxylink{class_resource}{Resource} class, providing functionality for managing a steel resource with refill and usage capabilities. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_steel_ad8b87fab26014d074869a770d550c378}\index{Steel@{Steel}!Steel@{Steel}}
+\index{Steel@{Steel}!Steel@{Steel}}
+\doxysubsubsection{\texorpdfstring{Steel()}{Steel()}}
+{\footnotesize\ttfamily \label{class_steel_ad8b87fab26014d074869a770d550c378} 
+Steel\+::\+Steel (\begin{DoxyParamCaption}\item[{int}]{capacity}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_steel}{Steel} object with a specified capacity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em capacity} & Initial capacity of the steel resource. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_steel_ac3ec26666a6fc21c04e99c4de39f5330}\index{Steel@{Steel}!getCapacity@{getCapacity}}
+\index{getCapacity@{getCapacity}!Steel@{Steel}}
+\doxysubsubsection{\texorpdfstring{getCapacity()}{getCapacity()}}
+{\footnotesize\ttfamily \label{class_steel_ac3ec26666a6fc21c04e99c4de39f5330} 
+int Steel\+::get\+Capacity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the current capacity of the steel resource. 
+
+\begin{DoxyReturn}{Returns}
+The current capacity as an integer. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_resource_aa54b7fb57467a4ad6b3eef325253ff58}{Resource}}.
+
+\Hypertarget{class_steel_a1d925ecc98126044591edcd81c99b855}\index{Steel@{Steel}!refill@{refill}}
+\index{refill@{refill}!Steel@{Steel}}
+\doxysubsubsection{\texorpdfstring{refill()}{refill()}}
+{\footnotesize\ttfamily \label{class_steel_a1d925ecc98126044591edcd81c99b855} 
+void Steel\+::refill (\begin{DoxyParamCaption}\item[{int}]{amount}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Refills the steel resource by a specified amount. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & Amount of steel to add to the resource. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_resource_a494c92291836c994eb228cb137136af9}{Resource}}.
+
+\Hypertarget{class_steel_a62f6d54970f846f97c06d17091b4b1ff}\index{Steel@{Steel}!use@{use}}
+\index{use@{use}!Steel@{Steel}}
+\doxysubsubsection{\texorpdfstring{use()}{use()}}
+{\footnotesize\ttfamily \label{class_steel_a62f6d54970f846f97c06d17091b4b1ff} 
+int Steel\+::use (\begin{DoxyParamCaption}\item[{int}]{amount}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Uses a specified amount of steel from the resource. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & Amount of steel to use from the resource. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The actual amount of steel used. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_resource_af21f50c27d3e59243933f7c96e475d7a}{Resource}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Steel.\+h\item 
+Steel.\+cpp\end{DoxyCompactItemize}
