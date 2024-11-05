@@ -4,7 +4,7 @@
  * @brief Constructs an Area with a specified name.
  * @param name The name of the area.
  */
-Area::Area(string name) : name(move(name)) {}
+Area::Area(string name) : name(std::move(name)) {}
 
 /**
  * @brief Adds a road to the area.

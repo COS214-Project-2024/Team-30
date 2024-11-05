@@ -58,7 +58,7 @@ SRCS = main.cpp \
        SewageSystem.cpp\
        WaterSupply.cpp\
        WasteManagement.cpp\
-       Utilities.cpp
+       Utilities.cpp\
        Road.cpp\
        Transport.cpp\
        PrivateTransport.cpp\
