@@ -1,15 +1,19 @@
 #ifndef CONCRETE_H
 #define CONCRETE_H
+#include "Resource.h"
 
-#include "ConcreteState.h"
 
-class Concrete
+class Concrete : public Resource
 {
     private: 
-        ConcreteState concreteState; 
+        int capacity;
 
     public: 
-        void request();
+        Concrete(int capacity);
+
+        int getCapacity() const override;
+        void refill(int amount) override;
+        int use(int amount) override;
 
 };
 

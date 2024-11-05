@@ -1,13 +1,21 @@
 #ifndef Steel_H
 #define Steel_H
-#include "SteelState.h"
+#include "Resource.h"
 
-class Steel
+class Resource;
+
+class Steel : public Resource
 {
     private: 
-        SteelState SteelState();
+        int capacity;
+
     public: 
-        void request();
+        Steel(int capacity);
+
+        int getCapacity() const override;
+        void refill(int amount) override;
+        int use(int amount) override;
+
 };
 
 #endif

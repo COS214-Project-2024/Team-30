@@ -1,20 +1,18 @@
-#ifndef WATER_H
-#define WATER_H
+#ifndef COAL_H
+#define COAL_H
 #include "Resource.h"
 
-
-class Water : public Resource
+class Coal : public Resource
 {
     private: 
         int capacity;
 
     public: 
-        Water(int capacity);
+        Coal(int capacity);
 
         int getCapacity() const override;
         void refill(int amount) override;
         int use(int amount) override;
-
 
 };
 

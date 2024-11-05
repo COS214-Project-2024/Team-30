@@ -7,6 +7,7 @@
 #include "Built.h"
 #include "Underconstruction.h"
 #include "Destroyed.h"
+#include "Utilities.h"
 
 // Building::Building(BuildingState *initialState) : currState(nullptr){
 //     this->currState->setState();
@@ -15,6 +16,10 @@ int Building::nextID = 1; // or 0, depending on your starting point for IDs
 
 Building::Building() : id(nextID++)
 {
+    water = 0;
+    power = 0;
+    sewerage = 25;
+    waste = 50;
 }
 
 // sets state of building to underconstruction
@@ -85,10 +90,6 @@ BuildingState *Building::getState()
 // }
 
 void Building::update()
-{
-}
-
-void Building::recieveUtilities()
 {
 }
 
@@ -202,7 +203,6 @@ void Building::setUtilities()
     waste = 100;
 }
 
-
 int Building::getWater()
 {
     return water;
@@ -238,4 +238,55 @@ void Building::setSewerage(int sewerage)
 void Building::setWaste(int waste)
 {
     this->waste = waste;
+}
+
+void Building::receiveWater(int amount)
+{
+    if (amount > 0)
+    {
+        water += amount;
+        cout << "Building received " << amount << " units of water. Total water: " << water << endl;
+    }
+    else
+    {
+        cout << "Invalid water amount. No water received." << endl;
+    }
+}
+void Building::receiveElectricity(int amount)
+{
+    if (amount > 0)
+    {
+        // Assuming there's a member variable to track the building's electricity supply
+        power += amount;
+        std::cout << "Building received " << amount << " units of electricity. Total electricity: " << power << std::endl;
+    }
+    else
+    {
+        std::cout << "Invalid electricity amount. No electricity received." << std::endl;
+    }
+}
+void Building::receiveUtilities(shared_ptr<Coal> c, shared_ptr<Water> w)
+{
+    std::shared_ptr<Building> buildingPtr = shared_from_this();
+    utils = std::make_unique<Utilities>(buildingPtr, c, w);
+
+    setState(make_unique<Built>());
+
+}
+
+void Building::checkConstructionStatus()
+{
+    if (currState && dynamic_cast<Underconstruction *>(currState.get()))
+    {
+        // Check if conditions for being built are met, e.g. utilities received
+        if (power > 0 && water > 0 && waste > 0)
+        { // Adjust conditions as needed
+            setState(make_unique<Built>());
+        }
+    }
+}
+
+std::vector<std::shared_ptr<Citizen>> &Building::getResidents() 
+{
+    return residents;
 }
