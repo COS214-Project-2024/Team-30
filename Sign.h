@@ -8,14 +8,13 @@ using namespace std;
 /**
  * @brief Represents a generic sign with a message and type.
  *
- * The Sign class keeps track of the total number of signs created and
- * assigns a unique ID to each instance.
+ * The Sign class keeps track of the total number of signs to note IDs
  */
 class Sign {
 protected:
-    string message; ///< The message displayed on the sign.
-    string type;    ///< The type of the sign.
-    static int numSigns; ///< Static variable to count the number of signs created.
+    string message; //message displayed
+    string type;    // The type of the sign.
+    static int numSigns; // Static variable to count the number of signs created.
     int ID; ///< Unique identifier for each sign instance.
 
 public:
