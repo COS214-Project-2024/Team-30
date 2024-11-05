@@ -21,7 +21,7 @@ int SewageSystem::manageDisposal(shared_ptr<Building> b) {
     }
 
     // Assume that the Building class has a method to manage sewage and returns an int (e.g., 100)
-    int resetValue = 100; // Default reset value for sewage management
+    int resetValue = 0; // Default reset value for sewage management
     std::cout << "Managing sewage disposal for building." << std::endl;
 
     // Logic to manage sewage disposal from the building would go here
