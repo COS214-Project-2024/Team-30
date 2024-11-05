@@ -9,9 +9,7 @@ using namespace std;
  * @class Plane
  * @brief Represents a plane that inherits from the PublicTransport class.
  *
- * The Plane class is a specific type of public transport that allows for
- * air travel. It inherits from the PublicTransport class and implements
- * travel capabilities.
+ * the only mode of transport that does not effect the area
  */
 class Plane : public publicTransport {
 public:
